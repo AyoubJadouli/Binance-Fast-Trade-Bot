@@ -1,0 +1,21 @@
+creds.yml
+creds_usethis.yml
+trades.txt
+
+__*__
+
+# Dont upload json files
+*.json
+
+# Virtual environment
+.venv
+
+# IDE settings
+.vscode
+
+# Don't upload log files
+*.log
+
+# Don't upload files
+test*.txt
+live*.txt

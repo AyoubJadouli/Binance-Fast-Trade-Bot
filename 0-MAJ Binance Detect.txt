@@ -1,0 +1,22 @@
+1-
+    print(f'')
+    print(f'--------')
+    print(f'STARTED         : {bot_started_datetime} | Running for: {datetime.now() - bot_started_datetime}')
+    print(f'CURRENT HOLDS   : {len(coins_bought)}/{TRADE_SLOTS} ({float(CURRENT_EXPOSURE):g}/{float(INVESTMENT_TOTAL):g} {PAIR_WITH})')
+    print(f'Buying Paused   : {bot_paused}')
+    print(f'')
+    print(f'--------')
+    print(f'Pending  : {txcolors.SELL_PROFIT if unrealised_session_profit_incfees_perc > 0. else txcolors.SELL_LOSS}{unrealised_session_profit_incfees_perc:.4f}% Est:${unrealised_session_profit_incfees_total:.4f} {PAIR_WITH}{txcolors.DEFAULT}')
+    print(f'--------')
+    print(f'')
+    print(f'--------')
+    print(f' TOTAL   : {txcolors.SELL_PROFIT if (session_profit_incfees_perc + unrealised_session_profit_incfees_perc) > 0. else txcolors.SELL_LOSS}{session_profit_incfees_perc + unrealised_session_profit_incfees_perc:.4f}% Est:${session_profit_incfees_total+unrealised_session_profit_incfees_total:.4f} {PAIR_WITH}{txcolors.DEFAULT}')
+    print(f'--------')
+    print(f'')
+
+2 - SUPPRIMER
+
+'botstart_datetime' : str(bot_started_datetime),
+
+3 - BLEU LOSS
+\033[94m
