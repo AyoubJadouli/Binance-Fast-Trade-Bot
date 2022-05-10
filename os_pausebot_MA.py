@@ -3,12 +3,13 @@ import os
 import time
 import threading
 
-INTERVAL = Interval.INTERVAL_1_MINUTE #Timeframe for analysis
+#INTERVAL = Interval.INTERVAL_1_MINUTE #Timeframe for analysis
+INTERVAL = Interval.INTERVAL_5_MINUTES #Timeframe for analysis
 
 EXCHANGE = 'BINANCE'
 SCREENER = 'CRYPTO'
 SYMBOL = 'BTCUSDT'
-TIME_TO_WAIT = 1
+TIME_TO_WAIT = 2
 SIGNAL_NAME = 'os_pausebot_MA'
 SIGNAL_FILE = 'signals/pausebot.pause'
 
@@ -37,14 +38,16 @@ def analyze():
     ma_analysis_buy = analysis.moving_averages['BUY']
     ma_analysis_neutral = analysis.moving_averages['NEUTRAL']
 
+
+
     # if ma_analysis_sell >= (ma_analysis_buy + ma_analysis_neutral) or price_downward_trend():       
-    if ma_analysis_sell >= (ma_analysis_buy + ma_analysis_neutral):       
+    if ma_analysis_sell >=  (ma_analysis_buy * 5 + ma_analysis_neutral * 2):       
         paused = True
         # print(f'pausebotmod: {SYMBOL} Market not looking too good, bot paused from buying. SELL indicators: {ma_analysis_sell}. BUY/NEUTRAL indicators: {ma_analysis_buy + ma_analysis_neutral}. P: {price} | LP: {lastprice} | Waiting {TIME_TO_WAIT} minutes for next market checkup')
-        print(f'{SIGNAL_NAME}: {SYMBOL} Market not looking too good, bot paused from buying. SELL indicators: {ma_analysis_sell}. BUY/NEUTRAL indicators: {ma_analysis_buy + ma_analysis_neutral}. Waiting {TIME_TO_WAIT} minutes for next market checkup')
+        print(f'{SIGNAL_NAME}: {SYMBOL}  ***** Bad Market Paused. SELL: {ma_analysis_sell} vs BUY:{ma_analysis_buy}/NEUTRAL:{ma_analysis_neutral} both: {ma_analysis_buy + ma_analysis_neutral}. Waiting {TIME_TO_WAIT} minutes for next market checkup')
     else:
         #print(f'pausebotmod: {SYMBOL} Market looks ok, bot is running. SELL indicators: {ma_analysis_sell}. BUY/NEUTRAL indicators: {ma_analysis_buy + ma_analysis_neutral}. P: {price} | LP: {lastprice} | Waiting {TIME_TO_WAIT} minutes for next market checkup')
-        print(f'{SIGNAL_NAME}: {SYMBOL} Market looks ok, bot is running. SELL indicators: {ma_analysis_sell}. BUY/NEUTRAL indicators: {ma_analysis_buy + ma_analysis_neutral}. Waiting {TIME_TO_WAIT} minutes for next market checkup')
+        print(f'{SIGNAL_NAME}: {SYMBOL}  ***** Good Market. SELL: {ma_analysis_sell} vs BUY:{ma_analysis_buy}/NEUTRAL:{ma_analysis_neutral} both: {ma_analysis_buy + ma_analysis_neutral}. Waiting {TIME_TO_WAIT} minutes for next market checkup')
         paused = False
 
     #lastprice = price

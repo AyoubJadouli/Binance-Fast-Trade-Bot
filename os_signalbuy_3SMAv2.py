@@ -50,7 +50,7 @@ else:
 #if os.path.exists(TICKERS_OVERRIDE):
 #    TICKERS = TICKERS_OVERRIDE
 
-TIME_TO_WAIT = 10 # Minutes to wait between analysis
+TIME_TO_WAIT = 1 # Minutes to wait between analysis
 DEBUG = False # List analysis result to console
 
 SIGNAL_NAME = 'os_signalbuys_3SMAv2'

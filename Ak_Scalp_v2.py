@@ -43,10 +43,10 @@ INTERVAL2 = Interval.INTERVAL_5_MINUTES # Secondary Timeframe for analysis on BU
 
 OSC_INDICATORS = ['RSI', 'Stoch.RSI', 'Mom', 'MACD', 'UO', 'BBP'] # Indicators to use in Oscillator analysis
 
-RSI_MIN = 12 # Min RSI Level for Buy Signal - Under 25 considered oversold (12)
-RSI_MAX = 55 # Max RSI Level for Buy Signal - Over 80 considered overbought (55)
+RSI_MIN = 10 # Min RSI Level for Buy Signal - Under 25 considered oversold (12)
+RSI_MAX = 90 # Max RSI Level for Buy Signal - Over 80 considered overbought (55)
 
-RSI_BUY = 0.3 # Difference in RSI levels over last 2 timescales for a Buy Signal (-0.3)
+RSI_BUY = -0.7 # Difference in RSI levels over last 2 timescales for a Buy Signal (-0.3)
 
 EXCHANGE = 'BINANCE'
 SCREENER = 'CRYPTO'

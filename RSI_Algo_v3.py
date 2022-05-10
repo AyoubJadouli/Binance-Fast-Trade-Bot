@@ -47,10 +47,11 @@ COINS_BOUGHT = parsed_config['script_options'].get('COINS_BOUGHT')
 #INTERVAL = Interval.INTERVAL_1_MINUTE
 INTERVAL1MIN = Interval.INTERVAL_1_MINUTE
 INTERVAL5MIN = Interval.INTERVAL_5_MINUTES
+INTERVAL15MIN = Interval.INTERVAL_15_MINUTES
 
 
-RSI_MIN = 43
-RSI_MAX = 57
+RSI_MIN = 8
+RSI_MAX = 80
 #if after n seconds the coin was not sold exceeding RSI_MAX it will be sold at the same purchase value or a little more
 TIME_MAX = 2700 # 45 minutes
 

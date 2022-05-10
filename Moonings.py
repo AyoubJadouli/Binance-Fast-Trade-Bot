@@ -1161,7 +1161,7 @@ def sell_coins(tpsl_override = False, specific_coin_to_sell = ""):
                             symbol = coin,
                             side = 'SELL',
                             type = 'MARKET',
-                            quantity = truncate(coins_bought[coin]['volume']-coins_bought[coin]['volume']*0.005,get_num_precision(coins_bought[coin]['volume']))
+                            quantity = truncate(coins_bought[coin]['volume']-coins_bought[coin]['volume']*0.001,get_num_precision(coins_bought[coin]['volume']))
                         )
 
                 # error handling here in case position cannot be placed
@@ -2007,7 +2007,7 @@ def menu():
         menu()
     return END
     
-def print_banner():
+def print_banner2():
     __header__='''
 \033[92m ___ _                        __   __   _      _   _ _ _ _          _____            _ _             ___     _   
 \033[92m| _ (_)_ _  __ _ _ _  __ ___  \ \ / ___| |__ _| |_(_| (_| |_ _  _  |_   __ _ __ _ __| (_)_ _  __ _  | _ )___| |_ 
@@ -2016,6 +2016,13 @@ def print_banner():
 \033[92m In intensive collaboration with one10001                    |__/                            |___/ by ABJ    '''
     print(__header__)
     
+def print_banner():
+    __header__='''
+\033[92m_____________________________________________________________________________
+\033[92m                       Binance Fast trader
+\033[92m_______________________       by ABJ     ____________________________________'''
+    print(__header__)
+
 if __name__ == '__main__':
     req_version = (3,9)
     if sys.version_info[:2] < req_version: 

@@ -6,6 +6,18 @@
 # Keep only coins that pass the checks in all intervals.
 # Use variables MY_INTERVALS MY_SINGNAL_STRENGTH to customize  your strategy. 
 # For example, you can select only coins with STRONG_BUY and BUY signals on intervals from 1 minute to 4 hours. Mon18Oct2021Ci
+MY_SINGNAL_STRENGTH = [
+    'STRONG_BUY',
+    'BUY',
+    'NEUTRAL'
+    ]
+
+BTC_SINGNAL_STRENGTH = [
+    'STRONG_BUY',
+    'BUY'
+    ]
+
+
 
 from tradingview_ta import TA_Handler, Interval, Exchange
 # use for environment variables
@@ -70,29 +82,53 @@ MY_INTERVALS=[
 #    Interval.INTERVAL_1_MONTH
     ]
 
-MY_SINGNAL_STRENGTH = [
-    'STRONG_BUY',
-    'BUY',
-    'NEUTRAL'
+BTC_INTERVALS=[
+    Interval.INTERVAL_1_MINUTE
+    ,
+#    Interval.INTERVAL_5_MINUTES
+#    ,
+#    Interval.INTERVAL_15_MINUTES
+#    ,
+#    Interval.INTERVAL_30_MINUTES,
+#    Interval.INTERVAL_1_HOUR
+#    ,
+#    Interval.INTERVAL_2_HOURS,
+#    Interval.INTERVAL_4_HOURS,
+#    Interval.INTERVAL_1_DAY
+#    ,
+#    Interval.INTERVAL_1_WEEK,
+#    Interval.INTERVAL_1_MONTH
     ]
 
-MY_SINGNAL_STRENGTH = [
-    'STRONG_BUY',
-    'BUY'
-    ]
 
 TIME_TO_WAIT = 1 # Minutes to wait between analysis
 FULL_LOG = False # List anylysis result to console
 
-SIGNAL_NAME = 'os_signalbuy_RECOMM_SBUY'
+SIGNAL_NAME = 'abj_superby_signal'
 SIGNAL_FILE = 'signals/' + SIGNAL_NAME + '.buy'
 
 TRADINGVIEW_EX_FILE = 'tradingview_ta_unknown'
 
 def analyze(pairs):
     signal_coins = {}
-    the_handler = {}
-    
+    btc_handler = TA_Handler(
+                symbol='BTC'+PAIR_WITH,
+                exchange=MY_EXCHANGE,
+                screener=MY_SCREENER,
+                interval=Interval.INTERVAL_1_MINUTE,
+                timeout= 10
+            )   
+
+    try:               
+        btc_analysis = btc_handler.get_analysis()
+        btc_recommendation = btc_analysis.summary['RECOMMENDATION']
+        btc_recommendation_osc = btc_analysis.oscillators['RECOMMENDATION']
+        btc_recommendation_ma = btc_analysis.moving_averages['RECOMMENDATION'] 
+    except Exception as e:
+        print(f'{SIGNAL_NAME}')
+        print("Exception:BTC Handler")
+        print(e)
+
     if os.path.exists(SIGNAL_FILE):
         os.remove(SIGNAL_FILE)
 
@@ -101,6 +137,7 @@ def analyze(pairs):
 
     for pair in pairs:
         for interval in MY_INTERVALS:
+                
             the_handler = TA_Handler(
                 symbol=pair,
                 exchange=MY_EXCHANGE,
@@ -151,10 +188,14 @@ def analyze(pairs):
  
             if (the_recommendation in MY_SINGNAL_STRENGTH and \
                 the_recommendation_osc in MY_SINGNAL_STRENGTH and \
-                the_recommendation_ma in MY_SINGNAL_STRENGTH):            
-                    print(f'#########{SIGNAL_NAME}: buy signal detected on {pair} in {interval}')
+                the_recommendation_ma in MY_SINGNAL_STRENGTH and \
+                #btc_recommendation in BTC_SINGNAL_STRENGTH and \
+                #btc_recommendation_osc in BTC_SINGNAL_STRENGTH and \
+                btc_recommendation_ma in BTC_SINGNAL_STRENGTH):             
+                    print(f'    {SIGNAL_NAME}:                ====> \033[32m  {pair} \033[39m<====')
+
                     if interval == MY_INTERVALS[-1]: 
-                        print(" ++++++++++++++++++++++++Ccoin this coin wins+++++++++++++++++++++++++++++++++++++++++++++++ ")
+                        #print(" ++++++++++++++++++++++++Ccoin this coin wins+++++++++++++++++++++++++++++++++++++++++++++++ ")
                         signal_coins[pair] = pair          
                         with open(SIGNAL_FILE,'a+') as f: f.write(pair + '\n')
             else: break
@@ -162,6 +203,7 @@ def analyze(pairs):
     return signal_coins
 
 def do_work():
+    print(f'{SIGNAL_NAME} - Starting')
     while True:
         try:
             if not os.path.exists(TICKERS):

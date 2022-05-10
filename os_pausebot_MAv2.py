@@ -6,8 +6,8 @@ import threading
 SIGNAL_NAME = 'os_pausebot_MAv2'
 SIGNAL_FILE = 'signals/pausebot.pause'
 
-INTERVAL = Interval.INTERVAL_5_MINUTES #Timeframe for analysis
-TIME_TO_WAIT = 5
+INTERVAL = Interval.INTERVAL_1_MINUTES #Timeframe for analysis
+TIME_TO_WAIT = 1
 
 EXCHANGE = 'BINANCE'
 SCREENER = 'CRYPTO'
