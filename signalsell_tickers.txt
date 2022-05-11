@@ -1,1 +1,4 @@
-DAR
+ADA
+LTC
+GALA
+ICP
