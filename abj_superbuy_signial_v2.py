@@ -11,18 +11,20 @@ from Ak_Scalp_v2 import RSI_BUY, RSI_MIN
 
 MY_SINGNAL_STRENGTH = [
     'STRONG_BUY',
-    'BUY',
-    'NEUTRAL'
+   # 'BUY',
+   # 'NEUTRAL'
     ]
 
 BTC_SINGNAL_STRENGTH = [
     'STRONG_BUY',
-    'BUY'
+    'BUY',
+    'NEUTRAL'
     ]
 
-RSI_MIN=13
-RSI_BUY=-0.3
+RSI_MIN=30
+RSI_BUY=-0.1
 BTC_CHECK_LEVEL=1
+ANNOYED_MOD=True
 
 from tradingview_ta import TA_Handler, Interval, Exchange
 # use for environment variables
@@ -88,10 +90,10 @@ MY_INTERVALS=[
     ]
 
 BTC_INTERVALS=[
-    Interval.INTERVAL_1_MINUTE
-    ,
-#    Interval.INTERVAL_5_MINUTES
+#    Interval.INTERVAL_1_MINUTE
 #    ,
+    Interval.INTERVAL_5_MINUTES
+    ,
 #    Interval.INTERVAL_15_MINUTES
 #    ,
 #    Interval.INTERVAL_30_MINUTES,
@@ -106,7 +108,7 @@ BTC_INTERVALS=[
     ]
 
 
-TIME_TO_WAIT = 1 # Minutes to wait between analysis
+TIME_TO_WAIT = 0.3 # Minutes to wait between analysis
 FULL_LOG = False # List anylysis result to console
 
 SIGNAL_NAME = 'abj_superby_signal_v2'
@@ -133,7 +135,7 @@ def btc_check(btc_level=1):
         print("Exception:BTC Handler")
         print(e)
 
-    if btc_level == 1:
+    if btc_level == 1 or ANNOYED_MOD:
         if (btc_recommendation_ma in BTC_SINGNAL_STRENGTH):
             return True
     elif btc_level == 2:
@@ -230,7 +232,14 @@ def analyze(pairs):
                     )
                 if interval == MY_INTERVALS[-1]: print("This is last interval to check, going to next coin")
  
-            if (the_recommendation in MY_SINGNAL_STRENGTH and \
+            if(ANNOYED_MOD and the_recommendation_ma in MY_SINGNAL_STRENGTH):
+                print(f'    {ANNOYED_MOD}:                ====> \033[32m  {pair} \033[39m<====')
+
+                if interval == MY_INTERVALS[-1]: 
+                    #print(" ++++++++++++++++++++++++Ccoin this coin wins+++++++++++++++++++++++++++++++++++++++++++++++ ")
+                    signal_coins[pair] = pair          
+                    with open(SIGNAL_FILE,'a+') as f: f.write(pair + '\n')
+            elif (the_recommendation in MY_SINGNAL_STRENGTH and \
                 the_recommendation_osc in MY_SINGNAL_STRENGTH and \
                 the_recommendation_ma in MY_SINGNAL_STRENGTH and \
                 the_recommendation_RSI in MY_SINGNAL_STRENGTH and \

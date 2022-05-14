@@ -258,7 +258,7 @@ def wait_for_price():
             min_price = min(historical_prices, key = lambda x: float("inf") if x is None else float(x[coin]['price']))
             max_price = max(historical_prices, key = lambda x: -1 if x is None else float(x[coin]['price']))
 
-            threshold_check = (-1.0 if min_price[coin]['time'] > max_price[coin]['time'] else 1.0) * (float(max_price[coin]['price']) - float(min_price[coin]['price'])) / float(min_price[coin]['price']) * 100
+            threshold_check = (-1.0 if min_price[coin]['time'] < max_price[coin]['time'] else 1.0) * (float(max_price[coin]['price']) - float(min_price[coin]['price'])) / float(min_price[coin]['price']) * 100
 
             # each coin with higher gains than our CHANGE_IN_PRICE is added to the volatile_coins dict if less than TRADE_SLOTS is not reached.
             if threshold_check > CHANGE_IN_PRICE:
@@ -423,6 +423,105 @@ def get_volume_list():
     return VOLATILE_VOLUME
 
 #########################################################
+
+
+def get_volume_list2():
+    try:
+        fav_tickers=[line.strip() for line in open(TICKERS_LIST)]
+        today = "volatile_volume_" + str(date.today()) + ".txt"
+        global COINS_MAX_VOLUME, COINS_MIN_VOLUME, VOLATILE_VOLUME, tickers
+        volatile_volume_empty = False
+        volatile_volume_time = False
+        if USE_MOST_VOLUME_COINS:
+            today = "volatile_volume_" + str(date.today()) + ".txt"
+            now = datetime.now()
+            now_str = now.strftime("%d-%m-%Y %H_%M_%S")
+            dt_string = datetime.strptime(now_str,"%d-%m-%Y %H_%M_%S")
+            if VOLATILE_VOLUME == "":
+                volatile_volume_empty = True
+            else:
+                tuple1 = dt_string.timetuple()
+                timestamp1 = time.mktime(tuple1)
+                
+                dt_string_old = datetime.strptime(VOLATILE_VOLUME.replace("(", " ").replace(")", "").replace("volatile_volume_", ""),"%d-%m-%Y %H_%M_%S") + timedelta(minutes = UPDATE_MOST_VOLUME_COINS)               
+                tuple2 = dt_string_old.timetuple()
+                timestamp2 = time.mktime(tuple2)                    
+                
+                if timestamp1 > timestamp2:
+                    volatile_volume_time = True
+                        
+            if volatile_volume_empty or volatile_volume_time or os.path.exists(today) == False:             
+                VOLATILE_VOLUME = "volatile_volume_" + str(dt_string)
+                
+                most_volume_coins = {}
+                tickers_all = []
+                
+                prices = client.get_all_tickers()
+                
+                for coin in prices:
+                    if ( coin['symbol'] == coin['symbol'].replace(PAIR_WITH, "") + PAIR_WITH ) and ( coin['symbol'].replace(PAIR_WITH, "") in fav_tickers ) :
+                        tickers_all.append(coin['symbol'].replace(PAIR_WITH, ""))
+
+                c = 0
+                if os.path.exists(VOLATILE_VOLUME + ".txt") == False:
+                    load_settings()
+                    print(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}Creating volatile list, wait a moment(3 minutes approximately)...')
+                    if COINS_MAX_VOLUME.isnumeric() == False and COINS_MIN_VOLUME.isnumeric() == False:
+                        infocoinMax = client.get_ticker(symbol=COINS_MAX_VOLUME + PAIR_WITH)
+                        infocoinMin = client.get_ticker(symbol=COINS_MIN_VOLUME + PAIR_WITH)
+                        COINS_MAX_VOLUME1 = float(infocoinMax['quoteVolume']) #math.ceil(float(infocoinMax['quoteVolume']))
+                        COINS_MIN_VOLUME1 = float(infocoinMin['quoteVolume'])
+                        most_volume_coins.update({COINS_MAX_VOLUME : COINS_MAX_VOLUME1})
+                        print(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}COINS_MAX_VOLUME {round(COINS_MAX_VOLUME1)} and COINS_MIN_VOLUME {round(COINS_MIN_VOLUME1)} were set from specific currencies...{txcolors.DEFAULT}')
+                    
+                    for coin in tickers_all:
+                        #try:
+                        infocoin = client.get_ticker(symbol= coin + PAIR_WITH)
+                        volumecoin = float(infocoin['quoteVolume']) #/ 1000000                
+                        if volumecoin <= COINS_MAX_VOLUME1 and volumecoin >= COINS_MIN_VOLUME1 and coin not in EX_PAIRS and coin not in most_volume_coins:
+                            most_volume_coins.update({coin : volumecoin})  					
+                            c = c + 1
+                        # except Exception as e:
+                            # print("Error on line {}".format(sys.exc_info()[-1].tb_lineno))
+                            # continue
+                            
+                    if c <= 0: 
+                        print(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}Cannot continue because there are no coins in the selected range, change the settings and start the bot again...')
+                        sys.exit()
+                        
+                    sortedVolumeList = sorted(most_volume_coins.items(), key=lambda x: x[1], reverse=True)
+                    
+                    now = datetime.now()
+                    now_str = now.strftime("%d-%m-%Y(%H_%M_%S)")
+                    VOLATILE_VOLUME = "volatile_volume_" + now_str
+                    
+                    print(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}Saving {str(c)} coins to {today} ...{txcolors.DEFAULT}')
+                    
+                    
+            else:    
+                VOLATILE_VOLUME = "volatile_volume_" + dt_string
+                return VOLATILE_VOLUME
+        else:
+            tickers=[line.strip() for line in open(TICKERS_LIST)]
+            
+    except Exception as e:
+        write_log(f'{txcolors.WARNING}BOT: {txcolors.WARNING}get_volume_list(): Exception in function: {e}{txcolors.DEFAULT}')
+        write_log("Error on line {}".format(sys.exc_info()[-1].tb_lineno))
+        print("COIN_ERROR: ", coin + PAIR_WITH)
+        exit(1)
+    return VOLATILE_VOLUME
+
+#End v2###################################
+
+
+
+
+
+
+
+
+
+
 
 def print_table_coins_bought():
     try:

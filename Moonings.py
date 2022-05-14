@@ -271,7 +271,8 @@ def wait_for_price():
             min_price = min(historical_prices, key = lambda x: float("inf") if x is None else float(x[coin]['price']))
             max_price = max(historical_prices, key = lambda x: -1 if x is None else float(x[coin]['price']))
 
-            threshold_check = (-1.0 if min_price[coin]['time'] > max_price[coin]['time'] else 1.0) * (float(max_price[coin]['price']) - float(min_price[coin]['price'])) / float(min_price[coin]['price']) * 100
+            #threshold_check = (-1.0 if min_price[coin]['time'] < max_price[coin]['time'] else 1.0) * (float(max_price[coin]['price']) - float(min_price[coin]['price'])) / float(min_price[coin]['price']) * 100
+            threshold_check = ( -1 *float(max_price[coin]['price'])) / float(min_price[coin]['price']) * 100
 
             # each coin with higher gains than our CHANGE_IN_PRICE is added to the volatile_coins dict if less than TRADE_SLOTS is not reached.
             if threshold_check > CHANGE_IN_PRICE:
@@ -895,7 +896,7 @@ def set_exparis(pairs):
             break
     #EX_PAIRS = parsed_config['trading_options']['EX_PAIRS']
     e = False
-    pairs = pairs.strip().replace('USDT','')
+    pairs = pairs.strip().replace(PAIR_WITH,'')
     for coin in EX_PAIRS:
         if coin == pairs: 
             e = True
@@ -2017,10 +2018,12 @@ def print_banner2():
     print(__header__)
     
 def print_banner():
+         
+
     __header__='''
-\033[92m_____________________________________________________________________________
-\033[92m                       Binance Fast trader
-\033[92m_______________________       by ABJ     ____________________________________'''
+\033[92m__________________________________________________________________________________________
+\033[92m                                   Binance Fast trader
+\033[92m_____________________________________     by ABJ     _____________________________________'''
     print(__header__)
 
 if __name__ == '__main__':
