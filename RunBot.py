@@ -1,8 +1,4 @@
 """
-AyoubJadouli Mod
-Version: 7.1
-
-On the top of:
 Horacio Oscar Fanelli - Pantersxx3
 Version: 6.8
 

@@ -7,12 +7,12 @@
 # Use variables MY_INTERVALS MY_SINGNAL_STRENGTH to customize  your strategy. 
 # For example, you can select only coins with STRONG_BUY and BUY signals on intervals from 1 minute to 4 hours. Mon18Oct2021Ci
 from Ak_Scalp_v2 import RSI_BUY, RSI_MIN
-
-
+TIME_TO_WAIT = 0.3 # Minutes to wait between analysis
+ANNOYED_MOD=False
 MY_SINGNAL_STRENGTH = [
     'STRONG_BUY',
-   # 'BUY',
-   # 'NEUTRAL'
+    'BUY',
+    'NEUTRAL'
     ]
 
 BTC_SINGNAL_STRENGTH = [
@@ -21,10 +21,10 @@ BTC_SINGNAL_STRENGTH = [
     'NEUTRAL'
     ]
 
-RSI_MIN=30
-RSI_BUY=-0.1
-BTC_CHECK_LEVEL=1
-ANNOYED_MOD=True
+#RSI_MIN=30
+#RSI_BUY=-0.1
+#BTC_CHECK_LEVEL=1
+#CHOOSEN_INTERVAL="1m" # 5m 1m-5m 5m-15m 15m 1h 4h
 
 from tradingview_ta import TA_Handler, Interval, Exchange
 # use for environment variables
@@ -62,6 +62,12 @@ TEST_MODE = parsed_config['script_options']['TEST_MODE']
 #TICKERS = parsed_config['trading_options']['TICKERS_LIST']
 USE_MOST_VOLUME_COINS = parsed_config['trading_options']['USE_MOST_VOLUME_COINS']
 
+ANNOYED_MOD= parsed_config['trading_options']['ANNOYED_MOD']
+RSI_MIN=  float(parsed_config['trading_options']['RSI_MIN'])
+RSI_BUY=  float(parsed_config['trading_options']['RSI_BUY'])
+BTC_CHECK_LEVEL=  int(parsed_config['trading_options']['BTC_CHECK_LEVEL'])
+CHOOSEN_INTERVAL=  parsed_config['trading_options']['CHOOSEN_INTERVAL']
+
 if USE_MOST_VOLUME_COINS == True:
         #if ABOVE_COINS_VOLUME == True:
     TICKERS = "volatile_volume_" + str(date.today()) + ".txt"
@@ -70,45 +76,246 @@ else:
     
 MY_EXCHANGE = 'BINANCE'
 MY_SCREENER = 'CRYPTO'
- 
-MY_INTERVALS=[
-    Interval.INTERVAL_1_MINUTE
-    ,
-#    Interval.INTERVAL_5_MINUTES
-#    ,
-#    Interval.INTERVAL_15_MINUTES
-#    ,
-#    Interval.INTERVAL_30_MINUTES,
-#    Interval.INTERVAL_1_HOUR
-#    ,
-#    Interval.INTERVAL_2_HOURS,
-#    Interval.INTERVAL_4_HOURS,
-#    Interval.INTERVAL_1_DAY
-#    ,
-#    Interval.INTERVAL_1_WEEK,
-#    Interval.INTERVAL_1_MONTH
-    ]
 
-BTC_INTERVALS=[
-#    Interval.INTERVAL_1_MINUTE
-#    ,
-    Interval.INTERVAL_5_MINUTES
-    ,
-#    Interval.INTERVAL_15_MINUTES
-#    ,
-#    Interval.INTERVAL_30_MINUTES,
-#    Interval.INTERVAL_1_HOUR
-#    ,
-#    Interval.INTERVAL_2_HOURS,
-#    Interval.INTERVAL_4_HOURS,
-#    Interval.INTERVAL_1_DAY
-#    ,
-#    Interval.INTERVAL_1_WEEK,
-#    Interval.INTERVAL_1_MONTH
-    ]
+MY_INTERVALS=[]
+BTC_INTERVALS=[]
 
+if CHOOSEN_INTERVAL == '1m':
+    MY_INTERVALS=[
+            Interval.INTERVAL_1_MINUTE
+        ,
+    #    Interval.INTERVAL_5_MINUTES
+    #    ,
+    #    Interval.INTERVAL_15_MINUTES
+    #    ,
+    #    Interval.INTERVAL_30_MINUTES,
+    #    Interval.INTERVAL_1_HOUR
+    #    ,
+    #    Interval.INTERVAL_2_HOURS,
+    #    Interval.INTERVAL_4_HOURS,
+    #    Interval.INTERVAL_1_DAY
+    #    ,
+    #    Interval.INTERVAL_1_WEEK,
+    #    Interval.INTERVAL_1_MONTH
+        ]
 
-TIME_TO_WAIT = 0.3 # Minutes to wait between analysis
+    BTC_INTERVALS=[
+        Interval.INTERVAL_1_MINUTE
+        ,
+    #    Interval.INTERVAL_5_MINUTES
+    #    ,
+    #    Interval.INTERVAL_15_MINUTES
+    #    ,
+    #    Interval.INTERVAL_30_MINUTES,
+    #    Interval.INTERVAL_1_HOUR
+    #    ,
+    #    Interval.INTERVAL_2_HOURS,
+    #    Interval.INTERVAL_4_HOURS,
+    #    Interval.INTERVAL_1_DAY
+    #    ,
+    #    Interval.INTERVAL_1_WEEK,
+    #    Interval.INTERVAL_1_MONTH
+        ]
+elif CHOOSEN_INTERVAL == '5m':
+    MY_INTERVALS=[
+    #        Interval.INTERVAL_1_MINUTE
+    #    ,
+        Interval.INTERVAL_5_MINUTES
+        ,
+    #    Interval.INTERVAL_15_MINUTES
+    #    ,
+    #    Interval.INTERVAL_30_MINUTES,
+    #    Interval.INTERVAL_1_HOUR
+    #    ,
+    #    Interval.INTERVAL_2_HOURS,
+    #    Interval.INTERVAL_4_HOURS,
+    #    Interval.INTERVAL_1_DAY
+    #    ,
+    #    Interval.INTERVAL_1_WEEK,
+    #    Interval.INTERVAL_1_MONTH
+        ]
+
+    BTC_INTERVALS=[
+    #    Interval.INTERVAL_1_MINUTE
+    #    ,
+        Interval.INTERVAL_5_MINUTES
+        ,
+    #    Interval.INTERVAL_15_MINUTES
+    #    ,
+    #    Interval.INTERVAL_30_MINUTES,
+    #    Interval.INTERVAL_1_HOUR
+    #    ,
+    #    Interval.INTERVAL_2_HOURS,
+    #    Interval.INTERVAL_4_HOURS,
+    #    Interval.INTERVAL_1_DAY
+    #    ,
+    #    Interval.INTERVAL_1_WEEK,
+    #    Interval.INTERVAL_1_MONTH
+        ]
+elif CHOOSEN_INTERVAL == '1m-5m':
+    MY_INTERVALS=[
+            Interval.INTERVAL_1_MINUTE
+        ,
+        Interval.INTERVAL_5_MINUTES
+        ,
+    #    Interval.INTERVAL_15_MINUTES
+    #    ,
+    #    Interval.INTERVAL_30_MINUTES,
+    #    Interval.INTERVAL_1_HOUR
+    #    ,
+    #    Interval.INTERVAL_2_HOURS,
+    #    Interval.INTERVAL_4_HOURS,
+    #    Interval.INTERVAL_1_DAY
+    #    ,
+    #    Interval.INTERVAL_1_WEEK,
+    #    Interval.INTERVAL_1_MONTH
+        ]
+
+    BTC_INTERVALS=[
+    #    Interval.INTERVAL_1_MINUTE
+    #    ,
+        Interval.INTERVAL_5_MINUTES
+        ,
+    #    Interval.INTERVAL_15_MINUTES
+    #    ,
+    #    Interval.INTERVAL_30_MINUTES,
+    #    Interval.INTERVAL_1_HOUR
+    #    ,
+    #    Interval.INTERVAL_2_HOURS,
+    #    Interval.INTERVAL_4_HOURS,
+    #    Interval.INTERVAL_1_DAY
+    #    ,
+    #    Interval.INTERVAL_1_WEEK,
+    #    Interval.INTERVAL_1_MONTH
+        ]
+elif CHOOSEN_INTERVAL == '15m':
+    MY_INTERVALS=[
+    #        Interval.INTERVAL_1_MINUTE
+    #    ,
+    #    Interval.INTERVAL_5_MINUTES
+    #    ,
+        Interval.INTERVAL_15_MINUTES
+        ,
+    #    Interval.INTERVAL_30_MINUTES,
+    #    Interval.INTERVAL_1_HOUR
+    #    ,
+    #    Interval.INTERVAL_2_HOURS,
+    #    Interval.INTERVAL_4_HOURS,
+    #    Interval.INTERVAL_1_DAY
+    #    ,
+    #    Interval.INTERVAL_1_WEEK,
+    #    Interval.INTERVAL_1_MONTH
+        ]
+
+    BTC_INTERVALS=[
+    #    Interval.INTERVAL_1_MINUTE
+    #    ,
+    #    Interval.INTERVAL_5_MINUTES
+    #    ,
+        Interval.INTERVAL_15_MINUTES
+        ,
+    #    Interval.INTERVAL_30_MINUTES,
+    #    Interval.INTERVAL_1_HOUR
+    #    ,
+    #    Interval.INTERVAL_2_HOURS,
+    #    Interval.INTERVAL_4_HOURS,
+    #    Interval.INTERVAL_1_DAY
+    #    ,
+    #    Interval.INTERVAL_1_WEEK,
+    #    Interval.INTERVAL_1_MONTH
+        ]
+elif CHOOSEN_INTERVAL == '5m-15m':
+    MY_INTERVALS=[
+    #    Interval.INTERVAL_1_MINUTE
+    #    ,
+        Interval.INTERVAL_5_MINUTES
+        ,
+        Interval.INTERVAL_15_MINUTES
+        ,
+    #    Interval.INTERVAL_30_MINUTES,
+    #    Interval.INTERVAL_1_HOUR
+    #    ,
+    #    Interval.INTERVAL_2_HOURS,
+    #    Interval.INTERVAL_4_HOURS,
+    #    Interval.INTERVAL_1_DAY
+    #    ,
+    #    Interval.INTERVAL_1_WEEK,
+    #    Interval.INTERVAL_1_MONTH
+        ]
+
+    BTC_INTERVALS=[
+    #    Interval.INTERVAL_1_MINUTE
+    #    ,
+        Interval.INTERVAL_5_MINUTES
+        ,
+        Interval.INTERVAL_15_MINUTES
+        ,
+    #    Interval.INTERVAL_30_MINUTES,
+    #    Interval.INTERVAL_1_HOUR
+    #    ,
+    #    Interval.INTERVAL_2_HOURS,
+    #    Interval.INTERVAL_4_HOURS,
+    #    Interval.INTERVAL_1_DAY
+    #    ,
+    #    Interval.INTERVAL_1_WEEK,
+    #    Interval.INTERVAL_1_MONTH
+        ]
+elif CHOOSEN_INTERVAL == '30m':
+    MY_INTERVALS=[
+        
+        Interval.INTERVAL_30_MINUTES
+
+        ]
+
+    BTC_INTERVALS=[
+        Interval.INTERVAL_30_MINUTES
+        ]
+elif CHOOSEN_INTERVAL == '1h':
+    MY_INTERVALS=[
+  
+       Interval.INTERVAL_1_HOUR
+]
+
+    BTC_INTERVALS=[
+  Interval.INTERVAL_1_HOUR
+
+        
+]
+elif CHOOSEN_INTERVAL == '4h':
+    MY_INTERVALS=[
+
+        Interval.INTERVAL_4_HOURS
+        
+        ]
+
+    BTC_INTERVALS=[
+    Interval.INTERVAL_4_HOURS,
+        ]
+elif CHOOSEN_INTERVAL == 'all':
+    MY_INTERVALS=[
+        Interval.INTERVAL_1_MINUTE
+        ,
+        Interval.INTERVAL_5_MINUTES
+        ,
+        Interval.INTERVAL_15_MINUTES
+        ,
+        Interval.INTERVAL_30_MINUTES,
+        Interval.INTERVAL_1_HOUR
+        
+    #    Interval.INTERVAL_2_HOURS,
+    #    Interval.INTERVAL_4_HOURS,
+    #    Interval.INTERVAL_1_DAY
+    #    ,
+    #    Interval.INTERVAL_1_WEEK,
+    #    Interval.INTERVAL_1_MONTH
+        ]
+
+    BTC_INTERVALS=[
+
+        Interval.INTERVAL_1_HOUR
+
+        ]
+
 FULL_LOG = False # List anylysis result to console
 
 SIGNAL_NAME = 'abj_superby_signal_v2'
@@ -233,7 +440,7 @@ def analyze(pairs):
                 if interval == MY_INTERVALS[-1]: print("This is last interval to check, going to next coin")
  
             if(ANNOYED_MOD and the_recommendation_ma in MY_SINGNAL_STRENGTH):
-                print(f'    {ANNOYED_MOD}:                ====> \033[32m  {pair} \033[39m<====')
+                print(f'    {"ANNOYED_MOD"}:                ====> \033[32m  {pair} \033[39m<====')
 
                 if interval == MY_INTERVALS[-1]: 
                     #print(" ++++++++++++++++++++++++Ccoin this coin wins+++++++++++++++++++++++++++++++++++++++++++++++ ")
