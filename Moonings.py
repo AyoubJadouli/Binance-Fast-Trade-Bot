@@ -1198,7 +1198,8 @@ def sell_coins(tpsl_override = False, specific_coin_to_sell = ""):
                     if int(MAX_HOLDING_TIME) != 0: 
                         if time_held*60 >= int(MAX_HOLDING_TIME): 
                             set_exparis(coin)
-                            sell_coin(coin)
+                            print(f'{txcolors.SELL_LOSS}BOT: XXX Timeout sell : '+coin.replace(PAIR_WITH,""))
+                            sell_coin(coin.replace(PAIR_WITH,""))
                     
                     if DEBUG:
                         if not SCREEN_MODE == 2: print(f"{txcolors.WARNING}BOT: {txcolors.DEFAULT}sell_coins() | Coin: {coin} | Sell Volume: {coins_bought[coin]['volume']} | Price:{LastPrice}")
