@@ -1,4 +1,8 @@
 """
+AyoubJadouli Mod
+Version: 7.1
+
+On the top of:
 Horacio Oscar Fanelli - Pantersxx3
 Version: 6.8
 
@@ -105,8 +109,8 @@ class txcolors:
 
 
 # tracks profit/loss each session
-global session_profit_incfees_perc, session_profit_incfees_total, session_tpsl_override_msg, is_bot_running, session_USDT_EARNED, last_msg_discord_balance_date, session_USDT_EARNED_TODAY, parsed_creds, TUP,PUP, TDOWN, PDOWN, TNEUTRAL, PNEUTRAL, renewlist, DISABLE_TIMESTAMPS, signalthreads, VOLATILE_VOLUME_LIST, FLAG_PAUSE, coins_up,coins_down,coins_unchanged, SHOW_TABLE_COINS_BOUGHT, USED_BNB_IN_SESSION, PAUSEBOT_MANUAL, sell_specific_coin, lostconnection
-global historic_profit_incfees_perc, historic_profit_incfees_total, trade_wins, trade_losses, sell_all_coins, bot_started_datetime
+global session_profit_incfees_perc, session_profit_incfees_total, session_tpsl_override_msg, is_bot_running, session_USDT_EARNED, last_msg_discord_balance_date, session_USDT_EARNED_TODAY, parsed_creds, TUP,PUP, TDOWN, PDOWN, TNEUTRAL, PNEUTRAL, renewlist, DISABLE_TIMESTAMPS, signalthreads, VOLATILE_VOLUME_LIST, FLAG_PAUSE,TOP_LIST, coins_up,coins_down,coins_unchanged, SHOW_TABLE_COINS_BOUGHT, USED_BNB_IN_SESSION, PAUSEBOT_MANUAL, sell_specific_coin, lostconnection
+global historic_profit_incfees_perc, historic_profit_incfees_total, trade_wins, trade_losses, sell_all_coins, bot_started_datetime ,ALL_COIN_DATA_SORTED
 last_price_global = 0
 session_profit_incfees_perc = 0
 session_profit_incfees_total = 0
@@ -164,6 +168,19 @@ def decimals():
         return 4
     else:
         return 8
+def get_num_precision(num):
+    count = 0
+    while num * 10**count % 1 != 0:
+        count += 1
+    return count
+
+def truncate(n, decimals=0):
+    multiplier = 10 ** decimals
+    return int(n * multiplier) / multiplier
+
+def get_precision(f1):
+    str1=str(f1)
+    return len(str1.split(".")[1])
 
 def get_price(add_to_historical=True):
     '''Return the current price for all coins on binance'''
@@ -236,6 +253,7 @@ def wait_for_price():
         pause_bot()
 
         # get first element from the dictionary
+        #print(historical_prices)
         firstcoin = next(iter(historical_prices[hsp_head]))  
 
         #BBif historical_prices[hsp_head]['BNB' + PAIR_WITH]['time'] > datetime.now() - timedelta(minutes=float(TIME_DIFFERENCE / RECHECK_INTERVAL)):
@@ -258,7 +276,8 @@ def wait_for_price():
             min_price = min(historical_prices, key = lambda x: float("inf") if x is None else float(x[coin]['price']))
             max_price = max(historical_prices, key = lambda x: -1 if x is None else float(x[coin]['price']))
 
-            threshold_check = (-1.0 if min_price[coin]['time'] < max_price[coin]['time'] else 1.0) * (float(max_price[coin]['price']) - float(min_price[coin]['price'])) / float(min_price[coin]['price']) * 100
+            #threshold_check = (-1.0 if min_price[coin]['time'] < max_price[coin]['time'] else 1.0) * (float(max_price[coin]['price']) - float(min_price[coin]['price'])) / float(min_price[coin]['price']) * 100
+            threshold_check = ( -1 *float(max_price[coin]['price'])) / float(min_price[coin]['price']) * 100
 
             # each coin with higher gains than our CHANGE_IN_PRICE is added to the volatile_coins dict if less than TRADE_SLOTS is not reached.
             if threshold_check > CHANGE_IN_PRICE:
@@ -309,32 +328,22 @@ def wait_for_price():
         balance_report(last_price)
     except Exception as e:
         write_log(f'{txcolors.WARNING}BOT: {txcolors.WARNING}wait_for_price(): Exception in function: {e}{txcolors.DEFAULT}')
+        print(e)
         write_log("Error on line {}".format(sys.exc_info()[-1].tb_lineno))
         lost_connection(e, "wait_for_price")        
         pass
     return volatile_coins, len(volatile_coins), historical_prices[hsp_head]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-##################################################################
 def get_volume_list():
     try:
         fav_tickers=[line.strip() for line in open(TICKERS_LIST)]
         today = "volatile_volume_" + str(date.today()) + ".txt"
-        global COINS_MAX_VOLUME, COINS_MIN_VOLUME, VOLATILE_VOLUME, tickers
+        global COINS_MAX_VOLUME, COINS_MIN_VOLUME, VOLATILE_VOLUME, tickers,ALL_COIN_DATA_SORTED
         volatile_volume_empty = False
         volatile_volume_time = False
+        all_coin_data = client.get_ticker()
+        all_coin_data_sorted =sorted(all_coin_data, key=lambda x: abs(float(x['priceChangePercent'])), reverse=True)
+        ALL_COIN_DATA_SORTED=all_coin_data_sorted
         if USE_MOST_VOLUME_COINS:
             today = "volatile_volume_" + str(date.today()) + ".txt"
             now = datetime.now()
@@ -361,8 +370,9 @@ def get_volume_list():
                 
                 prices = client.get_all_tickers()
                 
-                for coin in prices:
-                    if ( coin['symbol'] == coin['symbol'].replace(PAIR_WITH, "") + PAIR_WITH ) and ( coin['symbol'].replace(PAIR_WITH, "") in fav_tickers ) :
+                #for coin in prices:
+                for coin in all_coin_data_sorted: 
+                    if ( coin['symbol'] == coin['symbol'].replace(PAIR_WITH, "") + PAIR_WITH ) and ( coin['symbol'].replace(PAIR_WITH, "") in fav_tickers ) : #mod halal only
                         tickers_all.append(coin['symbol'].replace(PAIR_WITH, ""))
 
                 c = 0
@@ -380,8 +390,11 @@ def get_volume_list():
                     for coin in tickers_all:
                         #try:
                         infocoin = client.get_ticker(symbol= coin + PAIR_WITH)
-                        volumecoin = float(infocoin['quoteVolume']) #/ 1000000                
-                        if volumecoin <= COINS_MAX_VOLUME1 and volumecoin >= COINS_MIN_VOLUME1 and coin not in EX_PAIRS and coin not in most_volume_coins:
+                        volumecoin = float(infocoin['quoteVolume']) #/ 1000000
+                        if TOP_LIST > 0:    
+                            most_volume_coins.update({coin : volumecoin})
+                            c = c + 1
+                        elif volumecoin <= COINS_MAX_VOLUME1 and volumecoin >= COINS_MIN_VOLUME1 and coin not in EX_PAIRS and coin not in most_volume_coins:
                             most_volume_coins.update({coin : volumecoin})  					
                             c = c + 1
                         # except Exception as e:
@@ -393,16 +406,24 @@ def get_volume_list():
                         sys.exit()
                         
                     sortedVolumeList = sorted(most_volume_coins.items(), key=lambda x: x[1], reverse=True)
-                    
+                    if TOP_LIST > 0 and len(sortedVolumeList)>=TOP_LIST:        
+                        sortedVolumeList=sortedVolumeList[:TOP_LIST]
+                    sortedVolatilityList=[]
+                    for co in all_coin_data_sorted:
+                        if co["symbol"].replace(PAIR_WITH, "") in  list(map(lambda i:i[0],sortedVolumeList)):
+                            sortedVolatilityList.append(co["symbol"].replace(PAIR_WITH, "") )
+ 
                     now = datetime.now()
                     now_str = now.strftime("%d-%m-%Y(%H_%M_%S)")
                     VOLATILE_VOLUME = "volatile_volume_" + now_str
                     
                     print(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}Saving {str(c)} coins to {today} ...{txcolors.DEFAULT}')
                     
-                    for coin in sortedVolumeList:
+                    #for coin in sortedVolumeList:             
+                    for coin in sortedVolatilityList:
+                        #print("write coin: "+coin)
                         with open(today,'a+') as f:
-                            f.write(coin[0] + '\n')
+                            f.write(coin + '\n')
                     
                     set_config("VOLATILE_VOLUME", VOLATILE_VOLUME)
                 else:
@@ -421,107 +442,6 @@ def get_volume_list():
         print("COIN_ERROR: ", coin + PAIR_WITH)
         exit(1)
     return VOLATILE_VOLUME
-
-#########################################################
-
-
-def get_volume_list2():
-    try:
-        fav_tickers=[line.strip() for line in open(TICKERS_LIST)]
-        today = "volatile_volume_" + str(date.today()) + ".txt"
-        global COINS_MAX_VOLUME, COINS_MIN_VOLUME, VOLATILE_VOLUME, tickers
-        volatile_volume_empty = False
-        volatile_volume_time = False
-        if USE_MOST_VOLUME_COINS:
-            today = "volatile_volume_" + str(date.today()) + ".txt"
-            now = datetime.now()
-            now_str = now.strftime("%d-%m-%Y %H_%M_%S")
-            dt_string = datetime.strptime(now_str,"%d-%m-%Y %H_%M_%S")
-            if VOLATILE_VOLUME == "":
-                volatile_volume_empty = True
-            else:
-                tuple1 = dt_string.timetuple()
-                timestamp1 = time.mktime(tuple1)
-                
-                dt_string_old = datetime.strptime(VOLATILE_VOLUME.replace("(", " ").replace(")", "").replace("volatile_volume_", ""),"%d-%m-%Y %H_%M_%S") + timedelta(minutes = UPDATE_MOST_VOLUME_COINS)               
-                tuple2 = dt_string_old.timetuple()
-                timestamp2 = time.mktime(tuple2)                    
-                
-                if timestamp1 > timestamp2:
-                    volatile_volume_time = True
-                        
-            if volatile_volume_empty or volatile_volume_time or os.path.exists(today) == False:             
-                VOLATILE_VOLUME = "volatile_volume_" + str(dt_string)
-                
-                most_volume_coins = {}
-                tickers_all = []
-                
-                prices = client.get_all_tickers()
-                
-                for coin in prices:
-                    if ( coin['symbol'] == coin['symbol'].replace(PAIR_WITH, "") + PAIR_WITH ) and ( coin['symbol'].replace(PAIR_WITH, "") in fav_tickers ) :
-                        tickers_all.append(coin['symbol'].replace(PAIR_WITH, ""))
-
-                c = 0
-                if os.path.exists(VOLATILE_VOLUME + ".txt") == False:
-                    load_settings()
-                    print(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}Creating volatile list, wait a moment(3 minutes approximately)...')
-                    if COINS_MAX_VOLUME.isnumeric() == False and COINS_MIN_VOLUME.isnumeric() == False:
-                        infocoinMax = client.get_ticker(symbol=COINS_MAX_VOLUME + PAIR_WITH)
-                        infocoinMin = client.get_ticker(symbol=COINS_MIN_VOLUME + PAIR_WITH)
-                        COINS_MAX_VOLUME1 = float(infocoinMax['quoteVolume']) #math.ceil(float(infocoinMax['quoteVolume']))
-                        COINS_MIN_VOLUME1 = float(infocoinMin['quoteVolume'])
-                        most_volume_coins.update({COINS_MAX_VOLUME : COINS_MAX_VOLUME1})
-                        print(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}COINS_MAX_VOLUME {round(COINS_MAX_VOLUME1)} and COINS_MIN_VOLUME {round(COINS_MIN_VOLUME1)} were set from specific currencies...{txcolors.DEFAULT}')
-                    
-                    for coin in tickers_all:
-                        #try:
-                        infocoin = client.get_ticker(symbol= coin + PAIR_WITH)
-                        volumecoin = float(infocoin['quoteVolume']) #/ 1000000                
-                        if volumecoin <= COINS_MAX_VOLUME1 and volumecoin >= COINS_MIN_VOLUME1 and coin not in EX_PAIRS and coin not in most_volume_coins:
-                            most_volume_coins.update({coin : volumecoin})  					
-                            c = c + 1
-                        # except Exception as e:
-                            # print("Error on line {}".format(sys.exc_info()[-1].tb_lineno))
-                            # continue
-                            
-                    if c <= 0: 
-                        print(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}Cannot continue because there are no coins in the selected range, change the settings and start the bot again...')
-                        sys.exit()
-                        
-                    sortedVolumeList = sorted(most_volume_coins.items(), key=lambda x: x[1], reverse=True)
-                    
-                    now = datetime.now()
-                    now_str = now.strftime("%d-%m-%Y(%H_%M_%S)")
-                    VOLATILE_VOLUME = "volatile_volume_" + now_str
-                    
-                    print(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}Saving {str(c)} coins to {today} ...{txcolors.DEFAULT}')
-                    
-                    
-            else:    
-                VOLATILE_VOLUME = "volatile_volume_" + dt_string
-                return VOLATILE_VOLUME
-        else:
-            tickers=[line.strip() for line in open(TICKERS_LIST)]
-            
-    except Exception as e:
-        write_log(f'{txcolors.WARNING}BOT: {txcolors.WARNING}get_volume_list(): Exception in function: {e}{txcolors.DEFAULT}')
-        write_log("Error on line {}".format(sys.exc_info()[-1].tb_lineno))
-        print("COIN_ERROR: ", coin + PAIR_WITH)
-        exit(1)
-    return VOLATILE_VOLUME
-
-#End v2###################################
-
-
-
-
-
-
-
-
-
-
 
 def print_table_coins_bought():
     try:
@@ -993,7 +913,7 @@ def set_exparis(pairs):
             break
     #EX_PAIRS = parsed_config['trading_options']['EX_PAIRS']
     e = False
-    pairs = pairs.strip().replace('USDT','')
+    pairs = pairs.strip().replace(PAIR_WITH,'')
     for coin in EX_PAIRS:
         if coin == pairs: 
             e = True
@@ -1259,7 +1179,7 @@ def sell_coins(tpsl_override = False, specific_coin_to_sell = ""):
                             symbol = coin,
                             side = 'SELL',
                             type = 'MARKET',
-                            quantity = coins_bought[coin]['volume']
+                            quantity = truncate(coins_bought[coin]['volume']-coins_bought[coin]['volume']*0.001,get_num_precision(coins_bought[coin]['volume']))
                         )
 
                 # error handling here in case position cannot be placed
@@ -1289,7 +1209,11 @@ def sell_coins(tpsl_override = False, specific_coin_to_sell = ""):
                     time_held = (timedelta(seconds=datetime.now().timestamp()-int(str(coins_bought[coin]['timestamp'])[:10])).total_seconds())/3600
                     
                     if int(MAX_HOLDING_TIME) != 0: 
-                        if time_held >= int(MAX_HOLDING_TIME): set_exparis(coin)
+                        print("time_held*60="+str(time_held*60)+"vs"+str(MAX_HOLDING_TIME))
+                        if time_held*60 >= int(MAX_HOLDING_TIME): 
+                            #set_exparis(coin)
+                            print(f'{txcolors.SELL_LOSS}BOT: XXX Timeout sell : '+coin.replace(PAIR_WITH,""))
+                            #sell_coin(coin.replace(PAIR_WITH,""))
                     
                     if DEBUG:
                         if not SCREEN_MODE == 2: print(f"{txcolors.WARNING}BOT: {txcolors.DEFAULT}sell_coins() | Coin: {coin} | Sell Volume: {coins_bought[coin]['volume']} | Price:{LastPrice}")
@@ -1664,13 +1588,13 @@ def load_settings():
     DEFAULT_CONFIG_FILE = 'config.yml'
     DEFAULT_CREDS_FILE = 'creds.yml'
 
-    config_file = DEFAULT_CONFIG_FILE
-    creds_file = DEFAULT_CREDS_FILE
+    config_file = args.config if args.config else DEFAULT_CONFIG_FILE
+    creds_file = args.creds if args.creds else DEFAULT_CREDS_FILE
     parsed_config = load_config(config_file)
     parsed_creds = load_config(creds_file)
 
     # Default no debugging
-    global DEBUG, TEST_MODE, LOG_TRADES, TRADES_LOG_FILE, DEBUG_SETTING, AMERICAN_USER, PAIR_WITH, QUANTITY, MAX_COINS, FIATS, TIME_DIFFERENCE, RECHECK_INTERVAL, CHANGE_IN_PRICE, STOP_LOSS, TAKE_PROFIT, CUSTOM_LIST, TICKERS_LIST, USE_TRAILING_STOP_LOSS, TRAILING_STOP_LOSS, TRAILING_TAKE_PROFIT, TRADING_FEE, SIGNALLING_MODULES, SCREEN_MODE, MSG_DISCORD, HISTORY_LOG_FILE, TRADE_SLOTS, TRADE_TOTAL, SESSION_TPSL_OVERRIDE, SELL_ON_SIGNAL_ONLY, TRADING_FEE, SIGNALLING_MODULES, SHOW_INITIAL_CONFIG, USE_MOST_VOLUME_COINS, COINS_MAX_VOLUME, COINS_MIN_VOLUME, DISABLE_TIMESTAMPS, STATIC_MAIN_INFO, COINS_BOUGHT, BOT_STATS, MAIN_FILES_PATH, PRINT_TO_FILE, ENABLE_PRINT_TO_FILE, EX_PAIRS, RESTART_MODULES, SHOW_TABLE_COINS_BOUGHT, ALWAYS_OVERWRITE, ALWAYS_CONTINUE, SORT_TABLE_BY, REVERSE_SORT, MAX_HOLDING_TIME, IGNORE_FEE, EXTERNAL_COINS, PROXY_HTTP, PROXY_HTTPS, SIGNALLING_MODULES, REINVEST_MODE, LOG_FILE, PANIC_STOP, ASK_ME, BUY_PAUSED, UPDATE_MOST_VOLUME_COINS, VOLATILE_VOLUME
+    global DEBUG, TEST_MODE, LOG_TRADES,TOP_LIST, TRADES_LOG_FILE, DEBUG_SETTING, AMERICAN_USER, PAIR_WITH, QUANTITY, MAX_COINS, FIATS, TIME_DIFFERENCE, RECHECK_INTERVAL, CHANGE_IN_PRICE, STOP_LOSS, TAKE_PROFIT, CUSTOM_LIST, TICKERS_LIST, USE_TRAILING_STOP_LOSS, TRAILING_STOP_LOSS, TRAILING_TAKE_PROFIT, TRADING_FEE, SIGNALLING_MODULES, SCREEN_MODE, MSG_DISCORD, HISTORY_LOG_FILE, TRADE_SLOTS, TRADE_TOTAL, SESSION_TPSL_OVERRIDE, SELL_ON_SIGNAL_ONLY, TRADING_FEE, SIGNALLING_MODULES, SHOW_INITIAL_CONFIG, USE_MOST_VOLUME_COINS, COINS_MAX_VOLUME, COINS_MIN_VOLUME, DISABLE_TIMESTAMPS, STATIC_MAIN_INFO, COINS_BOUGHT, BOT_STATS, MAIN_FILES_PATH, PRINT_TO_FILE, ENABLE_PRINT_TO_FILE, EX_PAIRS, RESTART_MODULES, SHOW_TABLE_COINS_BOUGHT, ALWAYS_OVERWRITE, ALWAYS_CONTINUE, SORT_TABLE_BY, REVERSE_SORT, MAX_HOLDING_TIME, IGNORE_FEE, EXTERNAL_COINS, PROXY_HTTP, PROXY_HTTPS, SIGNALLING_MODULES, REINVEST_MODE, LOG_FILE, PANIC_STOP, ASK_ME, BUY_PAUSED, UPDATE_MOST_VOLUME_COINS, VOLATILE_VOLUME
 
     # Default no debugging
     DEBUG = False
@@ -1746,6 +1670,7 @@ def load_settings():
     SHOW_TABLE_COINS_BOUGHT = parsed_config['trading_options']['SHOW_TABLE_COINS_BOUGHT']
 
     USE_MOST_VOLUME_COINS = parsed_config['trading_options']['USE_MOST_VOLUME_COINS']
+    TOP_LIST = parsed_config['trading_options']['TOP_LIST']
     COINS_MAX_VOLUME = parsed_config['trading_options']['COINS_MAX_VOLUME']
     COINS_MIN_VOLUME = parsed_config['trading_options']['COINS_MIN_VOLUME']
     ALWAYS_OVERWRITE = parsed_config['trading_options']['ALWAYS_OVERWRITE']
@@ -1770,8 +1695,8 @@ def load_settings():
     #BNB_FEE = parsed_config['trading_options']['BNB_FEE']
     #TRADING_OTHER_FEE = parsed_config['trading_options']['TRADING_OTHER_FEE']
 
-   
-    DEBUG = True
+    if DEBUG_SETTING or args.debug:
+        DEBUG = True
     access_key, secret_key = load_correct_creds(parsed_creds)
     
 def CheckIfAliveStation(ip_address):
@@ -2104,7 +2029,7 @@ def menu():
         menu()
     return END
     
-def print_banner():
+def print_banner2():
     __header__='''
 \033[92m ___ _                        __   __   _      _   _ _ _ _          _____            _ _             ___     _   
 \033[92m| _ (_)_ _  __ _ _ _  __ ___  \ \ / ___| |__ _| |_(_| (_| |_ _  _  |_   __ _ __ _ __| (_)_ _  __ _  | _ )___| |_ 
@@ -2113,6 +2038,16 @@ def print_banner():
 \033[92m In intensive collaboration with one10001                    |__/                            |___/ by ABJ    '''
     print(__header__)
     
+def print_banner():
+         
+
+    __header__='''
+\033[92m__________________________________________________________________________________________
+\033[92m                                   Binance Fast trader
+\033[92m_____________________________________     by ABJ     _____________________________________'''
+    print(__header__)
+
+
 req_version = (3,9)
 if sys.version_info[:2] < req_version: 
     print(f'This bot requires Python version 3.9 or higher/newer. You are running version {sys.version_info[:2]} - please upgrade your Python version!!{txcolors.DEFAULT}')
@@ -2196,98 +2131,98 @@ if api_ready is not True:
 #global VOLATILE_VOLUME
 #if USE_MOST_VOLUME_COINS == True: VOLATILE_VOLUME = get_volume_list()
 
-#new_or_continue()
+new_or_continue()
 
 renew_list(True)
 
-# # try to load all the coins bought by the bot if the file exists and is not empty
-# coins_bought = {}
+# try to load all the coins bought by the bot if the file exists and is not empty
+coins_bought = {}
 
-# if TEST_MODE:
-#     file_prefix = 'test_'
-# else:
-#     file_prefix = 'live_'
+if TEST_MODE:
+    file_prefix = 'test_'
+else:
+    file_prefix = 'live_'
 
-# # path to the saved coins_bought file
-# coins_bought_file_path = file_prefix + COINS_BOUGHT
+# path to the saved coins_bought file
+coins_bought_file_path = file_prefix + COINS_BOUGHT
 
-# # The below mod was stolen and altered from GoGo's fork, a nice addition for keeping a historical history of profit across multiple bot sessions.
-# # path to the saved bot_stats file
-# bot_stats_file_path = file_prefix + BOT_STATS
+# The below mod was stolen and altered from GoGo's fork, a nice addition for keeping a historical history of profit across multiple bot sessions.
+# path to the saved bot_stats file
+bot_stats_file_path = file_prefix + BOT_STATS
 
-# # use separate files for testing and live trading
-# #TRADES_LOG_FILE = file_prefix + TRADES_LOG_FILE
-# #HISTORY_LOG_FILE = file_prefix + HISTORY_LOG_FILE
+# use separate files for testing and live trading
+#TRADES_LOG_FILE = file_prefix + TRADES_LOG_FILE
+#HISTORY_LOG_FILE = file_prefix + HISTORY_LOG_FILE
 
-# bot_started_datetime = datetime.now()
-# total_capital_config = TRADE_SLOTS * TRADE_TOTAL
+bot_started_datetime = datetime.now()
+total_capital_config = TRADE_SLOTS * TRADE_TOTAL
 
-# if os.path.isfile(bot_stats_file_path) and os.stat(bot_stats_file_path).st_size!= 0:
-#     with open(bot_stats_file_path) as file:
-#         bot_stats = json.load(file)
-#         # load bot stats:
-#         try:
-#             bot_started_datetime = datetime.strptime(bot_stats['botstart_datetime'], '%Y-%m-%d %H:%M:%S.%f')
-#         except Exception as e:
-#             write_log(f'{txcolors.WARNING}BOT: {txcolors.WARNING}Exception on reading botstart_datetime from {bot_stats_file_path}. Exception: {e}{txcolors.DEFAULT}')
-#             write_log("Error on line {}".format(sys.exc_info()[-1].tb_lineno))
-#             bot_started_datetime = datetime.now()
-#             #if continue fails
-#             pass
+if os.path.isfile(bot_stats_file_path) and os.stat(bot_stats_file_path).st_size!= 0:
+    with open(bot_stats_file_path) as file:
+        bot_stats = json.load(file)
+        # load bot stats:
+        try:
+            bot_started_datetime = datetime.strptime(bot_stats['botstart_datetime'], '%Y-%m-%d %H:%M:%S.%f')
+        except Exception as e:
+            write_log(f'{txcolors.WARNING}BOT: {txcolors.WARNING}Exception on reading botstart_datetime from {bot_stats_file_path}. Exception: {e}{txcolors.DEFAULT}')
+            write_log("Error on line {}".format(sys.exc_info()[-1].tb_lineno))
+            bot_started_datetime = datetime.now()
+            #if continue fails
+            pass
         
-#         try:
-#             total_capital = bot_stats['total_capital']
-#         except Exception as e:
-#             write_log(f'{txcolors.WARNING}BOT: {txcolors.WARNING}Exception on reading total_capital from {bot_stats_file_path}. Exception: {e}{txcolors.DEFAULT}')
-#             write_log("Error on line {}".format(sys.exc_info()[-1].tb_lineno))
-#             total_capital = TRADE_SLOTS * TRADE_TOTAL
-#             pass
+        try:
+            total_capital = bot_stats['total_capital']
+        except Exception as e:
+            write_log(f'{txcolors.WARNING}BOT: {txcolors.WARNING}Exception on reading total_capital from {bot_stats_file_path}. Exception: {e}{txcolors.DEFAULT}')
+            write_log("Error on line {}".format(sys.exc_info()[-1].tb_lineno))
+            total_capital = TRADE_SLOTS * TRADE_TOTAL
+            pass
 
-#         historic_profit_incfees_perc = float(bot_stats['historicProfitIncFees_Percent'])
-#         historic_profit_incfees_total = float(bot_stats['historicProfitIncFees_Total'])
-#         trade_wins = bot_stats['tradeWins']
-#         trade_losses = bot_stats['tradeLosses']
-#         session_USDT_EARNED = float(bot_stats['session_' + PAIR_WITH + '_EARNED'])
+        historic_profit_incfees_perc = float(bot_stats['historicProfitIncFees_Percent'])
+        historic_profit_incfees_total = float(bot_stats['historicProfitIncFees_Total'])
+        trade_wins = bot_stats['tradeWins']
+        trade_losses = bot_stats['tradeLosses']
+        session_USDT_EARNED = float(bot_stats['session_' + PAIR_WITH + '_EARNED'])
 
-#         if total_capital != total_capital_config:
-#             historic_profit_incfees_perc = (historic_profit_incfees_total / total_capital_config) * 100
+        if total_capital != total_capital_config:
+            historic_profit_incfees_perc = (historic_profit_incfees_total / total_capital_config) * 100
 
-# # rolling window of prices; cyclical queue
-# historical_prices = [None] * (TIME_DIFFERENCE * RECHECK_INTERVAL)
-# hsp_head = -1
+# rolling window of prices; cyclical queue
+historical_prices = [None] * (TIME_DIFFERENCE * RECHECK_INTERVAL)
+hsp_head = -1
 
-# # prevent including a coin in volatile_coins if it has already appeared there less than TIME_DIFFERENCE minutes ago
-# volatility_cooloff = {}
+# prevent including a coin in volatile_coins if it has already appeared there less than TIME_DIFFERENCE minutes ago
+volatility_cooloff = {}
 
-# # if saved coins_bought json file exists and it's not empty then load it
-# if os.path.isfile(coins_bought_file_path) and os.stat(coins_bought_file_path).st_size!= 0:
-#     with open(coins_bought_file_path) as file:
-#             coins_bought = json.load(file)
+# if saved coins_bought json file exists and it's not empty then load it
+if os.path.isfile(coins_bought_file_path) and os.stat(coins_bought_file_path).st_size!= 0:
+    with open(coins_bought_file_path) as file:
+            coins_bought = json.load(file)
 
-# print(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}Press Ctrl-C to stop the script. {txcolors.DEFAULT}')
+print(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}Press Ctrl-C to stop the script. {txcolors.DEFAULT}')
 
-# if not TEST_MODE:
-#     if not args.notimeout: # if notimeout skip this (fast for dev tests)
-#         write_log(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}WARNING: Test mode is disabled in the configuration, you are using _LIVE_ funds.{txcolors.DEFAULT}')
-#         print(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}WARNING: Waiting 10 seconds before live trading as a security measure!{txcolors.DEFAULT}')
-#         time.sleep(0)
+if not TEST_MODE:
+    if not args.notimeout: # if notimeout skip this (fast for dev tests)
+        write_log(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}WARNING: Test mode is disabled in the configuration, you are using _LIVE_ funds.{txcolors.DEFAULT}')
+        print(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}WARNING: Waiting 10 seconds before live trading as a security measure!{txcolors.DEFAULT}')
+        time.sleep(0)
 
-# remove_external_signals('buy')
-# remove_external_signals('sell')
-# remove_external_signals('pause')
+remove_external_signals('buy')
+remove_external_signals('sell')
+remove_external_signals('pause')
 
-# #load_signal_threads()
-# #load_signal_threads()
+#load_signal_threads()
+#load_signal_threads()
 
-# # seed initial prices
-# #get_price()
-# TIMEOUT_COUNT=0
-# READ_CONNECTERR_COUNT=0
-# BINANCE_API_EXCEPTION=0	
+# seed initial prices
+get_price()
+TIMEOUT_COUNT=0
+READ_CONNECTERR_COUNT=0
+BINANCE_API_EXCEPTION=0	
 
-# #extract of code of OlorinSledge, Thanks
-# thehour = datetime.now().hour  
-# coins_sold = {}
+#extract of code of OlorinSledge, Thanks
+thehour = datetime.now().hour  
+coins_sold = {}
 # while is_bot_running:
 #     try:
 #         coins_sold = {}

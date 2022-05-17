@@ -7,24 +7,24 @@ trading_options:
   TRADE_TOTAL: 12.5 #0.00002614 #10 #Total amount per trade (your base currency balance must be at least TRADE_SLOTS * TRADE_TOTAL) min 12
   TRADE_SLOTS: 4    # Maximum number of trade 'slots' at any time (your USDT balance must be at least TRADE_SLOTS * TRADE_TOTAL)
 
-  TAKE_PROFIT: 0.6  # define in % when to take profit on a profitable coin. default 0.25
-  STOP_LOSS: 0.3   # define in % when to sell a coin that's not making a profit.
+  TAKE_PROFIT: 0.4  # define in % when to take profit on a profitable coin. default 0.25
+  STOP_LOSS: 2   # define in % when to sell a coin that's not making a profit.
   USE_TRAILING_STOP_LOSS: True
-  TRAILING_STOP_LOSS: .1    # when hit TAKE_PROFIT, move STOP_LOSS to TRAILING_STOP_LOSS percentage points below TAKE_PROFIT hence locking in profit
+  TRAILING_STOP_LOSS: .04      # when hit TAKE_PROFIT, move STOP_LOSS to TRAILING_STOP_LOSS percentage points below TAKE_PROFIT hence locking in profit
   TRAILING_TAKE_PROFIT: .01 
 
   #abj_seperbuy_signal_v2 config
   CHOOSEN_INTERVAL: 1m # 5m 1m-5m 5m-15m 15m 1h 4h
-  BTC_CHECK_LEVEL: 2 #up to 4
+  BTC_CHECK_LEVEL: 1 #up to 4
   RSI_MIN: 30 #RSI value to concider oversell
-  RSI_BUY: -0.7 #RSI difference
-  ANNOYED_MOD: False #if the market are down and you want to force superbuy
-  
+  RSI_BUY: -0.3 #RSI difference
+  ANNOYED_MOD: True #if the market are down and you want to force superbuy
+  WISE_ANNOYED_MOD: True
   TIME_DIFFERENCE: 1   # the amount of time in MINUTES to calculate the difference from the current price (minimum: 1).
   RECHECK_INTERVAL: 60   # Number of times to check for TP/SL during each TIME_DIFFERENCE (minimum: 1).(max 1200 requests per minute per IP)
   PANIC_STOP: 0   #if the losses are equal to or greater than the established percentage, the bot will stop completely. if it is 0 it is deactivated.
-  MAX_HOLDING_TIME: 30   # in minutes If the sale time exceeds 6 hours it is automatically added to the black list of currencies. If set to 0 this can be disable
-  CHANGE_IN_PRICE: 100   # the difference in % between the first and second checks for the price. default 0.25
+  MAX_HOLDING_TIME: 1   # in minutes If the sale time exceeds 6 hours it is automatically added to the black list of currencies. If set to 0 this can be disable
+  CHANGE_IN_PRICE: 10   # the difference in % between the first and second checks for the price. default 0.25
   SIGNALLING_MODULES:
 #    - abj_superbuy_signal
     - abj_superbuy_signal_v2    
@@ -87,7 +87,7 @@ trading_options:
   SESSION_STOP_LOSS: -0.3
     # EX_PAIRS is a list of fiat currencies and margin symbols that I am excluding.
   # Anything added here will be excluded from coin withdrawal and will not be sold.
-  EX_PAIRS: ['BTC', 'ETH', 'PAX', 'EUR', 'GBP', 'JPY', 'USD', 'AUD', 'DOWN', 'UP', 'ONE', 'USDC', 'DOT', 'DF', 'AVAX', 'APE', 'SOL', 'ADA', 'LUNA', 'GMT', 'DOGE']
+  EX_PAIRS: ['BTC', 'ETH', 'PAX', 'EUR', 'GBP', 'JPY', 'USD', 'AUD', 'DOWN', 'UP']
 
   # Let a signalling module control sell of coin
   # NOTE - If USE_TRAILING_STOP_LOSS: True then this needs to be False
@@ -96,7 +96,7 @@ trading_options:
   # Trading fee in % per trade.
   # If using 0.075% (using BNB for fees) you must have BNB in your account to cover trading fees.
   # If using BNB for fees, it MUST be enabled in your Binance 'Dashboard' page (checkbox).
-  TRADING_FEE: 0.15 
+  TRADING_FEE: 0.125 
   
   #if it is activated, the commission is ignored in WIN = (SELL_PRICE + FEE) >= (BUY_PRICE + FEE)
   IGNORE_FEE: False
@@ -139,7 +139,7 @@ trading_options:
   #Sweethackercasper's idea, thanks mate.
   UPDATE_MOST_VOLUME_COINS: 1440
   #It should not be touched here, used as record.
-  VOLATILE_VOLUME: volatile_volume_16-05-2022(10_49_52)
+  VOLATILE_VOLUME: volatile_volume_17-05-2022(04_33_40)
   #idea from my psychologist, thanks Sebastian V.
   #Two different currencies can be used as a range (within the market table in Binance ordered from highest to lowest)
   COINS_MAX_VOLUME: ETH #ETH  #5000000000

@@ -6,6 +6,7 @@
 # Keep only coins that pass the checks in all intervals.
 # Use variables MY_INTERVALS MY_SINGNAL_STRENGTH to customize  your strategy. 
 # For example, you can select only coins with STRONG_BUY and BUY signals on intervals from 1 minute to 4 hours. Mon18Oct2021Ci
+from pyparsing import anyOpenTag
 from Ak_Scalp_v2 import RSI_BUY, RSI_MIN
 TIME_TO_WAIT = 0.3 # Minutes to wait between analysis
 ANNOYED_MOD=False
@@ -63,6 +64,7 @@ TEST_MODE = parsed_config['script_options']['TEST_MODE']
 USE_MOST_VOLUME_COINS = parsed_config['trading_options']['USE_MOST_VOLUME_COINS']
 
 ANNOYED_MOD= parsed_config['trading_options']['ANNOYED_MOD']
+WISE_ANNOYED_MOD= parsed_config['trading_options']['WISE_ANNOYED_MOD']
 RSI_MIN=  float(parsed_config['trading_options']['RSI_MIN'])
 RSI_BUY=  float(parsed_config['trading_options']['RSI_BUY'])
 BTC_CHECK_LEVEL=  int(parsed_config['trading_options']['BTC_CHECK_LEVEL'])
@@ -316,6 +318,7 @@ elif CHOOSEN_INTERVAL == 'all':
 
         ]
 
+
 FULL_LOG = False # List anylysis result to console
 
 SIGNAL_NAME = 'abj_superby_signal_v2'
@@ -439,9 +442,15 @@ def analyze(pairs):
                     )
                 if interval == MY_INTERVALS[-1]: print("This is last interval to check, going to next coin")
  
-            if(ANNOYED_MOD and the_recommendation_ma in MY_SINGNAL_STRENGTH):
+            if(ANNOYED_MOD and the_recommendation_ma in MY_SINGNAL_STRENGTH and not WISE_ANNOYED_MOD):
                 print(f'    {"ANNOYED_MOD"}:                ====> \033[32m  {pair} \033[39m<====')
 
+                if interval == MY_INTERVALS[-1]: 
+                    #print(" ++++++++++++++++++++++++Ccoin this coin wins+++++++++++++++++++++++++++++++++++++++++++++++ ")
+                    signal_coins[pair] = pair          
+                    with open(SIGNAL_FILE,'a+') as f: f.write(pair + '\n')
+            elif(ANNOYED_MOD and WISE_ANNOYED_MOD and the_analysis.moving_averages['COMPUTE']['SMA10'] == 'BUY'and the_analysis.moving_averages['COMPUTE']['EMA10'] == 'BUY'):
+                print(f'    {"WISE_ANNOYED_MOD"}:                ====> \033[32m  {pair} \033[39m<====')
                 if interval == MY_INTERVALS[-1]: 
                     #print(" ++++++++++++++++++++++++Ccoin this coin wins+++++++++++++++++++++++++++++++++++++++++++++++ ")
                     signal_coins[pair] = pair          

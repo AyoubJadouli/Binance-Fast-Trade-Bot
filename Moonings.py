@@ -110,7 +110,7 @@ class txcolors:
 
 # tracks profit/loss each session
 global session_profit_incfees_perc, session_profit_incfees_total, session_tpsl_override_msg, is_bot_running, session_USDT_EARNED, last_msg_discord_balance_date, session_USDT_EARNED_TODAY, parsed_creds, TUP,PUP, TDOWN, PDOWN, TNEUTRAL, PNEUTRAL, renewlist, DISABLE_TIMESTAMPS, signalthreads, VOLATILE_VOLUME_LIST, FLAG_PAUSE,TOP_LIST, coins_up,coins_down,coins_unchanged, SHOW_TABLE_COINS_BOUGHT, USED_BNB_IN_SESSION, PAUSEBOT_MANUAL, sell_specific_coin, lostconnection
-global historic_profit_incfees_perc, historic_profit_incfees_total, trade_wins, trade_losses, sell_all_coins, bot_started_datetime
+global historic_profit_incfees_perc, historic_profit_incfees_total, trade_wins, trade_losses, sell_all_coins, bot_started_datetime ,ALL_COIN_DATA_SORTED
 last_price_global = 0
 session_profit_incfees_perc = 0
 session_profit_incfees_total = 0
@@ -253,6 +253,7 @@ def wait_for_price():
         pause_bot()
 
         # get first element from the dictionary
+        #print(historical_prices)
         firstcoin = next(iter(historical_prices[hsp_head]))  
 
         #BBif historical_prices[hsp_head]['BNB' + PAIR_WITH]['time'] > datetime.now() - timedelta(minutes=float(TIME_DIFFERENCE / RECHECK_INTERVAL)):
@@ -327,6 +328,7 @@ def wait_for_price():
         balance_report(last_price)
     except Exception as e:
         write_log(f'{txcolors.WARNING}BOT: {txcolors.WARNING}wait_for_price(): Exception in function: {e}{txcolors.DEFAULT}')
+        print(e)
         write_log("Error on line {}".format(sys.exc_info()[-1].tb_lineno))
         lost_connection(e, "wait_for_price")        
         pass
@@ -336,9 +338,12 @@ def get_volume_list():
     try:
         fav_tickers=[line.strip() for line in open(TICKERS_LIST)]
         today = "volatile_volume_" + str(date.today()) + ".txt"
-        global COINS_MAX_VOLUME, COINS_MIN_VOLUME, VOLATILE_VOLUME, tickers
+        global COINS_MAX_VOLUME, COINS_MIN_VOLUME, VOLATILE_VOLUME, tickers,ALL_COIN_DATA_SORTED
         volatile_volume_empty = False
         volatile_volume_time = False
+        all_coin_data = client.get_ticker()
+        all_coin_data_sorted =sorted(all_coin_data, key=lambda x: abs(float(x['priceChangePercent'])), reverse=True)
+        ALL_COIN_DATA_SORTED=all_coin_data_sorted
         if USE_MOST_VOLUME_COINS:
             today = "volatile_volume_" + str(date.today()) + ".txt"
             now = datetime.now()
@@ -365,8 +370,9 @@ def get_volume_list():
                 
                 prices = client.get_all_tickers()
                 
-                for coin in prices:
-                    if ( coin['symbol'] == coin['symbol'].replace(PAIR_WITH, "") + PAIR_WITH ) and ( coin['symbol'].replace(PAIR_WITH, "") in fav_tickers ) :
+                #for coin in prices:
+                for coin in all_coin_data_sorted: 
+                    if ( coin['symbol'] == coin['symbol'].replace(PAIR_WITH, "") + PAIR_WITH ) and ( coin['symbol'].replace(PAIR_WITH, "") in fav_tickers ) : #mod halal only
                         tickers_all.append(coin['symbol'].replace(PAIR_WITH, ""))
 
                 c = 0
@@ -400,17 +406,24 @@ def get_volume_list():
                         sys.exit()
                         
                     sortedVolumeList = sorted(most_volume_coins.items(), key=lambda x: x[1], reverse=True)
-                    if TOP_LIST > 0 and len(sortedVolumeList)>=TOP_LIST:
+                    if TOP_LIST > 0 and len(sortedVolumeList)>=TOP_LIST:        
                         sortedVolumeList=sortedVolumeList[:TOP_LIST]
+                    sortedVolatilityList=[]
+                    for co in all_coin_data_sorted:
+                        if co["symbol"].replace(PAIR_WITH, "") in  list(map(lambda i:i[0],sortedVolumeList)):
+                            sortedVolatilityList.append(co["symbol"].replace(PAIR_WITH, "") )
+ 
                     now = datetime.now()
                     now_str = now.strftime("%d-%m-%Y(%H_%M_%S)")
                     VOLATILE_VOLUME = "volatile_volume_" + now_str
                     
                     print(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}Saving {str(c)} coins to {today} ...{txcolors.DEFAULT}')
                     
-                    for coin in sortedVolumeList:
+                    #for coin in sortedVolumeList:             
+                    for coin in sortedVolatilityList:
+                        #print("write coin: "+coin)
                         with open(today,'a+') as f:
-                            f.write(coin[0] + '\n')
+                            f.write(coin + '\n')
                     
                     set_config("VOLATILE_VOLUME", VOLATILE_VOLUME)
                 else:
@@ -1196,10 +1209,11 @@ def sell_coins(tpsl_override = False, specific_coin_to_sell = ""):
                     time_held = (timedelta(seconds=datetime.now().timestamp()-int(str(coins_bought[coin]['timestamp'])[:10])).total_seconds())/3600
                     
                     if int(MAX_HOLDING_TIME) != 0: 
+                        print("time_held*60="+str(time_held*60)+"vs"+str(MAX_HOLDING_TIME))
                         if time_held*60 >= int(MAX_HOLDING_TIME): 
-                            set_exparis(coin)
+                            #set_exparis(coin)
                             print(f'{txcolors.SELL_LOSS}BOT: XXX Timeout sell : '+coin.replace(PAIR_WITH,""))
-                            sell_coin(coin.replace(PAIR_WITH,""))
+                            #sell_coin(coin.replace(PAIR_WITH,""))
                     
                     if DEBUG:
                         if not SCREEN_MODE == 2: print(f"{txcolors.WARNING}BOT: {txcolors.DEFAULT}sell_coins() | Coin: {coin} | Sell Volume: {coins_bought[coin]['volume']} | Price:{LastPrice}")
