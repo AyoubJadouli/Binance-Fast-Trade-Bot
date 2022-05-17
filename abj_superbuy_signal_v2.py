@@ -1,3 +1,5 @@
+
+#ABJsuperbuy mod for rapide trade
 # Based off os_signalbuy_RECOMM
 # Based off Firewatch custsignalmod.py
 
