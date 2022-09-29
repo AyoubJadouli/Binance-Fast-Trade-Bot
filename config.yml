@@ -7,8 +7,8 @@ trading_options:
   TRADE_TOTAL: 12.5 #0.00002614 #10 #Total amount per trade (your base currency balance must be at least TRADE_SLOTS * TRADE_TOTAL) min 12
   TRADE_SLOTS: 4    # Maximum number of trade 'slots' at any time (your USDT balance must be at least TRADE_SLOTS * TRADE_TOTAL)
 
-  TAKE_PROFIT: 0.4  # define in % when to take profit on a profitable coin. default 0.25
-  STOP_LOSS: 2   # define in % when to sell a coin that's not making a profit.
+  TAKE_PROFIT: 0.5  # define in % when to take profit on a profitable coin. default 0.25
+  STOP_LOSS: 0.4   # define in % when to sell a coin that's not making a profit.
   USE_TRAILING_STOP_LOSS: True
   TRAILING_STOP_LOSS: .04      # when hit TAKE_PROFIT, move STOP_LOSS to TRAILING_STOP_LOSS percentage points below TAKE_PROFIT hence locking in profit
   TRAILING_TAKE_PROFIT: .01 
@@ -26,8 +26,9 @@ trading_options:
   MAX_HOLDING_TIME: 1   # in minutes If the sale time exceeds 6 hours it is automatically added to the black list of currencies. If set to 0 this can be disable
   CHANGE_IN_PRICE: 10   # the difference in % between the first and second checks for the price. default 0.25
   SIGNALLING_MODULES:
+     - abj_ai_buy_signal_v1
 #    - abj_superbuy_signal
-    - abj_superbuy_signal_v2    
+#    - abj_superbuy_signal_v2    
 #    - RSI_Algo_v3
     #- RSI_Algo
 #    - os_pausebot_MA
@@ -139,7 +140,7 @@ trading_options:
   #Sweethackercasper's idea, thanks mate.
   UPDATE_MOST_VOLUME_COINS: 1440
   #It should not be touched here, used as record.
-  VOLATILE_VOLUME: volatile_volume_17-05-2022(04_33_40)
+  VOLATILE_VOLUME: volatile_volume_29-09-2022(00_00_28)
   #idea from my psychologist, thanks Sebastian V.
   #Two different currencies can be used as a range (within the market table in Binance ordered from highest to lowest)
   COINS_MAX_VOLUME: ETH #ETH  #5000000000

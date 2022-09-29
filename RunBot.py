@@ -1071,8 +1071,11 @@ def sell_coins(tpsl_override = False, specific_coin_to_sell = ""):
         
             if sell_specific_coin and not specific_coin_to_sell == coin:
                 continue
-                
-            LastPrice = float(last_price[coin]['price'])
+            try:
+                LastPrice = float(last_price[coin]['price'])
+            except:
+                print(f"Lastprice Error {LastPrice} must be {last_price[coin]['price']}")
+                LastPrice = 0
             sellFee = (LastPrice * (TRADING_FEE/100))
             sellFeeTotal = (coins_bought[coin]['volume'] * LastPrice) * (TRADING_FEE/100)
             LastPriceLessFees = LastPrice - sellFee
@@ -1524,25 +1527,34 @@ def remove_external_signals(fileext):
                 if DEBUG: write_log(f'{txcolors.WARNING}BOT: {txcolors.WARNING} remove_external_signals(): Could not remove external signalling file {filename}{txcolors.DEFAULT}')
 
 def load_signal_threads():
+    ModuleRunner="ModuleRunner.sh"
     try:
+        print(SIGNALLING_MODULES)
         #load signalling modules
         global signalthreads
         signalthreads = []
+        process_id=0
         if SIGNALLING_MODULES is not None: 
             if len(SIGNALLING_MODULES) > 0:
                 for module in SIGNALLING_MODULES:
+
                     print(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}Starting {module}{txcolors.DEFAULT}')
-                    mymodule[module] = importlib.import_module(module)
-                    # t = threading.Thread(target=mymodule[module].do_work, args=())
-                    t = multiprocessing.Process(target=mymodule[module].do_work, args=())
-                    t.name = module
-                    t.daemon = True
-                    t.start()
-
-                    # add process to a list. This is so the thread can be terminated at a later time
-                    signalthreads.append(t)
-
-                    time.sleep(2)
+                    if module.find("_ai_")!=-1:
+                        print("lunch bash process : ->")
+                        #process_id = os.spawnv(os.P_NOWAIT , "bash" , ["ModuleRunner.sh" , module ])
+                        process_id = os.system("bash "+ModuleRunner+" "+module)
+                        print(f"              process id : {process_id}")
+                        break
+                    else:
+                        mymodule[module] = importlib.import_module("modules."+module)
+                        # t = threading.Thread(target=mymodule[module].do_work, args=())
+                        t = multiprocessing.Process(target=mymodule[module].do_work, args=())
+                        t.name = module
+                        t.daemon = True
+                        t.start()
+                        # add process to a list. This is so the thread can be terminated at a later time
+                        signalthreads.append(t)
+                        time.sleep(2)
             else:
                 write_log(f'{txcolors.WARNING}BOT: {txcolors.WARNING}{"load_signal_threads"}: No modules to load {SIGNALLING_MODULES}{txcolors.DEFAULT}')
     except Exception as e:
@@ -1558,6 +1570,10 @@ def stop_signal_threads():
                 print(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}Terminating thread {str(signalthread.name)}{txcolors.DEFAULT}')
                 signalthread.terminate()
                 signalthread.kill()
+                try:
+                    os.system("bash ModuleKiller.sh")
+                except:
+                    print("no ModuleKiller or not linux os")
     except Exception as e:
         write_log(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}stop_signal_threads(): Exception in function: {e}{txcolors.DEFAULT}')
         write_log("Error on line {}".format(sys.exc_info()[-1].tb_lineno))

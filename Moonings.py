@@ -1532,7 +1532,7 @@ def load_signal_threads():
             if len(SIGNALLING_MODULES) > 0:
                 for module in SIGNALLING_MODULES:
                     print(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}Starting {module}{txcolors.DEFAULT}')
-                    mymodule[module] = importlib.import_module(module)
+                    mymodule[module] = importlib.import_module("signals."+str(module))
                     # t = threading.Thread(target=mymodule[module].do_work, args=())
                     t = multiprocessing.Process(target=mymodule[module].do_work, args=())
                     t.name = module
