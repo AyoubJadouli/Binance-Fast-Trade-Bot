@@ -3,16 +3,17 @@
 #Test3 win 3.3$ for 38min 47/32 abjv2  1h-> win 4.12$ 89/61 with btc up     STOP_LOSS: 0.6/TAKE_PROFIT: 0.6 /TRAILING_STOP_LOSS: .05 / TRAILING_TAKE_PROFIT: .01||  6h>EARNED: 6.61 BUSD | PROFIT %: 8.266% WINS/LOSSSES: 346/313 WIN %: 52.5%
 
 trading_options:
-  PAIR_WITH: BUSD       # select your base currency to use for trading (trade for example USDT pairs)
-  TRADE_TOTAL: 12.5 #0.00002614 #10 #Total amount per trade (your base currency balance must be at least TRADE_SLOTS * TRADE_TOTAL) min 12
-  TRADE_SLOTS: 4    # Maximum number of trade 'slots' at any time (your USDT balance must be at least TRADE_SLOTS * TRADE_TOTAL)
+  PAIR_WITH: USDT #BUSD       # select your base currency to use for trading (trade for example USDT pairs)
+  TRADE_TOTAL: 125 #0.00002614 #10 #Total amount per trade (your base currency balance must be at least TRADE_SLOTS * TRADE_TOTAL) min 12
+  TRADE_SLOTS: 8    # Maximum number of trade 'slots' at any time (your USDT balance must be at least TRADE_SLOTS * TRADE_TOTAL)
 
-  TAKE_PROFIT: 0.5  # define in % when to take profit on a profitable coin. default 0.25
-  STOP_LOSS: 0.4   # define in % when to sell a coin that's not making a profit.
-  USE_TRAILING_STOP_LOSS: True
-  TRAILING_STOP_LOSS: .04      # when hit TAKE_PROFIT, move STOP_LOSS to TRAILING_STOP_LOSS percentage points below TAKE_PROFIT hence locking in profit
+  TAKE_PROFIT: 0.4  # define in % when to take profit on a profitable coin. default 0.25
+  STOP_LOSS: 1   # define in % when to sell a coin that's not making a profit.
+  #USE_TRAILING_STOP_LOSS: True
+  USE_TRAILING_STOP_LOSS: False
+  TRAILING_STOP_LOSS: .02      # when hit TAKE_PROFIT, move STOP_LOSS to TRAILING_STOP_LOSS percentage points below TAKE_PROFIT hence locking in profit
   TRAILING_TAKE_PROFIT: .01 
-
+  MAX_HOLDING_TIME: 10   # in minutes if we can't sell in this time it will sell it at more than 1/2 of SL
   #abj_seperbuy_signal_v2 config
   CHOOSEN_INTERVAL: 1m # 5m 1m-5m 5m-15m 15m 1h 4h
   BTC_CHECK_LEVEL: 1 #up to 4
@@ -23,7 +24,6 @@ trading_options:
   TIME_DIFFERENCE: 1   # the amount of time in MINUTES to calculate the difference from the current price (minimum: 1).
   RECHECK_INTERVAL: 60   # Number of times to check for TP/SL during each TIME_DIFFERENCE (minimum: 1).(max 1200 requests per minute per IP)
   PANIC_STOP: 0   #if the losses are equal to or greater than the established percentage, the bot will stop completely. if it is 0 it is deactivated.
-  MAX_HOLDING_TIME: 1   # in minutes If the sale time exceeds 6 hours it is automatically added to the black list of currencies. If set to 0 this can be disable
   CHANGE_IN_PRICE: 10   # the difference in % between the first and second checks for the price. default 0.25
   SIGNALLING_MODULES:
      - abj_ai_buy_signal_v1
@@ -140,7 +140,7 @@ trading_options:
   #Sweethackercasper's idea, thanks mate.
   UPDATE_MOST_VOLUME_COINS: 1440
   #It should not be touched here, used as record.
-  VOLATILE_VOLUME: volatile_volume_29-09-2022(00_00_28)
+  VOLATILE_VOLUME: volatile_volume_04-10-2022(00_00_26)
   #idea from my psychologist, thanks Sebastian V.
   #Two different currencies can be used as a range (within the market table in Binance ordered from highest to lowest)
   COINS_MAX_VOLUME: ETH #ETH  #5000000000
