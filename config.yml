@@ -7,7 +7,7 @@ trading_options:
   TRADE_TOTAL: 125 #0.00002614 #10 #Total amount per trade (your base currency balance must be at least TRADE_SLOTS * TRADE_TOTAL) min 12
   TRADE_SLOTS: 8    # Maximum number of trade 'slots' at any time (your USDT balance must be at least TRADE_SLOTS * TRADE_TOTAL)
 
-  TAKE_PROFIT: 0.4  # define in % when to take profit on a profitable coin. default 0.25
+  TAKE_PROFIT: 0.29  # define in % when to take profit on a profitable coin. default 0.25
   STOP_LOSS: 1   # define in % when to sell a coin that's not making a profit.
   #USE_TRAILING_STOP_LOSS: True
   USE_TRAILING_STOP_LOSS: False
@@ -140,7 +140,7 @@ trading_options:
   #Sweethackercasper's idea, thanks mate.
   UPDATE_MOST_VOLUME_COINS: 1440
   #It should not be touched here, used as record.
-  VOLATILE_VOLUME: volatile_volume_04-10-2022(00_00_26)
+  VOLATILE_VOLUME: volatile_volume_05-10-2022(00_00_25)
   #idea from my psychologist, thanks Sebastian V.
   #Two different currencies can be used as a range (within the market table in Binance ordered from highest to lowest)
   COINS_MAX_VOLUME: ETH #ETH  #5000000000

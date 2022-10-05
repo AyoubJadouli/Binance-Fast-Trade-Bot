@@ -6,7 +6,7 @@ _Experiments.ipynb
 __*__
 
 # Dont upload json files
-#*.json
+*.json
 
 # Virtual environment
 .venv
