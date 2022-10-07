@@ -1170,7 +1170,7 @@ def sell_coins(tpsl_override = False, specific_coin_to_sell = ""):
                 if int(MAX_HOLDING_TIME) != 0: 
                                         if time_held*60 >= int(MAX_HOLDING_TIME): 
                                             print(f'{txcolors.SELL_LOSS}BOT: XXX Timeout sell : {coin.replace(PAIR_WITH,"")} full pair is:{coin}')
-                                            if LastPrice <= float(coins_bought[coin]['bought_at'])+float(coins_bought[coin]['bought_at'])*(float(STOP_LOSS)/2):
+                                            if LastPrice <= (float(coins_bought[coin]['bought_at'])-(float(coins_bought[coin]['bought_at'])*(float(STOP_LOSS)))*0.75):
                                                 sellCoin = True
             except Exception as e:
                     #if repr(e).upper() == "APIERROR(CODE=-1111): PRECISION IS OVER THE MAXIMUM DEFINED FOR THIS ASSET.":

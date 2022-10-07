@@ -1,22 +1,48 @@
 
 # ABJ AI MOD
 
-#Best accuracy 98.15% w7 tp:004
+#Best accuracy 99.03% w10 tp:004
+# Normalization_File='/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp60_w10_max2min_orm_v1.json'
+# Model_FileName='/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp60_w10_max2min_Model_v1.hdf5'
+# WINDOW_SIZE=10
+
+#2nd Best accuracy 98.15% w7 tp:004
 # Normalization_File='/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp40_w7_max3min_Norm_v1.json'
 # Model_FileName='/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp40_w7_max3min_Model_v1.hdf5'
 # WINDOW_SIZE=7
 
-#97% w30 tp:008
-Normalization_File='/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp80_w30_max10min_Norm_v1.json'
-Model_FileName='/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp80_w30_max10min_Model_v1.hdf5'
-WINDOW_SIZE=7
+# ->  Running for: 4:46:34 - 60/48 WIN %: 55.56% - 7.40 USDT | PROFIT %: 0.74%
+Normalization_File='/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp28_w5_max1min_Norm_v1.json'
+# Model_FileName='/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp28_w5_max1min_Model_v1.hdf5'
+# Model_FileName='/UltimeTradingBot/Data/tp28_w5_max1min_Model_v1.hdf5.sftp.hdf5'
+#Model_FileName='/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp28_w5_max1min_Model_v0.hdf5' # 13/9 WIN %: 59.09%
+Model_FileName='/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp28_w5_max1min_Model_ZERO.hdf5'
+WINDOW_SIZE=5
+
+#-> Running for: 15:31:44 - WINS/LOSSSES: 128/89 WIN %: 58.99% - EARNED: 1.38 BUSD | PROFIT %: 1.378%
+# Normalization_File='/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp50_w15_max5min_Norm_v1.json'
+# Model_FileName='/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp50_w15_max5min_Model_v1.hdf5'
+# WINDOW_SIZE=15
+
+
+
+#97% w30 tp:008  ===>>>  Running for: 7:24:27 WINS/LOSSSES: 36/15 WIN %: 70.59%  EARNED: 6.59 USDT | PROFIT %: 0.659%
+# Normalization_File='/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp80_w30_max10min_Norm_v1.json'
+# Model_FileName='/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp80_w30_max10min_Model_v1.hdf5'
+# WINDOW_SIZE=30
+
+#XXXX ===>>> Running for: 1:25:40 WINS/LOSSSES: 5/10 WIN %: 33.33% EARNED: -1.75 USDT | PROFIT %: -0.175%
+# Normalization_File='/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp37_w9_max1min_Norm_v1.json'
+# Model_FileName='/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp37_w9_max1min_Model_v1.hdf5'
+# WINDOW_SIZE=9
+
 
 window=WINDOW_SIZE
-MAX_FORCAST_SIZE=3
+MAX_FORCAST_SIZE=1
 BUY_PERCENT=0.29
 SELL_PERCENT=0.2
 DATA_DIR='/UltimeTradingBot/Data/'
-hard_prediction_value=0.5e-01
+hard_prediction_value=0.0e-01
 
 import sys
 import pandas as pd
