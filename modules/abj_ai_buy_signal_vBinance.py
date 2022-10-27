@@ -1,5 +1,26 @@
-
 # ABJ AI MOD
+print("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||")
+print("||||||||||||||||||||||     AI Crypto Bot by ABJ vBinance  |||||||||||||||||||||||")
+print("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||")
+
+from helpers.parameters import parse_args, load_config
+# Settings
+args = parse_args()
+DEFAULT_CONFIG_FILE = 'config.yml'
+DEFAULT_CREDS_FILE = 'creds.yml'
+config_file = args.config if args.config else DEFAULT_CONFIG_FILE
+parsed_config = load_config(config_file)
+
+PAIR_WITH = parsed_config['trading_options']['PAIR_WITH']
+EX_PAIRS = parsed_config['trading_options']['EX_PAIRS']
+
+
+# Acc:97% w21 tp:0028 T4 ->  Running for: 4:46:34 - 60/48 WIN %: 55.56% - 7.40 USDT | PROFIT %: 0.74%
+Normalization_File= parsed_config['ai_options']['Normalization_File']
+Model_FileName= parsed_config['ai_options']['Model_FileName']
+#Model_FileName='/UltimeTradingBot/Data/tp28_w21_max4min_Model_v1.hdf5.sftp.hdf5'
+WINDOW_SIZE= int( parsed_config['ai_options']['WINDOW_SIZE'])
+PRESSISION=float( parsed_config['ai_options']['PRESSISION'])
 
 #Best accuracy 99.03% w10 tp:004
 # Normalization_File='/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp60_w10_max2min_orm_v1.json'
@@ -12,12 +33,12 @@
 # WINDOW_SIZE=7
 
 # ->  Running for: 4:46:34 - 60/48 WIN %: 55.56% - 7.40 USDT | PROFIT %: 0.74%
-Normalization_File='/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp28_w5_max1min_Norm_v1.json'
+#Normalization_File='/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp28_w5_max1min_Norm_v1.json'
 #Model_FileName='/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp28_w5_max1min_Model_v1.hdf5'
-# Model_FileName='/UltimeTradingBot/Data/tp28_w5_max1min_Model_v1.hdf5.sftp.hdf5'
+#Model_FileName='/UltimeTradingBot/Data/tp28_w5_max1min_Model_v1.hdf5.sftp.hdf5'
 #Model_FileName='/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp28_w5_max1min_Model_v0.hdf5' # 13/9 WIN %: 59.09%
-Model_FileName='/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp28_w5_max1min_Model_ZERO.hdf5'
-WINDOW_SIZE=5
+#Model_FileName='/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp28_w5_max1min_Model_ZERO.hdf5'
+#WINDOW_SIZE=5
 
 #-> Running for: 15:31:44 - WINS/LOSSSES: 128/89 WIN %: 58.99% - EARNED: 1.38 BUSD | PROFIT %: 1.378%
 # Normalization_File='/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp50_w15_max5min_Norm_v1.json'
@@ -81,7 +102,6 @@ import threading
 import time
 from datetime import date, datetime, timedelta
 
-from helpers.parameters import parse_args, load_config
 
 # Load creds modules
 from helpers.handle_creds import (
@@ -91,15 +111,11 @@ global graph,model
 
 #graph = tf.get_default_graph()
 
-# Settings
-args = parse_args()
-DEFAULT_CONFIG_FILE = 'config.yml'
-DEFAULT_CREDS_FILE = 'creds.yml'
 
-config_file = args.config if args.config else DEFAULT_CONFIG_FILE
+
 creds_file = args.creds if args.creds else DEFAULT_CREDS_FILE
 parsed_creds = load_config(creds_file)
-parsed_config = load_config(config_file)
+
 
 # Load trading vars
 PAIR_WITH = parsed_config['trading_options']['PAIR_WITH']
@@ -127,7 +143,7 @@ MY_SCREENER = 'CRYPTO'
 
 FULL_LOG = False # List anylysis result to console
 
-SIGNAL_NAME = 'abj_ai_buy_signal_v1'
+SIGNAL_NAME = 'abj_ai_buy_signal_vBinance'
 SIGNAL_FILE = 'signals/' + SIGNAL_NAME + '.buy'
 
 X_AI_EX_FILE = 'AI_EXBUY'
@@ -394,9 +410,11 @@ def normalize(dataset,file=Normalization_File):
     except:
         Normalization=None
     if(Normalization==None):
-        #print('Loading normalization from file')
+        print('Loading normalization from file')
         with open(file) as json_file:
             Normalization = json.load(json_file)
+            NorShape=len(Normalization["mean"])
+            print(f"Nomalization shape: {NorShape}")
     else:
         #print('normalization is loaded')
         pass
@@ -829,8 +847,10 @@ async def get_pdata_data(symbol,RLIST={},window=10,pair_with='USDT'):
 
         RLIST[symbol]=pair_data
         print("finshing work of: "+symbol)
-    except:
+    except Exception as e:
         print("Error while working on: "+symbol)
+        #sys.stderr.write(e)
+        print(e)
 
 
 
@@ -963,7 +983,7 @@ async def analyze(pairs):
 #################################### New ##############################3
     try:
         PL,DF= await get_df_from_pair_loop(pair_list=pairs,window=WINDOW_SIZE,pair_with=PAIR_WITH)
-        DF['Note']= np.float64(Buy_PLUS(DF))
+        DF['Note']= np.float64(Buy_PLUS(DF))+np.float64(PRESSISION)
         DF['Buy']=np.rint(DF['Note'])
         DF['Pair']=PL
         print(DF[['Pair','Buy','Note']])
@@ -1032,10 +1052,12 @@ async def analyze(pairs):
     return signal_coins
 
 
+DIVIDE_ANALYSE=True
+ANALYZE_RELAX_TIME=20
 async def do_work1():
     print(f'{SIGNAL_NAME} - Starting')
     while True:
-        time.sleep(35)
+        time.sleep(ANALYZE_RELAX_TIME)
         try:
             if not os.path.exists(TICKERS):
                 time.sleep((TIME_TO_WAIT*60))
@@ -1050,7 +1072,17 @@ async def do_work1():
             print("abj_ai_buy_signal_vBinance.py")
             if not threading.main_thread().is_alive(): exit()
             print(f'{SIGNAL_NAME}: Analyzing {len(pairs)} coins')
-            signal_coins =await analyze(pairs)
+            if DIVIDE_ANALYSE:
+                print("->Double anlayse mode")
+                print("->Analysing the fist part")
+                signal_coins =await analyze(pairs[:int(len(pairs)/2)])
+                time.sleep(ANALYZE_RELAX_TIME)
+                print("->Analysing the sconde part")
+                signal_coins.update(await analyze(pairs[int(len(pairs)/2):])) 
+
+            else:
+                signal_coins =await analyze(pairs)
+
             print(f'{SIGNAL_NAME}: {len(signal_coins)} coins with Buy Signals. Waiting {TIME_TO_WAIT} minutes for next analysis.')
 
             #time.sleep((TIME_TO_WAIT*60))

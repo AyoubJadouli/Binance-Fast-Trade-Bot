@@ -1,0 +1,2036 @@
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+||||||||||||||||||||||     AI Crypto Bot by ABJ vBinance  |||||||||||||||||||||||
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+AI/tp50_w15_max5min_Model_v1.hdf5 Loaded
+abj_ai_buy_signal_vBinance - Starting
+abj_ai_buy_signal_vBinance.py
+abj_ai_buy_signal_vBinance: Analyzing 40 coins
+->Double anlayse mode
+->Analysing the fist part
+########################################### Start Analyser ###################################################
+working on: TRXUSDT
+working on: DOGEUSDT
+working on: AVAXUSDT
+working on: DNTUSDT
+working on: ENSUSDT
+working on: NEARUSDT
+working on: ADAUSDT
+working on: SHIBUSDT
+working on: APEUSDT
+working on: JASMYUSDT
+working on: AXSUSDT
+working on: DOTUSDT
+working on: LTCUSDT
+working on: ETHUSDT
+working on: ROSEUSDT
+working on: EOSUSDT
+working on: XRPUSDT
+working on: ETCUSDT
+working on: ALGOUSDT
+working on: SOLUSDT
+finshing work of: TRXUSDT
+finshing work of: DOGEUSDT
+finshing work of: EOSUSDT
+finshing work of: AVAXUSDT
+Error while working on: DNTUSDT
+single positional indexer is out-of-bounds
+finshing work of: ENSUSDT
+finshing work of: NEARUSDT
+finshing work of: ADAUSDT
+finshing work of: SHIBUSDT
+finshing work of: JASMYUSDT
+finshing work of: AXSUSDT
+finshing work of: ETHUSDT
+finshing work of: LTCUSDT
+finshing work of: ALGOUSDT
+finshing work of: APEUSDT
+finshing work of: DOTUSDT
+finshing work of: ROSEUSDT
+finshing work of: XRPUSDT
+finshing work of: ETCUSDT
+finshing work of: SOLUSDT
+Loading normalization from file
+Nomalization shape: 606
+error new part at analyse()
+exception : operands could not be broadcast together with shapes (19,206) (606,) (19,206) 
+->Analysing the sconde part
+########################################### Start Analyser ###################################################
+working on: SHIBUSDT
+working on: ETCUSDT
+working on: AXSUSDT
+working on: TRXUSDT
+working on: XRPUSDT
+working on: LTCUSDT
+working on: LUNAUSDT
+working on: GALAUSDT
+working on: ROSEUSDT
+working on: ADAUSDT
+working on: ALGOUSDT
+working on: AVAXUSDT
+working on: DOGEUSDT
+working on: SOLUSDT
+working on: NEARUSDT
+working on: ETHUSDT
+working on: APEUSDT
+working on: GMTUSDT
+working on: ENSUSDT
+working on: DOTUSDT
+finshing work of: SHIBUSDT
+finshing work of: ALGOUSDT
+finshing work of: LUNAUSDT
+finshing work of: AVAXUSDT
+finshing work of: GALAUSDT
+finshing work of: ROSEUSDT
+finshing work of: ETCUSDT
+finshing work of: XRPUSDT
+finshing work of: LTCUSDT
+finshing work of: ADAUSDT
+finshing work of: AXSUSDT
+finshing work of: TRXUSDT
+finshing work of: ETHUSDT
+finshing work of: NEARUSDT
+finshing work of: SOLUSDT
+finshing work of: DOGEUSDT
+finshing work of: GMTUSDT
+finshing work of: ENSUSDT
+finshing work of: DOTUSDT
+finshing work of: APEUSDT
+error new part at analyse()
+exception : operands could not be broadcast together with shapes (20,206) (606,) (20,206) 
+abj_ai_buy_signal_vBinance: 0 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
+abj_ai_buy_signal_vBinance.py
+abj_ai_buy_signal_vBinance: Analyzing 40 coins
+->Double anlayse mode
+->Analysing the fist part
+########################################### Start Analyser ###################################################
+working on: DNTUSDT
+working on: SOLUSDT
+working on: DOGEUSDT
+working on: ALGOUSDT
+working on: ADAUSDT
+working on: SHIBUSDT
+working on: AVAXUSDT
+working on: JASMYUSDT
+working on: ETHUSDT
+working on: ROSEUSDT
+working on: TRXUSDT
+working on: ENSUSDT
+working on: LTCUSDT
+working on: XRPUSDT
+working on: EOSUSDT
+working on: AXSUSDT
+working on: ETCUSDT
+working on: APEUSDT
+working on: DOTUSDT
+working on: NEARUSDT
+finshing work of: SOLUSDT
+finshing work of: ALGOUSDT
+finshing work of: ETHUSDT
+finshing work of: LTCUSDT
+finshing work of: ENSUSDT
+finshing work of: DOGEUSDT
+finshing work of: SHIBUSDT
+finshing work of: ADAUSDT
+finshing work of: ROSEUSDT
+finshing work of: AVAXUSDT
+finshing work of: JASMYUSDT
+finshing work of: TRXUSDT
+finshing work of: XRPUSDT
+finshing work of: AXSUSDT
+finshing work of: ETCUSDT
+finshing work of: APEUSDT
+finshing work of: NEARUSDT
+finshing work of: DOTUSDT
+Error while working on: DNTUSDT
+single positional indexer is out-of-bounds
+finshing work of: EOSUSDT
+error new part at analyse()
+exception : operands could not be broadcast together with shapes (19,206) (606,) (19,206) 
+->Analysing the sconde part
+########################################### Start Analyser ###################################################
+working on: SHIBUSDT
+working on: ROSEUSDT
+working on: AVAXUSDT
+working on: GMTUSDT
+working on: TRXUSDT
+working on: DOTUSDT
+working on: ETCUSDT
+working on: GALAUSDT
+working on: APEUSDT
+working on: ADAUSDT
+working on: DOGEUSDT
+working on: SOLUSDT
+working on: LTCUSDT
+working on: AXSUSDT
+working on: XRPUSDT
+working on: LUNAUSDT
+working on: NEARUSDT
+working on: ENSUSDT
+working on: ETHUSDT
+working on: ALGOUSDT
+finshing work of: SHIBUSDT
+finshing work of: ETCUSDT
+finshing work of: SOLUSDT
+finshing work of: LTCUSDT
+finshing work of: LUNAUSDT
+finshing work of: ENSUSDT
+finshing work of: ALGOUSDT
+finshing work of: ROSEUSDT
+finshing work of: AVAXUSDT
+finshing work of: TRXUSDT
+finshing work of: GMTUSDT
+finshing work of: DOTUSDT
+finshing work of: APEUSDT
+finshing work of: ADAUSDT
+finshing work of: GALAUSDT
+finshing work of: DOGEUSDT
+finshing work of: XRPUSDT
+finshing work of: AXSUSDT
+finshing work of: NEARUSDT
+finshing work of: ETHUSDT
+error new part at analyse()
+exception : operands could not be broadcast together with shapes (20,206) (606,) (20,206) 
+abj_ai_buy_signal_vBinance: 0 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
+abj_ai_buy_signal_vBinance.py
+abj_ai_buy_signal_vBinance: Analyzing 40 coins
+->Double anlayse mode
+->Analysing the fist part
+########################################### Start Analyser ###################################################
+working on: XRPUSDT
+working on: ADAUSDT
+working on: DNTUSDT
+working on: TRXUSDT
+working on: JASMYUSDT
+working on: DOGEUSDT
+working on: SHIBUSDT
+working on: ETHUSDT
+working on: AVAXUSDT
+working on: EOSUSDT
+working on: ETCUSDT
+working on: ENSUSDT
+working on: APEUSDT
+working on: DOTUSDT
+working on: LTCUSDT
+working on: NEARUSDT
+working on: ALGOUSDT
+working on: SOLUSDT
+working on: AXSUSDT
+working on: ROSEUSDT
+finshing work of: APEUSDT
+finshing work of: XRPUSDT
+finshing work of: SHIBUSDT
+finshing work of: ETHUSDT
+Error while working on: DNTUSDT
+single positional indexer is out-of-bounds
+finshing work of: TRXUSDT
+finshing work of: AVAXUSDT
+finshing work of: ENSUSDT
+finshing work of: JASMYUSDT
+finshing work of: ADAUSDT
+finshing work of: ETCUSDT
+finshing work of: DOTUSDT
+finshing work of: LTCUSDT
+finshing work of: NEARUSDT
+finshing work of: SOLUSDT
+finshing work of: AXSUSDT
+finshing work of: DOGEUSDT
+finshing work of: EOSUSDT
+finshing work of: ALGOUSDT
+finshing work of: ROSEUSDT
+error new part at analyse()
+exception : operands could not be broadcast together with shapes (19,206) (606,) (19,206) 
+->Analysing the sconde part
+########################################### Start Analyser ###################################################
+working on: SHIBUSDT
+working on: ROSEUSDT
+working on: ALGOUSDT
+working on: GMTUSDT
+working on: ETCUSDT
+working on: GALAUSDT
+working on: APEUSDT
+working on: DOGEUSDT
+working on: ETHUSDT
+working on: ENSUSDT
+working on: NEARUSDT
+working on: TRXUSDT
+working on: SOLUSDT
+working on: AVAXUSDT
+working on: DOTUSDT
+working on: AXSUSDT
+working on: ADAUSDT
+working on: XRPUSDT
+working on: LUNAUSDT
+working on: LTCUSDT
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error while working on: LTCUSDT
+single positional indexer is out-of-bounds
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error while working on: NEARUSDT
+single positional indexer is out-of-bounds
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error while working on: ROSEUSDT
+single positional indexer is out-of-bounds
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error while working on: ENSUSDT
+single positional indexer is out-of-bounds
+Error while working on: GMTUSDT
+single positional indexer is out-of-bounds
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error while working on: GALAUSDT
+single positional indexer is out-of-bounds
+Error while working on: ETCUSDT
+single positional indexer is out-of-bounds
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error while working on: APEUSDT
+single positional indexer is out-of-bounds
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error while working on: TRXUSDT
+single positional indexer is out-of-bounds
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error while working on: SOLUSDT
+single positional indexer is out-of-bounds
+Error while working on: AVAXUSDT
+single positional indexer is out-of-bounds
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error while working on: DOTUSDT
+single positional indexer is out-of-bounds
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error while working on: AXSUSDT
+single positional indexer is out-of-bounds
+Error while working on: ADAUSDT
+single positional indexer is out-of-bounds
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error while working on: XRPUSDT
+single positional indexer is out-of-bounds
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error while working on: ETHUSDT
+single positional indexer is out-of-bounds
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error while working on: ALGOUSDT
+single positional indexer is out-of-bounds
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error while working on: LUNAUSDT
+single positional indexer is out-of-bounds
+Error while working on: DOGEUSDT
+single positional indexer is out-of-bounds
+Error do_ohlcv
+######################################################################################################################
+APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
+######################################################################################################################
+Error while working on: SHIBUSDT
+single positional indexer is out-of-bounds
+error new part at analyse()
+exception : operands could not be broadcast together with shapes (0,0) (606,) (0,0) 
+abj_ai_buy_signal_vBinance: 0 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
+abj_ai_buy_signal_vBinance.py
+abj_ai_buy_signal_vBinance: Analyzing 40 coins
+->Double anlayse mode
+->Analysing the fist part
+########################################### Start Analyser ###################################################
+working on: APEUSDT
+working on: DOGEUSDT
+working on: SHIBUSDT
+working on: ETHUSDT
+working on: ROSEUSDT
+working on: TRXUSDT
+working on: ENSUSDT
+working on: XRPUSDT
+working on: ADAUSDT
+working on: EOSUSDT
+working on: AVAXUSDT
+working on: DOTUSDT
+working on: LTCUSDT
+working on: NEARUSDT
+working on: SOLUSDT
+working on: ALGOUSDT
+working on: ETCUSDT
+working on: JASMYUSDT
+working on: DNTUSDT
+working on: AXSUSDT
+finshing work of: SOLUSDT
+finshing work of: AXSUSDT
+finshing work of: DOGEUSDT
+finshing work of: ROSEUSDT
+finshing work of: EOSUSDT
+finshing work of: LTCUSDT
+finshing work of: ENSUSDT
+finshing work of: TRXUSDT
+finshing work of: AVAXUSDT
+finshing work of: ADAUSDT
+finshing work of: DOTUSDT
+finshing work of: ETHUSDT
+finshing work of: NEARUSDT
+finshing work of: APEUSDT
+finshing work of: ALGOUSDT
+finshing work of: JASMYUSDT
+Error while working on: DNTUSDT
+single positional indexer is out-of-bounds
+finshing work of: SHIBUSDT
+finshing work of: XRPUSDT
+finshing work of: ETCUSDT
+error new part at analyse()
+exception : operands could not be broadcast together with shapes (19,206) (606,) (19,206) 
+->Analysing the sconde part
+########################################### Start Analyser ###################################################
+working on: SHIBUSDT
+working on: ROSEUSDT
+working on: GMTUSDT
+working on: TRXUSDT
+working on: GALAUSDT
+working on: APEUSDT
+working on: DOTUSDT
+working on: XRPUSDT
+working on: ETCUSDT
+working on: ETHUSDT
+working on: DOGEUSDT
+working on: ADAUSDT
+working on: NEARUSDT
+working on: AVAXUSDT
+working on: LTCUSDT
+working on: AXSUSDT
+working on: ENSUSDT
+working on: LUNAUSDT
+working on: ALGOUSDT
+working on: SOLUSDT
+finshing work of: ETCUSDT
+finshing work of: APEUSDT
+finshing work of: ROSEUSDT
+finshing work of: NEARUSDT
+finshing work of: GALAUSDT
+finshing work of: SHIBUSDT
+finshing work of: ADAUSDT
+finshing work of: DOTUSDT
+finshing work of: ETHUSDT
+finshing work of: DOGEUSDT
+finshing work of: SOLUSDT
+finshing work of: ENSUSDT
+finshing work of: AXSUSDT
+finshing work of: LTCUSDT
+finshing work of: AVAXUSDT
+finshing work of: LUNAUSDT
+finshing work of: ALGOUSDT
+finshing work of: XRPUSDT
+finshing work of: TRXUSDT
+finshing work of: GMTUSDT
+error new part at analyse()
+exception : operands could not be broadcast together with shapes (20,206) (606,) (20,206) 
+abj_ai_buy_signal_vBinance: 0 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
+abj_ai_buy_signal_vBinance.py
+abj_ai_buy_signal_vBinance: Analyzing 40 coins
+->Double anlayse mode
+->Analysing the fist part
+########################################### Start Analyser ###################################################
+working on: EOSUSDT
+working on: DOGEUSDT
+working on: SHIBUSDT
+working on: ADAUSDT
+working on: ETHUSDT
+working on: ROSEUSDT
+working on: SOLUSDT
+working on: JASMYUSDT
+working on: XRPUSDT
+working on: ETCUSDT
+working on: AVAXUSDT
+working on: APEUSDT
+working on: TRXUSDT
+working on: DOTUSDT
+working on: LTCUSDT
+working on: NEARUSDT
+working on: ALGOUSDT
+working on: ENSUSDT
+working on: DNTUSDT
+working on: AXSUSDT
+finshing work of: EOSUSDT
+finshing work of: ADAUSDT
+finshing work of: DOGEUSDT
+finshing work of: SHIBUSDT
+finshing work of: ETHUSDT
+finshing work of: ROSEUSDT
+finshing work of: AVAXUSDT
+finshing work of: TRXUSDT
+finshing work of: NEARUSDT
+finshing work of: ALGOUSDT
+finshing work of: ENSUSDT
+finshing work of: XRPUSDT
+finshing work of: SOLUSDT
+finshing work of: ETCUSDT
+finshing work of: JASMYUSDT
+finshing work of: LTCUSDT
+finshing work of: APEUSDT
+finshing work of: DOTUSDT
+Error while working on: DNTUSDT
+single positional indexer is out-of-bounds
+finshing work of: AXSUSDT
+error new part at analyse()
+exception : operands could not be broadcast together with shapes (19,206) (606,) (19,206) 
+->Analysing the sconde part
+########################################### Start Analyser ###################################################
+working on: DOGEUSDT
+working on: SHIBUSDT
+working on: ROSEUSDT
+working on: GMTUSDT
+working on: ENSUSDT
+working on: APEUSDT
+working on: ETHUSDT
+working on: ETCUSDT
+working on: NEARUSDT
+working on: SOLUSDT
+working on: DOTUSDT
+working on: AVAXUSDT
+working on: LTCUSDT
+working on: ADAUSDT
+working on: AXSUSDT
+working on: LUNAUSDT
+working on: ALGOUSDT
+working on: GALAUSDT
+working on: XRPUSDT
+working on: TRXUSDT
+finshing work of: DOGEUSDT
+finshing work of: ADAUSDT
+finshing work of: SHIBUSDT
+finshing work of: NEARUSDT
+finshing work of: ENSUSDT
+finshing work of: APEUSDT
+finshing work of: ETHUSDT
+finshing work of: ROSEUSDT
+finshing work of: GMTUSDT
+finshing work of: AXSUSDT
+finshing work of: DOTUSDT
+finshing work of: ALGOUSDT
+finshing work of: AVAXUSDT
+finshing work of: SOLUSDT
+finshing work of: LTCUSDT
+finshing work of: LUNAUSDT
+finshing work of: GALAUSDT
+finshing work of: XRPUSDT
+finshing work of: TRXUSDT
+finshing work of: ETCUSDT
+error new part at analyse()
+exception : operands could not be broadcast together with shapes (20,206) (606,) (20,206) 
+abj_ai_buy_signal_vBinance: 0 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
+abj_ai_buy_signal_vBinance.py
+abj_ai_buy_signal_vBinance: Analyzing 40 coins
+->Double anlayse mode
+->Analysing the fist part
+########################################### Start Analyser ###################################################
+working on: DNTUSDT
+working on: DOGEUSDT
+working on: TRXUSDT
+working on: SHIBUSDT
+working on: AXSUSDT
+working on: ETHUSDT
+working on: ROSEUSDT
+working on: LTCUSDT
+working on: ENSUSDT
+working on: XRPUSDT
+working on: EOSUSDT
+working on: ETCUSDT
+working on: APEUSDT
+working on: SOLUSDT
+working on: DOTUSDT
+working on: NEARUSDT
+working on: ADAUSDT
+working on: ALGOUSDT
+working on: AVAXUSDT
+working on: JASMYUSDT
+finshing work of: AXSUSDT
+Error while working on: DNTUSDT
+single positional indexer is out-of-bounds
+finshing work of: ETHUSDT
+finshing work of: ROSEUSDT
+finshing work of: LTCUSDT
+finshing work of: APEUSDT
+finshing work of: TRXUSDT
+finshing work of: ENSUSDT
+finshing work of: EOSUSDT
+finshing work of: DOGEUSDT
+finshing work of: SHIBUSDT
+finshing work of: XRPUSDT
+finshing work of: JASMYUSDT
+finshing work of: ETCUSDT
+finshing work of: SOLUSDT
+finshing work of: DOTUSDT
+finshing work of: NEARUSDT
+finshing work of: ADAUSDT
+finshing work of: ALGOUSDT
+finshing work of: AVAXUSDT
+error new part at analyse()
+exception : operands could not be broadcast together with shapes (19,206) (606,) (19,206) 
+->Analysing the sconde part
+########################################### Start Analyser ###################################################
+working on: DOGEUSDT
+working on: SHIBUSDT
+working on: ENSUSDT
+working on: ROSEUSDT
+working on: ETCUSDT
+working on: GMTUSDT
+working on: GALAUSDT
+working on: ALGOUSDT
+working on: APEUSDT
+working on: AVAXUSDT
+working on: ETHUSDT
+working on: NEARUSDT
+working on: SOLUSDT
+working on: ADAUSDT
+working on: LTCUSDT
+working on: XRPUSDT
+working on: AXSUSDT
+working on: LUNAUSDT
+working on: DOTUSDT
+working on: TRXUSDT
+finshing work of: DOGEUSDT
+finshing work of: SHIBUSDT
+finshing work of: ENSUSDT
+finshing work of: ROSEUSDT
+finshing work of: ETCUSDT
+finshing work of: GMTUSDT
+finshing work of: ALGOUSDT
+finshing work of: APEUSDT
+finshing work of: ETHUSDT
+finshing work of: SOLUSDT
+finshing work of: GALAUSDT
+finshing work of: NEARUSDT
+finshing work of: XRPUSDT
+finshing work of: AXSUSDT
+finshing work of: DOTUSDT
+finshing work of: AVAXUSDT
+finshing work of: ADAUSDT
+finshing work of: LTCUSDT
+finshing work of: TRXUSDT
+finshing work of: LUNAUSDT
+error new part at analyse()
+exception : operands could not be broadcast together with shapes (20,206) (606,) (20,206) 
+abj_ai_buy_signal_vBinance: 0 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
+abj_ai_buy_signal_vBinance.py
+abj_ai_buy_signal_vBinance: Analyzing 40 coins
+->Double anlayse mode
+->Analysing the fist part
+########################################### Start Analyser ###################################################
+working on: DNTUSDT
+working on: DOGEUSDT
+working on: SHIBUSDT
+working on: ETHUSDT
+working on: LTCUSDT
+working on: ROSEUSDT
+working on: SOLUSDT
+working on: AXSUSDT
+working on: AVAXUSDT
+working on: JASMYUSDT
+working on: XRPUSDT
+working on: EOSUSDT
+working on: ENSUSDT
+working on: ADAUSDT
+working on: ETCUSDT
+working on: APEUSDT
+working on: TRXUSDT
+working on: DOTUSDT
+working on: NEARUSDT
+working on: ALGOUSDT
+finshing work of: SOLUSDT
+Error while working on: DNTUSDT
+single positional indexer is out-of-bounds
+finshing work of: ETHUSDT
+finshing work of: AXSUSDT
+finshing work of: DOGEUSDT
+finshing work of: SHIBUSDT
+finshing work of: ENSUSDT
+finshing work of: ADAUSDT
+finshing work of: APEUSDT
+finshing work of: LTCUSDT
+finshing work of: ETCUSDT
+finshing work of: NEARUSDT
+finshing work of: ALGOUSDT
+finshing work of: AVAXUSDT
+finshing work of: ROSEUSDT
+finshing work of: XRPUSDT
+finshing work of: EOSUSDT
+finshing work of: DOTUSDT
+finshing work of: TRXUSDT
+finshing work of: JASMYUSDT
+error new part at analyse()
+exception : operands could not be broadcast together with shapes (19,206) (606,) (19,206) 
+->Analysing the sconde part
+########################################### Start Analyser ###################################################
+working on: APEUSDT
+working on: ETCUSDT
+working on: SHIBUSDT
+working on: ROSEUSDT
+working on: GMTUSDT
+working on: GALAUSDT
+working on: ETHUSDT
+working on: NEARUSDT
+working on: XRPUSDT
+working on: TRXUSDT
+working on: LTCUSDT
+working on: AXSUSDT
+working on: DOTUSDT
+working on: LUNAUSDT
+working on: SOLUSDT
+working on: ALGOUSDT
+working on: DOGEUSDT
+working on: AVAXUSDT
+working on: ADAUSDT
+working on: ENSUSDT
+finshing work of: LTCUSDT
+finshing work of: TRXUSDT
+finshing work of: ETHUSDT
+finshing work of: GMTUSDT
+finshing work of: LUNAUSDT
+finshing work of: ETCUSDT
+finshing work of: SHIBUSDT
+finshing work of: AVAXUSDT
+finshing work of: ROSEUSDT
+finshing work of: AXSUSDT
+finshing work of: DOTUSDT
+finshing work of: APEUSDT
+finshing work of: SOLUSDT
+finshing work of: GALAUSDT
+finshing work of: ALGOUSDT
+finshing work of: DOGEUSDT
+finshing work of: ENSUSDT
+finshing work of: XRPUSDT
+finshing work of: ADAUSDT
+finshing work of: NEARUSDT
+error new part at analyse()
+exception : operands could not be broadcast together with shapes (20,206) (606,) (20,206) 
+abj_ai_buy_signal_vBinance: 0 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
+abj_ai_buy_signal_vBinance.py
+abj_ai_buy_signal_vBinance: Analyzing 40 coins
+->Double anlayse mode
+->Analysing the fist part
+########################################### Start Analyser ###################################################
+working on: DNTUSDT
+working on: DOGEUSDT
+working on: SHIBUSDT
+working on: ENSUSDT
+working on: LTCUSDT
+working on: ADAUSDT
+working on: ETHUSDT
+working on: ROSEUSDT
+working on: AVAXUSDT
+working on: XRPUSDT
+working on: EOSUSDT
+working on: AXSUSDT
+working on: ETCUSDT
+working on: SOLUSDT
+working on: TRXUSDT
+working on: APEUSDT
+working on: DOTUSDT
+working on: NEARUSDT
+working on: ALGOUSDT
+working on: JASMYUSDT
+finshing work of: SHIBUSDT
+finshing work of: ETCUSDT
+finshing work of: EOSUSDT
+finshing work of: ETHUSDT
+finshing work of: AXSUSDT
+finshing work of: SOLUSDT
+finshing work of: ENSUSDT
+finshing work of: ADAUSDT
+finshing work of: ROSEUSDT
+finshing work of: APEUSDT
+finshing work of: DOTUSDT
+finshing work of: NEARUSDT
+finshing work of: LTCUSDT
+finshing work of: ALGOUSDT
+finshing work of: JASMYUSDT
+finshing work of: DOGEUSDT
+finshing work of: XRPUSDT
+Error while working on: DNTUSDT
+single positional indexer is out-of-bounds
+finshing work of: TRXUSDT
+finshing work of: AVAXUSDT
+error new part at analyse()
+exception : operands could not be broadcast together with shapes (19,206) (606,) (19,206) 
+->Analysing the sconde part
+########################################### Start Analyser ###################################################
+working on: DOGEUSDT
+working on: ADAUSDT
+working on: SHIBUSDT
+working on: ROSEUSDT
+working on: GALAUSDT
+working on: XRPUSDT
+working on: APEUSDT
+working on: AVAXUSDT
+working on: DOTUSDT
+working on: ETCUSDT
+working on: ETHUSDT
+working on: NEARUSDT
+working on: SOLUSDT
+working on: TRXUSDT
+working on: ENSUSDT
+working on: LTCUSDT
+working on: ALGOUSDT
+working on: AXSUSDT
+working on: LUNAUSDT
+working on: GMTUSDT
+finshing work of: TRXUSDT
+finshing work of: GALAUSDT
+finshing work of: APEUSDT
+finshing work of: ETCUSDT
+finshing work of: XRPUSDT
+finshing work of: ETHUSDT
+finshing work of: NEARUSDT
+finshing work of: DOGEUSDT
+finshing work of: SHIBUSDT
+finshing work of: ROSEUSDT
+finshing work of: SOLUSDT
+finshing work of: ADAUSDT
+finshing work of: DOTUSDT
+finshing work of: ENSUSDT
+finshing work of: LTCUSDT
+finshing work of: ALGOUSDT
+finshing work of: AVAXUSDT
+finshing work of: GMTUSDT
+finshing work of: LUNAUSDT
+finshing work of: AXSUSDT
+error new part at analyse()
+exception : operands could not be broadcast together with shapes (20,206) (606,) (20,206) 
+abj_ai_buy_signal_vBinance: 0 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
+abj_ai_buy_signal_vBinance.py
+abj_ai_buy_signal_vBinance: Analyzing 40 coins
+->Double anlayse mode
+->Analysing the fist part
+########################################### Start Analyser ###################################################
+working on: DNTUSDT
+working on: DOGEUSDT
+working on: SHIBUSDT
+working on: JASMYUSDT
+working on: TRXUSDT
+working on: ETHUSDT
+working on: XRPUSDT
+working on: AXSUSDT
+working on: AVAXUSDT
+working on: EOSUSDT
+working on: APEUSDT
+working on: ADAUSDT
+working on: DOTUSDT
+working on: LTCUSDT
+working on: NEARUSDT
+working on: ENSUSDT
+working on: ALGOUSDT
+working on: ROSEUSDT
+working on: ETCUSDT
+working on: SOLUSDT
+Error while working on: DNTUSDT
+single positional indexer is out-of-bounds
+finshing work of: SHIBUSDT
+finshing work of: TRXUSDT
+finshing work of: AXSUSDT
+finshing work of: AVAXUSDT
+finshing work of: XRPUSDT
+finshing work of: DOTUSDT
+finshing work of: NEARUSDT
+finshing work of: ROSEUSDT
+finshing work of: DOGEUSDT
+finshing work of: ETHUSDT
+finshing work of: JASMYUSDT
+finshing work of: EOSUSDT
+finshing work of: APEUSDT
+finshing work of: ADAUSDT
+finshing work of: LTCUSDT
+finshing work of: ENSUSDT
+finshing work of: ALGOUSDT
+finshing work of: ETCUSDT
+finshing work of: SOLUSDT
+error new part at analyse()
+exception : operands could not be broadcast together with shapes (19,206) (606,) (19,206) 
+->Analysing the sconde part
+########################################### Start Analyser ###################################################
+working on: DOGEUSDT
+working on: SHIBUSDT
+working on: ROSEUSDT
+working on: GMTUSDT
+working on: GALAUSDT
+working on: ALGOUSDT
+working on: ETCUSDT
+working on: APEUSDT
+working on: ETHUSDT
+working on: XRPUSDT
+working on: NEARUSDT
+working on: ENSUSDT
+working on: LTCUSDT
+working on: AXSUSDT
+working on: ADAUSDT
+working on: LUNAUSDT
+working on: DOTUSDT
+working on: SOLUSDT
+working on: AVAXUSDT
+working on: TRXUSDT
+finshing work of: GMTUSDT
+finshing work of: ETCUSDT
+finshing work of: ALGOUSDT
+finshing work of: APEUSDT
+finshing work of: XRPUSDT
+finshing work of: ROSEUSDT
+finshing work of: GALAUSDT
+finshing work of: DOGEUSDT
+finshing work of: ENSUSDT
+finshing work of: LTCUSDT
+finshing work of: ADAUSDT
+finshing work of: AXSUSDT
+finshing work of: LUNAUSDT
+finshing work of: SOLUSDT
+finshing work of: AVAXUSDT
+finshing work of: SHIBUSDT
+finshing work of: DOTUSDT
+finshing work of: TRXUSDT
+finshing work of: ETHUSDT
+finshing work of: NEARUSDT
+error new part at analyse()
+exception : operands could not be broadcast together with shapes (20,206) (606,) (20,206) 
+abj_ai_buy_signal_vBinance: 0 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
+abj_ai_buy_signal_vBinance.py
+abj_ai_buy_signal_vBinance: Analyzing 40 coins
+->Double anlayse mode
+->Analysing the fist part
+########################################### Start Analyser ###################################################
+working on: EOSUSDT
+working on: DNTUSDT
+working on: SOLUSDT
+working on: DOGEUSDT
+working on: JASMYUSDT
+working on: SHIBUSDT
+working on: ETHUSDT
+working on: ROSEUSDT
+working on: ENSUSDT
+working on: XRPUSDT
+working on: ADAUSDT
+working on: ETCUSDT
+working on: AXSUSDT
+working on: APEUSDT
+working on: DOTUSDT
+working on: TRXUSDT
+working on: NEARUSDT
+working on: AVAXUSDT
+working on: ALGOUSDT
+working on: LTCUSDT
+finshing work of: SOLUSDT
+finshing work of: NEARUSDT
+finshing work of: ETCUSDT
+finshing work of: APEUSDT
+finshing work of: DOTUSDT
+finshing work of: TRXUSDT
+Error while working on: DNTUSDT
+single positional indexer is out-of-bounds
+finshing work of: DOGEUSDT
+finshing work of: JASMYUSDT
+finshing work of: SHIBUSDT
+finshing work of: EOSUSDT
+finshing work of: ADAUSDT
+finshing work of: AXSUSDT
+finshing work of: ETHUSDT
+finshing work of: ROSEUSDT
+finshing work of: XRPUSDT
+finshing work of: AVAXUSDT
+finshing work of: ALGOUSDT
+finshing work of: LTCUSDT
+finshing work of: ENSUSDT
+error new part at analyse()
+exception : operands could not be broadcast together with shapes (19,206) (606,) (19,206) 
+->Analysing the sconde part
+########################################### Start Analyser ###################################################
+working on: SHIBUSDT
+working on: ADAUSDT
+working on: ROSEUSDT
+working on: GMTUSDT
+working on: DOTUSDT
+working on: GALAUSDT
+working on: ETHUSDT
+working on: NEARUSDT
+working on: DOGEUSDT
+working on: ETCUSDT
+working on: SOLUSDT
+working on: ALGOUSDT
+working on: TRXUSDT
+working on: LTCUSDT
+working on: AXSUSDT
+working on: LUNAUSDT
+working on: ENSUSDT
+working on: APEUSDT
+working on: AVAXUSDT
+working on: XRPUSDT
+finshing work of: SHIBUSDT
+finshing work of: DOGEUSDT
+finshing work of: ADAUSDT
+finshing work of: GALAUSDT
+finshing work of: ETCUSDT
+finshing work of: NEARUSDT
+finshing work of: ROSEUSDT
+finshing work of: SOLUSDT
+finshing work of: AXSUSDT
+finshing work of: TRXUSDT
+finshing work of: ENSUSDT
+finshing work of: AVAXUSDT
+finshing work of: APEUSDT
+finshing work of: XRPUSDT
+finshing work of: LTCUSDT
+finshing work of: ALGOUSDT
+finshing work of: ETHUSDT
+finshing work of: DOTUSDT
+finshing work of: GMTUSDT
+finshing work of: LUNAUSDT
+error new part at analyse()
+exception : operands could not be broadcast together with shapes (20,206) (606,) (20,206) 
+abj_ai_buy_signal_vBinance: 0 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
+abj_ai_buy_signal_vBinance.py
+abj_ai_buy_signal_vBinance: Analyzing 40 coins
+->Double anlayse mode
+->Analysing the fist part
+########################################### Start Analyser ###################################################
+working on: DNTUSDT
+working on: SOLUSDT
+working on: DOGEUSDT
+working on: SHIBUSDT
+working on: AVAXUSDT
+working on: ETHUSDT
+working on: ROSEUSDT
+working on: XRPUSDT
+working on: EOSUSDT
+working on: ENSUSDT
+working on: ETCUSDT
+working on: ADAUSDT
+working on: APEUSDT
+working on: JASMYUSDT
+working on: DOTUSDT
+working on: NEARUSDT
+working on: LTCUSDT
+working on: ALGOUSDT
+working on: TRXUSDT
+working on: AXSUSDT
+finshing work of: SOLUSDT
+finshing work of: ROSEUSDT
+finshing work of: TRXUSDT
+finshing work of: SHIBUSDT
+finshing work of: ETCUSDT
+finshing work of: APEUSDT
+Error while working on: DNTUSDT
+single positional indexer is out-of-bounds
+finshing work of: AVAXUSDT
+finshing work of: DOGEUSDT
+finshing work of: ETHUSDT
+finshing work of: XRPUSDT
+finshing work of: ADAUSDT
+finshing work of: EOSUSDT
+finshing work of: ENSUSDT
+finshing work of: JASMYUSDT
+finshing work of: DOTUSDT
+finshing work of: ALGOUSDT
+finshing work of: AXSUSDT
+finshing work of: LTCUSDT
+finshing work of: NEARUSDT
+error new part at analyse()
+exception : operands could not be broadcast together with shapes (19,206) (606,) (19,206) 
+->Analysing the sconde part
+########################################### Start Analyser ###################################################
+working on: ETHUSDT
+working on: DOGEUSDT
+working on: SHIBUSDT
+working on: DOTUSDT
+working on: ALGOUSDT
+working on: ADAUSDT
+working on: ROSEUSDT
+working on: GMTUSDT
+working on: ETCUSDT
+working on: XRPUSDT
+working on: GALAUSDT
+working on: APEUSDT
+working on: ENSUSDT
+working on: NEARUSDT
+working on: SOLUSDT
+working on: TRXUSDT
+working on: LTCUSDT
+working on: AXSUSDT
+working on: AVAXUSDT
+working on: LUNAUSDT
+finshing work of: SHIBUSDT
+finshing work of: ETCUSDT
+finshing work of: ETHUSDT
+finshing work of: ROSEUSDT
+finshing work of: APEUSDT
+finshing work of: NEARUSDT
+finshing work of: SOLUSDT
+finshing work of: GMTUSDT
+finshing work of: DOTUSDT
+finshing work of: ALGOUSDT
+finshing work of: DOGEUSDT
+finshing work of: GALAUSDT
+finshing work of: ADAUSDT
+finshing work of: XRPUSDT
+finshing work of: TRXUSDT
+finshing work of: LTCUSDT
+finshing work of: AVAXUSDT
+finshing work of: AXSUSDT
+finshing work of: LUNAUSDT
+finshing work of: ENSUSDT
+error new part at analyse()
+exception : operands could not be broadcast together with shapes (20,206) (606,) (20,206) 
+abj_ai_buy_signal_vBinance: 0 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
+abj_ai_buy_signal_vBinance.py
+abj_ai_buy_signal_vBinance: Analyzing 40 coins
+->Double anlayse mode
+->Analysing the fist part
+########################################### Start Analyser ###################################################
+working on: DNTUSDT
+working on: AXSUSDT
+working on: DOGEUSDT
+working on: SHIBUSDT
+working on: ADAUSDT
+working on: ETHUSDT
+working on: ROSEUSDT
+working on: TRXUSDT
+working on: JASMYUSDT
+working on: XRPUSDT
+working on: AVAXUSDT
+working on: EOSUSDT
+working on: APEUSDT
+working on: DOTUSDT
+working on: NEARUSDT
+working on: ALGOUSDT
+working on: SOLUSDT
+working on: ENSUSDT
+working on: ETCUSDT
+working on: LTCUSDT
+finshing work of: TRXUSDT
+finshing work of: SHIBUSDT
+finshing work of: APEUSDT
+finshing work of: XRPUSDT
+finshing work of: AVAXUSDT
+finshing work of: DOGEUSDT
+finshing work of: ENSUSDT
+finshing work of: ADAUSDT
+finshing work of: EOSUSDT
+finshing work of: ETCUSDT
+finshing work of: DOTUSDT
+finshing work of: ETHUSDT
+finshing work of: ROSEUSDT
+Error while working on: DNTUSDT
+single positional indexer is out-of-bounds
+finshing work of: AXSUSDT
+finshing work of: ALGOUSDT
+finshing work of: SOLUSDT
+finshing work of: LTCUSDT
+finshing work of: JASMYUSDT
+finshing work of: NEARUSDT
+error new part at analyse()
+exception : operands could not be broadcast together with shapes (19,206) (606,) (19,206) 
+->Analysing the sconde part
+########################################### Start Analyser ###################################################
+working on: DOGEUSDT
+working on: ALGOUSDT
+working on: SHIBUSDT
+working on: ROSEUSDT
+working on: GALAUSDT
+working on: APEUSDT
+working on: AVAXUSDT
+working on: ENSUSDT
+working on: XRPUSDT
+working on: ETHUSDT
+working on: DOTUSDT
+working on: NEARUSDT
+working on: ADAUSDT
+working on: SOLUSDT
+working on: LTCUSDT
+working on: AXSUSDT
+working on: ETCUSDT
+working on: LUNAUSDT
+working on: GMTUSDT
+working on: TRXUSDT
+finshing work of: LTCUSDT
+finshing work of: AXSUSDT
+finshing work of: AVAXUSDT
+finshing work of: DOTUSDT
+finshing work of: NEARUSDT
+finshing work of: ADAUSDT
+finshing work of: DOGEUSDT
+finshing work of: ETCUSDT
+finshing work of: XRPUSDT
+finshing work of: ALGOUSDT
+finshing work of: SHIBUSDT
+finshing work of: SOLUSDT
+finshing work of: GMTUSDT
+finshing work of: TRXUSDT
+finshing work of: ROSEUSDT
+finshing work of: APEUSDT
+finshing work of: LUNAUSDT
+finshing work of: GALAUSDT
+finshing work of: ENSUSDT
+finshing work of: ETHUSDT
+error new part at analyse()
+exception : operands could not be broadcast together with shapes (20,206) (606,) (20,206) 
+abj_ai_buy_signal_vBinance: 0 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
+abj_ai_buy_signal_vBinance.py
+abj_ai_buy_signal_vBinance: Analyzing 40 coins
+->Double anlayse mode
+->Analysing the fist part
+########################################### Start Analyser ###################################################
+working on: DNTUSDT
+working on: DOGEUSDT
+working on: SHIBUSDT
+working on: TRXUSDT
+working on: ROSEUSDT
+working on: XRPUSDT
+working on: ENSUSDT
+working on: EOSUSDT
+working on: AVAXUSDT
+working on: LTCUSDT
+working on: ETCUSDT
+working on: SOLUSDT
+working on: ADAUSDT
+working on: APEUSDT
+working on: DOTUSDT
+working on: NEARUSDT
+working on: JASMYUSDT
+working on: ALGOUSDT
+working on: ETHUSDT
+working on: AXSUSDT
+finshing work of: TRXUSDT
+Error while working on: DNTUSDT
+single positional indexer is out-of-bounds
+finshing work of: ENSUSDT
+finshing work of: DOGEUSDT
+finshing work of: DOTUSDT
+finshing work of: APEUSDT
+finshing work of: EOSUSDT
+finshing work of: NEARUSDT
+finshing work of: SHIBUSDT
+finshing work of: SOLUSDT
+finshing work of: ETCUSDT
+finshing work of: ROSEUSDT
+finshing work of: XRPUSDT
+finshing work of: ETHUSDT
+finshing work of: ADAUSDT
+finshing work of: LTCUSDT
+finshing work of: JASMYUSDT
+finshing work of: AVAXUSDT
+finshing work of: AXSUSDT
+finshing work of: ALGOUSDT
+error new part at analyse()
+exception : operands could not be broadcast together with shapes (19,206) (606,) (19,206) 
+->Analysing the sconde part
+########################################### Start Analyser ###################################################
+working on: DOGEUSDT
+working on: SHIBUSDT
+working on: AVAXUSDT
+working on: ROSEUSDT
+working on: ETCUSDT
+working on: GMTUSDT
+working on: GALAUSDT
+working on: ALGOUSDT
+working on: DOTUSDT
+working on: TRXUSDT
+working on: APEUSDT
+working on: ENSUSDT
+working on: ETHUSDT
+working on: NEARUSDT
+working on: SOLUSDT
+working on: XRPUSDT
+working on: LTCUSDT
+working on: AXSUSDT
+working on: LUNAUSDT
+working on: ADAUSDT
+finshing work of: DOGEUSDT
+finshing work of: ROSEUSDT
+finshing work of: ETCUSDT
+finshing work of: DOTUSDT
+finshing work of: SOLUSDT
+finshing work of: AVAXUSDT
+finshing work of: GMTUSDT
+finshing work of: SHIBUSDT
+finshing work of: GALAUSDT
+finshing work of: TRXUSDT
+finshing work of: APEUSDT
+finshing work of: ENSUSDT
+finshing work of: NEARUSDT
+finshing work of: ETHUSDT
+finshing work of: ADAUSDT
+finshing work of: ALGOUSDT
+finshing work of: LTCUSDT
+finshing work of: AXSUSDT
+finshing work of: LUNAUSDT
+finshing work of: XRPUSDT
+error new part at analyse()
+exception : operands could not be broadcast together with shapes (20,206) (606,) (20,206) 
+abj_ai_buy_signal_vBinance: 0 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
+abj_ai_buy_signal_vBinance.py
+abj_ai_buy_signal_vBinance: Analyzing 40 coins
+->Double anlayse mode
+->Analysing the fist part
+########################################### Start Analyser ###################################################
+working on: DNTUSDT
+working on: DOGEUSDT
+working on: LTCUSDT
+working on: SHIBUSDT
+working on: ROSEUSDT
+working on: XRPUSDT
+working on: AXSUSDT
+working on: EOSUSDT
+working on: ADAUSDT
+working on: ETCUSDT
+working on: APEUSDT
+working on: AVAXUSDT
+working on: TRXUSDT
+working on: DOTUSDT
+working on: NEARUSDT
+working on: ENSUSDT
+working on: ALGOUSDT
+working on: SOLUSDT
+working on: ETHUSDT
+working on: JASMYUSDT
+finshing work of: ROSEUSDT
+Error while working on: DNTUSDT
+single positional indexer is out-of-bounds
+finshing work of: ADAUSDT
+finshing work of: APEUSDT
+finshing work of: AVAXUSDT
+finshing work of: TRXUSDT
+finshing work of: AXSUSDT
+finshing work of: DOGEUSDT
+finshing work of: LTCUSDT
+finshing work of: ALGOUSDT
+finshing work of: SHIBUSDT
+finshing work of: JASMYUSDT
+finshing work of: EOSUSDT
+finshing work of: ETCUSDT
+finshing work of: DOTUSDT
+finshing work of: XRPUSDT
+finshing work of: NEARUSDT
+finshing work of: ENSUSDT
+finshing work of: ETHUSDT
+finshing work of: SOLUSDT
+error new part at analyse()
+exception : operands could not be broadcast together with shapes (19,206) (606,) (19,206) 
+->Analysing the sconde part
+########################################### Start Analyser ###################################################
+working on: DOGEUSDT
+working on: SHIBUSDT
+working on: ROSEUSDT
+working on: ALGOUSDT
+working on: GMTUSDT
+working on: GALAUSDT
+working on: TRXUSDT
+working on: XRPUSDT
+working on: ETHUSDT
+working on: NEARUSDT
+working on: SOLUSDT
+working on: DOTUSDT
+working on: LTCUSDT
+working on: ADAUSDT
+working on: AVAXUSDT
+working on: AXSUSDT
+working on: LUNAUSDT
+working on: ENSUSDT
+working on: APEUSDT
+working on: ETCUSDT
+finshing work of: SHIBUSDT
+finshing work of: ROSEUSDT
+finshing work of: GMTUSDT
+finshing work of: ALGOUSDT
+finshing work of: SOLUSDT
+finshing work of: DOGEUSDT
+finshing work of: XRPUSDT
+finshing work of: DOTUSDT
+finshing work of: LTCUSDT
+finshing work of: ADAUSDT
+finshing work of: AXSUSDT
+finshing work of: LUNAUSDT
+finshing work of: GALAUSDT
+finshing work of: ENSUSDT
+finshing work of: NEARUSDT
+finshing work of: ETHUSDT
+finshing work of: ETCUSDT
+finshing work of: TRXUSDT
+finshing work of: APEUSDT
+finshing work of: AVAXUSDT
+error new part at analyse()
+exception : operands could not be broadcast together with shapes (20,206) (606,) (20,206) 
+abj_ai_buy_signal_vBinance: 0 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
+abj_ai_buy_signal_vBinance.py
+abj_ai_buy_signal_vBinance: Analyzing 40 coins
+->Double anlayse mode
+->Analysing the fist part
+########################################### Start Analyser ###################################################
+working on: DNTUSDT
+working on: AVAXUSDT
+working on: DOGEUSDT
+working on: SOLUSDT
+working on: SHIBUSDT
+working on: ETHUSDT
+working on: ROSEUSDT
+working on: LTCUSDT
+working on: XRPUSDT
+working on: AXSUSDT
+working on: EOSUSDT
+working on: ETCUSDT
+working on: APEUSDT
+working on: ADAUSDT
+working on: NEARUSDT
+working on: JASMYUSDT
+working on: ALGOUSDT
+working on: DOTUSDT
+working on: TRXUSDT
+working on: ENSUSDT
+Error while working on: DNTUSDT
+single positional indexer is out-of-bounds
+finshing work of: DOGEUSDT
+finshing work of: SOLUSDT
+finshing work of: SHIBUSDT
+finshing work of: LTCUSDT
+finshing work of: AVAXUSDT
+finshing work of: EOSUSDT
+finshing work of: ETCUSDT
+finshing work of: AXSUSDT
+finshing work of: ADAUSDT
+finshing work of: ROSEUSDT
+finshing work of: DOTUSDT
+finshing work of: XRPUSDT
+finshing work of: APEUSDT
+finshing work of: ENSUSDT
+finshing work of: NEARUSDT
+finshing work of: JASMYUSDT
+finshing work of: ALGOUSDT
+finshing work of: TRXUSDT
+finshing work of: ETHUSDT
+error new part at analyse()
+exception : operands could not be broadcast together with shapes (19,206) (606,) (19,206) 
+->Analysing the sconde part
+########################################### Start Analyser ###################################################
+working on: DOGEUSDT
+working on: SHIBUSDT
+working on: ROSEUSDT
+working on: AVAXUSDT
+working on: GMTUSDT
+working on: GALAUSDT
+working on: TRXUSDT
+working on: XRPUSDT
+working on: APEUSDT
+working on: ENSUSDT
+working on: ETHUSDT
+working on: ETCUSDT
+working on: NEARUSDT
+working on: SOLUSDT
+working on: LTCUSDT
+working on: ALGOUSDT
+working on: AXSUSDT
+working on: LUNAUSDT
+working on: ADAUSDT
+working on: DOTUSDT
+finshing work of: SHIBUSDT
+finshing work of: ENSUSDT
+finshing work of: ROSEUSDT
+finshing work of: GALAUSDT
+finshing work of: ETHUSDT
+finshing work of: ETCUSDT
+finshing work of: LTCUSDT
+finshing work of: ALGOUSDT
+finshing work of: AVAXUSDT
+finshing work of: GMTUSDT
+finshing work of: AXSUSDT
+finshing work of: SOLUSDT
+finshing work of: DOGEUSDT
+finshing work of: ADAUSDT
+finshing work of: XRPUSDT
+finshing work of: APEUSDT
+finshing work of: DOTUSDT
+finshing work of: NEARUSDT
+finshing work of: LUNAUSDT
+finshing work of: TRXUSDT
+error new part at analyse()
+exception : operands could not be broadcast together with shapes (20,206) (606,) (20,206) 
+abj_ai_buy_signal_vBinance: 0 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
+abj_ai_buy_signal_vBinance.py
+abj_ai_buy_signal_vBinance: Analyzing 40 coins
+->Double anlayse mode
+->Analysing the fist part
+########################################### Start Analyser ###################################################
+working on: DNTUSDT
+working on: ENSUSDT
+working on: DOGEUSDT
+working on: AXSUSDT
+working on: SHIBUSDT
+working on: SOLUSDT
+working on: TRXUSDT
+working on: ETHUSDT
+working on: ROSEUSDT
+working on: JASMYUSDT
+working on: XRPUSDT
+working on: EOSUSDT
+working on: ETCUSDT
+working on: APEUSDT
+working on: DOTUSDT
+working on: NEARUSDT
+working on: ADAUSDT
+working on: ALGOUSDT
+working on: LTCUSDT
+working on: AVAXUSDT
+Error while working on: DNTUSDT
+single positional indexer is out-of-bounds
+finshing work of: XRPUSDT
+finshing work of: APEUSDT
+finshing work of: LTCUSDT
+finshing work of: ENSUSDT
+finshing work of: AVAXUSDT
+finshing work of: TRXUSDT
+finshing work of: SOLUSDT
+finshing work of: ETHUSDT
+finshing work of: JASMYUSDT
+finshing work of: ROSEUSDT
+finshing work of: SHIBUSDT
+finshing work of: AXSUSDT
+finshing work of: DOGEUSDT
+finshing work of: EOSUSDT
+finshing work of: ALGOUSDT
+finshing work of: ETCUSDT
+finshing work of: DOTUSDT
+finshing work of: NEARUSDT
+finshing work of: ADAUSDT
+error new part at analyse()
+exception : operands could not be broadcast together with shapes (19,206) (606,) (19,206) 
+->Analysing the sconde part
+########################################### Start Analyser ###################################################
+working on: GALAUSDT
+working on: TRXUSDT
+working on: DOGEUSDT
+working on: SHIBUSDT
+working on: ETCUSDT
+working on: XRPUSDT
+working on: ROSEUSDT
+working on: GMTUSDT
+working on: DOTUSDT
+working on: AVAXUSDT
+working on: APEUSDT
+working on: ETHUSDT
+working on: NEARUSDT
+working on: ENSUSDT
+working on: SOLUSDT
+working on: LTCUSDT
+working on: AXSUSDT
+working on: ADAUSDT
+working on: LUNAUSDT
+working on: ALGOUSDT
+finshing work of: GALAUSDT
+finshing work of: NEARUSDT
+finshing work of: ROSEUSDT
+finshing work of: TRXUSDT
+finshing work of: ETCUSDT
+finshing work of: GMTUSDT
+finshing work of: APEUSDT
+finshing work of: XRPUSDT
+finshing work of: ALGOUSDT
+finshing work of: AVAXUSDT
+finshing work of: SOLUSDT
+finshing work of: ENSUSDT
+finshing work of: LTCUSDT
+finshing work of: AXSUSDT
+finshing work of: ADAUSDT
+finshing work of: DOGEUSDT
+finshing work of: LUNAUSDT
+finshing work of: SHIBUSDT
+finshing work of: DOTUSDT
+finshing work of: ETHUSDT
+error new part at analyse()
+exception : operands could not be broadcast together with shapes (20,206) (606,) (20,206) 
+abj_ai_buy_signal_vBinance: 0 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
+abj_ai_buy_signal_vBinance.py
+abj_ai_buy_signal_vBinance: Analyzing 40 coins
+->Double anlayse mode
+->Analysing the fist part
+########################################### Start Analyser ###################################################
+working on: DNTUSDT
+working on: AXSUSDT
+working on: DOGEUSDT
+working on: AVAXUSDT
+working on: ENSUSDT
+working on: ETHUSDT
+working on: ROSEUSDT
+working on: XRPUSDT
+working on: SOLUSDT
+working on: JASMYUSDT
+working on: EOSUSDT
+working on: ETCUSDT
+working on: APEUSDT
+working on: ADAUSDT
+working on: DOTUSDT
+working on: NEARUSDT
+working on: TRXUSDT
+working on: LTCUSDT
+working on: ALGOUSDT
+working on: SHIBUSDT
+Error while working on: DNTUSDT
+single positional indexer is out-of-bounds
+finshing work of: JASMYUSDT
+finshing work of: EOSUSDT
+finshing work of: XRPUSDT
+finshing work of: ALGOUSDT
+finshing work of: ROSEUSDT
+finshing work of: APEUSDT
+finshing work of: ETHUSDT
+finshing work of: AXSUSDT
+finshing work of: SOLUSDT
+finshing work of: LTCUSDT
+finshing work of: ENSUSDT
+finshing work of: ETCUSDT
+finshing work of: AVAXUSDT
+finshing work of: ADAUSDT
+finshing work of: DOTUSDT
+finshing work of: NEARUSDT
+finshing work of: DOGEUSDT
+finshing work of: TRXUSDT
+finshing work of: SHIBUSDT
+error new part at analyse()
+exception : operands could not be broadcast together with shapes (19,206) (606,) (19,206) 
+->Analysing the sconde part
+########################################### Start Analyser ###################################################
+working on: DOGEUSDT
+working on: AVAXUSDT
+working on: DOTUSDT
+working on: SHIBUSDT
+working on: TRXUSDT
+working on: GMTUSDT
+working on: GALAUSDT
+working on: ETCUSDT
+working on: APEUSDT
+working on: ADAUSDT
+working on: ENSUSDT
+working on: ETHUSDT
+working on: NEARUSDT
+working on: SOLUSDT
+working on: LTCUSDT
+working on: LUNAUSDT
+working on: ALGOUSDT
+working on: AXSUSDT
+working on: ROSEUSDT
+working on: XRPUSDT
+finshing work of: ADAUSDT
+finshing work of: LTCUSDT
+finshing work of: DOGEUSDT
+finshing work of: AVAXUSDT
+finshing work of: DOTUSDT
+finshing work of: ALGOUSDT
+finshing work of: TRXUSDT
+finshing work of: SHIBUSDT
+finshing work of: GMTUSDT
+finshing work of: GALAUSDT
+finshing work of: ENSUSDT
+finshing work of: ETHUSDT
+finshing work of: ETCUSDT
+finshing work of: LUNAUSDT
+finshing work of: APEUSDT
+finshing work of: SOLUSDT
+finshing work of: AXSUSDT
+finshing work of: ROSEUSDT
+finshing work of: XRPUSDT
+finshing work of: NEARUSDT
+error new part at analyse()
+exception : operands could not be broadcast together with shapes (20,206) (606,) (20,206) 
+abj_ai_buy_signal_vBinance: 0 coins with Buy Signals. Waiting 0.65 minutes for next analysis.

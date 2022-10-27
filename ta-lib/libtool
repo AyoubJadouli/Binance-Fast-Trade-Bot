@@ -30,10 +30,10 @@
 # the same distribution terms that you use for the rest of that program.
 
 # A sed program that does not truncate output.
-SED="/usr/bin/sed"
+SED="/bin/sed"
 
 # Sed that helps us avoid accidentally triggering echo(1) options like -n.
-Xsed="/usr/bin/sed -e 1s/^X//"
+Xsed="/bin/sed -e 1s/^X//"
 
 # The HP-UX ksh and POSIX shell print the target directory to stdout
 # if CDPATH is set.
@@ -44,7 +44,7 @@ available_tags=" CXX"
 
 # ### BEGIN LIBTOOL CONFIG
 
-# Libtool was configured on host Binance-bot:
+# Libtool was configured on host abj-K93SV:
 
 # Shell to use when invoking shell scripts.
 SHELL="/bin/bash"
@@ -94,10 +94,10 @@ CC="gcc"
 with_gcc=yes
 
 # An ERE matcher.
-EGREP="/usr/bin/grep -E"
+EGREP="/bin/grep -E"
 
 # The linker used to build libraries.
-LD="/usr/bin/ld"
+LD="/usr/bin/ld -m elf_x86_64"
 
 # Whether we need hard or soft links.
 LN_S="ln -s"
@@ -325,7 +325,7 @@ variables_saved_for_relink="PATH LD_LIBRARY_PATH LD_RUN_PATH GCC_EXEC_PREFIX COM
 link_all_deplibs=no
 
 # Compile-time system search path for libraries
-sys_lib_search_path_spec=" /usr/lib/gcc/x86_64-linux-gnu/9/ /usr/lib/gcc/x86_64-linux-gnu/9/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/9/ /usr/lib/gcc/x86_64-linux-gnu/9/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/ /usr/lib/gcc/x86_64-linux-gnu/9/../../../../x86_64-linux-gnu/lib/../lib/ /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/9/ /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/ /usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/ /lib/x86_64-linux-gnu/9/ /lib/x86_64-linux-gnu/ /lib/../lib/ /usr/lib/x86_64-linux-gnu/9/ /usr/lib/x86_64-linux-gnu/ /usr/lib/../lib/ /usr/lib/gcc/x86_64-linux-gnu/9/../../../../x86_64-linux-gnu/lib/ /usr/lib/gcc/x86_64-linux-gnu/9/../../../ /lib/ /usr/lib/"
+sys_lib_search_path_spec=" /usr/lib/gcc/x86_64-linux-gnu/10/ /usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/10/ /usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/ /usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/lib/../lib/ /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/10/ /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/ /usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/ /lib/x86_64-linux-gnu/10/ /lib/x86_64-linux-gnu/ /lib/../lib/ /usr/lib/x86_64-linux-gnu/10/ /usr/lib/x86_64-linux-gnu/ /usr/lib/../lib/ /usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/lib/ /usr/lib/gcc/x86_64-linux-gnu/10/../../../ /lib/ /usr/lib/"
 
 # Run-time system search path for libraries
 sys_lib_dlsearch_path_spec="/lib /usr/lib /usr/lib/x86_64-linux-gnu/libfakeroot /usr/local/lib /usr/local/lib/x86_64-linux-gnu /lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu "
@@ -7223,7 +7223,7 @@ disable_libs=static
 # End:
 # ### BEGIN LIBTOOL TAG CONFIG: CXX
 
-# Libtool was configured on host Binance-bot:
+# Libtool was configured on host abj-K93SV:
 
 # Shell to use when invoking shell scripts.
 SHELL="/bin/bash"
@@ -7273,10 +7273,10 @@ CC="g++"
 with_gcc=yes
 
 # An ERE matcher.
-EGREP="/usr/bin/grep -E"
+EGREP="/bin/grep -E"
 
 # The linker used to build libraries.
-LD="/usr/bin/ld"
+LD="/usr/bin/ld -m elf_x86_64"
 
 # Whether we need hard or soft links.
 LN_S="ln -s"
@@ -7405,11 +7405,11 @@ striplib="strip --strip-unneeded"
 
 # Dependencies to place before the objects being linked to create a
 # shared library.
-predep_objects="/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o"
+predep_objects="/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o"
 
 # Dependencies to place after the objects being linked to create a
 # shared library.
-postdep_objects="/usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o"
+postdep_objects="/usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o"
 
 # Dependencies to place before the objects being linked to create a
 # shared library.
@@ -7421,7 +7421,7 @@ postdeps="-lstdc++ -lm -lgcc_s -lc -lgcc_s"
 
 # The library search path used internally by the compiler when linking
 # a shared library.
-compiler_lib_search_path="-L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.."
+compiler_lib_search_path="-L/usr/lib/gcc/x86_64-linux-gnu/10 -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/10/../../.."
 
 # Method to check whether dependent libraries are shared objects.
 deplibs_check_method="pass_all"
@@ -7501,7 +7501,7 @@ variables_saved_for_relink="PATH LD_LIBRARY_PATH LD_RUN_PATH GCC_EXEC_PREFIX COM
 link_all_deplibs=no
 
 # Compile-time system search path for libraries
-sys_lib_search_path_spec=" /usr/lib/gcc/x86_64-linux-gnu/9/ /usr/lib/gcc/x86_64-linux-gnu/9/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/9/ /usr/lib/gcc/x86_64-linux-gnu/9/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/ /usr/lib/gcc/x86_64-linux-gnu/9/../../../../x86_64-linux-gnu/lib/../lib/ /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/9/ /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/ /usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/ /lib/x86_64-linux-gnu/9/ /lib/x86_64-linux-gnu/ /lib/../lib/ /usr/lib/x86_64-linux-gnu/9/ /usr/lib/x86_64-linux-gnu/ /usr/lib/../lib/ /usr/lib/gcc/x86_64-linux-gnu/9/../../../../x86_64-linux-gnu/lib/ /usr/lib/gcc/x86_64-linux-gnu/9/../../../ /lib/ /usr/lib/"
+sys_lib_search_path_spec=" /usr/lib/gcc/x86_64-linux-gnu/10/ /usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/10/ /usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/lib/x86_64-linux-gnu/ /usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/lib/../lib/ /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/10/ /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/ /usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/ /lib/x86_64-linux-gnu/10/ /lib/x86_64-linux-gnu/ /lib/../lib/ /usr/lib/x86_64-linux-gnu/10/ /usr/lib/x86_64-linux-gnu/ /usr/lib/../lib/ /usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/lib/ /usr/lib/gcc/x86_64-linux-gnu/10/../../../ /lib/ /usr/lib/"
 
 # Run-time system search path for libraries
 sys_lib_dlsearch_path_spec="/lib /usr/lib /usr/lib/x86_64-linux-gnu/libfakeroot /usr/local/lib /usr/local/lib/x86_64-linux-gnu /lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu "

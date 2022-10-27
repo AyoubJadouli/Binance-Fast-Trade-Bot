@@ -1,0 +1,13 @@
+# Ensure your keys and values have a space between them
+# Example:
+# Bad:
+#   access_key:myaccess_key
+# Good:
+#   access_key: myaccess_key
+
+
+prod:
+  access_key: eXVF3v3WC98O8g5iCGYPc2MTe64oSTjxN036DvUvDiOmlfjv3rcAwySn7aM0nlGW
+  secret_key: 3s8MDTiB7OZIf1v6keQUc89bMnMM0y6lX8D2nL9ZDSAQReEjql5ToX5piVnptnz5
+discord:
+  DISCORD_WEBHOOK: https://discord.com/api/webhooks/XXX/YYYYY

@@ -1,20 +1,51 @@
 #Test1 4.49 BUSD/ 5:17:43 TP:0.15 SL:0.15 TTP:0.05 TSL:0.05 RSI1  75/64 
 #Test2 4.49 BUSD/ 5:17:43 TP:0.13 SL:0.13 TTP:0.03 TSL:0.03 RSI1  38/37 
 #Test3 win 3.3$ for 38min 47/32 abjv2  1h-> win 4.12$ 89/61 with btc up     STOP_LOSS: 0.6/TAKE_PROFIT: 0.6 /TRAILING_STOP_LOSS: .05 / TRAILING_TAKE_PROFIT: .01||  6h>EARNED: 6.61 BUSD | PROFIT %: 8.266% WINS/LOSSSES: 346/313 WIN %: 52.5%
+# ai_options:
+#   Normalization_File: '/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp28_w21_max4min_Model_v1_Norm_v1.json'
+#   Model_FileName: '/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp28_w21_max4min_Model_v1_Model_v1.hdf5'
+#   WINDOW_SIZE: 21
+
+# ai_options: # 18/6 WIN %: 75%
+#   Normalization_File: '/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp44_w6_max14min_Norm_v1.json'
+#   Model_FileName: '/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp44_w6_max14min_Model_v1.hdf5' 
+#   RF_Model_FileName: '/UltimeTradingBot/Data/tp33_w7_max2min_Model_v1.jolib'
+#   WINDOW_SIZE: 6
+#   PRESSISION: -0.2
+
+#ai_options: # max window
+#  Normalization_File: 'AI/tp40_w40_max4min_Norm_v1.json'
+#  #Model_FileName: 'AI/tp40_w40_max4min_Model_vZ76.h5' 
+#  Model_FileName: 'AI/tp40_w40_max4min_Model_vZ2.h5' # c0=94%, c1=43.4%
+#  WINDOW_SIZE: 40
+#  PRESSISION: 0
+
+ai_options: # 18/6 WIN %: 75%
+   Normalization_File: 'AI/tp50_w15_max5min_Norm_v1.json'
+#   # Model_FileName: 'AI/tp35_w20_max2min_Model_v1.hdf5' 
+   # Model_FileName: 'AI/tp35_w20_max2min_Model_vZ.hdf5' 
+   Model_FileName: 'AI/tp50_w15_max5min_Model_v1.hdf5' 
+   RF_Model_FileName: '/UltimeTradingBot/Data/tp33_w7_max2min_Model_v1.jolib'
+   WINDOW_SIZE: 5
+   PRESSISION: 0.0
 
 trading_options:
-  PAIR_WITH: BUSD #BUSD       # select your base currency to use for trading (trade for example USDT pairs)
-  TRADE_TOTAL: 50 #0.00002614 #10 #Total amount per trade (your base currency balance must be at least TRADE_SLOTS * TRADE_TOTAL) min 12
-  TRADE_SLOTS: 2    # Maximum number of trade 'slots' at any time (your USDT balance must be at least TRADE_SLOTS * TRADE_TOTAL)
+  TAKE_PROFIT: 0.5  # define in % when to take profit on a profitable coin. default 0.25
+  STOP_LOSS:  10.75  # define in % when to sell a coin that's not making a profit.
+  MAX_HOLDING_TIME: 30   # in minutes if we can't sell in this time it will sell it at more than 1/2 of SL
 
-  TAKE_PROFIT: 0.28  # define in % when to take profit on a profitable coin. default 0.25
-  STOP_LOSS: 0.5  # define in % when to sell a coin that's not making a profit.
+
   #USE_TRAILING_STOP_LOSS: True
   USE_TRAILING_STOP_LOSS: False
   TRAILING_STOP_LOSS: .01      # when hit TAKE_PROFIT, move STOP_LOSS to TRAILING_STOP_LOSS percentage points below TAKE_PROFIT hence locking in profit
   TRAILING_TAKE_PROFIT: .01 
-  MAX_HOLDING_TIME: 3   # in minutes if we can't sell in this time it will sell it at more than 1/2 of SL
   #abj_seperbuy_signal_v2 config
+
+
+  PAIR_WITH: USDT #BUSD       # select your base currency to use for trading (trade for example USDT pairs)
+  TRADE_TOTAL: 50 #0.00002614 #10 #Total amount per trade (your base currency balance must be at least TRADE_SLOTS * TRADE_TOTAL) min 12
+  TRADE_SLOTS: 10    # Maximum number of trade 'slots' at any time (your USDT balance must be at least TRADE_SLOTS * TRADE_TOTAL)
+
   CHOOSEN_INTERVAL: 1m # 5m 1m-5m 5m-15m 15m 1h 4h
   BTC_CHECK_LEVEL: 1 #up to 4
   RSI_MIN: 30 #RSI value to concider oversell
@@ -22,12 +53,14 @@ trading_options:
   ANNOYED_MOD: True #if the market are down and you want to force superbuy
   WISE_ANNOYED_MOD: True
   TIME_DIFFERENCE: 1   # the amount of time in MINUTES to calculate the difference from the current price (minimum: 1).
-  RECHECK_INTERVAL: 60   # Number of times to check for TP/SL during each TIME_DIFFERENCE (minimum: 1).(max 1200 requests per minute per IP)
+  RECHECK_INTERVAL: 40   # Number of times to check for TP/SL during each TIME_DIFFERENCE (minimum: 1).(max 1200 requests per minute per IP)
   PANIC_STOP: 0   #if the losses are equal to or greater than the established percentage, the bot will stop completely. if it is 0 it is deactivated.
   CHANGE_IN_PRICE: 10   # the difference in % between the first and second checks for the price. default 0.25
   SIGNALLING_MODULES:
 #     - abj_ai_buy_signal_v1
-     - abj_ai_buy_signal_vBinance
+#    - abj_ai_buy_signal_w6
+#     - abj_ai_buy_signal_vRF
+    - abj_ai_buy_signal_vBinance
 #    - abj_superbuy_signal
 #    - abj_superbuy_signal_v2    
 #    - RSI_Algo_v3
@@ -98,7 +131,7 @@ trading_options:
   # Trading fee in % per trade.
   # If using 0.075% (using BNB for fees) you must have BNB in your account to cover trading fees.
   # If using BNB for fees, it MUST be enabled in your Binance 'Dashboard' page (checkbox).
-  TRADING_FEE: 0.120 
+  TRADING_FEE: 0.101 
   
   #if it is activated, the commission is ignored in WIN = (SELL_PRICE + FEE) >= (BUY_PRICE + FEE)
   IGNORE_FEE: False
@@ -136,12 +169,12 @@ trading_options:
 
   #Enables the use of currencies with greater or lesser volume
   USE_MOST_VOLUME_COINS: True
-  TOP_LIST: 12
+  TOP_LIST: 20
   #the list is updated every n number of minutes. by default it is updated every 24 hours (1440 minutes). 
   #Sweethackercasper's idea, thanks mate.
   UPDATE_MOST_VOLUME_COINS: 1440
   #It should not be touched here, used as record.
-  VOLATILE_VOLUME: volatile_volume_07-10-2022(15_42_10)
+  VOLATILE_VOLUME: volatile_volume_27-10-2022(06_38_17)
   #idea from my psychologist, thanks Sebastian V.
   #Two different currencies can be used as a range (within the market table in Binance ordered from highest to lowest)
   COINS_MAX_VOLUME: ETH #ETH  #5000000000

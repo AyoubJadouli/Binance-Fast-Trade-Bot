@@ -1242,7 +1242,8 @@ def sell_coins(tpsl_override = False, specific_coin_to_sell = ""):
                     profit_incfees_total = coins_sold[coin]['volume'] * PriceChangeIncFees_Unit
                     #write_log_trades(f"Sell: {coins_sold[coin]['volume']} {coin} - {BuyPrice} - {LastPrice} Profit: {profit_incfees_total:.{decimals()}f} {PAIR_WITH} ({PriceChange_Perc:.2f}%)")
                     SellUSDT = coins_sold[coin]['volume'] * LastPrice
-                    USDTdiff = SellUSDT - (BuyPrice * coins_sold[coin]['volume'])
+                    #USDTdiff = SellUSDT - (BuyPrice * coins_sold[coin]['volume'])
+                    USDTdiff = ((LastPrice - BuyPrice)-(buyFee + sellFee)) * coins_sold[coin]['volume']
                     session_USDT_EARNED = session_USDT_EARNED + USDTdiff
                     #improving the presentation of the log file
                     # it was padded with trailing zeros to give order to the table in the log file

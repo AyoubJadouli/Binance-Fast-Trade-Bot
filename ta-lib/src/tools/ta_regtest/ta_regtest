@@ -11,19 +11,19 @@
 
 # Sed substitution that helps us do robust quoting.  It backslashifies
 # metacharacters that are still active within double-quoted strings.
-Xsed='/usr/bin/sed -e 1s/^X//'
+Xsed='/bin/sed -e 1s/^X//'
 sed_quote_subst='s/\([\\`\\"$\\\\]\)/\\\1/g'
 
 # The HP-UX ksh and POSIX shell print the target directory to stdout
 # if CDPATH is set.
 (unset CDPATH) >/dev/null 2>&1 && unset CDPATH
 
-relink_command="(cd /pybot/Binance-Bot/ta-lib/src/tools/ta_regtest; { test -z \"\${LIBRARY_PATH+set}\" || unset LIBRARY_PATH || { LIBRARY_PATH=; export LIBRARY_PATH; }; }; { test -z \"\${COMPILER_PATH+set}\" || unset COMPILER_PATH || { COMPILER_PATH=; export COMPILER_PATH; }; }; { test -z \"\${GCC_EXEC_PREFIX+set}\" || unset GCC_EXEC_PREFIX || { GCC_EXEC_PREFIX=; export GCC_EXEC_PREFIX; }; }; { test -z \"\${LD_RUN_PATH+set}\" || unset LD_RUN_PATH || { LD_RUN_PATH=; export LD_RUN_PATH; }; }; { test -z \"\${LD_LIBRARY_PATH+set}\" || unset LD_LIBRARY_PATH || { LD_LIBRARY_PATH=; export LD_LIBRARY_PATH; }; }; PATH=\"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin\"; export PATH; gcc -g -O2 -o \$progdir/\$file ta_regtest-ta_regtest.o ta_regtest-test_data.o ta_regtest-test_util.o ta_regtest-test_abstract.o ta_regtest-test_adx.o ta_regtest-test_mom.o ta_regtest-test_sar.o ta_regtest-test_rsi.o ta_regtest-test_candlestick.o ta_regtest-test_per_ema.o ta_regtest-test_per_hlc.o ta_regtest-test_stoch.o ta_regtest-test_macd.o ta_regtest-test_minmax.o ta_regtest-test_per_hlcv.o ta_regtest-test_1in_1out.o ta_regtest-test_1in_2out.o ta_regtest-test_per_ohlc.o ta_regtest-test_stddev.o ta_regtest-test_bbands.o ta_regtest-test_ma.o ta_regtest-test_po.o ta_regtest-test_per_hl.o ta_regtest-test_trange.o ta_regtest-test_internals.o  -L/pybot/Binance-Bot/ta-lib/src /pybot/Binance-Bot/ta-lib/src/.libs/libta_lib.so -lm -lpthread -ldl -Wl,--rpath -Wl,/pybot/Binance-Bot/ta-lib/src/.libs)"
+relink_command="(cd /UltimeTradingBot/Binance-Fast-Trade-Bot/ta-lib/src/tools/ta_regtest; { test -z \"\${LIBRARY_PATH+set}\" || unset LIBRARY_PATH || { LIBRARY_PATH=; export LIBRARY_PATH; }; }; { test -z \"\${COMPILER_PATH+set}\" || unset COMPILER_PATH || { COMPILER_PATH=; export COMPILER_PATH; }; }; { test -z \"\${GCC_EXEC_PREFIX+set}\" || unset GCC_EXEC_PREFIX || { GCC_EXEC_PREFIX=; export GCC_EXEC_PREFIX; }; }; { test -z \"\${LD_RUN_PATH+set}\" || unset LD_RUN_PATH || { LD_RUN_PATH=; export LD_RUN_PATH; }; }; { test -z \"\${LD_LIBRARY_PATH+set}\" || unset LD_LIBRARY_PATH || { LD_LIBRARY_PATH=; export LD_LIBRARY_PATH; }; }; PATH=\"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\"; export PATH; gcc -g -O2 -o \$progdir/\$file ta_regtest-ta_regtest.o ta_regtest-test_data.o ta_regtest-test_util.o ta_regtest-test_abstract.o ta_regtest-test_adx.o ta_regtest-test_mom.o ta_regtest-test_sar.o ta_regtest-test_rsi.o ta_regtest-test_candlestick.o ta_regtest-test_per_ema.o ta_regtest-test_per_hlc.o ta_regtest-test_stoch.o ta_regtest-test_macd.o ta_regtest-test_minmax.o ta_regtest-test_per_hlcv.o ta_regtest-test_1in_1out.o ta_regtest-test_1in_2out.o ta_regtest-test_per_ohlc.o ta_regtest-test_stddev.o ta_regtest-test_bbands.o ta_regtest-test_ma.o ta_regtest-test_po.o ta_regtest-test_per_hl.o ta_regtest-test_trange.o ta_regtest-test_internals.o  -L/UltimeTradingBot/Binance-Fast-Trade-Bot/ta-lib/src /UltimeTradingBot/Binance-Fast-Trade-Bot/ta-lib/src/.libs/libta_lib.so -lm -lpthread -ldl -Wl,--rpath -Wl,/UltimeTradingBot/Binance-Fast-Trade-Bot/ta-lib/src/.libs)"
 
 # This environment variable determines our operation mode.
 if test "$libtool_install_magic" = "%%%MAGIC variable%%%"; then
   # install mode needs the following variable:
-  notinst_deplibs=' /pybot/Binance-Bot/ta-lib/src/libta_lib.la'
+  notinst_deplibs=' /UltimeTradingBot/Binance-Fast-Trade-Bot/ta-lib/src/libta_lib.la'
 else
   # When we are sourced in execute mode, $file and $echo are already set.
   if test "$libtool_execute_magic" != "%%%MAGIC variable%%%"; then
@@ -47,7 +47,7 @@ else
   test "x$thisdir" = "x$file" && thisdir=.
 
   # Follow symbolic links until we get to the real thisdir.
-  file=`ls -ld "$file" | /usr/bin/sed -n 's/.*-> //p'`
+  file=`ls -ld "$file" | /bin/sed -n 's/.*-> //p'`
   while test -n "$file"; do
     destdir=`$echo "X$file" | $Xsed -e 's%/[^/]*$%%'`
 
@@ -60,7 +60,7 @@ else
     fi
 
     file=`$echo "X$file" | $Xsed -e 's%^.*/%%'`
-    file=`ls -ld "$thisdir/$file" | /usr/bin/sed -n 's/.*-> //p'`
+    file=`ls -ld "$thisdir/$file" | /bin/sed -n 's/.*-> //p'`
   done
 
   # Try to get the absolute directory name.
@@ -71,7 +71,7 @@ else
   progdir="$thisdir/.libs"
 
   if test ! -f "$progdir/$program" || \
-     { file=`ls -1dt "$progdir/$program" "$progdir/../$program" 2>/dev/null | /usr/bin/sed 1q`; \
+     { file=`ls -1dt "$progdir/$program" "$progdir/../$program" 2>/dev/null | /bin/sed 1q`; \
        test "X$file" != "X$progdir/$program"; }; then
 
     file="$$-$program"
