@@ -1169,14 +1169,23 @@ def sell_coins(tpsl_override = False, specific_coin_to_sell = ""):
                 #print(f"MAX_HOLDING_TIME: {MAX_HOLDING_TIME} / TIME HELD: {time_held*60}")
                 if int(MAX_HOLDING_TIME) != 0: 
                                         if time_held*60 >= int(MAX_HOLDING_TIME): 
-                                            print(f'{txcolors.SELL_LOSS}BOT: XXX Timeout sell : {coin.replace(PAIR_WITH,"")} full pair is:{coin}')
-                                            if LastPrice <= (float(coins_bought[coin]['bought_at'])-(float(coins_bought[coin]['bought_at'])*(float(STOP_LOSS)))*0.75):
+                                            if LastPrice <= (float(coins_bought[coin]['bought_at'])-(float(coins_bought[coin]['bought_at'])*(float(STOP_LOSS)))*0.5):
                                                 sellCoin = True
+                                                print(f'{txcolors.WARNING}BOT: XXX Timeout  : {coin.replace(PAIR_WITH,"")} full pair is:{coin}')
+                                                sell_reason = 'Holding Time out'
+
+                                        if time_held*60 >= int(MAX_HOLDING_TIME)*2: 
+                                                sellCoin = True
+                                                print(f'{txcolors.WARNING}BOT: XXX Timeout  : {coin.replace(PAIR_WITH,"")} full pair is:{coin}')
+                                                sell_reason = 'Holding Time 2 times out'
+
             except Exception as e:
                     #if repr(e).upper() == "APIERROR(CODE=-1111): PRECISION IS OVER THE MAXIMUM DEFINED FOR THIS ASSET.":
                     write_log(f"{txcolors.WARNING}BOT: {txcolors.DEFAULT}sell_coins(): Exception occured on MAX HOLDING TIME condition {MAX_HOLDING_TIME} ,time held: {time_held}\nException: {e}{txcolors.DEFAULT}")
                     write_log("Error on line {}".format(sys.exc_info()[-1].tb_lineno))
                     pass
+
+
             if sellCoin:
                 print(f"{txcolors.WARNING}BOT: {txcolors.SELL_PROFIT if PriceChangeIncFees_Perc >= 0. else txcolors.SELL_LOSS}Sell: {coins_bought[coin]['volume']} of {coin} | {sell_reason} | ${float(LastPrice):g} - ${float(BuyPrice):g} | Profit: {PriceChangeIncFees_Perc:.2f}% Est: {((float(coins_bought[coin]['volume'])*float(coins_bought[coin]['bought_at']))*PriceChangeIncFees_Perc)/100:.{decimals()}f} {PAIR_WITH} (Inc Fees) {PAIR_WITH} earned: {(float(coins_bought[coin]['volume'])*float(coins_bought[coin]['bought_at']))}{txcolors.DEFAULT}")
                 #msg1 = str(datetime.now()) + '| SELL: ' + coin + '. R:' +  sell_reason + ' P%:' + str(round(PriceChangeIncFees_Perc,2)) + ' P$:' + str(round(((float(coins_bought[coin]['volume'])*float(coins_bought[coin]['bought_at']))*PriceChangeIncFees_Perc)/100,4)) + ' ' + PAIR_WITH + ' earned:' + str(float(coins_bought[coin]['volume'])*float(coins_bought[coin]['bought_at']))

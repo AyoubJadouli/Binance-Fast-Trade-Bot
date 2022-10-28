@@ -1,1 +1,102 @@
-{}
+{
+    "APEUSDT": {
+        "symbol": "APEUSDT",
+        "orderid": 0,
+        "timestamp": 1666954014.056856,
+        "bought_at": "4.61800000",
+        "volume": 10.82,
+        "stop_loss": -10.75,
+        "take_profit": 0.33,
+        "step_size": 0.01
+    },
+    "XRPUSDT": {
+        "symbol": "XRPUSDT",
+        "orderid": 0,
+        "timestamp": 1666954014.057546,
+        "bought_at": "0.45940000",
+        "volume": 108,
+        "stop_loss": -10.75,
+        "take_profit": 0.33,
+        "step_size": 1.0
+    },
+    "GALAUSDT": {
+        "symbol": "GALAUSDT",
+        "orderid": 0,
+        "timestamp": 1666954014.05875,
+        "bought_at": "0.03419000",
+        "volume": 1462,
+        "stop_loss": -10.75,
+        "take_profit": 0.33,
+        "step_size": 1.0
+    },
+    "GMTUSDT": {
+        "symbol": "GMTUSDT",
+        "orderid": 0,
+        "timestamp": 1666954014.062366,
+        "bought_at": "0.47970000",
+        "volume": 104.2,
+        "stop_loss": -10.75,
+        "take_profit": 0.33,
+        "step_size": 0.1
+    },
+    "LTCUSDT": {
+        "symbol": "LTCUSDT",
+        "orderid": 0,
+        "timestamp": 1666954048.901101,
+        "bought_at": "53.97000000",
+        "volume": 0.926,
+        "stop_loss": -10.75,
+        "take_profit": 0.33,
+        "step_size": 0.001
+    },
+    "ETCUSDT": {
+        "symbol": "ETCUSDT",
+        "orderid": 0,
+        "timestamp": 1666954048.903237,
+        "bought_at": "24.53000000",
+        "volume": 2.03,
+        "stop_loss": -10.75,
+        "take_profit": 0.33,
+        "step_size": 0.01
+    },
+    "ADAUSDT": {
+        "symbol": "ADAUSDT",
+        "orderid": 0,
+        "timestamp": 1666954048.905993,
+        "bought_at": "0.38290000",
+        "volume": 130.5,
+        "stop_loss": -10.75,
+        "take_profit": 0.33,
+        "step_size": 0.1
+    },
+    "TRXUSDT": {
+        "symbol": "TRXUSDT",
+        "orderid": 0,
+        "timestamp": 1666954219.604208,
+        "bought_at": "0.06303000",
+        "volume": 793.2,
+        "stop_loss": -10.75,
+        "take_profit": 0.33,
+        "step_size": 0.1
+    },
+    "NEARUSDT": {
+        "symbol": "NEARUSDT",
+        "orderid": 0,
+        "timestamp": 1666954600.143828,
+        "bought_at": "2.92700000",
+        "volume": 17.0,
+        "stop_loss": -10.75,
+        "take_profit": 0.33,
+        "step_size": 0.1
+    },
+    "SHIBUSDT": {
+        "symbol": "SHIBUSDT",
+        "orderid": 0,
+        "timestamp": 1666954772.296773,
+        "bought_at": "0.00001072",
+        "volume": 4664179,
+        "stop_loss": -10.75,
+        "take_profit": 0.33,
+        "step_size": 1.0
+    }
+}

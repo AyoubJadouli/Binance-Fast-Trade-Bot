@@ -1,10 +1,10 @@
 {
     "total_capital": "500",
-    "botstart_datetime": "2022-10-27 15:17:15.969097",
-    "historicProfitIncFees_Percent": 0,
-    "historicProfitIncFees_Total": "0.00000000000000",
-    "tradeWins": 0,
+    "botstart_datetime": "2022-10-28 10:45:37.934231",
+    "historicProfitIncFees_Percent": 0.11020229201099946,
+    "historicProfitIncFees_Total": "0.55101146005500",
+    "tradeWins": 3,
     "tradeLosses": 0,
-    "session_USDT_EARNED": "0.00000000000000",
-    "used_bnb_in_session": 0
+    "session_USDT_EARNED": "0.24706560939700",
+    "used_bnb_in_session": 0.151416965274
 }

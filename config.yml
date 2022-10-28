@@ -21,18 +21,18 @@
 #  PRESSISION: 0
 
 ai_options: # 18/6 WIN %: 75%
-   Normalization_File: 'AI/tp50_w15_max5min_Norm_v1.json'
+   Normalization_File: 'AI/tp60_w7_max30min_Norm_v1.json'
 #   # Model_FileName: 'AI/tp35_w20_max2min_Model_v1.hdf5' 
    # Model_FileName: 'AI/tp35_w20_max2min_Model_vZ.hdf5' 
-   Model_FileName: 'AI/tp50_w15_max5min_Model_v1.hdf5' 
+   Model_FileName: 'AI/tp60_w7_max30min_Model_v1.hdf5' 
    RF_Model_FileName: '/UltimeTradingBot/Data/tp33_w7_max2min_Model_v1.jolib'
-   WINDOW_SIZE: 5
+   WINDOW_SIZE: 7
    PRESSISION: 0.0
 
 trading_options:
-  TAKE_PROFIT: 0.5  # define in % when to take profit on a profitable coin. default 0.25
+  TAKE_PROFIT: 0.33  # define in % when to take profit on a profitable coin. default 0.25
   STOP_LOSS:  10.75  # define in % when to sell a coin that's not making a profit.
-  MAX_HOLDING_TIME: 30   # in minutes if we can't sell in this time it will sell it at more than 1/2 of SL
+  MAX_HOLDING_TIME: 20   # in minutes if we can't sell in this time it will sell it at more than 1/2 of SL
 
 
   #USE_TRAILING_STOP_LOSS: True
@@ -58,9 +58,9 @@ trading_options:
   CHANGE_IN_PRICE: 10   # the difference in % between the first and second checks for the price. default 0.25
   SIGNALLING_MODULES:
 #     - abj_ai_buy_signal_v1
-#    - abj_ai_buy_signal_w6
+    - abj_ai_buy_signal_w7_F30
 #     - abj_ai_buy_signal_vRF
-    - abj_ai_buy_signal_vBinance
+#    - abj_ai_buy_signal_vBinance
 #    - abj_superbuy_signal
 #    - abj_superbuy_signal_v2    
 #    - RSI_Algo_v3
@@ -174,7 +174,7 @@ trading_options:
   #Sweethackercasper's idea, thanks mate.
   UPDATE_MOST_VOLUME_COINS: 1440
   #It should not be touched here, used as record.
-  VOLATILE_VOLUME: volatile_volume_27-10-2022(06_38_17)
+  VOLATILE_VOLUME: volatile_volume_28-10-2022(00_00_36)
   #idea from my psychologist, thanks Sebastian V.
   #Two different currencies can be used as a range (within the market table in Binance ordered from highest to lowest)
   COINS_MAX_VOLUME: ETH #ETH  #5000000000

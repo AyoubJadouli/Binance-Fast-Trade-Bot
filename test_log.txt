@@ -1,4 +1,0 @@
-22-10-27 15:19:55 BOT: wait_for_price(): Exception in function: APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-22-10-27 15:19:55 Error on line 267
-22-10-27 15:19:56 BOT: sell_coins(): Exception in function: APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-22-10-27 15:19:56 Error on line 1064

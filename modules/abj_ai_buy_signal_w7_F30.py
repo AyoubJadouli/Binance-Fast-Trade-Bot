@@ -1,6 +1,6 @@
 # ABJ AI MOD
 print("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||")
-print("||||||||||||||||||||||     AI Crypto Bot by ABJ vBinance  |||||||||||||||||||||||")
+print("||||||||||||||||||||||||||     ABJ AI W7 Forcast 30     |||||||||||||||||||||||||")
 print("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||")
 
 from helpers.parameters import parse_args, load_config
@@ -16,10 +16,10 @@ EX_PAIRS = parsed_config['trading_options']['EX_PAIRS']
 
 
 # Acc:97% w21 tp:0028 T4 ->  Running for: 4:46:34 - 60/48 WIN %: 55.56% - 7.40 USDT | PROFIT %: 0.74%
-Normalization_File= parsed_config['ai_options']['Normalization_File']
-Model_FileName= parsed_config['ai_options']['Model_FileName']
+Normalization_File= "AI/tp60_w7_max30min_Norm_v1.json"
+Model_FileName= 'AI/tp60_w7_max30min_Model_v1.hdf5'
 #Model_FileName='/UltimeTradingBot/Data/tp28_w21_max4min_Model_v1.hdf5.sftp.hdf5'
-WINDOW_SIZE= int( parsed_config['ai_options']['WINDOW_SIZE'])
+WINDOW_SIZE= 7
 PRESSISION=float( parsed_config['ai_options']['PRESSISION'])
 
 #Best accuracy 99.03% w10 tp:004
@@ -744,7 +744,7 @@ async def get_pdata_data(symbol,RLIST={},window=10,pair_with='USDT'):
         BTC_price=BTC_DF1m["close"].iloc[-1].astype(np.float64)
 
         pair_data=pd.DataFrame()
-
+        pair_data.loc[0,"num_index"]=422527
         #############################################################  Pair_data population  ######################################################################################
         pair_data.loc[0,"price"]=DF1m.iloc[-1]["close"]
         #minute
@@ -844,13 +844,12 @@ async def get_pdata_data(symbol,RLIST={},window=10,pair_with='USDT'):
             if key.find("BTC")==-1 and (key.find("open")!=-1 or
             key.find("high")!=-1 or key.find("low")!=-1 or key.find("close")!=-1):
                 pair_data[key]=(pair_data["price"]-pair_data[key])/pair_data["price"]
+        
 
         RLIST[symbol]=pair_data
         print("finshing work of: "+symbol)
-    except Exception as e:
+    except:
         print("Error while working on: "+symbol)
-        #sys.stderr.write(e)
-        print(e)
 
 
 
@@ -1051,11 +1050,11 @@ async def analyze(pairs):
 
     return signal_coins
 
-
 DIVIDE_ANALYSE=True
-ANALYZE_RELAX_TIME=40
+ANALYZE_RELAX_TIME=30   
 async def do_work1():
     print(f'{SIGNAL_NAME} - Starting')
+
     while True:
         time.sleep(ANALYZE_RELAX_TIME)
         try:
@@ -1081,8 +1080,7 @@ async def do_work1():
                 signal_coins.update(await analyze(pairs[int(len(pairs)/2):])) 
 
             else:
-                signal_coins =await analyze(pairs)
-
+                signal_coins =await analyze(pairs)            
             print(f'{SIGNAL_NAME}: {len(signal_coins)} coins with Buy Signals. Waiting {TIME_TO_WAIT} minutes for next analysis.')
 
             #time.sleep((TIME_TO_WAIT*60))

@@ -1,2036 +1,1755 @@
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-||||||||||||||||||||||     AI Crypto Bot by ABJ vBinance  |||||||||||||||||||||||
+||||||||||||||||||||||||||     ABJ AI W7 Forcast 30     |||||||||||||||||||||||||
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-AI/tp50_w15_max5min_Model_v1.hdf5 Loaded
+AI/tp60_w7_max30min_Model_v1.hdf5 Loaded
 abj_ai_buy_signal_vBinance - Starting
 abj_ai_buy_signal_vBinance.py
-abj_ai_buy_signal_vBinance: Analyzing 40 coins
+abj_ai_buy_signal_vBinance: Analyzing 20 coins
 ->Double anlayse mode
 ->Analysing the fist part
 ########################################### Start Analyser ###################################################
-working on: TRXUSDT
-working on: DOGEUSDT
-working on: AVAXUSDT
-working on: DNTUSDT
-working on: ENSUSDT
-working on: NEARUSDT
 working on: ADAUSDT
-working on: SHIBUSDT
-working on: APEUSDT
-working on: JASMYUSDT
-working on: AXSUSDT
-working on: DOTUSDT
-working on: LTCUSDT
-working on: ETHUSDT
-working on: ROSEUSDT
-working on: EOSUSDT
-working on: XRPUSDT
+working on: DOGEUSDT
 working on: ETCUSDT
-working on: ALGOUSDT
-working on: SOLUSDT
-finshing work of: TRXUSDT
-finshing work of: DOGEUSDT
-finshing work of: EOSUSDT
-finshing work of: AVAXUSDT
-Error while working on: DNTUSDT
-single positional indexer is out-of-bounds
+working on: DNTUSDT
+working on: ETHUSDT
+working on: LUNAUSDT
+working on: ENSUSDT
+working on: LTCUSDT
+working on: JASMYUSDT
+working on: NEARUSDT
+finshing work of: ADAUSDT
+finshing work of: ETHUSDT
+finshing work of: LUNAUSDT
+finshing work of: ETCUSDT
 finshing work of: ENSUSDT
 finshing work of: NEARUSDT
-finshing work of: ADAUSDT
-finshing work of: SHIBUSDT
-finshing work of: JASMYUSDT
-finshing work of: AXSUSDT
-finshing work of: ETHUSDT
+Error while working on: DNTUSDT
+finshing work of: DOGEUSDT
 finshing work of: LTCUSDT
-finshing work of: ALGOUSDT
-finshing work of: APEUSDT
-finshing work of: DOTUSDT
-finshing work of: ROSEUSDT
-finshing work of: XRPUSDT
-finshing work of: ETCUSDT
-finshing work of: SOLUSDT
+finshing work of: JASMYUSDT
 Loading normalization from file
-Nomalization shape: 606
-error new part at analyse()
-exception : operands could not be broadcast together with shapes (19,206) (606,) (19,206) 
+Nomalization shape: 287
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 179ms/step
+        Pair  Buy      Note
+0    ADAUSDT  0.0  0.010942
+1    ETHUSDT  1.0  0.996001
+2   LUNAUSDT  0.0  0.107178
+3    ETCUSDT  0.0  0.425968
+4    ENSUSDT  0.0  0.010243
+5   NEARUSDT  0.0  0.037753
+6   DOGEUSDT  0.0  0.193448
+7    LTCUSDT  0.0  0.021864
+8  JASMYUSDT  0.0  0.435542
+      Pair      Note
+1  ETHUSDT  0.996001
+-------> working on : ETHUSDT <------------
+-------> pair_usdt : ETH/USDT <------------
+XXXXXX=================  buy dession for :ETHUSDT ==================XXXXXXX
 ->Analysing the sconde part
 ########################################### Start Analyser ###################################################
-working on: SHIBUSDT
-working on: ETCUSDT
-working on: AXSUSDT
-working on: TRXUSDT
-working on: XRPUSDT
-working on: LTCUSDT
-working on: LUNAUSDT
-working on: GALAUSDT
-working on: ROSEUSDT
-working on: ADAUSDT
-working on: ALGOUSDT
-working on: AVAXUSDT
-working on: DOGEUSDT
 working on: SOLUSDT
-working on: NEARUSDT
-working on: ETHUSDT
-working on: APEUSDT
-working on: GMTUSDT
-working on: ENSUSDT
+working on: XRPUSDT
+working on: AVAXUSDT
 working on: DOTUSDT
-finshing work of: SHIBUSDT
-finshing work of: ALGOUSDT
-finshing work of: LUNAUSDT
+working on: GALAUSDT
+working on: AXSUSDT
+working on: APEUSDT
+working on: SHIBUSDT
+working on: TRXUSDT
+working on: GMTUSDT
+finshing work of: SOLUSDT
+finshing work of: XRPUSDT
 finshing work of: AVAXUSDT
+finshing work of: DOTUSDT
 finshing work of: GALAUSDT
-finshing work of: ROSEUSDT
-finshing work of: ETCUSDT
-finshing work of: XRPUSDT
-finshing work of: LTCUSDT
-finshing work of: ADAUSDT
 finshing work of: AXSUSDT
-finshing work of: TRXUSDT
-finshing work of: ETHUSDT
-finshing work of: NEARUSDT
-finshing work of: SOLUSDT
-finshing work of: DOGEUSDT
-finshing work of: GMTUSDT
-finshing work of: ENSUSDT
-finshing work of: DOTUSDT
 finshing work of: APEUSDT
-error new part at analyse()
-exception : operands could not be broadcast together with shapes (20,206) (606,) (20,206) 
-abj_ai_buy_signal_vBinance: 0 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
-abj_ai_buy_signal_vBinance.py
-abj_ai_buy_signal_vBinance: Analyzing 40 coins
-->Double anlayse mode
-->Analysing the fist part
-########################################### Start Analyser ###################################################
-working on: DNTUSDT
-working on: SOLUSDT
-working on: DOGEUSDT
-working on: ALGOUSDT
-working on: ADAUSDT
-working on: SHIBUSDT
-working on: AVAXUSDT
-working on: JASMYUSDT
-working on: ETHUSDT
-working on: ROSEUSDT
-working on: TRXUSDT
-working on: ENSUSDT
-working on: LTCUSDT
-working on: XRPUSDT
-working on: EOSUSDT
-working on: AXSUSDT
-working on: ETCUSDT
-working on: APEUSDT
-working on: DOTUSDT
-working on: NEARUSDT
-finshing work of: SOLUSDT
-finshing work of: ALGOUSDT
-finshing work of: ETHUSDT
-finshing work of: LTCUSDT
-finshing work of: ENSUSDT
-finshing work of: DOGEUSDT
 finshing work of: SHIBUSDT
-finshing work of: ADAUSDT
-finshing work of: ROSEUSDT
-finshing work of: AVAXUSDT
-finshing work of: JASMYUSDT
-finshing work of: TRXUSDT
-finshing work of: XRPUSDT
-finshing work of: AXSUSDT
-finshing work of: ETCUSDT
-finshing work of: APEUSDT
-finshing work of: NEARUSDT
-finshing work of: DOTUSDT
-Error while working on: DNTUSDT
-single positional indexer is out-of-bounds
-finshing work of: EOSUSDT
-error new part at analyse()
-exception : operands could not be broadcast together with shapes (19,206) (606,) (19,206) 
-->Analysing the sconde part
-########################################### Start Analyser ###################################################
-working on: SHIBUSDT
-working on: ROSEUSDT
-working on: AVAXUSDT
-working on: GMTUSDT
-working on: TRXUSDT
-working on: DOTUSDT
-working on: ETCUSDT
-working on: GALAUSDT
-working on: APEUSDT
-working on: ADAUSDT
-working on: DOGEUSDT
-working on: SOLUSDT
-working on: LTCUSDT
-working on: AXSUSDT
-working on: XRPUSDT
-working on: LUNAUSDT
-working on: NEARUSDT
-working on: ENSUSDT
-working on: ETHUSDT
-working on: ALGOUSDT
-finshing work of: SHIBUSDT
-finshing work of: ETCUSDT
-finshing work of: SOLUSDT
-finshing work of: LTCUSDT
-finshing work of: LUNAUSDT
-finshing work of: ENSUSDT
-finshing work of: ALGOUSDT
-finshing work of: ROSEUSDT
-finshing work of: AVAXUSDT
 finshing work of: TRXUSDT
 finshing work of: GMTUSDT
-finshing work of: DOTUSDT
-finshing work of: APEUSDT
-finshing work of: ADAUSDT
-finshing work of: GALAUSDT
-finshing work of: DOGEUSDT
-finshing work of: XRPUSDT
-finshing work of: AXSUSDT
-finshing work of: NEARUSDT
-finshing work of: ETHUSDT
-error new part at analyse()
-exception : operands could not be broadcast together with shapes (20,206) (606,) (20,206) 
-abj_ai_buy_signal_vBinance: 0 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 26ms/step
+       Pair  Buy      Note
+0   SOLUSDT  0.0  0.075611
+1   XRPUSDT  1.0  0.602688
+2  AVAXUSDT  0.0  0.085182
+3   DOTUSDT  0.0  0.039573
+4  GALAUSDT  1.0  0.602313
+5   AXSUSDT  0.0  0.010416
+6   APEUSDT  1.0  0.673522
+7  SHIBUSDT  0.0  0.005925
+8   TRXUSDT  0.0  0.008945
+9   GMTUSDT  1.0  0.593849
+       Pair      Note
+6   APEUSDT  0.673522
+1   XRPUSDT  0.602688
+4  GALAUSDT  0.602313
+9   GMTUSDT  0.593849
+-------> working on : APEUSDT <------------
+-------> pair_usdt : APE/USDT <------------
+XXXXXX=================  buy dession for :APEUSDT ==================XXXXXXX
+-------> working on : XRPUSDT <------------
+-------> pair_usdt : XRP/USDT <------------
+XXXXXX=================  buy dession for :XRPUSDT ==================XXXXXXX
+-------> working on : GALAUSDT <------------
+-------> pair_usdt : GALA/USDT <------------
+XXXXXX=================  buy dession for :GALAUSDT ==================XXXXXXX
+-------> working on : GMTUSDT <------------
+-------> pair_usdt : GMT/USDT <------------
+XXXXXX=================  buy dession for :GMTUSDT ==================XXXXXXX
+abj_ai_buy_signal_vBinance: 5 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
 abj_ai_buy_signal_vBinance.py
-abj_ai_buy_signal_vBinance: Analyzing 40 coins
+abj_ai_buy_signal_vBinance: Analyzing 20 coins
 ->Double anlayse mode
 ->Analysing the fist part
 ########################################### Start Analyser ###################################################
-working on: XRPUSDT
+working on: ETHUSDT
 working on: ADAUSDT
+working on: LTCUSDT
+working on: ETCUSDT
+working on: DOGEUSDT
+working on: ENSUSDT
 working on: DNTUSDT
-working on: TRXUSDT
 working on: JASMYUSDT
-working on: DOGEUSDT
-working on: SHIBUSDT
-working on: ETHUSDT
-working on: AVAXUSDT
-working on: EOSUSDT
-working on: ETCUSDT
-working on: ENSUSDT
-working on: APEUSDT
-working on: DOTUSDT
-working on: LTCUSDT
-working on: NEARUSDT
-working on: ALGOUSDT
-working on: SOLUSDT
-working on: AXSUSDT
-working on: ROSEUSDT
-finshing work of: APEUSDT
-finshing work of: XRPUSDT
-finshing work of: SHIBUSDT
-finshing work of: ETHUSDT
-Error while working on: DNTUSDT
-single positional indexer is out-of-bounds
-finshing work of: TRXUSDT
-finshing work of: AVAXUSDT
-finshing work of: ENSUSDT
-finshing work of: JASMYUSDT
-finshing work of: ADAUSDT
-finshing work of: ETCUSDT
-finshing work of: DOTUSDT
-finshing work of: LTCUSDT
-finshing work of: NEARUSDT
-finshing work of: SOLUSDT
-finshing work of: AXSUSDT
-finshing work of: DOGEUSDT
-finshing work of: EOSUSDT
-finshing work of: ALGOUSDT
-finshing work of: ROSEUSDT
-error new part at analyse()
-exception : operands could not be broadcast together with shapes (19,206) (606,) (19,206) 
-->Analysing the sconde part
-########################################### Start Analyser ###################################################
-working on: SHIBUSDT
-working on: ROSEUSDT
-working on: ALGOUSDT
-working on: GMTUSDT
-working on: ETCUSDT
-working on: GALAUSDT
-working on: APEUSDT
-working on: DOGEUSDT
-working on: ETHUSDT
-working on: ENSUSDT
-working on: NEARUSDT
-working on: TRXUSDT
-working on: SOLUSDT
-working on: AVAXUSDT
-working on: DOTUSDT
-working on: AXSUSDT
-working on: ADAUSDT
-working on: XRPUSDT
 working on: LUNAUSDT
-working on: LTCUSDT
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error while working on: LTCUSDT
-single positional indexer is out-of-bounds
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error while working on: NEARUSDT
-single positional indexer is out-of-bounds
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error while working on: ROSEUSDT
-single positional indexer is out-of-bounds
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error while working on: ENSUSDT
-single positional indexer is out-of-bounds
-Error while working on: GMTUSDT
-single positional indexer is out-of-bounds
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error while working on: GALAUSDT
-single positional indexer is out-of-bounds
-Error while working on: ETCUSDT
-single positional indexer is out-of-bounds
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error while working on: APEUSDT
-single positional indexer is out-of-bounds
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error while working on: TRXUSDT
-single positional indexer is out-of-bounds
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error while working on: SOLUSDT
-single positional indexer is out-of-bounds
-Error while working on: AVAXUSDT
-single positional indexer is out-of-bounds
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error while working on: DOTUSDT
-single positional indexer is out-of-bounds
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error while working on: AXSUSDT
-single positional indexer is out-of-bounds
-Error while working on: ADAUSDT
-single positional indexer is out-of-bounds
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error while working on: XRPUSDT
-single positional indexer is out-of-bounds
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error while working on: ETHUSDT
-single positional indexer is out-of-bounds
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error while working on: ALGOUSDT
-single positional indexer is out-of-bounds
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error while working on: LUNAUSDT
-single positional indexer is out-of-bounds
-Error while working on: DOGEUSDT
-single positional indexer is out-of-bounds
-Error do_ohlcv
-######################################################################################################################
-APIError(code=-1003): Too much request weight used; current limit is 1200 request weight per 1 MINUTE. Please use the websocket for live updates to avoid polling the API.
-######################################################################################################################
-Error while working on: SHIBUSDT
-single positional indexer is out-of-bounds
-error new part at analyse()
-exception : operands could not be broadcast together with shapes (0,0) (606,) (0,0) 
-abj_ai_buy_signal_vBinance: 0 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
-abj_ai_buy_signal_vBinance.py
-abj_ai_buy_signal_vBinance: Analyzing 40 coins
-->Double anlayse mode
-->Analysing the fist part
-########################################### Start Analyser ###################################################
-working on: APEUSDT
-working on: DOGEUSDT
-working on: SHIBUSDT
-working on: ETHUSDT
-working on: ROSEUSDT
-working on: TRXUSDT
-working on: ENSUSDT
-working on: XRPUSDT
-working on: ADAUSDT
-working on: EOSUSDT
-working on: AVAXUSDT
-working on: DOTUSDT
-working on: LTCUSDT
 working on: NEARUSDT
-working on: SOLUSDT
-working on: ALGOUSDT
-working on: ETCUSDT
-working on: JASMYUSDT
-working on: DNTUSDT
-working on: AXSUSDT
-finshing work of: SOLUSDT
-finshing work of: AXSUSDT
-finshing work of: DOGEUSDT
-finshing work of: ROSEUSDT
-finshing work of: EOSUSDT
-finshing work of: LTCUSDT
-finshing work of: ENSUSDT
-finshing work of: TRXUSDT
-finshing work of: AVAXUSDT
-finshing work of: ADAUSDT
-finshing work of: DOTUSDT
-finshing work of: ETHUSDT
-finshing work of: NEARUSDT
-finshing work of: APEUSDT
-finshing work of: ALGOUSDT
-finshing work of: JASMYUSDT
-Error while working on: DNTUSDT
-single positional indexer is out-of-bounds
-finshing work of: SHIBUSDT
-finshing work of: XRPUSDT
 finshing work of: ETCUSDT
-error new part at analyse()
-exception : operands could not be broadcast together with shapes (19,206) (606,) (19,206) 
-->Analysing the sconde part
-########################################### Start Analyser ###################################################
-working on: SHIBUSDT
-working on: ROSEUSDT
-working on: GMTUSDT
-working on: TRXUSDT
-working on: GALAUSDT
-working on: APEUSDT
-working on: DOTUSDT
-working on: XRPUSDT
-working on: ETCUSDT
-working on: ETHUSDT
-working on: DOGEUSDT
-working on: ADAUSDT
-working on: NEARUSDT
-working on: AVAXUSDT
-working on: LTCUSDT
-working on: AXSUSDT
-working on: ENSUSDT
-working on: LUNAUSDT
-working on: ALGOUSDT
-working on: SOLUSDT
-finshing work of: ETCUSDT
-finshing work of: APEUSDT
-finshing work of: ROSEUSDT
-finshing work of: NEARUSDT
-finshing work of: GALAUSDT
-finshing work of: SHIBUSDT
-finshing work of: ADAUSDT
-finshing work of: DOTUSDT
-finshing work of: ETHUSDT
-finshing work of: DOGEUSDT
-finshing work of: SOLUSDT
-finshing work of: ENSUSDT
-finshing work of: AXSUSDT
 finshing work of: LTCUSDT
-finshing work of: AVAXUSDT
+finshing work of: ETHUSDT
+finshing work of: ENSUSDT
 finshing work of: LUNAUSDT
-finshing work of: ALGOUSDT
-finshing work of: XRPUSDT
-finshing work of: TRXUSDT
-finshing work of: GMTUSDT
-error new part at analyse()
-exception : operands could not be broadcast together with shapes (20,206) (606,) (20,206) 
-abj_ai_buy_signal_vBinance: 0 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
-abj_ai_buy_signal_vBinance.py
-abj_ai_buy_signal_vBinance: Analyzing 40 coins
-->Double anlayse mode
-->Analysing the fist part
-########################################### Start Analyser ###################################################
-working on: EOSUSDT
-working on: DOGEUSDT
-working on: SHIBUSDT
-working on: ADAUSDT
-working on: ETHUSDT
-working on: ROSEUSDT
-working on: SOLUSDT
-working on: JASMYUSDT
-working on: XRPUSDT
-working on: ETCUSDT
-working on: AVAXUSDT
-working on: APEUSDT
-working on: TRXUSDT
-working on: DOTUSDT
-working on: LTCUSDT
-working on: NEARUSDT
-working on: ALGOUSDT
-working on: ENSUSDT
-working on: DNTUSDT
-working on: AXSUSDT
-finshing work of: EOSUSDT
 finshing work of: ADAUSDT
 finshing work of: DOGEUSDT
-finshing work of: SHIBUSDT
-finshing work of: ETHUSDT
-finshing work of: ROSEUSDT
-finshing work of: AVAXUSDT
-finshing work of: TRXUSDT
-finshing work of: NEARUSDT
-finshing work of: ALGOUSDT
-finshing work of: ENSUSDT
-finshing work of: XRPUSDT
-finshing work of: SOLUSDT
-finshing work of: ETCUSDT
-finshing work of: JASMYUSDT
-finshing work of: LTCUSDT
-finshing work of: APEUSDT
-finshing work of: DOTUSDT
 Error while working on: DNTUSDT
-single positional indexer is out-of-bounds
-finshing work of: AXSUSDT
-error new part at analyse()
-exception : operands could not be broadcast together with shapes (19,206) (606,) (19,206) 
+finshing work of: JASMYUSDT
+finshing work of: NEARUSDT
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 26ms/step
+        Pair  Buy      Note
+0    ETCUSDT  1.0  0.812394
+1    LTCUSDT  1.0  0.987477
+2    ETHUSDT  1.0  0.994322
+3    ENSUSDT  0.0  0.018033
+4   LUNAUSDT  0.0  0.079643
+5    ADAUSDT  1.0  0.713757
+6   DOGEUSDT  0.0  0.358348
+7  JASMYUSDT  0.0  0.021939
+8   NEARUSDT  0.0  0.013587
+      Pair      Note
+2  ETHUSDT  0.994322
+1  LTCUSDT  0.987477
+0  ETCUSDT  0.812394
+5  ADAUSDT  0.713757
+-------> working on : ETHUSDT <------------
+-------> pair_usdt : ETH/USDT <------------
+XXXXXX=================  buy dession for :ETHUSDT ==================XXXXXXX
+-------> working on : LTCUSDT <------------
+-------> pair_usdt : LTC/USDT <------------
+XXXXXX=================  buy dession for :LTCUSDT ==================XXXXXXX
+-------> working on : ETCUSDT <------------
+-------> pair_usdt : ETC/USDT <------------
+XXXXXX=================  buy dession for :ETCUSDT ==================XXXXXXX
+-------> working on : ADAUSDT <------------
+-------> pair_usdt : ADA/USDT <------------
+XXXXXX=================  buy dession for :ADAUSDT ==================XXXXXXX
 ->Analysing the sconde part
 ########################################### Start Analyser ###################################################
-working on: DOGEUSDT
-working on: SHIBUSDT
-working on: ROSEUSDT
 working on: GMTUSDT
-working on: ENSUSDT
-working on: APEUSDT
-working on: ETHUSDT
-working on: ETCUSDT
-working on: NEARUSDT
-working on: SOLUSDT
-working on: DOTUSDT
-working on: AVAXUSDT
-working on: LTCUSDT
-working on: ADAUSDT
-working on: AXSUSDT
-working on: LUNAUSDT
-working on: ALGOUSDT
-working on: GALAUSDT
-working on: XRPUSDT
 working on: TRXUSDT
-finshing work of: DOGEUSDT
-finshing work of: ADAUSDT
-finshing work of: SHIBUSDT
-finshing work of: NEARUSDT
-finshing work of: ENSUSDT
-finshing work of: APEUSDT
-finshing work of: ETHUSDT
-finshing work of: ROSEUSDT
+working on: GALAUSDT
+working on: SOLUSDT
+working on: APEUSDT
+working on: DOTUSDT
+working on: SHIBUSDT
+working on: AXSUSDT
+working on: AVAXUSDT
+working on: XRPUSDT
 finshing work of: GMTUSDT
-finshing work of: AXSUSDT
-finshing work of: DOTUSDT
-finshing work of: ALGOUSDT
-finshing work of: AVAXUSDT
-finshing work of: SOLUSDT
-finshing work of: LTCUSDT
-finshing work of: LUNAUSDT
-finshing work of: GALAUSDT
-finshing work of: XRPUSDT
 finshing work of: TRXUSDT
-finshing work of: ETCUSDT
-error new part at analyse()
-exception : operands could not be broadcast together with shapes (20,206) (606,) (20,206) 
-abj_ai_buy_signal_vBinance: 0 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
+finshing work of: GALAUSDT
+finshing work of: SOLUSDT
+finshing work of: APEUSDT
+finshing work of: DOTUSDT
+finshing work of: SHIBUSDT
+finshing work of: AXSUSDT
+finshing work of: XRPUSDT
+finshing work of: AVAXUSDT
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 24ms/step
+       Pair  Buy      Note
+0   GMTUSDT  0.0  0.010222
+1   TRXUSDT  0.0  0.003212
+2  GALAUSDT  0.0  0.010852
+3   SOLUSDT  0.0  0.013871
+4   APEUSDT  0.0  0.103958
+5   DOTUSDT  0.0  0.010862
+6  SHIBUSDT  0.0  0.069744
+7   AXSUSDT  0.0  0.311114
+8   XRPUSDT  1.0  0.977444
+9  AVAXUSDT  0.0  0.029129
+      Pair      Note
+8  XRPUSDT  0.977444
+-------> working on : XRPUSDT <------------
+-------> pair_usdt : XRP/USDT <------------
+XXXXXX=================  buy dession for :XRPUSDT ==================XXXXXXX
+abj_ai_buy_signal_vBinance: 5 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
 abj_ai_buy_signal_vBinance.py
-abj_ai_buy_signal_vBinance: Analyzing 40 coins
+abj_ai_buy_signal_vBinance: Analyzing 20 coins
 ->Double anlayse mode
 ->Analysing the fist part
 ########################################### Start Analyser ###################################################
+working on: NEARUSDT
+working on: ENSUSDT
 working on: DNTUSDT
-working on: DOGEUSDT
-working on: TRXUSDT
-working on: SHIBUSDT
-working on: AXSUSDT
-working on: ETHUSDT
-working on: ROSEUSDT
 working on: LTCUSDT
-working on: ENSUSDT
-working on: XRPUSDT
-working on: EOSUSDT
-working on: ETCUSDT
-working on: APEUSDT
-working on: SOLUSDT
-working on: DOTUSDT
-working on: NEARUSDT
-working on: ADAUSDT
-working on: ALGOUSDT
-working on: AVAXUSDT
-working on: JASMYUSDT
-finshing work of: AXSUSDT
-Error while working on: DNTUSDT
-single positional indexer is out-of-bounds
-finshing work of: ETHUSDT
-finshing work of: ROSEUSDT
-finshing work of: LTCUSDT
-finshing work of: APEUSDT
-finshing work of: TRXUSDT
-finshing work of: ENSUSDT
-finshing work of: EOSUSDT
-finshing work of: DOGEUSDT
-finshing work of: SHIBUSDT
-finshing work of: XRPUSDT
-finshing work of: JASMYUSDT
-finshing work of: ETCUSDT
-finshing work of: SOLUSDT
-finshing work of: DOTUSDT
-finshing work of: NEARUSDT
-finshing work of: ADAUSDT
-finshing work of: ALGOUSDT
-finshing work of: AVAXUSDT
-error new part at analyse()
-exception : operands could not be broadcast together with shapes (19,206) (606,) (19,206) 
-->Analysing the sconde part
-########################################### Start Analyser ###################################################
-working on: DOGEUSDT
-working on: SHIBUSDT
-working on: ENSUSDT
-working on: ROSEUSDT
-working on: ETCUSDT
-working on: GMTUSDT
-working on: GALAUSDT
-working on: ALGOUSDT
-working on: APEUSDT
-working on: AVAXUSDT
-working on: ETHUSDT
-working on: NEARUSDT
-working on: SOLUSDT
-working on: ADAUSDT
-working on: LTCUSDT
-working on: XRPUSDT
-working on: AXSUSDT
 working on: LUNAUSDT
-working on: DOTUSDT
-working on: TRXUSDT
+working on: DOGEUSDT
+working on: ETHUSDT
+working on: JASMYUSDT
+working on: ADAUSDT
+working on: ETCUSDT
+Error while working on: DNTUSDT
+finshing work of: JASMYUSDT
 finshing work of: DOGEUSDT
-finshing work of: SHIBUSDT
-finshing work of: ENSUSDT
-finshing work of: ROSEUSDT
 finshing work of: ETCUSDT
-finshing work of: GMTUSDT
-finshing work of: ALGOUSDT
-finshing work of: APEUSDT
-finshing work of: ETHUSDT
-finshing work of: SOLUSDT
-finshing work of: GALAUSDT
-finshing work of: NEARUSDT
-finshing work of: XRPUSDT
-finshing work of: AXSUSDT
-finshing work of: DOTUSDT
-finshing work of: AVAXUSDT
-finshing work of: ADAUSDT
-finshing work of: LTCUSDT
-finshing work of: TRXUSDT
 finshing work of: LUNAUSDT
-error new part at analyse()
-exception : operands could not be broadcast together with shapes (20,206) (606,) (20,206) 
-abj_ai_buy_signal_vBinance: 0 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
-abj_ai_buy_signal_vBinance.py
-abj_ai_buy_signal_vBinance: Analyzing 40 coins
-->Double anlayse mode
-->Analysing the fist part
-########################################### Start Analyser ###################################################
-working on: DNTUSDT
-working on: DOGEUSDT
-working on: SHIBUSDT
-working on: ETHUSDT
-working on: LTCUSDT
-working on: ROSEUSDT
-working on: SOLUSDT
-working on: AXSUSDT
-working on: AVAXUSDT
-working on: JASMYUSDT
-working on: XRPUSDT
-working on: EOSUSDT
-working on: ENSUSDT
-working on: ADAUSDT
-working on: ETCUSDT
-working on: APEUSDT
-working on: TRXUSDT
-working on: DOTUSDT
-working on: NEARUSDT
-working on: ALGOUSDT
-finshing work of: SOLUSDT
-Error while working on: DNTUSDT
-single positional indexer is out-of-bounds
-finshing work of: ETHUSDT
-finshing work of: AXSUSDT
-finshing work of: DOGEUSDT
-finshing work of: SHIBUSDT
-finshing work of: ENSUSDT
-finshing work of: ADAUSDT
-finshing work of: APEUSDT
 finshing work of: LTCUSDT
-finshing work of: ETCUSDT
 finshing work of: NEARUSDT
-finshing work of: ALGOUSDT
-finshing work of: AVAXUSDT
-finshing work of: ROSEUSDT
-finshing work of: XRPUSDT
-finshing work of: EOSUSDT
-finshing work of: DOTUSDT
-finshing work of: TRXUSDT
-finshing work of: JASMYUSDT
-error new part at analyse()
-exception : operands could not be broadcast together with shapes (19,206) (606,) (19,206) 
+finshing work of: ENSUSDT
+finshing work of: ETHUSDT
+finshing work of: ADAUSDT
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 29ms/step
+        Pair  Buy      Note
+0  JASMYUSDT  0.0  0.016647
+1   DOGEUSDT  0.0  0.367360
+2    ETCUSDT  0.0  0.118174
+3   LUNAUSDT  0.0  0.030799
+4    LTCUSDT  1.0  0.995785
+5   NEARUSDT  0.0  0.156989
+6    ENSUSDT  0.0  0.008925
+7    ETHUSDT  1.0  0.995190
+8    ADAUSDT  1.0  0.728894
+      Pair      Note
+4  LTCUSDT  0.995785
+7  ETHUSDT  0.995190
+8  ADAUSDT  0.728894
+-------> working on : LTCUSDT <------------
+-------> pair_usdt : LTC/USDT <------------
+XXXXXX=================  buy dession for :LTCUSDT ==================XXXXXXX
+-------> working on : ETHUSDT <------------
+-------> pair_usdt : ETH/USDT <------------
+XXXXXX=================  buy dession for :ETHUSDT ==================XXXXXXX
+-------> working on : ADAUSDT <------------
+-------> pair_usdt : ADA/USDT <------------
+XXXXXX=================  buy dession for :ADAUSDT ==================XXXXXXX
 ->Analysing the sconde part
 ########################################### Start Analyser ###################################################
 working on: APEUSDT
-working on: ETCUSDT
+working on: DOTUSDT
+working on: SOLUSDT
 working on: SHIBUSDT
-working on: ROSEUSDT
-working on: GMTUSDT
+working on: AXSUSDT
+working on: AVAXUSDT
+working on: TRXUSDT
+working on: XRPUSDT
 working on: GALAUSDT
-working on: ETHUSDT
-working on: NEARUSDT
-working on: XRPUSDT
-working on: TRXUSDT
-working on: LTCUSDT
-working on: AXSUSDT
-working on: DOTUSDT
-working on: LUNAUSDT
-working on: SOLUSDT
-working on: ALGOUSDT
-working on: DOGEUSDT
-working on: AVAXUSDT
-working on: ADAUSDT
-working on: ENSUSDT
-finshing work of: LTCUSDT
-finshing work of: TRXUSDT
-finshing work of: ETHUSDT
-finshing work of: GMTUSDT
-finshing work of: LUNAUSDT
-finshing work of: ETCUSDT
-finshing work of: SHIBUSDT
-finshing work of: AVAXUSDT
-finshing work of: ROSEUSDT
-finshing work of: AXSUSDT
-finshing work of: DOTUSDT
-finshing work of: APEUSDT
-finshing work of: SOLUSDT
-finshing work of: GALAUSDT
-finshing work of: ALGOUSDT
-finshing work of: DOGEUSDT
-finshing work of: ENSUSDT
-finshing work of: XRPUSDT
-finshing work of: ADAUSDT
-finshing work of: NEARUSDT
-error new part at analyse()
-exception : operands could not be broadcast together with shapes (20,206) (606,) (20,206) 
-abj_ai_buy_signal_vBinance: 0 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
-abj_ai_buy_signal_vBinance.py
-abj_ai_buy_signal_vBinance: Analyzing 40 coins
-->Double anlayse mode
-->Analysing the fist part
-########################################### Start Analyser ###################################################
-working on: DNTUSDT
-working on: DOGEUSDT
-working on: SHIBUSDT
-working on: ENSUSDT
-working on: LTCUSDT
-working on: ADAUSDT
-working on: ETHUSDT
-working on: ROSEUSDT
-working on: AVAXUSDT
-working on: XRPUSDT
-working on: EOSUSDT
-working on: AXSUSDT
-working on: ETCUSDT
-working on: SOLUSDT
-working on: TRXUSDT
-working on: APEUSDT
-working on: DOTUSDT
-working on: NEARUSDT
-working on: ALGOUSDT
-working on: JASMYUSDT
-finshing work of: SHIBUSDT
-finshing work of: ETCUSDT
-finshing work of: EOSUSDT
-finshing work of: ETHUSDT
-finshing work of: AXSUSDT
-finshing work of: SOLUSDT
-finshing work of: ENSUSDT
-finshing work of: ADAUSDT
-finshing work of: ROSEUSDT
-finshing work of: APEUSDT
-finshing work of: DOTUSDT
-finshing work of: NEARUSDT
-finshing work of: LTCUSDT
-finshing work of: ALGOUSDT
-finshing work of: JASMYUSDT
-finshing work of: DOGEUSDT
-finshing work of: XRPUSDT
-Error while working on: DNTUSDT
-single positional indexer is out-of-bounds
-finshing work of: TRXUSDT
-finshing work of: AVAXUSDT
-error new part at analyse()
-exception : operands could not be broadcast together with shapes (19,206) (606,) (19,206) 
-->Analysing the sconde part
-########################################### Start Analyser ###################################################
-working on: DOGEUSDT
-working on: ADAUSDT
-working on: SHIBUSDT
-working on: ROSEUSDT
-working on: GALAUSDT
-working on: XRPUSDT
-working on: APEUSDT
-working on: AVAXUSDT
-working on: DOTUSDT
-working on: ETCUSDT
-working on: ETHUSDT
-working on: NEARUSDT
-working on: SOLUSDT
-working on: TRXUSDT
-working on: ENSUSDT
-working on: LTCUSDT
-working on: ALGOUSDT
-working on: AXSUSDT
-working on: LUNAUSDT
 working on: GMTUSDT
 finshing work of: TRXUSDT
 finshing work of: GALAUSDT
 finshing work of: APEUSDT
-finshing work of: ETCUSDT
-finshing work of: XRPUSDT
-finshing work of: ETHUSDT
-finshing work of: NEARUSDT
-finshing work of: DOGEUSDT
-finshing work of: SHIBUSDT
-finshing work of: ROSEUSDT
 finshing work of: SOLUSDT
-finshing work of: ADAUSDT
-finshing work of: DOTUSDT
-finshing work of: ENSUSDT
-finshing work of: LTCUSDT
-finshing work of: ALGOUSDT
-finshing work of: AVAXUSDT
-finshing work of: GMTUSDT
-finshing work of: LUNAUSDT
+finshing work of: SHIBUSDT
 finshing work of: AXSUSDT
-error new part at analyse()
-exception : operands could not be broadcast together with shapes (20,206) (606,) (20,206) 
-abj_ai_buy_signal_vBinance: 0 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
+finshing work of: AVAXUSDT
+finshing work of: XRPUSDT
+finshing work of: GMTUSDT
+finshing work of: DOTUSDT
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 24ms/step
+       Pair  Buy      Note
+0   TRXUSDT  0.0  0.110751
+1  GALAUSDT  0.0  0.004378
+2   APEUSDT  0.0  0.007735
+3   SOLUSDT  0.0  0.002102
+4  SHIBUSDT  0.0  0.037369
+5   AXSUSDT  0.0  0.003436
+6  AVAXUSDT  0.0  0.002032
+7   XRPUSDT  0.0  0.070163
+8   GMTUSDT  0.0  0.005113
+9   DOTUSDT  0.0  0.004598
+Empty DataFrame
+Columns: [Pair, Note]
+Index: []
+abj_ai_buy_signal_vBinance: 3 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
 abj_ai_buy_signal_vBinance.py
-abj_ai_buy_signal_vBinance: Analyzing 40 coins
+abj_ai_buy_signal_vBinance: Analyzing 20 coins
+->Double anlayse mode
+->Analysing the fist part
+########################################### Start Analyser ###################################################
+working on: DOGEUSDT
+working on: ETHUSDT
+working on: LUNAUSDT
+working on: ENSUSDT
+working on: ADAUSDT
+working on: DNTUSDT
+working on: NEARUSDT
+working on: LTCUSDT
+working on: ETCUSDT
+working on: JASMYUSDT
+finshing work of: DOGEUSDT
+finshing work of: LUNAUSDT
+finshing work of: ETHUSDT
+finshing work of: ADAUSDT
+finshing work of: ENSUSDT
+Error while working on: DNTUSDT
+finshing work of: JASMYUSDT
+finshing work of: NEARUSDT
+finshing work of: ETCUSDT
+finshing work of: LTCUSDT
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 25ms/step
+        Pair  Buy      Note
+0   DOGEUSDT  0.0  0.011066
+1   LUNAUSDT  0.0  0.009247
+2    ETHUSDT  1.0  0.996590
+3    ADAUSDT  0.0  0.299689
+4    ENSUSDT  0.0  0.001206
+5  JASMYUSDT  0.0  0.006725
+6   NEARUSDT  0.0  0.001378
+7    ETCUSDT  0.0  0.486936
+8    LTCUSDT  0.0  0.070247
+      Pair     Note
+2  ETHUSDT  0.99659
+-------> working on : ETHUSDT <------------
+-------> pair_usdt : ETH/USDT <------------
+XXXXXX=================  buy dession for :ETHUSDT ==================XXXXXXX
+->Analysing the sconde part
+########################################### Start Analyser ###################################################
+working on: APEUSDT
+working on: GALAUSDT
+working on: SHIBUSDT
+working on: TRXUSDT
+working on: AVAXUSDT
+working on: XRPUSDT
+working on: DOTUSDT
+working on: GMTUSDT
+working on: AXSUSDT
+working on: SOLUSDT
+finshing work of: GALAUSDT
+finshing work of: SHIBUSDT
+finshing work of: APEUSDT
+finshing work of: TRXUSDT
+finshing work of: GMTUSDT
+finshing work of: DOTUSDT
+finshing work of: SOLUSDT
+finshing work of: AXSUSDT
+finshing work of: XRPUSDT
+finshing work of: AVAXUSDT
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 26ms/step
+       Pair  Buy      Note
+0  GALAUSDT  0.0  0.002474
+1  SHIBUSDT  0.0  0.032983
+2   APEUSDT  0.0  0.277753
+3   TRXUSDT  1.0  0.987750
+4   GMTUSDT  0.0  0.039146
+5   DOTUSDT  0.0  0.046118
+6   SOLUSDT  0.0  0.001507
+7   AXSUSDT  0.0  0.007345
+8   XRPUSDT  1.0  0.875390
+9  AVAXUSDT  0.0  0.001467
+      Pair     Note
+3  TRXUSDT  0.98775
+8  XRPUSDT  0.87539
+-------> working on : TRXUSDT <------------
+-------> pair_usdt : TRX/USDT <------------
+XXXXXX=================  buy dession for :TRXUSDT ==================XXXXXXX
+-------> working on : XRPUSDT <------------
+-------> pair_usdt : XRP/USDT <------------
+XXXXXX=================  buy dession for :XRPUSDT ==================XXXXXXX
+abj_ai_buy_signal_vBinance: 3 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
+abj_ai_buy_signal_vBinance.py
+abj_ai_buy_signal_vBinance: Analyzing 20 coins
+->Double anlayse mode
+->Analysing the fist part
+########################################### Start Analyser ###################################################
+working on: LTCUSDT
+working on: ADAUSDT
+working on: DNTUSDT
+working on: ENSUSDT
+working on: ETCUSDT
+working on: LUNAUSDT
+working on: ETHUSDT
+working on: DOGEUSDT
+working on: JASMYUSDT
+working on: NEARUSDT
+finshing work of: ETCUSDT
+finshing work of: ADAUSDT
+Error while working on: DNTUSDT
+finshing work of: ENSUSDT
+finshing work of: LUNAUSDT
+finshing work of: DOGEUSDT
+finshing work of: JASMYUSDT
+finshing work of: NEARUSDT
+finshing work of: LTCUSDT
+finshing work of: ETHUSDT
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 26ms/step
+        Pair  Buy      Note
+0    ETCUSDT  1.0  0.909409
+1    ADAUSDT  1.0  0.952577
+2    ENSUSDT  0.0  0.004377
+3   LUNAUSDT  0.0  0.003005
+4   DOGEUSDT  0.0  0.001923
+5  JASMYUSDT  1.0  0.502049
+6   NEARUSDT  0.0  0.035233
+7    LTCUSDT  1.0  0.979166
+8    ETHUSDT  1.0  0.999770
+        Pair      Note
+8    ETHUSDT  0.999770
+7    LTCUSDT  0.979166
+1    ADAUSDT  0.952577
+0    ETCUSDT  0.909409
+5  JASMYUSDT  0.502049
+-------> working on : ETHUSDT <------------
+-------> pair_usdt : ETH/USDT <------------
+XXXXXX=================  buy dession for :ETHUSDT ==================XXXXXXX
+-------> working on : LTCUSDT <------------
+-------> pair_usdt : LTC/USDT <------------
+XXXXXX=================  buy dession for :LTCUSDT ==================XXXXXXX
+-------> working on : ADAUSDT <------------
+-------> pair_usdt : ADA/USDT <------------
+XXXXXX=================  buy dession for :ADAUSDT ==================XXXXXXX
+-------> working on : ETCUSDT <------------
+-------> pair_usdt : ETC/USDT <------------
+XXXXXX=================  buy dession for :ETCUSDT ==================XXXXXXX
+-------> working on : JASMYUSDT <------------
+-------> pair_usdt : JASMY/USDT <------------
+XXXXXX=================  buy dession for :JASMYUSDT ==================XXXXXXX
+->Analysing the sconde part
+########################################### Start Analyser ###################################################
+working on: XRPUSDT
+working on: GMTUSDT
+working on: DOTUSDT
+working on: AXSUSDT
+working on: AVAXUSDT
+working on: GALAUSDT
+working on: TRXUSDT
+working on: SOLUSDT
+working on: APEUSDT
+working on: SHIBUSDT
+finshing work of: TRXUSDT
+finshing work of: XRPUSDT
+finshing work of: SHIBUSDT
+finshing work of: AVAXUSDT
+finshing work of: DOTUSDT
+finshing work of: APEUSDT
+finshing work of: GALAUSDT
+finshing work of: AXSUSDT
+finshing work of: GMTUSDT
+finshing work of: SOLUSDT
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 24ms/step
+       Pair  Buy      Note
+0   TRXUSDT  0.0  0.001037
+1   XRPUSDT  0.0  0.021228
+2  SHIBUSDT  0.0  0.086577
+3  AVAXUSDT  0.0  0.014595
+4   DOTUSDT  0.0  0.012159
+5   APEUSDT  0.0  0.004176
+6  GALAUSDT  0.0  0.002385
+7   AXSUSDT  0.0  0.019621
+8   GMTUSDT  0.0  0.002112
+9   SOLUSDT  0.0  0.000945
+Empty DataFrame
+Columns: [Pair, Note]
+Index: []
+abj_ai_buy_signal_vBinance: 5 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
+abj_ai_buy_signal_vBinance.py
+abj_ai_buy_signal_vBinance: Analyzing 20 coins
+->Double anlayse mode
+->Analysing the fist part
+########################################### Start Analyser ###################################################
+working on: DOGEUSDT
+working on: ETHUSDT
+working on: LTCUSDT
+working on: ADAUSDT
+working on: ENSUSDT
+working on: NEARUSDT
+working on: ETCUSDT
+working on: JASMYUSDT
+working on: DNTUSDT
+working on: LUNAUSDT
+finshing work of: DOGEUSDT
+finshing work of: ETHUSDT
+finshing work of: LTCUSDT
+finshing work of: ADAUSDT
+finshing work of: JASMYUSDT
+finshing work of: NEARUSDT
+finshing work of: ETCUSDT
+Error while working on: DNTUSDT
+finshing work of: LUNAUSDT
+finshing work of: ENSUSDT
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 25ms/step
+        Pair  Buy      Note
+0   DOGEUSDT  0.0  0.368185
+1    ETHUSDT  1.0  0.999851
+2    LTCUSDT  1.0  0.895434
+3    ADAUSDT  1.0  0.948811
+4  JASMYUSDT  0.0  0.000640
+5   NEARUSDT  0.0  0.003082
+6    ETCUSDT  1.0  0.951221
+7   LUNAUSDT  0.0  0.000979
+8    ENSUSDT  0.0  0.001459
+      Pair      Note
+1  ETHUSDT  0.999851
+6  ETCUSDT  0.951221
+3  ADAUSDT  0.948811
+2  LTCUSDT  0.895434
+-------> working on : ETHUSDT <------------
+-------> pair_usdt : ETH/USDT <------------
+XXXXXX=================  buy dession for :ETHUSDT ==================XXXXXXX
+-------> working on : ETCUSDT <------------
+-------> pair_usdt : ETC/USDT <------------
+XXXXXX=================  buy dession for :ETCUSDT ==================XXXXXXX
+-------> working on : ADAUSDT <------------
+-------> pair_usdt : ADA/USDT <------------
+XXXXXX=================  buy dession for :ADAUSDT ==================XXXXXXX
+-------> working on : LTCUSDT <------------
+-------> pair_usdt : LTC/USDT <------------
+XXXXXX=================  buy dession for :LTCUSDT ==================XXXXXXX
+->Analysing the sconde part
+########################################### Start Analyser ###################################################
+working on: APEUSDT
+working on: AXSUSDT
+working on: TRXUSDT
+working on: XRPUSDT
+working on: GMTUSDT
+working on: DOTUSDT
+working on: AVAXUSDT
+working on: GALAUSDT
+working on: SHIBUSDT
+working on: SOLUSDT
+finshing work of: APEUSDT
+finshing work of: GMTUSDT
+finshing work of: TRXUSDT
+finshing work of: AXSUSDT
+finshing work of: GALAUSDT
+finshing work of: SHIBUSDT
+finshing work of: XRPUSDT
+finshing work of: SOLUSDT
+finshing work of: AVAXUSDT
+finshing work of: DOTUSDT
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 24ms/step
+       Pair  Buy      Note
+0   APEUSDT  0.0  0.001947
+1   GMTUSDT  0.0  0.001443
+2   TRXUSDT  0.0  0.081079
+3   AXSUSDT  0.0  0.000682
+4  GALAUSDT  0.0  0.000869
+5  SHIBUSDT  0.0  0.021446
+6   XRPUSDT  1.0  0.839904
+7   SOLUSDT  0.0  0.002445
+8  AVAXUSDT  0.0  0.019538
+9   DOTUSDT  0.0  0.001057
+      Pair      Note
+6  XRPUSDT  0.839904
+-------> working on : XRPUSDT <------------
+-------> pair_usdt : XRP/USDT <------------
+XXXXXX=================  buy dession for :XRPUSDT ==================XXXXXXX
+abj_ai_buy_signal_vBinance: 5 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
+abj_ai_buy_signal_vBinance.py
+abj_ai_buy_signal_vBinance: Analyzing 20 coins
 ->Double anlayse mode
 ->Analysing the fist part
 ########################################### Start Analyser ###################################################
 working on: DNTUSDT
-working on: DOGEUSDT
-working on: SHIBUSDT
-working on: JASMYUSDT
-working on: TRXUSDT
-working on: ETHUSDT
-working on: XRPUSDT
-working on: AXSUSDT
-working on: AVAXUSDT
-working on: EOSUSDT
-working on: APEUSDT
-working on: ADAUSDT
-working on: DOTUSDT
-working on: LTCUSDT
 working on: NEARUSDT
-working on: ENSUSDT
-working on: ALGOUSDT
-working on: ROSEUSDT
+working on: LTCUSDT
 working on: ETCUSDT
-working on: SOLUSDT
-Error while working on: DNTUSDT
-single positional indexer is out-of-bounds
-finshing work of: SHIBUSDT
-finshing work of: TRXUSDT
-finshing work of: AXSUSDT
-finshing work of: AVAXUSDT
-finshing work of: XRPUSDT
-finshing work of: DOTUSDT
+working on: LUNAUSDT
+working on: ADAUSDT
+working on: ETHUSDT
+working on: ENSUSDT
+working on: JASMYUSDT
+working on: DOGEUSDT
 finshing work of: NEARUSDT
-finshing work of: ROSEUSDT
-finshing work of: DOGEUSDT
-finshing work of: ETHUSDT
-finshing work of: JASMYUSDT
-finshing work of: EOSUSDT
-finshing work of: APEUSDT
-finshing work of: ADAUSDT
 finshing work of: LTCUSDT
-finshing work of: ENSUSDT
-finshing work of: ALGOUSDT
+Error while working on: DNTUSDT
 finshing work of: ETCUSDT
-finshing work of: SOLUSDT
-error new part at analyse()
-exception : operands could not be broadcast together with shapes (19,206) (606,) (19,206) 
+finshing work of: ADAUSDT
+finshing work of: LUNAUSDT
+finshing work of: ETHUSDT
+finshing work of: ENSUSDT
+finshing work of: JASMYUSDT
+finshing work of: DOGEUSDT
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 23ms/step
+        Pair  Buy      Note
+0   NEARUSDT  0.0  0.001449
+1    LTCUSDT  0.0  0.075816
+2    ETCUSDT  0.0  0.219839
+3    ADAUSDT  1.0  0.915887
+4   LUNAUSDT  0.0  0.001548
+5    ETHUSDT  1.0  0.999440
+6    ENSUSDT  0.0  0.003219
+7  JASMYUSDT  0.0  0.170160
+8   DOGEUSDT  1.0  0.979444
+       Pair      Note
+5   ETHUSDT  0.999440
+8  DOGEUSDT  0.979444
+3   ADAUSDT  0.915887
+-------> working on : ETHUSDT <------------
+-------> pair_usdt : ETH/USDT <------------
+XXXXXX=================  buy dession for :ETHUSDT ==================XXXXXXX
+-------> working on : DOGEUSDT <------------
+-------> pair_usdt : DOGE/USDT <------------
+XXXXXX=================  buy dession for :DOGEUSDT ==================XXXXXXX
+-------> working on : ADAUSDT <------------
+-------> pair_usdt : ADA/USDT <------------
+XXXXXX=================  buy dession for :ADAUSDT ==================XXXXXXX
 ->Analysing the sconde part
 ########################################### Start Analyser ###################################################
-working on: DOGEUSDT
-working on: SHIBUSDT
-working on: ROSEUSDT
-working on: GMTUSDT
 working on: GALAUSDT
-working on: ALGOUSDT
-working on: ETCUSDT
-working on: APEUSDT
-working on: ETHUSDT
-working on: XRPUSDT
-working on: NEARUSDT
-working on: ENSUSDT
-working on: LTCUSDT
-working on: AXSUSDT
-working on: ADAUSDT
-working on: LUNAUSDT
-working on: DOTUSDT
-working on: SOLUSDT
-working on: AVAXUSDT
+working on: SHIBUSDT
 working on: TRXUSDT
-finshing work of: GMTUSDT
-finshing work of: ETCUSDT
-finshing work of: ALGOUSDT
+working on: DOTUSDT
+working on: XRPUSDT
+working on: APEUSDT
+working on: AVAXUSDT
+working on: SOLUSDT
+working on: AXSUSDT
+working on: GMTUSDT
+finshing work of: SHIBUSDT
+finshing work of: AVAXUSDT
+finshing work of: GALAUSDT
+finshing work of: TRXUSDT
+finshing work of: DOTUSDT
 finshing work of: APEUSDT
 finshing work of: XRPUSDT
-finshing work of: ROSEUSDT
-finshing work of: GALAUSDT
-finshing work of: DOGEUSDT
-finshing work of: ENSUSDT
-finshing work of: LTCUSDT
-finshing work of: ADAUSDT
-finshing work of: AXSUSDT
-finshing work of: LUNAUSDT
 finshing work of: SOLUSDT
-finshing work of: AVAXUSDT
-finshing work of: SHIBUSDT
-finshing work of: DOTUSDT
-finshing work of: TRXUSDT
-finshing work of: ETHUSDT
-finshing work of: NEARUSDT
-error new part at analyse()
-exception : operands could not be broadcast together with shapes (20,206) (606,) (20,206) 
-abj_ai_buy_signal_vBinance: 0 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
+finshing work of: AXSUSDT
+finshing work of: GMTUSDT
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 24ms/step
+       Pair  Buy      Note
+0  SHIBUSDT  0.0  0.048138
+1  AVAXUSDT  0.0  0.001615
+2  GALAUSDT  0.0  0.002460
+3   TRXUSDT  0.0  0.438961
+4   DOTUSDT  0.0  0.018901
+5   APEUSDT  0.0  0.003507
+6   XRPUSDT  0.0  0.077067
+7   SOLUSDT  0.0  0.001535
+8   AXSUSDT  0.0  0.001147
+9   GMTUSDT  0.0  0.002321
+Empty DataFrame
+Columns: [Pair, Note]
+Index: []
+abj_ai_buy_signal_vBinance: 3 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
 abj_ai_buy_signal_vBinance.py
-abj_ai_buy_signal_vBinance: Analyzing 40 coins
+abj_ai_buy_signal_vBinance: Analyzing 20 coins
 ->Double anlayse mode
 ->Analysing the fist part
 ########################################### Start Analyser ###################################################
-working on: EOSUSDT
-working on: DNTUSDT
-working on: SOLUSDT
 working on: DOGEUSDT
-working on: JASMYUSDT
-working on: SHIBUSDT
-working on: ETHUSDT
-working on: ROSEUSDT
-working on: ENSUSDT
-working on: XRPUSDT
-working on: ADAUSDT
-working on: ETCUSDT
-working on: AXSUSDT
-working on: APEUSDT
-working on: DOTUSDT
-working on: TRXUSDT
 working on: NEARUSDT
-working on: AVAXUSDT
-working on: ALGOUSDT
 working on: LTCUSDT
-finshing work of: SOLUSDT
-finshing work of: NEARUSDT
+working on: ETCUSDT
+working on: DNTUSDT
+working on: LUNAUSDT
+working on: ETHUSDT
+working on: JASMYUSDT
+working on: ADAUSDT
+working on: ENSUSDT
 finshing work of: ETCUSDT
-finshing work of: APEUSDT
-finshing work of: DOTUSDT
-finshing work of: TRXUSDT
-Error while working on: DNTUSDT
-single positional indexer is out-of-bounds
 finshing work of: DOGEUSDT
-finshing work of: JASMYUSDT
-finshing work of: SHIBUSDT
-finshing work of: EOSUSDT
-finshing work of: ADAUSDT
-finshing work of: AXSUSDT
-finshing work of: ETHUSDT
-finshing work of: ROSEUSDT
-finshing work of: XRPUSDT
-finshing work of: AVAXUSDT
-finshing work of: ALGOUSDT
 finshing work of: LTCUSDT
+Error while working on: DNTUSDT
+finshing work of: LUNAUSDT
+finshing work of: ETHUSDT
+finshing work of: JASMYUSDT
+finshing work of: NEARUSDT
+finshing work of: ADAUSDT
 finshing work of: ENSUSDT
-error new part at analyse()
-exception : operands could not be broadcast together with shapes (19,206) (606,) (19,206) 
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 24ms/step
+        Pair  Buy      Note
+0    ETCUSDT  1.0  0.928789
+1   DOGEUSDT  1.0  0.999861
+2    LTCUSDT  0.0  0.155680
+3   LUNAUSDT  0.0  0.001778
+4    ETHUSDT  1.0  0.996501
+5  JASMYUSDT  0.0  0.002102
+6   NEARUSDT  0.0  0.001229
+7    ADAUSDT  0.0  0.117119
+8    ENSUSDT  0.0  0.001756
+       Pair      Note
+1  DOGEUSDT  0.999861
+4   ETHUSDT  0.996501
+0   ETCUSDT  0.928789
+-------> working on : DOGEUSDT <------------
+-------> pair_usdt : DOGE/USDT <------------
+XXXXXX=================  buy dession for :DOGEUSDT ==================XXXXXXX
+-------> working on : ETHUSDT <------------
+-------> pair_usdt : ETH/USDT <------------
+XXXXXX=================  buy dession for :ETHUSDT ==================XXXXXXX
+-------> working on : ETCUSDT <------------
+-------> pair_usdt : ETC/USDT <------------
+XXXXXX=================  buy dession for :ETCUSDT ==================XXXXXXX
 ->Analysing the sconde part
 ########################################### Start Analyser ###################################################
-working on: SHIBUSDT
-working on: ADAUSDT
-working on: ROSEUSDT
-working on: GMTUSDT
-working on: DOTUSDT
-working on: GALAUSDT
-working on: ETHUSDT
-working on: NEARUSDT
-working on: DOGEUSDT
-working on: ETCUSDT
-working on: SOLUSDT
-working on: ALGOUSDT
-working on: TRXUSDT
-working on: LTCUSDT
-working on: AXSUSDT
-working on: LUNAUSDT
-working on: ENSUSDT
 working on: APEUSDT
+working on: GALAUSDT
+working on: AXSUSDT
 working on: AVAXUSDT
+working on: DOTUSDT
 working on: XRPUSDT
-finshing work of: SHIBUSDT
-finshing work of: DOGEUSDT
-finshing work of: ADAUSDT
-finshing work of: GALAUSDT
-finshing work of: ETCUSDT
-finshing work of: NEARUSDT
-finshing work of: ROSEUSDT
+working on: TRXUSDT
+working on: SOLUSDT
+working on: SHIBUSDT
+working on: GMTUSDT
 finshing work of: SOLUSDT
-finshing work of: AXSUSDT
-finshing work of: TRXUSDT
-finshing work of: ENSUSDT
-finshing work of: AVAXUSDT
-finshing work of: APEUSDT
-finshing work of: XRPUSDT
-finshing work of: LTCUSDT
-finshing work of: ALGOUSDT
-finshing work of: ETHUSDT
-finshing work of: DOTUSDT
+finshing work of: GALAUSDT
 finshing work of: GMTUSDT
-finshing work of: LUNAUSDT
-error new part at analyse()
-exception : operands could not be broadcast together with shapes (20,206) (606,) (20,206) 
-abj_ai_buy_signal_vBinance: 0 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
+finshing work of: AVAXUSDT
+finshing work of: DOTUSDT
+finshing work of: TRXUSDT
+finshing work of: XRPUSDT
+finshing work of: SHIBUSDT
+finshing work of: APEUSDT
+finshing work of: AXSUSDT
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 25ms/step
+       Pair  Buy      Note
+0   SOLUSDT  0.0  0.001322
+1  GALAUSDT  0.0  0.002382
+2   GMTUSDT  0.0  0.002180
+3  AVAXUSDT  0.0  0.001625
+4   DOTUSDT  0.0  0.002175
+5   TRXUSDT  0.0  0.015068
+6   XRPUSDT  0.0  0.006704
+7  SHIBUSDT  0.0  0.038418
+8   APEUSDT  0.0  0.001884
+9   AXSUSDT  0.0  0.003019
+Empty DataFrame
+Columns: [Pair, Note]
+Index: []
+abj_ai_buy_signal_vBinance: 3 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
 abj_ai_buy_signal_vBinance.py
-abj_ai_buy_signal_vBinance: Analyzing 40 coins
+abj_ai_buy_signal_vBinance: Analyzing 20 coins
 ->Double anlayse mode
 ->Analysing the fist part
 ########################################### Start Analyser ###################################################
-working on: DNTUSDT
-working on: SOLUSDT
-working on: DOGEUSDT
-working on: SHIBUSDT
-working on: AVAXUSDT
-working on: ETHUSDT
-working on: ROSEUSDT
-working on: XRPUSDT
-working on: EOSUSDT
-working on: ENSUSDT
-working on: ETCUSDT
-working on: ADAUSDT
-working on: APEUSDT
+working on: LUNAUSDT
 working on: JASMYUSDT
-working on: DOTUSDT
-working on: NEARUSDT
 working on: LTCUSDT
-working on: ALGOUSDT
-working on: TRXUSDT
-working on: AXSUSDT
-finshing work of: SOLUSDT
-finshing work of: ROSEUSDT
-finshing work of: TRXUSDT
-finshing work of: SHIBUSDT
-finshing work of: ETCUSDT
-finshing work of: APEUSDT
-Error while working on: DNTUSDT
-single positional indexer is out-of-bounds
-finshing work of: AVAXUSDT
-finshing work of: DOGEUSDT
-finshing work of: ETHUSDT
-finshing work of: XRPUSDT
-finshing work of: ADAUSDT
-finshing work of: EOSUSDT
-finshing work of: ENSUSDT
-finshing work of: JASMYUSDT
-finshing work of: DOTUSDT
-finshing work of: ALGOUSDT
-finshing work of: AXSUSDT
+working on: ADAUSDT
+working on: ETHUSDT
+working on: NEARUSDT
+working on: DNTUSDT
+working on: DOGEUSDT
+working on: ETCUSDT
+working on: ENSUSDT
 finshing work of: LTCUSDT
+finshing work of: ETHUSDT
+finshing work of: JASMYUSDT
+finshing work of: ADAUSDT
 finshing work of: NEARUSDT
-error new part at analyse()
-exception : operands could not be broadcast together with shapes (19,206) (606,) (19,206) 
+finshing work of: DOGEUSDT
+finshing work of: ETCUSDT
+finshing work of: ENSUSDT
+finshing work of: LUNAUSDT
+Error while working on: DNTUSDT
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 24ms/step
+        Pair  Buy      Note
+0    LTCUSDT  0.0  0.165704
+1    ETHUSDT  1.0  0.999448
+2  JASMYUSDT  0.0  0.008936
+3    ADAUSDT  1.0  0.654056
+4   NEARUSDT  0.0  0.006780
+5   DOGEUSDT  0.0  0.001074
+6    ETCUSDT  1.0  0.825436
+7    ENSUSDT  0.0  0.002579
+8   LUNAUSDT  0.0  0.001294
+      Pair      Note
+1  ETHUSDT  0.999448
+6  ETCUSDT  0.825436
+3  ADAUSDT  0.654056
+-------> working on : ETHUSDT <------------
+-------> pair_usdt : ETH/USDT <------------
+XXXXXX=================  buy dession for :ETHUSDT ==================XXXXXXX
+-------> working on : ETCUSDT <------------
+-------> pair_usdt : ETC/USDT <------------
+XXXXXX=================  buy dession for :ETCUSDT ==================XXXXXXX
+-------> working on : ADAUSDT <------------
+-------> pair_usdt : ADA/USDT <------------
+XXXXXX=================  buy dession for :ADAUSDT ==================XXXXXXX
 ->Analysing the sconde part
 ########################################### Start Analyser ###################################################
-working on: ETHUSDT
-working on: DOGEUSDT
-working on: SHIBUSDT
-working on: DOTUSDT
-working on: ALGOUSDT
-working on: ADAUSDT
-working on: ROSEUSDT
 working on: GMTUSDT
-working on: ETCUSDT
-working on: XRPUSDT
-working on: GALAUSDT
 working on: APEUSDT
-working on: ENSUSDT
-working on: NEARUSDT
-working on: SOLUSDT
-working on: TRXUSDT
-working on: LTCUSDT
 working on: AXSUSDT
+working on: TRXUSDT
+working on: XRPUSDT
+working on: SOLUSDT
+working on: SHIBUSDT
+working on: GALAUSDT
+working on: DOTUSDT
 working on: AVAXUSDT
-working on: LUNAUSDT
-finshing work of: SHIBUSDT
-finshing work of: ETCUSDT
-finshing work of: ETHUSDT
-finshing work of: ROSEUSDT
-finshing work of: APEUSDT
-finshing work of: NEARUSDT
-finshing work of: SOLUSDT
-finshing work of: GMTUSDT
-finshing work of: DOTUSDT
-finshing work of: ALGOUSDT
-finshing work of: DOGEUSDT
-finshing work of: GALAUSDT
-finshing work of: ADAUSDT
-finshing work of: XRPUSDT
-finshing work of: TRXUSDT
-finshing work of: LTCUSDT
-finshing work of: AVAXUSDT
 finshing work of: AXSUSDT
-finshing work of: LUNAUSDT
-finshing work of: ENSUSDT
-error new part at analyse()
-exception : operands could not be broadcast together with shapes (20,206) (606,) (20,206) 
-abj_ai_buy_signal_vBinance: 0 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
+finshing work of: GMTUSDT
+finshing work of: APEUSDT
+finshing work of: TRXUSDT
+finshing work of: SOLUSDT
+finshing work of: SHIBUSDT
+finshing work of: XRPUSDT
+finshing work of: GALAUSDT
+finshing work of: DOTUSDT
+finshing work of: AVAXUSDT
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 31ms/step
+       Pair  Buy      Note
+0   AXSUSDT  0.0  0.180755
+1   GMTUSDT  0.0  0.002924
+2   APEUSDT  0.0  0.205916
+3   TRXUSDT  0.0  0.263849
+4   SOLUSDT  0.0  0.067138
+5  SHIBUSDT  1.0  0.973105
+6   XRPUSDT  0.0  0.061852
+7  GALAUSDT  0.0  0.003599
+8   DOTUSDT  1.0  0.983808
+9  AVAXUSDT  0.0  0.293814
+       Pair      Note
+8   DOTUSDT  0.983808
+5  SHIBUSDT  0.973105
+-------> working on : DOTUSDT <------------
+-------> pair_usdt : DOT/USDT <------------
+XXXXXX=================  buy dession for :DOTUSDT ==================XXXXXXX
+-------> working on : SHIBUSDT <------------
+-------> pair_usdt : SHIB/USDT <------------
+XXXXXX=================  buy dession for :SHIBUSDT ==================XXXXXXX
+abj_ai_buy_signal_vBinance: 5 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
 abj_ai_buy_signal_vBinance.py
-abj_ai_buy_signal_vBinance: Analyzing 40 coins
+abj_ai_buy_signal_vBinance: Analyzing 20 coins
 ->Double anlayse mode
 ->Analysing the fist part
 ########################################### Start Analyser ###################################################
-working on: DNTUSDT
-working on: AXSUSDT
-working on: DOGEUSDT
-working on: SHIBUSDT
-working on: ADAUSDT
-working on: ETHUSDT
-working on: ROSEUSDT
-working on: TRXUSDT
-working on: JASMYUSDT
-working on: XRPUSDT
-working on: AVAXUSDT
-working on: EOSUSDT
-working on: APEUSDT
-working on: DOTUSDT
-working on: NEARUSDT
-working on: ALGOUSDT
-working on: SOLUSDT
 working on: ENSUSDT
+working on: ETHUSDT
+working on: DNTUSDT
+working on: ADAUSDT
 working on: ETCUSDT
+working on: NEARUSDT
+working on: LUNAUSDT
+working on: JASMYUSDT
 working on: LTCUSDT
-finshing work of: TRXUSDT
-finshing work of: SHIBUSDT
-finshing work of: APEUSDT
-finshing work of: XRPUSDT
-finshing work of: AVAXUSDT
-finshing work of: DOGEUSDT
+working on: DOGEUSDT
 finshing work of: ENSUSDT
-finshing work of: ADAUSDT
-finshing work of: EOSUSDT
-finshing work of: ETCUSDT
-finshing work of: DOTUSDT
+finshing work of: DOGEUSDT
 finshing work of: ETHUSDT
-finshing work of: ROSEUSDT
-Error while working on: DNTUSDT
-single positional indexer is out-of-bounds
-finshing work of: AXSUSDT
-finshing work of: ALGOUSDT
-finshing work of: SOLUSDT
 finshing work of: LTCUSDT
-finshing work of: JASMYUSDT
+Error while working on: DNTUSDT
+finshing work of: LUNAUSDT
 finshing work of: NEARUSDT
-error new part at analyse()
-exception : operands could not be broadcast together with shapes (19,206) (606,) (19,206) 
+finshing work of: JASMYUSDT
+finshing work of: ETCUSDT
+finshing work of: ADAUSDT
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 26ms/step
+        Pair  Buy      Note
+0    ENSUSDT  0.0  0.332205
+1   DOGEUSDT  1.0  0.567359
+2    ETHUSDT  1.0  0.999843
+3    LTCUSDT  1.0  0.940923
+4   LUNAUSDT  0.0  0.001403
+5   NEARUSDT  1.0  0.725812
+6  JASMYUSDT  0.0  0.006393
+7    ETCUSDT  1.0  0.959358
+8    ADAUSDT  1.0  0.845133
+       Pair      Note
+2   ETHUSDT  0.999843
+7   ETCUSDT  0.959358
+3   LTCUSDT  0.940923
+8   ADAUSDT  0.845133
+5  NEARUSDT  0.725812
+1  DOGEUSDT  0.567359
+-------> working on : ETHUSDT <------------
+-------> pair_usdt : ETH/USDT <------------
+XXXXXX=================  buy dession for :ETHUSDT ==================XXXXXXX
+-------> working on : ETCUSDT <------------
+-------> pair_usdt : ETC/USDT <------------
+XXXXXX=================  buy dession for :ETCUSDT ==================XXXXXXX
+-------> working on : LTCUSDT <------------
+-------> pair_usdt : LTC/USDT <------------
+XXXXXX=================  buy dession for :LTCUSDT ==================XXXXXXX
+-------> working on : ADAUSDT <------------
+-------> pair_usdt : ADA/USDT <------------
+XXXXXX=================  buy dession for :ADAUSDT ==================XXXXXXX
+-------> working on : NEARUSDT <------------
+-------> pair_usdt : NEAR/USDT <------------
+XXXXXX=================  buy dession for :NEARUSDT ==================XXXXXXX
+-------> working on : DOGEUSDT <------------
+-------> pair_usdt : DOGE/USDT <------------
+XXXXXX=================  buy dession for :DOGEUSDT ==================XXXXXXX
 ->Analysing the sconde part
 ########################################### Start Analyser ###################################################
-working on: DOGEUSDT
-working on: ALGOUSDT
-working on: SHIBUSDT
-working on: ROSEUSDT
 working on: GALAUSDT
 working on: APEUSDT
-working on: AVAXUSDT
-working on: ENSUSDT
-working on: XRPUSDT
-working on: ETHUSDT
 working on: DOTUSDT
-working on: NEARUSDT
-working on: ADAUSDT
-working on: SOLUSDT
-working on: LTCUSDT
 working on: AXSUSDT
-working on: ETCUSDT
-working on: LUNAUSDT
-working on: GMTUSDT
+working on: AVAXUSDT
+working on: SOLUSDT
 working on: TRXUSDT
-finshing work of: LTCUSDT
-finshing work of: AXSUSDT
+working on: XRPUSDT
+working on: SHIBUSDT
+working on: GMTUSDT
+finshing work of: GALAUSDT
+finshing work of: APEUSDT
 finshing work of: AVAXUSDT
-finshing work of: DOTUSDT
-finshing work of: NEARUSDT
-finshing work of: ADAUSDT
-finshing work of: DOGEUSDT
-finshing work of: ETCUSDT
-finshing work of: XRPUSDT
-finshing work of: ALGOUSDT
 finshing work of: SHIBUSDT
-finshing work of: SOLUSDT
 finshing work of: GMTUSDT
 finshing work of: TRXUSDT
-finshing work of: ROSEUSDT
-finshing work of: APEUSDT
-finshing work of: LUNAUSDT
-finshing work of: GALAUSDT
-finshing work of: ENSUSDT
-finshing work of: ETHUSDT
-error new part at analyse()
-exception : operands could not be broadcast together with shapes (20,206) (606,) (20,206) 
-abj_ai_buy_signal_vBinance: 0 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
+finshing work of: AXSUSDT
+finshing work of: DOTUSDT
+finshing work of: SOLUSDT
+finshing work of: XRPUSDT
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 28ms/step
+       Pair  Buy      Note
+0  GALAUSDT  0.0  0.005030
+1   APEUSDT  0.0  0.012398
+2  AVAXUSDT  0.0  0.001836
+3  SHIBUSDT  0.0  0.498703
+4   GMTUSDT  0.0  0.003454
+5   TRXUSDT  1.0  0.991630
+6   AXSUSDT  0.0  0.001683
+7   DOTUSDT  0.0  0.003213
+8   SOLUSDT  0.0  0.001464
+9   XRPUSDT  1.0  0.928221
+      Pair      Note
+5  TRXUSDT  0.991630
+9  XRPUSDT  0.928221
+-------> working on : TRXUSDT <------------
+-------> pair_usdt : TRX/USDT <------------
+XXXXXX=================  buy dession for :TRXUSDT ==================XXXXXXX
+-------> working on : XRPUSDT <------------
+-------> pair_usdt : XRP/USDT <------------
+XXXXXX=================  buy dession for :XRPUSDT ==================XXXXXXX
+abj_ai_buy_signal_vBinance: 8 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
 abj_ai_buy_signal_vBinance.py
-abj_ai_buy_signal_vBinance: Analyzing 40 coins
+abj_ai_buy_signal_vBinance: Analyzing 20 coins
 ->Double anlayse mode
 ->Analysing the fist part
 ########################################### Start Analyser ###################################################
-working on: DNTUSDT
 working on: DOGEUSDT
-working on: SHIBUSDT
-working on: TRXUSDT
-working on: ROSEUSDT
-working on: XRPUSDT
-working on: ENSUSDT
-working on: EOSUSDT
-working on: AVAXUSDT
-working on: LTCUSDT
-working on: ETCUSDT
-working on: SOLUSDT
-working on: ADAUSDT
-working on: APEUSDT
-working on: DOTUSDT
+working on: ETHUSDT
+working on: DNTUSDT
+working on: LUNAUSDT
 working on: NEARUSDT
 working on: JASMYUSDT
-working on: ALGOUSDT
-working on: ETHUSDT
-working on: AXSUSDT
-finshing work of: TRXUSDT
+working on: LTCUSDT
+working on: ETCUSDT
+working on: ADAUSDT
+working on: ENSUSDT
 Error while working on: DNTUSDT
-single positional indexer is out-of-bounds
-finshing work of: ENSUSDT
-finshing work of: DOGEUSDT
-finshing work of: DOTUSDT
-finshing work of: APEUSDT
-finshing work of: EOSUSDT
-finshing work of: NEARUSDT
-finshing work of: SHIBUSDT
-finshing work of: SOLUSDT
-finshing work of: ETCUSDT
-finshing work of: ROSEUSDT
-finshing work of: XRPUSDT
 finshing work of: ETHUSDT
-finshing work of: ADAUSDT
-finshing work of: LTCUSDT
+finshing work of: DOGEUSDT
+finshing work of: LUNAUSDT
+finshing work of: NEARUSDT
 finshing work of: JASMYUSDT
-finshing work of: AVAXUSDT
-finshing work of: AXSUSDT
-finshing work of: ALGOUSDT
-error new part at analyse()
-exception : operands could not be broadcast together with shapes (19,206) (606,) (19,206) 
+finshing work of: LTCUSDT
+finshing work of: ETCUSDT
+finshing work of: ENSUSDT
+finshing work of: ADAUSDT
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 24ms/step
+        Pair  Buy      Note
+0    ETHUSDT  1.0  0.999903
+1   DOGEUSDT  0.0  0.002515
+2   LUNAUSDT  0.0  0.001356
+3   NEARUSDT  0.0  0.019675
+4  JASMYUSDT  0.0  0.007668
+5    LTCUSDT  1.0  0.960897
+6    ETCUSDT  1.0  0.978684
+7    ENSUSDT  0.0  0.004145
+8    ADAUSDT  1.0  0.991975
+      Pair      Note
+0  ETHUSDT  0.999903
+8  ADAUSDT  0.991975
+6  ETCUSDT  0.978684
+5  LTCUSDT  0.960897
+-------> working on : ETHUSDT <------------
+-------> pair_usdt : ETH/USDT <------------
+XXXXXX=================  buy dession for :ETHUSDT ==================XXXXXXX
+-------> working on : ADAUSDT <------------
+-------> pair_usdt : ADA/USDT <------------
+XXXXXX=================  buy dession for :ADAUSDT ==================XXXXXXX
+-------> working on : ETCUSDT <------------
+-------> pair_usdt : ETC/USDT <------------
+XXXXXX=================  buy dession for :ETCUSDT ==================XXXXXXX
+-------> working on : LTCUSDT <------------
+-------> pair_usdt : LTC/USDT <------------
+XXXXXX=================  buy dession for :LTCUSDT ==================XXXXXXX
 ->Analysing the sconde part
 ########################################### Start Analyser ###################################################
-working on: DOGEUSDT
-working on: SHIBUSDT
-working on: AVAXUSDT
-working on: ROSEUSDT
-working on: ETCUSDT
-working on: GMTUSDT
-working on: GALAUSDT
-working on: ALGOUSDT
-working on: DOTUSDT
-working on: TRXUSDT
 working on: APEUSDT
-working on: ENSUSDT
-working on: ETHUSDT
-working on: NEARUSDT
 working on: SOLUSDT
-working on: XRPUSDT
-working on: LTCUSDT
+working on: GMTUSDT
 working on: AXSUSDT
-working on: LUNAUSDT
-working on: ADAUSDT
-finshing work of: DOGEUSDT
-finshing work of: ROSEUSDT
-finshing work of: ETCUSDT
-finshing work of: DOTUSDT
-finshing work of: SOLUSDT
+working on: AVAXUSDT
+working on: TRXUSDT
+working on: SHIBUSDT
+working on: GALAUSDT
+working on: XRPUSDT
+working on: DOTUSDT
 finshing work of: AVAXUSDT
-finshing work of: GMTUSDT
 finshing work of: SHIBUSDT
-finshing work of: GALAUSDT
-finshing work of: TRXUSDT
+finshing work of: DOTUSDT
+finshing work of: GMTUSDT
 finshing work of: APEUSDT
-finshing work of: ENSUSDT
-finshing work of: NEARUSDT
-finshing work of: ETHUSDT
-finshing work of: ADAUSDT
-finshing work of: ALGOUSDT
-finshing work of: LTCUSDT
+finshing work of: SOLUSDT
 finshing work of: AXSUSDT
-finshing work of: LUNAUSDT
+finshing work of: GALAUSDT
 finshing work of: XRPUSDT
-error new part at analyse()
-exception : operands could not be broadcast together with shapes (20,206) (606,) (20,206) 
-abj_ai_buy_signal_vBinance: 0 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
+finshing work of: TRXUSDT
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 25ms/step
+       Pair  Buy      Note
+0  AVAXUSDT  0.0  0.004074
+1  SHIBUSDT  0.0  0.099614
+2   DOTUSDT  0.0  0.003428
+3   GMTUSDT  0.0  0.005157
+4   APEUSDT  1.0  0.567857
+5   SOLUSDT  0.0  0.126274
+6   AXSUSDT  0.0  0.003938
+7  GALAUSDT  0.0  0.008191
+8   XRPUSDT  1.0  0.999387
+9   TRXUSDT  1.0  0.999932
+      Pair      Note
+9  TRXUSDT  0.999932
+8  XRPUSDT  0.999387
+4  APEUSDT  0.567857
+-------> working on : TRXUSDT <------------
+-------> pair_usdt : TRX/USDT <------------
+XXXXXX=================  buy dession for :TRXUSDT ==================XXXXXXX
+-------> working on : XRPUSDT <------------
+-------> pair_usdt : XRP/USDT <------------
+XXXXXX=================  buy dession for :XRPUSDT ==================XXXXXXX
+-------> working on : APEUSDT <------------
+-------> pair_usdt : APE/USDT <------------
+XXXXXX=================  buy dession for :APEUSDT ==================XXXXXXX
+abj_ai_buy_signal_vBinance: 7 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
 abj_ai_buy_signal_vBinance.py
-abj_ai_buy_signal_vBinance: Analyzing 40 coins
+abj_ai_buy_signal_vBinance: Analyzing 20 coins
 ->Double anlayse mode
 ->Analysing the fist part
 ########################################### Start Analyser ###################################################
-working on: DNTUSDT
-working on: DOGEUSDT
-working on: LTCUSDT
-working on: SHIBUSDT
-working on: ROSEUSDT
-working on: XRPUSDT
-working on: AXSUSDT
-working on: EOSUSDT
-working on: ADAUSDT
-working on: ETCUSDT
-working on: APEUSDT
-working on: AVAXUSDT
-working on: TRXUSDT
-working on: DOTUSDT
 working on: NEARUSDT
 working on: ENSUSDT
-working on: ALGOUSDT
-working on: SOLUSDT
+working on: DNTUSDT
 working on: ETHUSDT
+working on: ADAUSDT
+working on: LTCUSDT
 working on: JASMYUSDT
-finshing work of: ROSEUSDT
-Error while working on: DNTUSDT
-single positional indexer is out-of-bounds
-finshing work of: ADAUSDT
-finshing work of: APEUSDT
-finshing work of: AVAXUSDT
-finshing work of: TRXUSDT
-finshing work of: AXSUSDT
-finshing work of: DOGEUSDT
-finshing work of: LTCUSDT
-finshing work of: ALGOUSDT
-finshing work of: SHIBUSDT
-finshing work of: JASMYUSDT
-finshing work of: EOSUSDT
-finshing work of: ETCUSDT
-finshing work of: DOTUSDT
-finshing work of: XRPUSDT
-finshing work of: NEARUSDT
-finshing work of: ENSUSDT
+working on: LUNAUSDT
+working on: ETCUSDT
+working on: DOGEUSDT
 finshing work of: ETHUSDT
-finshing work of: SOLUSDT
-error new part at analyse()
-exception : operands could not be broadcast together with shapes (19,206) (606,) (19,206) 
+finshing work of: JASMYUSDT
+finshing work of: ETCUSDT
+finshing work of: NEARUSDT
+Error while working on: DNTUSDT
+finshing work of: DOGEUSDT
+finshing work of: ADAUSDT
+finshing work of: LTCUSDT
+finshing work of: LUNAUSDT
+finshing work of: ENSUSDT
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 23ms/step
+        Pair  Buy      Note
+0    ETHUSDT  1.0  0.983298
+1  JASMYUSDT  0.0  0.011140
+2    ETCUSDT  0.0  0.396246
+3   NEARUSDT  0.0  0.020784
+4   DOGEUSDT  0.0  0.004557
+5    ADAUSDT  1.0  0.997285
+6    LTCUSDT  1.0  0.998529
+7   LUNAUSDT  0.0  0.002243
+8    ENSUSDT  0.0  0.005785
+      Pair      Note
+6  LTCUSDT  0.998529
+5  ADAUSDT  0.997285
+0  ETHUSDT  0.983298
+-------> working on : LTCUSDT <------------
+-------> pair_usdt : LTC/USDT <------------
+XXXXXX=================  buy dession for :LTCUSDT ==================XXXXXXX
+-------> working on : ADAUSDT <------------
+-------> pair_usdt : ADA/USDT <------------
+XXXXXX=================  buy dession for :ADAUSDT ==================XXXXXXX
+-------> working on : ETHUSDT <------------
+-------> pair_usdt : ETH/USDT <------------
+XXXXXX=================  buy dession for :ETHUSDT ==================XXXXXXX
 ->Analysing the sconde part
 ########################################### Start Analyser ###################################################
-working on: DOGEUSDT
-working on: SHIBUSDT
-working on: ROSEUSDT
-working on: ALGOUSDT
-working on: GMTUSDT
-working on: GALAUSDT
-working on: TRXUSDT
-working on: XRPUSDT
-working on: ETHUSDT
-working on: NEARUSDT
-working on: SOLUSDT
 working on: DOTUSDT
-working on: LTCUSDT
-working on: ADAUSDT
-working on: AVAXUSDT
+working on: SOLUSDT
 working on: AXSUSDT
-working on: LUNAUSDT
-working on: ENSUSDT
+working on: GMTUSDT
+working on: XRPUSDT
+working on: GALAUSDT
+working on: SHIBUSDT
+working on: TRXUSDT
+working on: AVAXUSDT
 working on: APEUSDT
-working on: ETCUSDT
-finshing work of: SHIBUSDT
-finshing work of: ROSEUSDT
-finshing work of: GMTUSDT
-finshing work of: ALGOUSDT
-finshing work of: SOLUSDT
-finshing work of: DOGEUSDT
-finshing work of: XRPUSDT
 finshing work of: DOTUSDT
-finshing work of: LTCUSDT
-finshing work of: ADAUSDT
+finshing work of: SOLUSDT
 finshing work of: AXSUSDT
-finshing work of: LUNAUSDT
+finshing work of: GMTUSDT
+finshing work of: XRPUSDT
 finshing work of: GALAUSDT
-finshing work of: ENSUSDT
-finshing work of: NEARUSDT
-finshing work of: ETHUSDT
-finshing work of: ETCUSDT
 finshing work of: TRXUSDT
-finshing work of: APEUSDT
 finshing work of: AVAXUSDT
-error new part at analyse()
-exception : operands could not be broadcast together with shapes (20,206) (606,) (20,206) 
-abj_ai_buy_signal_vBinance: 0 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
+finshing work of: APEUSDT
+finshing work of: SHIBUSDT
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 25ms/step
+       Pair  Buy      Note
+0   DOTUSDT  0.0  0.008242
+1   SOLUSDT  0.0  0.002794
+2   AXSUSDT  0.0  0.005727
+3   GMTUSDT  0.0  0.015290
+4   XRPUSDT  0.0  0.114664
+5  GALAUSDT  0.0  0.008042
+6   TRXUSDT  1.0  0.718826
+7  AVAXUSDT  0.0  0.002467
+8   APEUSDT  0.0  0.005803
+9  SHIBUSDT  1.0  0.937748
+       Pair      Note
+9  SHIBUSDT  0.937748
+6   TRXUSDT  0.718826
+-------> working on : SHIBUSDT <------------
+-------> pair_usdt : SHIB/USDT <------------
+XXXXXX=================  buy dession for :SHIBUSDT ==================XXXXXXX
+-------> working on : TRXUSDT <------------
+-------> pair_usdt : TRX/USDT <------------
+XXXXXX=================  buy dession for :TRXUSDT ==================XXXXXXX
+abj_ai_buy_signal_vBinance: 5 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
 abj_ai_buy_signal_vBinance.py
-abj_ai_buy_signal_vBinance: Analyzing 40 coins
+abj_ai_buy_signal_vBinance: Analyzing 20 coins
 ->Double anlayse mode
 ->Analysing the fist part
 ########################################### Start Analyser ###################################################
-working on: DNTUSDT
-working on: AVAXUSDT
 working on: DOGEUSDT
-working on: SOLUSDT
-working on: SHIBUSDT
+working on: DNTUSDT
 working on: ETHUSDT
-working on: ROSEUSDT
 working on: LTCUSDT
-working on: XRPUSDT
-working on: AXSUSDT
-working on: EOSUSDT
-working on: ETCUSDT
-working on: APEUSDT
-working on: ADAUSDT
-working on: NEARUSDT
 working on: JASMYUSDT
-working on: ALGOUSDT
-working on: DOTUSDT
-working on: TRXUSDT
+working on: ADAUSDT
 working on: ENSUSDT
-Error while working on: DNTUSDT
-single positional indexer is out-of-bounds
-finshing work of: DOGEUSDT
-finshing work of: SOLUSDT
-finshing work of: SHIBUSDT
+working on: ETCUSDT
+working on: LUNAUSDT
+working on: NEARUSDT
 finshing work of: LTCUSDT
-finshing work of: AVAXUSDT
-finshing work of: EOSUSDT
 finshing work of: ETCUSDT
-finshing work of: AXSUSDT
+finshing work of: ETHUSDT
+finshing work of: LUNAUSDT
+Error while working on: DNTUSDT
+finshing work of: JASMYUSDT
 finshing work of: ADAUSDT
-finshing work of: ROSEUSDT
-finshing work of: DOTUSDT
-finshing work of: XRPUSDT
-finshing work of: APEUSDT
+finshing work of: DOGEUSDT
 finshing work of: ENSUSDT
 finshing work of: NEARUSDT
-finshing work of: JASMYUSDT
-finshing work of: ALGOUSDT
-finshing work of: TRXUSDT
-finshing work of: ETHUSDT
-error new part at analyse()
-exception : operands could not be broadcast together with shapes (19,206) (606,) (19,206) 
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 25ms/step
+        Pair  Buy      Note
+0    LTCUSDT  1.0  0.829597
+1    ETCUSDT  1.0  0.999970
+2    ETHUSDT  1.0  0.994048
+3   LUNAUSDT  0.0  0.012621
+4  JASMYUSDT  0.0  0.039682
+5    ADAUSDT  1.0  0.999979
+6   DOGEUSDT  1.0  0.947245
+7    ENSUSDT  0.0  0.018562
+8   NEARUSDT  0.0  0.049901
+       Pair      Note
+5   ADAUSDT  0.999979
+1   ETCUSDT  0.999970
+2   ETHUSDT  0.994048
+6  DOGEUSDT  0.947245
+0   LTCUSDT  0.829597
+-------> working on : ADAUSDT <------------
+-------> pair_usdt : ADA/USDT <------------
+XXXXXX=================  buy dession for :ADAUSDT ==================XXXXXXX
+-------> working on : ETCUSDT <------------
+-------> pair_usdt : ETC/USDT <------------
+XXXXXX=================  buy dession for :ETCUSDT ==================XXXXXXX
+-------> working on : ETHUSDT <------------
+-------> pair_usdt : ETH/USDT <------------
+XXXXXX=================  buy dession for :ETHUSDT ==================XXXXXXX
+-------> working on : DOGEUSDT <------------
+-------> pair_usdt : DOGE/USDT <------------
+XXXXXX=================  buy dession for :DOGEUSDT ==================XXXXXXX
+-------> working on : LTCUSDT <------------
+-------> pair_usdt : LTC/USDT <------------
+XXXXXX=================  buy dession for :LTCUSDT ==================XXXXXXX
 ->Analysing the sconde part
 ########################################### Start Analyser ###################################################
-working on: DOGEUSDT
-working on: SHIBUSDT
-working on: ROSEUSDT
+working on: APEUSDT
+working on: GALAUSDT
+working on: AXSUSDT
 working on: AVAXUSDT
 working on: GMTUSDT
-working on: GALAUSDT
-working on: TRXUSDT
 working on: XRPUSDT
-working on: APEUSDT
-working on: ENSUSDT
-working on: ETHUSDT
-working on: ETCUSDT
-working on: NEARUSDT
+working on: SHIBUSDT
+working on: TRXUSDT
 working on: SOLUSDT
-working on: LTCUSDT
-working on: ALGOUSDT
-working on: AXSUSDT
-working on: LUNAUSDT
-working on: ADAUSDT
 working on: DOTUSDT
-finshing work of: SHIBUSDT
-finshing work of: ENSUSDT
-finshing work of: ROSEUSDT
-finshing work of: GALAUSDT
-finshing work of: ETHUSDT
-finshing work of: ETCUSDT
-finshing work of: LTCUSDT
-finshing work of: ALGOUSDT
-finshing work of: AVAXUSDT
-finshing work of: GMTUSDT
-finshing work of: AXSUSDT
-finshing work of: SOLUSDT
-finshing work of: DOGEUSDT
-finshing work of: ADAUSDT
-finshing work of: XRPUSDT
 finshing work of: APEUSDT
+finshing work of: GALAUSDT
+finshing work of: AXSUSDT
+finshing work of: GMTUSDT
+finshing work of: SHIBUSDT
+finshing work of: XRPUSDT
 finshing work of: DOTUSDT
-finshing work of: NEARUSDT
-finshing work of: LUNAUSDT
+finshing work of: SOLUSDT
 finshing work of: TRXUSDT
-error new part at analyse()
-exception : operands could not be broadcast together with shapes (20,206) (606,) (20,206) 
-abj_ai_buy_signal_vBinance: 0 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
+finshing work of: AVAXUSDT
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 27ms/step
+       Pair  Buy      Note
+0   APEUSDT  0.0  0.014999
+1  GALAUSDT  0.0  0.027676
+2   AXSUSDT  0.0  0.025192
+3   GMTUSDT  0.0  0.024637
+4  SHIBUSDT  1.0  0.985829
+5   XRPUSDT  1.0  0.999393
+6   DOTUSDT  0.0  0.012899
+7   SOLUSDT  0.0  0.014062
+8   TRXUSDT  0.0  0.091760
+9  AVAXUSDT  0.0  0.240592
+       Pair      Note
+5   XRPUSDT  0.999393
+4  SHIBUSDT  0.985829
+-------> working on : XRPUSDT <------------
+-------> pair_usdt : XRP/USDT <------------
+XXXXXX=================  buy dession for :XRPUSDT ==================XXXXXXX
+-------> working on : SHIBUSDT <------------
+-------> pair_usdt : SHIB/USDT <------------
+XXXXXX=================  buy dession for :SHIBUSDT ==================XXXXXXX
+abj_ai_buy_signal_vBinance: 7 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
 abj_ai_buy_signal_vBinance.py
-abj_ai_buy_signal_vBinance: Analyzing 40 coins
+abj_ai_buy_signal_vBinance: Analyzing 20 coins
 ->Double anlayse mode
 ->Analysing the fist part
 ########################################### Start Analyser ###################################################
-working on: DNTUSDT
-working on: ENSUSDT
-working on: DOGEUSDT
-working on: AXSUSDT
-working on: SHIBUSDT
-working on: SOLUSDT
-working on: TRXUSDT
-working on: ETHUSDT
-working on: ROSEUSDT
-working on: JASMYUSDT
-working on: XRPUSDT
-working on: EOSUSDT
-working on: ETCUSDT
-working on: APEUSDT
-working on: DOTUSDT
-working on: NEARUSDT
 working on: ADAUSDT
-working on: ALGOUSDT
+working on: DNTUSDT
+working on: NEARUSDT
+working on: ENSUSDT
+working on: ETCUSDT
+working on: JASMYUSDT
+working on: DOGEUSDT
 working on: LTCUSDT
-working on: AVAXUSDT
-Error while working on: DNTUSDT
-single positional indexer is out-of-bounds
-finshing work of: XRPUSDT
-finshing work of: APEUSDT
-finshing work of: LTCUSDT
-finshing work of: ENSUSDT
-finshing work of: AVAXUSDT
-finshing work of: TRXUSDT
-finshing work of: SOLUSDT
-finshing work of: ETHUSDT
-finshing work of: JASMYUSDT
-finshing work of: ROSEUSDT
-finshing work of: SHIBUSDT
-finshing work of: AXSUSDT
-finshing work of: DOGEUSDT
-finshing work of: EOSUSDT
-finshing work of: ALGOUSDT
-finshing work of: ETCUSDT
-finshing work of: DOTUSDT
-finshing work of: NEARUSDT
+working on: LUNAUSDT
+working on: ETHUSDT
 finshing work of: ADAUSDT
-error new part at analyse()
-exception : operands could not be broadcast together with shapes (19,206) (606,) (19,206) 
+finshing work of: NEARUSDT
+finshing work of: ENSUSDT
+finshing work of: JASMYUSDT
+Error while working on: DNTUSDT
+finshing work of: ETCUSDT
+finshing work of: LUNAUSDT
+finshing work of: DOGEUSDT
+finshing work of: ETHUSDT
+finshing work of: LTCUSDT
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 27ms/step
+        Pair  Buy      Note
+0    ADAUSDT  1.0  0.999933
+1   NEARUSDT  1.0  0.758263
+2    ENSUSDT  1.0  0.999349
+3  JASMYUSDT  1.0  0.990816
+4    ETCUSDT  1.0  0.999930
+5   LUNAUSDT  0.0  0.018864
+6   DOGEUSDT  1.0  0.933020
+7    ETHUSDT  1.0  0.825319
+8    LTCUSDT  1.0  0.969497
+        Pair      Note
+0    ADAUSDT  0.999933
+4    ETCUSDT  0.999930
+2    ENSUSDT  0.999349
+3  JASMYUSDT  0.990816
+8    LTCUSDT  0.969497
+6   DOGEUSDT  0.933020
+7    ETHUSDT  0.825319
+1   NEARUSDT  0.758263
+-------> working on : ADAUSDT <------------
+-------> pair_usdt : ADA/USDT <------------
+XXXXXX=================  buy dession for :ADAUSDT ==================XXXXXXX
+-------> working on : ETCUSDT <------------
+-------> pair_usdt : ETC/USDT <------------
+XXXXXX=================  buy dession for :ETCUSDT ==================XXXXXXX
+-------> working on : ENSUSDT <------------
+-------> pair_usdt : ENS/USDT <------------
+XXXXXX=================  buy dession for :ENSUSDT ==================XXXXXXX
+-------> working on : JASMYUSDT <------------
+-------> pair_usdt : JASMY/USDT <------------
+XXXXXX=================  buy dession for :JASMYUSDT ==================XXXXXXX
+-------> working on : LTCUSDT <------------
+-------> pair_usdt : LTC/USDT <------------
+XXXXXX=================  buy dession for :LTCUSDT ==================XXXXXXX
+-------> working on : DOGEUSDT <------------
+-------> pair_usdt : DOGE/USDT <------------
+XXXXXX=================  buy dession for :DOGEUSDT ==================XXXXXXX
+-------> working on : ETHUSDT <------------
+-------> pair_usdt : ETH/USDT <------------
+XXXXXX=================  buy dession for :ETHUSDT ==================XXXXXXX
+-------> working on : NEARUSDT <------------
+-------> pair_usdt : NEAR/USDT <------------
+XXXXXX=================  buy dession for :NEARUSDT ==================XXXXXXX
 ->Analysing the sconde part
 ########################################### Start Analyser ###################################################
-working on: GALAUSDT
-working on: TRXUSDT
-working on: DOGEUSDT
-working on: SHIBUSDT
-working on: ETCUSDT
-working on: XRPUSDT
-working on: ROSEUSDT
-working on: GMTUSDT
-working on: DOTUSDT
-working on: AVAXUSDT
 working on: APEUSDT
-working on: ETHUSDT
-working on: NEARUSDT
-working on: ENSUSDT
+working on: AVAXUSDT
+working on: XRPUSDT
+working on: GALAUSDT
 working on: SOLUSDT
-working on: LTCUSDT
+working on: DOTUSDT
 working on: AXSUSDT
-working on: ADAUSDT
-working on: LUNAUSDT
-working on: ALGOUSDT
-finshing work of: GALAUSDT
-finshing work of: NEARUSDT
-finshing work of: ROSEUSDT
-finshing work of: TRXUSDT
-finshing work of: ETCUSDT
-finshing work of: GMTUSDT
+working on: TRXUSDT
+working on: GMTUSDT
+working on: SHIBUSDT
+finshing work of: DOTUSDT
 finshing work of: APEUSDT
 finshing work of: XRPUSDT
-finshing work of: ALGOUSDT
 finshing work of: AVAXUSDT
-finshing work of: SOLUSDT
-finshing work of: ENSUSDT
-finshing work of: LTCUSDT
 finshing work of: AXSUSDT
-finshing work of: ADAUSDT
-finshing work of: DOGEUSDT
-finshing work of: LUNAUSDT
+finshing work of: TRXUSDT
+finshing work of: SOLUSDT
+finshing work of: GMTUSDT
 finshing work of: SHIBUSDT
-finshing work of: DOTUSDT
-finshing work of: ETHUSDT
-error new part at analyse()
-exception : operands could not be broadcast together with shapes (20,206) (606,) (20,206) 
-abj_ai_buy_signal_vBinance: 0 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
+finshing work of: GALAUSDT
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 25ms/step
+       Pair  Buy      Note
+0   DOTUSDT  0.0  0.138742
+1   APEUSDT  1.0  0.997383
+2   XRPUSDT  1.0  0.999572
+3  AVAXUSDT  1.0  0.999552
+4   AXSUSDT  1.0  0.995533
+5   TRXUSDT  1.0  0.970485
+6   SOLUSDT  1.0  0.970661
+7   GMTUSDT  1.0  0.990711
+8  SHIBUSDT  1.0  0.933411
+9  GALAUSDT  1.0  0.898901
+       Pair      Note
+2   XRPUSDT  0.999572
+3  AVAXUSDT  0.999552
+1   APEUSDT  0.997383
+4   AXSUSDT  0.995533
+7   GMTUSDT  0.990711
+6   SOLUSDT  0.970661
+5   TRXUSDT  0.970485
+8  SHIBUSDT  0.933411
+9  GALAUSDT  0.898901
+-------> working on : XRPUSDT <------------
+-------> pair_usdt : XRP/USDT <------------
+XXXXXX=================  buy dession for :XRPUSDT ==================XXXXXXX
+-------> working on : AVAXUSDT <------------
+-------> pair_usdt : AVAX/USDT <------------
+XXXXXX=================  buy dession for :AVAXUSDT ==================XXXXXXX
+-------> working on : APEUSDT <------------
+-------> pair_usdt : APE/USDT <------------
+XXXXXX=================  buy dession for :APEUSDT ==================XXXXXXX
+-------> working on : AXSUSDT <------------
+-------> pair_usdt : AXS/USDT <------------
+XXXXXX=================  buy dession for :AXSUSDT ==================XXXXXXX
+-------> working on : GMTUSDT <------------
+-------> pair_usdt : GMT/USDT <------------
+XXXXXX=================  buy dession for :GMTUSDT ==================XXXXXXX
+-------> working on : SOLUSDT <------------
+-------> pair_usdt : SOL/USDT <------------
+XXXXXX=================  buy dession for :SOLUSDT ==================XXXXXXX
+-------> working on : TRXUSDT <------------
+-------> pair_usdt : TRX/USDT <------------
+XXXXXX=================  buy dession for :TRXUSDT ==================XXXXXXX
+-------> working on : SHIBUSDT <------------
+-------> pair_usdt : SHIB/USDT <------------
+XXXXXX=================  buy dession for :SHIBUSDT ==================XXXXXXX
+-------> working on : GALAUSDT <------------
+-------> pair_usdt : GALA/USDT <------------
+XXXXXX=================  buy dession for :GALAUSDT ==================XXXXXXX
+abj_ai_buy_signal_vBinance: 17 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
 abj_ai_buy_signal_vBinance.py
-abj_ai_buy_signal_vBinance: Analyzing 40 coins
+abj_ai_buy_signal_vBinance: Analyzing 20 coins
 ->Double anlayse mode
 ->Analysing the fist part
 ########################################### Start Analyser ###################################################
-working on: DNTUSDT
-working on: AXSUSDT
-working on: DOGEUSDT
-working on: AVAXUSDT
 working on: ENSUSDT
-working on: ETHUSDT
-working on: ROSEUSDT
-working on: XRPUSDT
-working on: SOLUSDT
-working on: JASMYUSDT
-working on: EOSUSDT
-working on: ETCUSDT
-working on: APEUSDT
 working on: ADAUSDT
-working on: DOTUSDT
+working on: ETHUSDT
+working on: LUNAUSDT
 working on: NEARUSDT
-working on: TRXUSDT
+working on: DNTUSDT
+working on: DOGEUSDT
 working on: LTCUSDT
-working on: ALGOUSDT
-working on: SHIBUSDT
-Error while working on: DNTUSDT
-single positional indexer is out-of-bounds
-finshing work of: JASMYUSDT
-finshing work of: EOSUSDT
-finshing work of: XRPUSDT
-finshing work of: ALGOUSDT
-finshing work of: ROSEUSDT
-finshing work of: APEUSDT
-finshing work of: ETHUSDT
-finshing work of: AXSUSDT
-finshing work of: SOLUSDT
-finshing work of: LTCUSDT
+working on: ETCUSDT
+working on: JASMYUSDT
 finshing work of: ENSUSDT
-finshing work of: ETCUSDT
-finshing work of: AVAXUSDT
 finshing work of: ADAUSDT
-finshing work of: DOTUSDT
+finshing work of: LUNAUSDT
+finshing work of: ETHUSDT
 finshing work of: NEARUSDT
 finshing work of: DOGEUSDT
-finshing work of: TRXUSDT
-finshing work of: SHIBUSDT
-error new part at analyse()
-exception : operands could not be broadcast together with shapes (19,206) (606,) (19,206) 
+finshing work of: LTCUSDT
+Error while working on: DNTUSDT
+finshing work of: JASMYUSDT
+finshing work of: ETCUSDT
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 28ms/step
+        Pair  Buy      Note
+0    ENSUSDT  1.0  0.680659
+1    ADAUSDT  1.0  0.999940
+2   LUNAUSDT  0.0  0.124731
+3    ETHUSDT  1.0  0.999901
+4   NEARUSDT  1.0  0.834813
+5   DOGEUSDT  1.0  0.968396
+6    LTCUSDT  1.0  0.998292
+7  JASMYUSDT  0.0  0.020404
+8    ETCUSDT  1.0  0.999898
+       Pair      Note
+1   ADAUSDT  0.999940
+3   ETHUSDT  0.999901
+8   ETCUSDT  0.999898
+6   LTCUSDT  0.998292
+5  DOGEUSDT  0.968396
+4  NEARUSDT  0.834813
+0   ENSUSDT  0.680659
+-------> working on : ADAUSDT <------------
+-------> pair_usdt : ADA/USDT <------------
+XXXXXX=================  buy dession for :ADAUSDT ==================XXXXXXX
+-------> working on : ETHUSDT <------------
+-------> pair_usdt : ETH/USDT <------------
+XXXXXX=================  buy dession for :ETHUSDT ==================XXXXXXX
+-------> working on : ETCUSDT <------------
+-------> pair_usdt : ETC/USDT <------------
+XXXXXX=================  buy dession for :ETCUSDT ==================XXXXXXX
+-------> working on : LTCUSDT <------------
+-------> pair_usdt : LTC/USDT <------------
+XXXXXX=================  buy dession for :LTCUSDT ==================XXXXXXX
+-------> working on : DOGEUSDT <------------
+-------> pair_usdt : DOGE/USDT <------------
+XXXXXX=================  buy dession for :DOGEUSDT ==================XXXXXXX
+-------> working on : NEARUSDT <------------
+-------> pair_usdt : NEAR/USDT <------------
+XXXXXX=================  buy dession for :NEARUSDT ==================XXXXXXX
+-------> working on : ENSUSDT <------------
+-------> pair_usdt : ENS/USDT <------------
+XXXXXX=================  buy dession for :ENSUSDT ==================XXXXXXX
 ->Analysing the sconde part
 ########################################### Start Analyser ###################################################
-working on: DOGEUSDT
-working on: AVAXUSDT
-working on: DOTUSDT
-working on: SHIBUSDT
-working on: TRXUSDT
-working on: GMTUSDT
-working on: GALAUSDT
-working on: ETCUSDT
 working on: APEUSDT
+working on: DOTUSDT
+working on: XRPUSDT
+working on: SHIBUSDT
+working on: AVAXUSDT
+working on: SOLUSDT
+working on: GMTUSDT
+working on: AXSUSDT
+working on: TRXUSDT
+working on: GALAUSDT
+finshing work of: APEUSDT
+finshing work of: DOTUSDT
+finshing work of: XRPUSDT
+finshing work of: AVAXUSDT
+finshing work of: SOLUSDT
+finshing work of: GALAUSDT
+finshing work of: SHIBUSDT
+finshing work of: AXSUSDT
+finshing work of: TRXUSDT
+finshing work of: GMTUSDT
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 24ms/step
+       Pair  Buy      Note
+0   APEUSDT  1.0  0.998637
+1   DOTUSDT  1.0  0.851784
+2   XRPUSDT  1.0  0.999881
+3  AVAXUSDT  1.0  0.927229
+4   SOLUSDT  1.0  0.627261
+5  GALAUSDT  0.0  0.019260
+6  SHIBUSDT  0.0  0.021554
+7   AXSUSDT  0.0  0.213263
+8   TRXUSDT  1.0  0.992219
+9   GMTUSDT  0.0  0.170197
+       Pair      Note
+2   XRPUSDT  0.999881
+0   APEUSDT  0.998637
+8   TRXUSDT  0.992219
+3  AVAXUSDT  0.927229
+1   DOTUSDT  0.851784
+4   SOLUSDT  0.627261
+-------> working on : XRPUSDT <------------
+-------> pair_usdt : XRP/USDT <------------
+XXXXXX=================  buy dession for :XRPUSDT ==================XXXXXXX
+-------> working on : APEUSDT <------------
+-------> pair_usdt : APE/USDT <------------
+XXXXXX=================  buy dession for :APEUSDT ==================XXXXXXX
+-------> working on : TRXUSDT <------------
+-------> pair_usdt : TRX/USDT <------------
+XXXXXX=================  buy dession for :TRXUSDT ==================XXXXXXX
+-------> working on : AVAXUSDT <------------
+-------> pair_usdt : AVAX/USDT <------------
+XXXXXX=================  buy dession for :AVAXUSDT ==================XXXXXXX
+-------> working on : DOTUSDT <------------
+-------> pair_usdt : DOT/USDT <------------
+XXXXXX=================  buy dession for :DOTUSDT ==================XXXXXXX
+-------> working on : SOLUSDT <------------
+-------> pair_usdt : SOL/USDT <------------
+XXXXXX=================  buy dession for :SOLUSDT ==================XXXXXXX
+abj_ai_buy_signal_vBinance: 13 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
+abj_ai_buy_signal_vBinance.py
+abj_ai_buy_signal_vBinance: Analyzing 20 coins
+->Double anlayse mode
+->Analysing the fist part
+########################################### Start Analyser ###################################################
+working on: ETCUSDT
+working on: JASMYUSDT
 working on: ADAUSDT
 working on: ENSUSDT
-working on: ETHUSDT
-working on: NEARUSDT
-working on: SOLUSDT
 working on: LTCUSDT
+working on: DOGEUSDT
+working on: DNTUSDT
+working on: NEARUSDT
 working on: LUNAUSDT
-working on: ALGOUSDT
-working on: AXSUSDT
-working on: ROSEUSDT
-working on: XRPUSDT
+working on: ETHUSDT
 finshing work of: ADAUSDT
-finshing work of: LTCUSDT
+Error while working on: DNTUSDT
 finshing work of: DOGEUSDT
-finshing work of: AVAXUSDT
-finshing work of: DOTUSDT
-finshing work of: ALGOUSDT
-finshing work of: TRXUSDT
-finshing work of: SHIBUSDT
-finshing work of: GMTUSDT
-finshing work of: GALAUSDT
+finshing work of: NEARUSDT
 finshing work of: ENSUSDT
 finshing work of: ETHUSDT
-finshing work of: ETCUSDT
+finshing work of: LTCUSDT
+finshing work of: JASMYUSDT
 finshing work of: LUNAUSDT
+finshing work of: ETCUSDT
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 26ms/step
+        Pair  Buy      Note
+0    ADAUSDT  1.0  0.999582
+1   DOGEUSDT  0.0  0.085357
+2   NEARUSDT  1.0  0.998834
+3    ENSUSDT  0.0  0.054105
+4    ETHUSDT  1.0  0.999803
+5    LTCUSDT  1.0  0.999091
+6  JASMYUSDT  0.0  0.013038
+7   LUNAUSDT  1.0  0.610088
+8    ETCUSDT  1.0  0.999756
+       Pair      Note
+4   ETHUSDT  0.999803
+8   ETCUSDT  0.999756
+0   ADAUSDT  0.999582
+5   LTCUSDT  0.999091
+2  NEARUSDT  0.998834
+7  LUNAUSDT  0.610088
+-------> working on : ETHUSDT <------------
+-------> pair_usdt : ETH/USDT <------------
+XXXXXX=================  buy dession for :ETHUSDT ==================XXXXXXX
+-------> working on : ETCUSDT <------------
+-------> pair_usdt : ETC/USDT <------------
+XXXXXX=================  buy dession for :ETCUSDT ==================XXXXXXX
+-------> working on : ADAUSDT <------------
+-------> pair_usdt : ADA/USDT <------------
+XXXXXX=================  buy dession for :ADAUSDT ==================XXXXXXX
+-------> working on : LTCUSDT <------------
+-------> pair_usdt : LTC/USDT <------------
+XXXXXX=================  buy dession for :LTCUSDT ==================XXXXXXX
+-------> working on : NEARUSDT <------------
+-------> pair_usdt : NEAR/USDT <------------
+XXXXXX=================  buy dession for :NEARUSDT ==================XXXXXXX
+-------> working on : LUNAUSDT <------------
+-------> pair_usdt : LUNA/USDT <------------
+XXXXXX=================  buy dession for :LUNAUSDT ==================XXXXXXX
+->Analysing the sconde part
+########################################### Start Analyser ###################################################
+working on: DOTUSDT
+working on: GALAUSDT
+working on: SHIBUSDT
+working on: APEUSDT
+working on: AXSUSDT
+working on: AVAXUSDT
+working on: SOLUSDT
+working on: TRXUSDT
+working on: GMTUSDT
+working on: XRPUSDT
+finshing work of: GALAUSDT
+finshing work of: DOTUSDT
+finshing work of: SHIBUSDT
+finshing work of: AXSUSDT
 finshing work of: APEUSDT
 finshing work of: SOLUSDT
-finshing work of: AXSUSDT
-finshing work of: ROSEUSDT
+finshing work of: AVAXUSDT
+finshing work of: GMTUSDT
 finshing work of: XRPUSDT
+finshing work of: TRXUSDT
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 27ms/step
+       Pair  Buy      Note
+0  GALAUSDT  0.0  0.011501
+1   DOTUSDT  0.0  0.007150
+2  SHIBUSDT  0.0  0.048148
+3   AXSUSDT  0.0  0.094202
+4   APEUSDT  0.0  0.013559
+5   SOLUSDT  0.0  0.005580
+6  AVAXUSDT  0.0  0.010591
+7   GMTUSDT  0.0  0.009159
+8   XRPUSDT  0.0  0.012183
+9   TRXUSDT  0.0  0.019607
+Empty DataFrame
+Columns: [Pair, Note]
+Index: []
+abj_ai_buy_signal_vBinance: 6 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
+abj_ai_buy_signal_vBinance.py
+abj_ai_buy_signal_vBinance: Analyzing 20 coins
+->Double anlayse mode
+->Analysing the fist part
+########################################### Start Analyser ###################################################
+working on: ETCUSDT
+working on: LTCUSDT
+working on: JASMYUSDT
+working on: DOGEUSDT
+working on: DNTUSDT
+working on: ENSUSDT
+working on: ADAUSDT
+working on: NEARUSDT
+working on: ETHUSDT
+working on: LUNAUSDT
+finshing work of: ETCUSDT
+finshing work of: JASMYUSDT
+finshing work of: DOGEUSDT
+Error while working on: DNTUSDT
+finshing work of: LTCUSDT
+finshing work of: ENSUSDT
+finshing work of: ADAUSDT
 finshing work of: NEARUSDT
-error new part at analyse()
-exception : operands could not be broadcast together with shapes (20,206) (606,) (20,206) 
-abj_ai_buy_signal_vBinance: 0 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
+finshing work of: ETHUSDT
+finshing work of: LUNAUSDT
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 25ms/step
+        Pair  Buy      Note
+0    ETCUSDT  1.0  0.994820
+1  JASMYUSDT  0.0  0.014648
+2   DOGEUSDT  0.0  0.025842
+3    LTCUSDT  1.0  0.842957
+4    ENSUSDT  0.0  0.010125
+5    ADAUSDT  1.0  0.988261
+6   NEARUSDT  0.0  0.016123
+7    ETHUSDT  1.0  0.999697
+8   LUNAUSDT  0.0  0.008506
+      Pair      Note
+7  ETHUSDT  0.999697
+0  ETCUSDT  0.994820
+5  ADAUSDT  0.988261
+3  LTCUSDT  0.842957
+-------> working on : ETHUSDT <------------
+-------> pair_usdt : ETH/USDT <------------
+XXXXXX=================  buy dession for :ETHUSDT ==================XXXXXXX
+-------> working on : ETCUSDT <------------
+-------> pair_usdt : ETC/USDT <------------
+XXXXXX=================  buy dession for :ETCUSDT ==================XXXXXXX
+-------> working on : ADAUSDT <------------
+-------> pair_usdt : ADA/USDT <------------
+XXXXXX=================  buy dession for :ADAUSDT ==================XXXXXXX
+-------> working on : LTCUSDT <------------
+-------> pair_usdt : LTC/USDT <------------
+XXXXXX=================  buy dession for :LTCUSDT ==================XXXXXXX
+->Analysing the sconde part
+########################################### Start Analyser ###################################################
+working on: XRPUSDT
+working on: AVAXUSDT
+working on: APEUSDT
+working on: GALAUSDT
+working on: GMTUSDT
+working on: SOLUSDT
+working on: SHIBUSDT
+working on: AXSUSDT
+working on: TRXUSDT
+working on: DOTUSDT
+finshing work of: XRPUSDT
+finshing work of: AVAXUSDT
+finshing work of: APEUSDT
+finshing work of: GALAUSDT
+finshing work of: SHIBUSDT
+finshing work of: AXSUSDT
+finshing work of: TRXUSDT
+finshing work of: DOTUSDT
+finshing work of: GMTUSDT
+finshing work of: SOLUSDT
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 25ms/step
+       Pair  Buy      Note
+0   XRPUSDT  0.0  0.005557
+1  AVAXUSDT  0.0  0.027374
+2   APEUSDT  0.0  0.035115
+3  GALAUSDT  0.0  0.035483
+4  SHIBUSDT  0.0  0.001587
+5   AXSUSDT  0.0  0.026848
+6   TRXUSDT  0.0  0.010621
+7   DOTUSDT  0.0  0.032389
+8   GMTUSDT  0.0  0.042363
+9   SOLUSDT  0.0  0.025681
+Empty DataFrame
+Columns: [Pair, Note]
+Index: []
+abj_ai_buy_signal_vBinance: 4 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
+abj_ai_buy_signal_vBinance.py
+abj_ai_buy_signal_vBinance: Analyzing 20 coins
+->Double anlayse mode
+->Analysing the fist part
+########################################### Start Analyser ###################################################
+working on: ADAUSDT
+working on: NEARUSDT
+working on: LUNAUSDT
+working on: DNTUSDT
+working on: LTCUSDT
+working on: ENSUSDT
+working on: ETHUSDT
+working on: ETCUSDT
+working on: JASMYUSDT
+working on: DOGEUSDT
+Error while working on: DNTUSDT
+finshing work of: ADAUSDT
+finshing work of: ETHUSDT
+finshing work of: JASMYUSDT
+finshing work of: DOGEUSDT
+finshing work of: LUNAUSDT
+finshing work of: LTCUSDT
+finshing work of: NEARUSDT
+finshing work of: ETCUSDT
+finshing work of: ENSUSDT
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 37ms/step
+        Pair  Buy      Note
+0    ADAUSDT  0.0  0.003919
+1    ETHUSDT  1.0  0.999918
+2  JASMYUSDT  0.0  0.034318
+3   DOGEUSDT  0.0  0.030241
+4   LUNAUSDT  0.0  0.027263
+5    LTCUSDT  0.0  0.005895
+6   NEARUSDT  0.0  0.026221
+7    ETCUSDT  0.0  0.012934
+8    ENSUSDT  0.0  0.039234
+      Pair      Note
+1  ETHUSDT  0.999918
+-------> working on : ETHUSDT <------------
+-------> pair_usdt : ETH/USDT <------------
+XXXXXX=================  buy dession for :ETHUSDT ==================XXXXXXX
+->Analysing the sconde part
+########################################### Start Analyser ###################################################
+working on: XRPUSDT
+working on: GALAUSDT
+working on: SHIBUSDT
+working on: AVAXUSDT
+working on: DOTUSDT
+working on: TRXUSDT
+working on: SOLUSDT
+working on: GMTUSDT
+working on: AXSUSDT
+working on: APEUSDT
+finshing work of: XRPUSDT
+finshing work of: AVAXUSDT
+finshing work of: GALAUSDT
+finshing work of: SHIBUSDT
+finshing work of: TRXUSDT
+finshing work of: DOTUSDT
+finshing work of: GMTUSDT
+finshing work of: AXSUSDT
+finshing work of: APEUSDT
+finshing work of: SOLUSDT
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 25ms/step
+       Pair  Buy      Note
+0   XRPUSDT  0.0  0.007157
+1  AVAXUSDT  0.0  0.023403
+2  GALAUSDT  0.0  0.023480
+3  SHIBUSDT  0.0  0.000352
+4   TRXUSDT  0.0  0.009769
+5   DOTUSDT  0.0  0.020992
+6   GMTUSDT  0.0  0.028649
+7   AXSUSDT  0.0  0.026851
+8   APEUSDT  0.0  0.029805
+9   SOLUSDT  0.0  0.029793
+Empty DataFrame
+Columns: [Pair, Note]
+Index: []
+abj_ai_buy_signal_vBinance: 1 coins with Buy Signals. Waiting 0.65 minutes for next analysis.
