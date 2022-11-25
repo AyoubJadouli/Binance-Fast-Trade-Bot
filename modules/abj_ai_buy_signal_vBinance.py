@@ -423,6 +423,31 @@ def normalize(dataset,file=Normalization_File):
     std=np.array(Normalization["std"])
     dataset -= mean 
     dataset /= std
+    dataset=np.nan_to_num(dataset,nan=0)
+    dataset=np.nan_to_num(dataset, neginf=0) 
+    dataset=np.nan_to_num(dataset, posinf=0) 
+    return(dataset)
+
+def normalize_org(dataset,file=Normalization_File):
+    global Normalization
+    try:
+        N=Normalization
+    except:
+        Normalization=None
+    if(Normalization==None):
+        print('Loading normalization from file')
+        with open(file) as json_file:
+            Normalization = json.load(json_file)
+            NorShape=len(Normalization["mean"])
+            print(f"Nomalization shape: {NorShape}")
+    else:
+        #print('normalization is loaded')
+        pass
+
+    mean=np.array(Normalization["mean"])
+    std=np.array(Normalization["std"])
+    dataset -= mean 
+    dataset /= std
     return(dataset)
 
 def Buy_Dessision(input):
@@ -665,7 +690,11 @@ async def get_all_data_for(list_pair=pairs,exchange=ex,window=WINDOW_SIZE):
 
 ###################################################################### V Binance ###################################################
 def Buy_PLUS(input):
-    A=np.array(input)
+    dt=np.array(input)
+    dt=np.nan_to_num(dt,nan=0)
+    dt=np.nan_to_num(dt, neginf=0) 
+    dt=np.nan_to_num(dt, posinf=0) 
+    A=dt
     predictions = model.predict(normalize(A))
     #rounded = [round(x[0]) for x in predictions]
     return predictions

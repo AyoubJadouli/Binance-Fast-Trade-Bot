@@ -1,0 +1,250 @@
+
+####################
+# STARTED: 2022-11-25 13:33:34 | Running for: 1:22:42
+# CURRENT HOLDS: 4/10 200/500 USDT
+# BUYING PAUSE: False
+# WINS/LOSSSES: 19/5 WIN %: 79.17%
+# PENDING: -0.131% EST $:-0.653 USDT
+# EARNED: 2.43 USDT | PROFIT %: 0.486%
+
+# +--------+----------+-----------+----------+------+-------+----------+----------+-----------+
+# | Symbol |  Volume  | Bought At |  Now At  | TP % |  SL % | Change % | Profit $ | Time Held |
+# +--------+----------+-----------+----------+------+-------+----------+----------+-----------+
+# |  SRM   | 187.9000 |  0.266060 | 0.266060 | 0.50 | -2.60 |  0.000   |   0.00   |  0:00:19  |
+# |  APE   | 15.3200  |  3.263000 | 3.268000 | 0.50 | -2.60 |  0.153   |   0.08   |  0:20:41  |
+# |  DOGE  | 568.0000 |  0.087930 | 0.087850 | 0.50 | -2.60 |  -0.091  |  -0.05   |  0:13:03  |
+# |  REN   | 456.0000 |  0.109453 | 0.107952 | 0.50 | -2.60 |  -1.371  |  -0.68   |  0:13:52  |
+# +--------+----------+-----------+----------+------+-------+----------+----------+-----------+
+###################
+
+ai_options: # top 20
+   Normalization_File: AI/tp70_w14_max7min_Norm_v1_top20_dip.json
+   Model_FileName:  AI/tp70_w14_max7min_Mode_top20_dip.hdf5
+   WINDOW_SIZE: 14
+   PRESSISION: -0.0
+
+
+trading_options:
+  TAKE_PROFIT: 0.5   # define in % when to take profit on a profitable coin. default 0.25
+  STOP_LOSS:  2.6  # define in % when to sell a coin that's not making a profit.
+  MAX_HOLDING_TIME: 14    # in minutes if we can't sell in this time it will sell it at more than 1/2 of SL
+
+
+  USE_TRAILING_STOP_LOSS: True
+  #USE_TRAILING_STOP_LOSS: False
+  TRAILING_STOP_LOSS: .02     # when hit TAKE_PROFIT, move STOP_LOSS to TRAILING_STOP_LOSS percentage points below TAKE_PROFIT hence locking in profit
+  TRAILING_TAKE_PROFIT: .005 
+  #abj_seperbuy_signal_v2 config
+
+
+  PAIR_WITH: USDT #BUSD       # select your base currency to use for trading (trade for example USDT pairs)
+  TRADE_TOTAL: 50 #0.00002614 #10 #Total amount per trade (your base currency balance must be at least TRADE_SLOTS * TRADE_TOTAL) min 12
+  TRADE_SLOTS: 10    # Maximum number of trade 'slots' at any time (your USDT balance must be at least TRADE_SLOTS * TRADE_TOTAL)
+
+  CHOOSEN_INTERVAL: 1m # 5m 1m-5m 5m-15m 15m 1h 4h
+  BTC_CHECK_LEVEL: 1 #up to 4
+  RSI_MIN: 30 #RSI value to concider oversell
+  RSI_BUY: -0.3 #RSI difference
+  ANNOYED_MOD: True #if the market are down and you want to force superbuy
+  WISE_ANNOYED_MOD: True
+  TIME_DIFFERENCE: 1   # the amount of time in MINUTES to calculate the difference from the current price (minimum: 1).
+  RECHECK_INTERVAL: 40   # Number of times to check for TP/SL during each TIME_DIFFERENCE (minimum: 1).(max 1200 requests per minute per IP)
+  PANIC_STOP: 0   #if the losses are equal to or greater than the established percentage, the bot will stop completely. if it is 0 it is deactivated.
+  CHANGE_IN_PRICE: 10   # the difference in % between the first and second checks for the price. default 0.25
+  SIGNALLING_MODULES:
+#     - abj_ai_buy_signal_v1
+#    - abj_ai_buy_signal_w7_F30
+#     - abj_ai_buy_signal_vRF
+#    - abj_ai_buy_signal_vNoPrice
+    - abj_ai_buy_signal_vBinance
+#    - abj_superbuy_signal
+#    - abj_superbuy_signal_v2    
+#    - RSI_Algo_v3
+    #- RSI_Algo
+#    - os_pausebot_MA
+#    - os_signalbuy_RECOMM_SBUY
+    #- Ak_Scalp
+    #- Ak_Scalp_v2
+    #- three_musketeers
+    #- webserver
+    # - RSI_Algo_v2
+    # - RSI_Algo_v3.1
+    #- ScalperPro
+    #- supertrend
+    #- custsignalmod
+    #- btc_pause
+    #- djcommie_signalbuy_rsi_stoch
+    #- djcommie_signalsell_rsi_stoch
+    #- nigec_signalbuy_RSI
+    #- nigec_signalsell_RSI
+    #- os_pausebot_MAOSC
+    #- os_pausebot_MAv2
+    #- VolScan
+    #- the_snail_test
+    #- the_snail_v2
+    #- os_signalbuy_3SMA
+    #- os_signalbuy_3SMAv2
+    #- os_signalbuy_RECOMM
+    #- os_signalsell_RECOMM
+    #- os_signalsell_3SMA
+    #- os_signalsell_3SMAv2
+    #- pausebotmod
+    #- rsi-mod
+    #- signalsample
+    #- signalsamplemod
+    #- Ak_Scalp_v3
+
+
+
+
+
+
+  # Use custom tickers.txt list for filtering pairs.
+  # Name of custom tickers list
+  CUSTOM_LIST: True
+  TICKERS_LIST: 'halal_coins.txt'
+   
+  # whether to use trailing stop loss or not; default is True
+  # 
+  # NOTE -SELL_ON_SIGNAL_ONLY will override USE_TRAILING_STOP_LOSS
+
+
+  # Following are used to override SL, TP, TSL & TTP & SELL_ON_SIGNAL_ONLY in the case of a market crash
+  # when hit SESSION_TAKE_PROFIT %, sell all coins and stop bot
+  # when hit SESSION_STOP_LOSS %, sell all coins and stop bot.
+  # Note, SESSION_STOP_LOSS needs to be a NEGATIVE number i.e. -2
+  SESSION_TPSL_OVERRIDE: False
+  SESSION_TAKE_PROFIT: 0.3
+  SESSION_STOP_LOSS: -0.3
+    # EX_PAIRS is a list of fiat currencies and margin symbols that I am excluding.
+  # Anything added here will be excluded from coin withdrawal and will not be sold.
+  EX_PAIRS: [ 'PAX', 'EUR', 'GBP', 'JPY', 'USD', 'AUD', 'DOWN', 'UP']
+
+  # Let a signalling module control sell of coin
+  # NOTE - If USE_TRAILING_STOP_LOSS: True then this needs to be False
+  SELL_ON_SIGNAL_ONLY: False
+
+  # Trading fee in % per trade.
+  # If using 0.075% (using BNB for fees) you must have BNB in your account to cover trading fees.
+  # If using BNB for fees, it MUST be enabled in your Binance 'Dashboard' page (checkbox).
+  TRADING_FEE: 0.001 
+  
+  #if it is activated, the commission is ignored in WIN = (SELL_PRICE + FEE) >= (BUY_PRICE + FEE)
+  IGNORE_FEE: False
+  
+  # Discord integration
+  # Used to push alerts, messages etc to a discord channel
+  MSG_DISCORD: True
+  
+  #restart all modules every hour
+  RESTART_MODULES: False
+  
+  #minimal mode set to 0, complete mode set to 1, termux mode set to 2
+  SCREEN_MODE: 2
+  STATIC_MAIN_INFO: False
+  DISABLE_TIMESTAMPS: True  
+  SHOW_INITIAL_CONFIG: False
+  
+
+  
+  SHOW_TABLE_COINS_BOUGHT: True  
+  #Thanks to the idea of Norker Play, the table of purchased coins can now be ordered according to the name of the column that we want ... 
+  #thank you Norker Play for your contribution ...
+  #["Symbol", "Volume", "Bought At", "Now At", "TP %", "SL %", "Change %", "Profit $", "Time Held"]
+  SORT_TABLE_BY: "Time Held"
+  REVERSE_SORT: False
+  
+  #if true, it will ignore ALWAYS_OVERWRITE and ALWAYS_CONTINUE
+  ASK_ME: True
+  
+  #I will no longer ask if you want to continue a new session, I would simply start from 0
+  ALWAYS_OVERWRITE: False
+  
+  #ALWAYS_OVERWRITE must be false to use this option, which if TRUE will not ask, and will start the previous session automatically
+  ALWAYS_CONTINUE: True
+
+  #Enables the use of currencies with greater or lesser volume
+  USE_MOST_VOLUME_COINS: True
+  TOP_LIST: 20
+  #the list is updated every n number of minutes. by default it is updated every 24 hours (1440 minutes). 
+  #Sweethackercasper's idea, thanks mate.
+  UPDATE_MOST_VOLUME_COINS: 1440
+  #It should not be touched here, used as record.
+  VOLATILE_VOLUME: volatile_volume_25-11-2022(00_00_34)
+  #idea from my psychologist, thanks Sebastian V.
+  #Two different currencies can be used as a range (within the market table in Binance ordered from highest to lowest)
+  COINS_MAX_VOLUME: ETH #ETH  #5000000000
+  COINS_MIN_VOLUME: EPS #GALA #100000000
+  
+
+  
+
+# These options apply to how the script will operate.
+script_options:
+  # Switch between testnet and mainnet
+  # Setting this to False will use REAL funds, use at your own risk
+  TEST_MODE: True
+  LOG_TRADES: True
+  #the MAIN_FILES_PATH will be the folder where the LOG_FILE, HISTORY_LOG_FILE, COIN_BOUGHT and BOT_STATS files will be stored. 
+  #By default, if it is empty, these files will be housed in the main folder of the Bot. Not yet implemented
+  MAIN_FILES_PATH: ""
+  LOG_FILE: 'log.txt'
+  TRADES_LOG_FILE: 'trades.html'
+  #if it is empty no information will be saved
+  HISTORY_LOG_FILE: '' #'history.html'
+  COINS_BOUGHT: 'coins_bought.json'
+  BOT_STATS: 'bot_stats.json'
+  #This file will show the currencies contributed by the module or the compa modules for the bot
+  EXTERNAL_COINS: 'excoin.txt'
+  DEBUG: True
+  BUY_PAUSED: 0
+  
+  #all binance requests from our bot will be proxied
+  PROXY_HTTP: '' #'http://localhost:8090'
+  PROXY_HTTPS: ''
+
+  # Set this to true if you are accessing binance from within the United States of America
+  # Need to change TLD
+  AMERICAN_USER: False
+
+
+
+######################### old in ibm ################################################3
+#Test1 4.49 BUSD/ 5:17:43 TP:0.15 SL:0.15 TTP:0.05 TSL:0.05 RSI1  75/64 
+#Test2 4.49 BUSD/ 5:17:43 TP:0.13 SL:0.13 TTP:0.03 TSL:0.03 RSI1  38/37 
+#Test3 win 3.3$ for 38min 47/32 abjv2  1h-> win 4.12$ 89/61 with btc up     STOP_LOSS: 0.6/TAKE_PROFIT: 0.6 /TRAILING_STOP_LOSS: .05 / TRAILING_TAKE_PROFIT: .01||  6h>EARNED: 6.61 BUSD | PROFIT %: 8.266% WINS/LOSSSES: 346/313 WIN %: 52.5%
+# ai_options:
+#   Normalization_File: '/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp28_w21_max4min_Model_v1_Norm_v1.json'
+#   Model_FileName: '/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp28_w21_max4min_Model_v1_Model_v1.hdf5'
+#   WINDOW_SIZE: 21
+
+# ai_options: # 18/6 WIN %: 75%
+#   Normalization_File: '/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp44_w6_max14min_Norm_v1.json'
+#   Model_FileName: '/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp44_w6_max14min_Model_v1.hdf5' 
+#   RF_Model_FileName: '/UltimeTradingBot/Data/tp33_w7_max2min_Model_v1.jolib'
+#   WINDOW_SIZE: 6
+#   PRESSISION: -0.2
+
+#ai_options: # max window
+#  Normalization_File: 'AI/tp40_w40_max4min_Norm_v1.json'
+#  #Model_FileName: 'AI/tp40_w40_max4min_Model_vZ76.h5' 
+#  Model_FileName: 'AI/tp40_w40_max4min_Model_vZ2.h5' # c0=94%, c1=43.4%
+#  WINDOW_SIZE: 40
+#  PRESSISION: 0
+
+# ai_options: # 18/6 WIN %: 75%
+#    Normalization_File: 'AI/tp60_w7_max30min_Norm_v1.json'
+# #   # Model_FileName: 'AI/tp35_w20_max2min_Model_v1.hdf5' 
+#    # Model_FileName: 'AI/tp35_w20_max2min_Model_vZ.hdf5' 
+#    Model_FileName: 'AI/tp60_w7_max30min_Model_v1.hdf5' 
+#    RF_Model_FileName: '/UltimeTradingBot/Data/tp33_w7_max2min_Model_v1.jolib'
+#    WINDOW_SIZE: 7
+#    PRESSISION: 0.0
+
+# ai_options: # 18/6 WIN %: 75%
+#    Normalization_File: 'AI/minix30mintp06.json'
+#    Model_FileName: 'AI/minix30mintp06.h5' 
+#    WINDOW_SIZE: 7
+#    PRESSISION: 0.0
+
+#    PRESSISION: 0.0

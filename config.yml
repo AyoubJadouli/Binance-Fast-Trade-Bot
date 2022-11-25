@@ -1,44 +1,75 @@
-#Test1 4.49 BUSD/ 5:17:43 TP:0.15 SL:0.15 TTP:0.05 TSL:0.05 RSI1  75/64 
-#Test2 4.49 BUSD/ 5:17:43 TP:0.13 SL:0.13 TTP:0.03 TSL:0.03 RSI1  38/37 
-#Test3 win 3.3$ for 38min 47/32 abjv2  1h-> win 4.12$ 89/61 with btc up     STOP_LOSS: 0.6/TAKE_PROFIT: 0.6 /TRAILING_STOP_LOSS: .05 / TRAILING_TAKE_PROFIT: .01||  6h>EARNED: 6.61 BUSD | PROFIT %: 8.266% WINS/LOSSSES: 346/313 WIN %: 52.5%
-# ai_options:
-#   Normalization_File: '/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp28_w21_max4min_Model_v1_Norm_v1.json'
-#   Model_FileName: '/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp28_w21_max4min_Model_v1_Model_v1.hdf5'
-#   WINDOW_SIZE: 21
 
-# ai_options: # 18/6 WIN %: 75%
-#   Normalization_File: '/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp44_w6_max14min_Norm_v1.json'
-#   Model_FileName: '/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp44_w6_max14min_Model_v1.hdf5' 
-#   RF_Model_FileName: '/UltimeTradingBot/Data/tp33_w7_max2min_Model_v1.jolib'
-#   WINDOW_SIZE: 6
-#   PRESSISION: -0.2
+######################################################################################################
+####################################### new #########################################################
+# ai_options: 
+#    Normalization_File: 'AI/tp35_w20_max2min_Norm_v1.json'
+#    Model_FileName: 'AI/tp35_w20_max2min_Model_v3x99.h5' 
+#    WINDOW_SIZE: 20
+#    PRESSISION: -0.0
 
-#ai_options: # max window
-#  Normalization_File: 'AI/tp40_w40_max4min_Norm_v1.json'
-#  #Model_FileName: 'AI/tp40_w40_max4min_Model_vZ76.h5' 
-#  Model_FileName: 'AI/tp40_w40_max4min_Model_vZ2.h5' # c0=94%, c1=43.4%
-#  WINDOW_SIZE: 40
-#  PRESSISION: 0
+# ai_options: # no price
+#    Normalization_File: 'AI/minix15mintp08.json'
+#    Model_FileName: 'AI/minix15mintp08.h5' 
+#    WINDOW_SIZE: 8
+#    PRESSISION: 0.0
 
-ai_options: # 18/6 WIN %: 75%
-   Normalization_File: 'AI/tp60_w7_max30min_Norm_v1.json'
-#   # Model_FileName: 'AI/tp35_w20_max2min_Model_v1.hdf5' 
-   # Model_FileName: 'AI/tp35_w20_max2min_Model_vZ.hdf5' 
-   Model_FileName: 'AI/tp60_w7_max30min_Model_v1.hdf5' 
-   RF_Model_FileName: '/UltimeTradingBot/Data/tp33_w7_max2min_Model_v1.jolib'
-   WINDOW_SIZE: 7
-   PRESSISION: 0.0
+# ai_options: # no price
+#    Normalization_File: 'AI/tp200_w10_max20min_Norm_v1.json'
+#    Model_FileName: 'AI/tp200_w10_max20min_Model_v2.h5' 
+#    WINDOW_SIZE: 10
+#    PRESSISION: -0.35
+
+# ai_options: # no price
+#    Normalization_File: 'AI/tp35_w20_max2min_Norm_v1.json'
+#    Model_FileName: 'AI/tp35_w20_max2min_Model_v3x99.h5' 
+#    WINDOW_SIZE: 20
+#    PRESSISION: -0.0
+
+# ai_options: # no price
+#    #Normalization_File: 'AI/w10_Noprice_Norm.json'
+#    Normalization_File: /UltimeTradingBot/Data/tp70_w10_max5min_Norm_v1.json
+#    Model_FileName: 'AI/dontbuy_model_w10_noprice_p1.2.h5' 
+#    WINDOW_SIZE: 10
+#    PRESSISION: -0.0
+
+# ai_options: # no price
+#    #Normalization_File: 'AI/w10_Noprice_Norm.json'
+#    Normalization_File: /UltimeTradingBot/Data/tp120_w10_max5min_Norm_v1_NoPrice.json
+#    Model_FileName: 'AI/buy_model_w10_tp1.2.h5' 
+#    WINDOW_SIZE: 10
+#    PRESSISION: -0.0
+
+# ai_options: # top 20
+#    Normalization_File: /UltimeTradingBot/Data/tp50_w20_max6min_Norm_v1.json
+#    Model_FileName: /UltimeTradingBot/Data/tp50_w20_max6min_Model_v1.hdf5
+#    WINDOW_SIZE: 20
+#    PRESSISION: -0.0
+
+
+ai_options: # top 20
+   Normalization_File: AI/tp70_w14_max7min_Norm_v1_top20_dip.json
+   Model_FileName:  AI/tp70_w14_max7min_Mode_top20_dip.hdf5
+   WINDOW_SIZE: 14
+   PRESSISION: -0.0
+
+
+# ai_options: # max min
+#    Normalization_File: /UltimeTradingBot/Data/tp80_w15_max15min_Norm_v1.json
+#    Model_FileName: /UltimeTradingBot/Data/tp80_w15_max15min_Model_v1.hdf5
+#    WINDOW_SIZE: 15
+#    PRESSISION: -0.0
+
 
 trading_options:
-  TAKE_PROFIT: 0.33  # define in % when to take profit on a profitable coin. default 0.25
-  STOP_LOSS:  10.75  # define in % when to sell a coin that's not making a profit.
-  MAX_HOLDING_TIME: 20   # in minutes if we can't sell in this time it will sell it at more than 1/2 of SL
+  TAKE_PROFIT: 0.5   # define in % when to take profit on a profitable coin. default 0.25
+  STOP_LOSS:  2.6  # define in % when to sell a coin that's not making a profit.
+  MAX_HOLDING_TIME: 14    # in minutes if we can't sell in this time it will sell it at more than 1/2 of SL
 
 
-  #USE_TRAILING_STOP_LOSS: True
-  USE_TRAILING_STOP_LOSS: False
-  TRAILING_STOP_LOSS: .01      # when hit TAKE_PROFIT, move STOP_LOSS to TRAILING_STOP_LOSS percentage points below TAKE_PROFIT hence locking in profit
-  TRAILING_TAKE_PROFIT: .01 
+  USE_TRAILING_STOP_LOSS: True
+  #USE_TRAILING_STOP_LOSS: False
+  TRAILING_STOP_LOSS: .02     # when hit TAKE_PROFIT, move STOP_LOSS to TRAILING_STOP_LOSS percentage points below TAKE_PROFIT hence locking in profit
+  TRAILING_TAKE_PROFIT: .005 
   #abj_seperbuy_signal_v2 config
 
 
@@ -58,9 +89,10 @@ trading_options:
   CHANGE_IN_PRICE: 10   # the difference in % between the first and second checks for the price. default 0.25
   SIGNALLING_MODULES:
 #     - abj_ai_buy_signal_v1
-    - abj_ai_buy_signal_w7_F30
+#    - abj_ai_buy_signal_w7_F30
 #     - abj_ai_buy_signal_vRF
-#    - abj_ai_buy_signal_vBinance
+#    - abj_ai_buy_signal_vNoPrice
+    - abj_ai_buy_signal_vBinance
 #    - abj_superbuy_signal
 #    - abj_superbuy_signal_v2    
 #    - RSI_Algo_v3
@@ -122,7 +154,7 @@ trading_options:
   SESSION_STOP_LOSS: -0.3
     # EX_PAIRS is a list of fiat currencies and margin symbols that I am excluding.
   # Anything added here will be excluded from coin withdrawal and will not be sold.
-  EX_PAIRS: ['BTC', 'ETH', 'PAX', 'EUR', 'GBP', 'JPY', 'USD', 'AUD', 'DOWN', 'UP']
+  EX_PAIRS: [ 'PAX', 'EUR', 'GBP', 'JPY', 'USD', 'AUD', 'DOWN', 'UP']
 
   # Let a signalling module control sell of coin
   # NOTE - If USE_TRAILING_STOP_LOSS: True then this needs to be False
@@ -131,7 +163,7 @@ trading_options:
   # Trading fee in % per trade.
   # If using 0.075% (using BNB for fees) you must have BNB in your account to cover trading fees.
   # If using BNB for fees, it MUST be enabled in your Binance 'Dashboard' page (checkbox).
-  TRADING_FEE: 0.101 
+  TRADING_FEE: 0.001 
   
   #if it is activated, the commission is ignored in WIN = (SELL_PRICE + FEE) >= (BUY_PRICE + FEE)
   IGNORE_FEE: False
@@ -174,7 +206,7 @@ trading_options:
   #Sweethackercasper's idea, thanks mate.
   UPDATE_MOST_VOLUME_COINS: 1440
   #It should not be touched here, used as record.
-  VOLATILE_VOLUME: volatile_volume_28-10-2022(00_00_36)
+  VOLATILE_VOLUME: volatile_volume_25-11-2022(22_41_17)
   #idea from my psychologist, thanks Sebastian V.
   #Two different currencies can be used as a range (within the market table in Binance ordered from highest to lowest)
   COINS_MAX_VOLUME: ETH #ETH  #5000000000
@@ -210,3 +242,45 @@ script_options:
   # Set this to true if you are accessing binance from within the United States of America
   # Need to change TLD
   AMERICAN_USER: False
+
+
+
+######################### old in ibm ################################################3
+#Test1 4.49 BUSD/ 5:17:43 TP:0.15 SL:0.15 TTP:0.05 TSL:0.05 RSI1  75/64 
+#Test2 4.49 BUSD/ 5:17:43 TP:0.13 SL:0.13 TTP:0.03 TSL:0.03 RSI1  38/37 
+#Test3 win 3.3$ for 38min 47/32 abjv2  1h-> win 4.12$ 89/61 with btc up     STOP_LOSS: 0.6/TAKE_PROFIT: 0.6 /TRAILING_STOP_LOSS: .05 / TRAILING_TAKE_PROFIT: .01||  6h>EARNED: 6.61 BUSD | PROFIT %: 8.266% WINS/LOSSSES: 346/313 WIN %: 52.5%
+# ai_options:
+#   Normalization_File: '/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp28_w21_max4min_Model_v1_Norm_v1.json'
+#   Model_FileName: '/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp28_w21_max4min_Model_v1_Model_v1.hdf5'
+#   WINDOW_SIZE: 21
+
+# ai_options: # 18/6 WIN %: 75%
+#   Normalization_File: '/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp44_w6_max14min_Norm_v1.json'
+#   Model_FileName: '/UltimeTradingBot/Binance-Fast-Trade-Bot/AI/tp44_w6_max14min_Model_v1.hdf5' 
+#   RF_Model_FileName: '/UltimeTradingBot/Data/tp33_w7_max2min_Model_v1.jolib'
+#   WINDOW_SIZE: 6
+#   PRESSISION: -0.2
+
+#ai_options: # max window
+#  Normalization_File: 'AI/tp40_w40_max4min_Norm_v1.json'
+#  #Model_FileName: 'AI/tp40_w40_max4min_Model_vZ76.h5' 
+#  Model_FileName: 'AI/tp40_w40_max4min_Model_vZ2.h5' # c0=94%, c1=43.4%
+#  WINDOW_SIZE: 40
+#  PRESSISION: 0
+
+# ai_options: # 18/6 WIN %: 75%
+#    Normalization_File: 'AI/tp60_w7_max30min_Norm_v1.json'
+# #   # Model_FileName: 'AI/tp35_w20_max2min_Model_v1.hdf5' 
+#    # Model_FileName: 'AI/tp35_w20_max2min_Model_vZ.hdf5' 
+#    Model_FileName: 'AI/tp60_w7_max30min_Model_v1.hdf5' 
+#    RF_Model_FileName: '/UltimeTradingBot/Data/tp33_w7_max2min_Model_v1.jolib'
+#    WINDOW_SIZE: 7
+#    PRESSISION: 0.0
+
+# ai_options: # 18/6 WIN %: 75%
+#    Normalization_File: 'AI/minix30mintp06.json'
+#    Model_FileName: 'AI/minix30mintp06.h5' 
+#    WINDOW_SIZE: 7
+#    PRESSISION: 0.0
+
+#    PRESSISION: 0.0

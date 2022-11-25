@@ -1,6 +1,6 @@
 """
 AyoubJadouli Mod
-Version: 7.1
+Version: 7.4
 
 On the top of:
 Horacio Oscar Fanelli - Pantersxx3
@@ -27,7 +27,8 @@ Notes:
 
 # use for environment variables
 import os
-
+import asyncio
+import ccxt.pro as ccxt
 # use if needed to pass args to external modules
 import sys
 
@@ -1058,12 +1059,13 @@ def buy():
 def sell_coins(tpsl_override = False, specific_coin_to_sell = ""):
     try:
         '''sell coins that have reached the STOP LOSS or TAKE PROFIT threshold'''
+        coins_sold = {}
         global hsp_head, session_profit_incfees_perc, session_profit_incfees_total, coin_order_id, trade_wins, trade_losses, historic_profit_incfees_perc, historic_profit_incfees_total, sell_all_coins, session_USDT_EARNED, TUP, TDOWN, TNEUTRAL, USED_BNB_IN_SESSION, TRADE_TOTAL, sell_specific_coin
         externals = sell_external_signals()
      
         last_price = get_price(False) # don't populate rolling window
         #last_price = get_price(add_to_historical=True) # don't populate rolling window
-        coins_sold = {}
+        
         
         BUDGET = TRADE_TOTAL * TRADE_SLOTS
     
@@ -2089,6 +2091,79 @@ def print_banner():
 \033[92m_____________________________________     by ABJ     _____________________________________'''
     print(__header__)
 
+async def mmain(args):
+
+    remove_external_signals('buy')
+    remove_external_signals('sell')
+    remove_external_signals('pause')
+
+    #load_signal_threads()
+    load_signal_threads()
+
+    # seed initial prices
+    get_price()
+    TIMEOUT_COUNT=0
+    READ_CONNECTERR_COUNT=0
+    BINANCE_API_EXCEPTION=0	
+    
+    #extract of code of OlorinSledge, Thanks
+    thehour = datetime.now().hour  
+    coins_sold = {}
+    while is_bot_running:
+        try:
+            coins_sold = {}
+            orders, last_price, volume = buy()
+            update_portfolio(orders, last_price, volume)
+            
+            if SESSION_TPSL_OVERRIDE:
+                check_total_session_profit(coins_bought, last_price)
+                
+            coins_sold = sell_coins()
+            remove_from_portfolio(coins_sold)
+            update_bot_stats()
+            
+            #coins_sold = sell_coins()
+            #remove_from_portfolio(coins_sold)
+            #update_bot_stats()
+            
+            if FLAG_PAUSE == False:
+                #extract of code of OlorinSledge, Thanks
+                if RESTART_MODULES and thehour != datetime.now().hour :
+                    stop_signal_threads()
+                    load_signal_threads()
+                    thehour = datetime.now().hour
+                    print(f'{txcolors.WARNING}BOT: {txcolors.WARNING}Modules Realoaded Completed{txcolors.DEFAULT}')
+        except ReadTimeout as rt:
+            TIMEOUT_COUNT += 1
+            write_log(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}We got a timeout error from Binance. Re-loop. Connection Timeouts so far: {TIMEOUT_COUNT}{txcolors.DEFAULT}')
+        except ConnectionError as ce:
+            READ_CONNECTERR_COUNT += 1
+            write_log(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}We got a connection error from Binance. Re-loop. Connection Errors so far: {READ_CONNECTERR_COUNT}{txcolors.DEFAULT}')
+        except BinanceAPIException as bapie:
+            BINANCE_API_EXCEPTION += 1
+            write_log(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}We got an API error from Binance. Re-loop. API Errors so far: {BINANCE_API_EXCEPTION}.\nException:\n{bapie}{txcolors.DEFAULT}')											
+        except KeyboardInterrupt as ki:
+            if menu() == True: sys.exit(0)
+    try:
+        if not is_bot_running:
+            if SESSION_TPSL_OVERRIDE:
+                print(f'')
+                print(f'')
+                print(f'{txcolors.WARNING}{session_tpsl_override_msg}{txcolors.DEFAULT}')            
+                sell_all(session_tpsl_override_msg, True)
+                sys.exit(0)
+
+            else:
+                print(f'')
+                print(f'')
+                print(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}Bot terminated for some reason.{txcolors.DEFAULT}')
+    except Exception as e:
+        write_log(f'{txcolors.WARNING}BOT: {txcolors.WARNING} Exception in main(): {e}{txcolors.DEFAULT}')
+        write_log("Error on line {}".format(sys.exc_info()[-1].tb_lineno))
+        pass
+    except KeyboardInterrupt as ki:
+        pass
+
 if __name__ == '__main__':
     req_version = (3,9)
     if sys.version_info[:2] < req_version: 
@@ -2249,73 +2324,5 @@ if __name__ == '__main__':
             print(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}WARNING: Waiting 10 seconds before live trading as a security measure!{txcolors.DEFAULT}')
             time.sleep(0)
 
-    remove_external_signals('buy')
-    remove_external_signals('sell')
-    remove_external_signals('pause')
-
-    #load_signal_threads()
-    load_signal_threads()
-
-    # seed initial prices
-    get_price()
-    TIMEOUT_COUNT=0
-    READ_CONNECTERR_COUNT=0
-    BINANCE_API_EXCEPTION=0	
-    
-    #extract of code of OlorinSledge, Thanks
-    thehour = datetime.now().hour  
-    coins_sold = {}
-    while is_bot_running:
-        try:
-            coins_sold = {}
-            orders, last_price, volume = buy()
-            update_portfolio(orders, last_price, volume)
-            
-            if SESSION_TPSL_OVERRIDE:
-                check_total_session_profit(coins_bought, last_price)
-                
-            coins_sold = sell_coins()
-            remove_from_portfolio(coins_sold)
-            update_bot_stats()
-            
-            #coins_sold = sell_coins()
-            #remove_from_portfolio(coins_sold)
-            #update_bot_stats()
-            
-            if FLAG_PAUSE == False:
-                #extract of code of OlorinSledge, Thanks
-                if RESTART_MODULES and thehour != datetime.now().hour :
-                    stop_signal_threads()
-                    load_signal_threads()
-                    thehour = datetime.now().hour
-                    print(f'{txcolors.WARNING}BOT: {txcolors.WARNING}Modules Realoaded Completed{txcolors.DEFAULT}')
-        except ReadTimeout as rt:
-            TIMEOUT_COUNT += 1
-            write_log(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}We got a timeout error from Binance. Re-loop. Connection Timeouts so far: {TIMEOUT_COUNT}{txcolors.DEFAULT}')
-        except ConnectionError as ce:
-            READ_CONNECTERR_COUNT += 1
-            write_log(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}We got a connection error from Binance. Re-loop. Connection Errors so far: {READ_CONNECTERR_COUNT}{txcolors.DEFAULT}')
-        except BinanceAPIException as bapie:
-            BINANCE_API_EXCEPTION += 1
-            write_log(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}We got an API error from Binance. Re-loop. API Errors so far: {BINANCE_API_EXCEPTION}.\nException:\n{bapie}{txcolors.DEFAULT}')											
-        except KeyboardInterrupt as ki:
-            if menu() == True: sys.exit(0)
-    try:
-        if not is_bot_running:
-            if SESSION_TPSL_OVERRIDE:
-                print(f'')
-                print(f'')
-                print(f'{txcolors.WARNING}{session_tpsl_override_msg}{txcolors.DEFAULT}')            
-                sell_all(session_tpsl_override_msg, True)
-                sys.exit(0)
-
-            else:
-                print(f'')
-                print(f'')
-                print(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}Bot terminated for some reason.{txcolors.DEFAULT}')
-    except Exception as e:
-        write_log(f'{txcolors.WARNING}BOT: {txcolors.WARNING} Exception in main(): {e}{txcolors.DEFAULT}')
-        write_log("Error on line {}".format(sys.exc_info()[-1].tb_lineno))
-        pass
-    except KeyboardInterrupt as ki:
-        pass
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(mmain(args))
