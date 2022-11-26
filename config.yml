@@ -61,14 +61,14 @@ ai_options: # top 20
 
 
 trading_options:
-  TAKE_PROFIT: 0.5   # define in % when to take profit on a profitable coin. default 0.25
-  STOP_LOSS:  2.6  # define in % when to sell a coin that's not making a profit.
+  TAKE_PROFIT: 0.7   # define in % when to take profit on a profitable coin. default 0.25
+  STOP_LOSS:  5  # define in % when to sell a coin that's not making a profit.
   MAX_HOLDING_TIME: 14    # in minutes if we can't sell in this time it will sell it at more than 1/2 of SL
 
 
   USE_TRAILING_STOP_LOSS: True
   #USE_TRAILING_STOP_LOSS: False
-  TRAILING_STOP_LOSS: .02     # when hit TAKE_PROFIT, move STOP_LOSS to TRAILING_STOP_LOSS percentage points below TAKE_PROFIT hence locking in profit
+  TRAILING_STOP_LOSS: .005     # when hit TAKE_PROFIT, move STOP_LOSS to TRAILING_STOP_LOSS percentage points below TAKE_PROFIT hence locking in profit
   TRAILING_TAKE_PROFIT: .005 
   #abj_seperbuy_signal_v2 config
 
@@ -84,7 +84,7 @@ trading_options:
   ANNOYED_MOD: True #if the market are down and you want to force superbuy
   WISE_ANNOYED_MOD: True
   TIME_DIFFERENCE: 1   # the amount of time in MINUTES to calculate the difference from the current price (minimum: 1).
-  RECHECK_INTERVAL: 40   # Number of times to check for TP/SL during each TIME_DIFFERENCE (minimum: 1).(max 1200 requests per minute per IP)
+  RECHECK_INTERVAL: 60   # Number of times to check for TP/SL during each TIME_DIFFERENCE (minimum: 1).(max 1200 requests per minute per IP)
   PANIC_STOP: 0   #if the losses are equal to or greater than the established percentage, the bot will stop completely. if it is 0 it is deactivated.
   CHANGE_IN_PRICE: 10   # the difference in % between the first and second checks for the price. default 0.25
   SIGNALLING_MODULES:
@@ -206,7 +206,7 @@ trading_options:
   #Sweethackercasper's idea, thanks mate.
   UPDATE_MOST_VOLUME_COINS: 1440
   #It should not be touched here, used as record.
-  VOLATILE_VOLUME: volatile_volume_25-11-2022(22_41_17)
+  VOLATILE_VOLUME: volatile_volume_26-11-2022(19_49_33)
   #idea from my psychologist, thanks Sebastian V.
   #Two different currencies can be used as a range (within the market table in Binance ordered from highest to lowest)
   COINS_MAX_VOLUME: ETH #ETH  #5000000000

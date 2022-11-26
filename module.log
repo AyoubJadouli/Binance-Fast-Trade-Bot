@@ -3,3 +3,22 @@
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 AI/tp70_w14_max7min_Mode_top20_dip.hdf5 Loaded
 abj_ai_buy_signal_vBinance - Starting
+abj_ai_buy_signal_vBinance.py
+abj_ai_buy_signal_vBinance: Analyzing 20 coins
+->Double anlayse mode
+->Analysing the fist part
+########################################### Start Analyser ###################################################
+working on: SHIBUSDT
+working on: MOBUSDT
+working on: RENUSDT
+working on: EOSUSDT
+working on: NEARUSDT
+working on: APEUSDT
+working on: XRPUSDT
+working on: LTCUSDT
+working on: AVAXUSDT
+working on: SCRTUSDT
+finshing work of: MOBUSDT
+finshing work of: RENUSDT
+finshing work of: NEARUSDT
+finshing work of: EOSUSDT

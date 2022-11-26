@@ -169,19 +169,6 @@ def is_fiat():
     else:
         return False
 
-async def get_soket_orderbook(name):
-    global orderbook
-    orderbook={}
-    orderbook[name] = await Exchange.watchOrderBook(name+'/'+PAIR_WITH, limit=5)
-    
-async def refresh_all_orderbooks():
-    tasks=[]
-    for item1 in VOLATILE_VOLUME_LIST:
-            if item1  not in EX_PAIRS:
-                tasks.append(asyncio.create_task(get_soket_orderbook(item1))) 
-    result = await asyncio.wait(tasks) 
-    
-
 def decimals():
     # set number of decimals for reporting fractions
     if is_fiat():
@@ -202,11 +189,11 @@ def get_precision(f1):
     str1=str(f1)
     return len(str1.split(".")[1])
 
-def get_price(add_to_historical=True):
+async def get_price(add_to_historical=True):
     '''Return the current price for all coins on binance'''
-    global historical_prices, hsp_head , one_time_prices
+    global historical_prices, hsp_head
     initial_price = {}    
-    prices = one_time_prices
+    prices = client.get_all_tickers()
     
     renew_list()
     try:
@@ -217,8 +204,7 @@ def get_price(add_to_historical=True):
                 tickers=[line.strip() for line in open(TICKERS_LIST)]
                 for item1 in tickers:
                     if item1 + PAIR_WITH == coin['symbol'] and coin['symbol'].replace(PAIR_WITH, "") not in EX_PAIRS:
-                        #initial_price[coin['symbol']] = { 'price': coin['price'], 'time': datetime.now()} 
-                        initial_price[coin['symbol']] = { 'price': orderbook[item1]['bids'][0][0], 'time': datetime.now()} 
+                        initial_price[coin['symbol']] = { 'price': coin['price'], 'time': datetime.now()} 
                         # intickers = True
                         # break
                 # for item2 in EX_PAIRS:
@@ -239,9 +225,6 @@ def get_price(add_to_historical=True):
                     if item1 + PAIR_WITH == coin['symbol'] and coin['symbol'].replace(PAIR_WITH, "") not in EX_PAIRS:
                         #initial_price[coin['symbol']] = { 'price': coin['price'], 'time': datetime.now()}
                         initial_price[coin['symbol']] = { 'price': orderbook[item1]['bids'][0][0], 'time': datetime.now()} 
-                      
-
-                
                 #if PAIR_WITH in coin['symbol'] and all(item not in coin['symbol'] for item in EX_PAIRS):
                     #initial_price[coin['symbol']] = { 'price': coin['price'], 'time': datetime.now()}
 
@@ -1521,7 +1504,7 @@ def update_portfolio(orders, last_price, volume):
                 'symbol': orders[coin][0]['symbol'],
                 'orderid': orders[coin][0]['orderId'],
                 'timestamp': orders[coin][0]['time'],
-                'bought_at': orderbook[coin.replace(PAIR_WITH, "")]['asks'][0][0],
+                'bought_at': last_price[coin]['price'],
                 'volume': volume[coin],
                 'stop_loss': -STOP_LOSS,
                 'take_profit': TAKE_PROFIT,
@@ -1648,7 +1631,7 @@ def truncate(number, decimals=0):
     factor = 10.0 ** decimals
     return math.trunc(number * factor) / factor
 
-def load_settings():
+async def load_settings():
     # set to false at Start
     global bot_paused, parsed_config, creds_file, access_key, secret_key, parsed_creds
     bot_paused = False
@@ -1766,8 +1749,27 @@ def load_settings():
     if DEBUG_SETTING or args.debug:
         DEBUG = True
     
-
-    
+    global ex, exchange, Exchange , orderbook
+    access_key, secret_key = load_correct_creds(parsed_creds)
+    Exchange=ccxt.binance({
+    # 'rateLimit': 1000,  # unified exchange property
+    # 'headers': {
+    #     'YOUR_CUSTOM_HTTP_HEADER': 'YOUR_CUSTOM_VALUE',
+    # },
+    # 'options': {
+    #     'adjustForTimeDifference': True,  # exchange-specific option
+    # },
+    'apiKey':   access_key,
+    'secret':   secret_key
+    })
+                      
+    ex=Exchange
+    exchange=Exchange
+    today = "volatile_volume_" + str(date.today()) + ".txt"
+    VOLATILE_VOLUME_LIST=[line.strip() for line in open(today)]
+    for item1 in VOLATILE_VOLUME_LIST:
+        if item1  not in EX_PAIRS:
+            orderbook[item1] = await Exchange.watchOrderBook(item1+'/'+PAIR_WITH, limit=5)
     
 def CheckIfAliveStation(ip_address):
     # for windows
@@ -1991,7 +1993,7 @@ async def menu():
         LOOP = True
         stop_signal_threads()
         while LOOP:
-            time.sleep(1)
+            time.sleep(5)
             print(f'')
             print(f'')
             print(f'{txcolors.MENUOPTION}[1]{txcolors.WARNING}Reload Configuration{txcolors.DEFAULT}')
@@ -2009,7 +2011,7 @@ async def menu():
             print(f'')
             print(f'')
             if x == 1:
-                load_settings()
+                await load_settings()
                 #print(f'TICKERS_LIST(menu): ' + TICKERS_LIST)
                 renew_list()
                 LOOP = False
@@ -2117,17 +2119,14 @@ def print_banner():
 \033[92m_____________________________________     by ABJ     _____________________________________'''
     print(__header__)
 
-
-
-
-
-async def main():
-    global args,MSG_DISCORD
+async def mmain(args):
+	
+    req_version = (3,9)
+    if sys.version_info[:2] < req_version: 
+        print(f'This bot requires Python version 3.9 or higher/newer. You are running version {sys.version_info[:2]} - please upgrade your Python version!!{txcolors.DEFAULT}')
+        sys.exit()
+		# Load arguments then parse settings
     global mymodule,discord_msg_balance_data,last_msg_discord_balance_date,last_history_log_date,DISABLE_TIMESTAMPS,old_out,DEBUG,SHOW_INITIAL_CONFIG,parsed_config,creds_file,MSG_DISCORD,DISCORD_WEBHOOK,sell_all_coins,sell_specific_coin,AMERICAN_USER,PROXY_HTTP,client,api_ready, msg,api_ready,SELL_LOSS,coins_bought,TEST_MODE,file_prefix,coins_bought_file_path,bot_stats_file_path,bot_started_datetime,total_capital_config,bot_stats_file_path,bot_started_datetime,bot_stats,total_capital,TRADE_SLOTS,TRADE_TOTAL,historic_profit_incfees_perc,bot_stats,historic_profit_incfees_total,trade_wins,trade_losses,session_USDT_EARNED,total_capital,historic_profit_incfees_perc,historic_profit_incfees_total,total_capital_config,total_capital_config,historical_prices,TIME_DIFFERENCE,RECHECK_INTERVAL,hsp_head,volatility_cooloff,coins_bought_file_path,coins_bought_file_path,coins_bought,TEST_MODE
-    global one_time_prices
-    
-
-    args = parse_args()
     mymodule = {}
     print_banner()
     print(f'')
@@ -2136,28 +2135,8 @@ async def main():
     last_msg_discord_balance_date = datetime.now()
     last_history_log_date = datetime.now()
 	
-    load_settings()
-    
-    global ex, exchange, Exchange 
-    access_key, secret_key = load_correct_creds(parsed_creds)
-    Exchange=ccxt.binance({
-    # 'rateLimit': 1000,  # unified exchange property
-    # 'headers': {
-    #     'YOUR_CUSTOM_HTTP_HEADER': 'YOUR_CUSTOM_VALUE',
-    # },
-    # 'options': {
-    #     'adjustForTimeDifference': True,  # exchange-specific option
-    # },
-    'apiKey':   access_key,
-    'secret':   secret_key,
-    'enableRateLimit': True
-    })
-                      
-    ex=Exchange
-    exchange=Exchange
-    await Exchange.load_markets()
-    
- 
+    await load_settings()
+	
     if DISABLE_TIMESTAMPS == False:
         # print with timestamps
         old_out = sys.stdout
@@ -2228,8 +2207,6 @@ async def main():
     new_or_continue()
     
     renew_list(True)
-    global orderbook
-    orderbook={}
 
     # try to load all the coins bought by the bot if the file exists and is not empty
     coins_bought = {}
@@ -2302,104 +2279,7 @@ async def main():
             write_log(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}WARNING: Test mode is disabled in the configuration, you are using _LIVE_ funds.{txcolors.DEFAULT}')
             print(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}WARNING: Waiting 10 seconds before live trading as a security measure!{txcolors.DEFAULT}')
             time.sleep(0)
-    remove_external_signals('buy')
-    remove_external_signals('sell')
-    remove_external_signals('pause')
 
-    #load_signal_threads()
-    load_signal_threads()
-
-    # seed initial prices
-    try:
-        today = "volatile_volume_" + str(date.today()) + ".txt"
-        global VOLATILE_VOLUME_LIST
-        VOLATILE_VOLUME_LIST=[line.strip() for line in open(today)]
-        await refresh_all_orderbooks()
-        #print('############################## get price #######################################')
-        #print(orderbook["LTC"]['bids'][0][0])
-        # time.sleep(30)
-        # print(orderbook["LTC"]['bids'][0][0])
-        #print('############################## end get price ###################################')
-    except Exception as e:
-        print(f"{txcolors.RED}XXXXXXXXXXXXX Errotr in refresh oderbook routing XXXXXXXXXXXXXXXXXXXX" )
-        print(e)
-        print(f"{txcolors.RED}XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" )    
-    one_time_prices=client.get_all_tickers()
-
-    get_price()
-    TIMEOUT_COUNT=0
-    READ_CONNECTERR_COUNT=0
-    BINANCE_API_EXCEPTION=0	
-    
-    #extract of code of OlorinSledge, Thanks
-    thehour = datetime.now().hour  
-    coins_sold = {}
-    while is_bot_running:
-        try:
-            await refresh_all_orderbooks()
-            # print('############################## get price #######################################')
-            # print(orderbook["LTC"]['bids'][0][0])
-            # time.sleep(30)
-            # print(orderbook["LTC"]['bids'][0][0])
-            # print('############################## end get price ###################################')
-        except Exception as e:
-            print(f"{txcolors.RED}XXXXXXXXXXXXX Errotr in refresh oderbook routing XXXXXXXXXXXXXXXXXXXX" )
-            print(e)
-            print(f"{txcolors.RED}XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" )
-
-        try:
-            coins_sold = {}
-            orders, last_price, volume = buy()
-            update_portfolio(orders, last_price, volume)
-            
-            if SESSION_TPSL_OVERRIDE:
-                check_total_session_profit(coins_bought, last_price)
-                
-            coins_sold = sell_coins()
-            remove_from_portfolio(coins_sold)
-            update_bot_stats()
-            
-            #coins_sold = sell_coins()
-            #remove_from_portfolio(coins_sold)
-            #update_bot_stats()
-            
-            if FLAG_PAUSE == False:
-                #extract of code of OlorinSledge, Thanks
-                if RESTART_MODULES and thehour != datetime.now().hour :
-                    stop_signal_threads()
-                    load_signal_threads()
-                    thehour = datetime.now().hour
-                    print(f'{txcolors.WARNING}BOT: {txcolors.WARNING}Modules Realoaded Completed{txcolors.DEFAULT}')
-        except ReadTimeout as rt:
-            TIMEOUT_COUNT += 1
-            write_log(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}We got a timeout error from Binance. Re-loop. Connection Timeouts so far: {TIMEOUT_COUNT}{txcolors.DEFAULT}')
-        except ConnectionError as ce:
-            READ_CONNECTERR_COUNT += 1
-            write_log(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}We got a connection error from Binance. Re-loop. Connection Errors so far: {READ_CONNECTERR_COUNT}{txcolors.DEFAULT}')
-        except BinanceAPIException as bapie:
-            BINANCE_API_EXCEPTION += 1
-            write_log(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}We got an API error from Binance. Re-loop. API Errors so far: {BINANCE_API_EXCEPTION}.\nException:\n{bapie}{txcolors.DEFAULT}')											
-        except KeyboardInterrupt as ki:
-            if menu() == True: sys.exit(0)
-    try:
-        if not is_bot_running:
-            if SESSION_TPSL_OVERRIDE:
-                print(f'')
-                print(f'')
-                print(f'{txcolors.WARNING}{session_tpsl_override_msg}{txcolors.DEFAULT}')            
-                sell_all(session_tpsl_override_msg, True)
-                sys.exit(0)
-
-            else:
-                print(f'')
-                print(f'')
-                print(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}Bot terminated for some reason.{txcolors.DEFAULT}')
-    except Exception as e:
-        write_log(f'{txcolors.WARNING}BOT: {txcolors.WARNING} Exception in main(): {e}{txcolors.DEFAULT}')
-        write_log("Error on line {}".format(sys.exc_info()[-1].tb_lineno))
-        pass
-    except KeyboardInterrupt as ki:
-        pass
 
 if __name__ == '__main__':
     req_version = (3,9)
@@ -2407,7 +2287,8 @@ if __name__ == '__main__':
         print(f'This bot requires Python version 3.9 or higher/newer. You are running version {sys.version_info[:2]} - please upgrade your Python version!!{txcolors.DEFAULT}')
         sys.exit()
 		# Load arguments then parse settings
-
-
+    args = parse_args()
+    
+    
     loop = asyncio.get_event_loop()
-    loop.run_until_complete(main())
+    loop.run_until_complete(mmain(args))
