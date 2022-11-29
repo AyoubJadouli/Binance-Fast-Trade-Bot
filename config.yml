@@ -61,9 +61,9 @@ ai_options: # top 20
 
 
 trading_options:
-  TAKE_PROFIT: 0.7   # define in % when to take profit on a profitable coin. default 0.25
-  STOP_LOSS:  5  # define in % when to sell a coin that's not making a profit.
-  MAX_HOLDING_TIME: 14    # in minutes if we can't sell in this time it will sell it at more than 1/2 of SL
+  TAKE_PROFIT: 0.5   # define in % when to take profit on a profitable coin. default 0.25
+  STOP_LOSS:  0.5  # define in % when to sell a coin that's not making a profit.
+  MAX_HOLDING_TIME: 7    # in minutes if we can't sell in this time it will sell it at more than 1/2 of SL
 
 
   USE_TRAILING_STOP_LOSS: True
@@ -73,9 +73,9 @@ trading_options:
   #abj_seperbuy_signal_v2 config
 
 
-  PAIR_WITH: USDT #BUSD       # select your base currency to use for trading (trade for example USDT pairs)
+  PAIR_WITH: BUSD #BUSD       # select your base currency to use for trading (trade for example USDT pairs)
   TRADE_TOTAL: 50 #0.00002614 #10 #Total amount per trade (your base currency balance must be at least TRADE_SLOTS * TRADE_TOTAL) min 12
-  TRADE_SLOTS: 10    # Maximum number of trade 'slots' at any time (your USDT balance must be at least TRADE_SLOTS * TRADE_TOTAL)
+  TRADE_SLOTS: 2    # Maximum number of trade 'slots' at any time (your USDT balance must be at least TRADE_SLOTS * TRADE_TOTAL)
 
   CHOOSEN_INTERVAL: 1m # 5m 1m-5m 5m-15m 15m 1h 4h
   BTC_CHECK_LEVEL: 1 #up to 4
@@ -92,6 +92,7 @@ trading_options:
 #    - abj_ai_buy_signal_w7_F30
 #     - abj_ai_buy_signal_vRF
 #    - abj_ai_buy_signal_vNoPrice
+#    - abj_ai_buy_signal_vDoubleCheck
     - abj_ai_buy_signal_vBinance
 #    - abj_superbuy_signal
 #    - abj_superbuy_signal_v2    
@@ -206,7 +207,7 @@ trading_options:
   #Sweethackercasper's idea, thanks mate.
   UPDATE_MOST_VOLUME_COINS: 1440
   #It should not be touched here, used as record.
-  VOLATILE_VOLUME: volatile_volume_26-11-2022(19_49_33)
+  VOLATILE_VOLUME: volatile_volume_29-11-2022(22_34_40)
   #idea from my psychologist, thanks Sebastian V.
   #Two different currencies can be used as a range (within the market table in Binance ordered from highest to lowest)
   COINS_MAX_VOLUME: ETH #ETH  #5000000000

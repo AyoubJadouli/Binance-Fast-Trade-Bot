@@ -1879,6 +1879,21 @@ def renew_list(in_init=False):
                     print(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}A new Volatily Volume list has been created, {len(list(coins_bought_list))} coin(s) added...{txcolors.DEFAULT}')
                     FLAG_PAUSE = False
                     #renew_list()
+                    try:
+                        today = "volatile_volume_" + str(date.today()) + ".txt"
+                        global VOLATILE_VOLUME_LIST
+                        VOLATILE_VOLUME_LIST=[line.strip() for line in open(today)]
+                        #await refresh_all_orderbooks()
+                        #print('############################## get price #######################################')
+                        #print(orderbook["LTC"]['bids'][0][0])
+                        # time.sleep(30)
+                        # print(orderbook["LTC"]['bids'][0][0])
+                        #print('############################## end get price ###################################')
+                    except Exception as e:
+                        print(f"{txcolors.RED}XXXXXXXXXXXXX Errotr in refresh oderbook routing XXXXXXXXXXXXXXXXXXXX" )
+                        print(e)
+                        print(f"{txcolors.RED}XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" )    
+                    one_time_prices=client.get_all_tickers()
                     load_signal_threads()     
                 
         else:
@@ -1926,6 +1941,117 @@ def renew_list(in_init=False):
         write_log("Error on line {}".format(sys.exc_info()[-1].tb_lineno))
         pass
     
+    
+async def async_renew_list(in_init=False):
+    try:
+        global tickers, VOLATILE_VOLUME, FLAG_PAUSE, COINS_MAX_VOLUME, COINS_MIN_VOLUME
+        volatile_volume_empty = False
+        volatile_volume_time = False
+        if USE_MOST_VOLUME_COINS == True:
+            today = "volatile_volume_" + str(date.today()) + ".txt"
+            if VOLATILE_VOLUME == "":
+                volatile_volume_empty = True
+            else:
+                now = datetime.now()
+                dt_string = datetime.strptime(now.strftime("%d-%m-%Y %H_%M_%S"),"%d-%m-%Y %H_%M_%S")
+                tuple1 = dt_string.timetuple()
+                timestamp1 = time.mktime(tuple1)
+
+                #timestampNOW = now.timestamp()
+                dt_string_old = datetime.strptime(VOLATILE_VOLUME.replace("(", " ").replace(")", "").replace("volatile_volume_", ""),"%d-%m-%Y %H_%M_%S") + timedelta(minutes = UPDATE_MOST_VOLUME_COINS)               
+                tuple2 = dt_string_old.timetuple()
+                timestamp2 = time.mktime(tuple2)
+                if timestamp1 > timestamp2:
+                    volatile_volume_time = True
+
+            if volatile_volume_time or volatile_volume_empty or os.path.exists(today) == False:
+                print(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}A new Volatily Volume list will be created...{txcolors.DEFAULT}')
+                stop_signal_threads()
+                FLAG_PAUSE = True
+                if TEST_MODE == True:
+                    jsonfile = "test_" + COINS_BOUGHT
+                else: 
+                    jsonfile = "live_" + COINS_BOUGHT
+                    
+                VOLATILE_VOLUME = get_volume_list()
+                
+                if os.path.exists(jsonfile):    
+                    with open(jsonfile,'r') as f:
+                        coins_bought_list = json.load(f)
+   
+                    
+                    with open(today,'r') as f:
+                        lines_today = f.readlines()
+                    
+                    #coinstosave = []
+
+                    for coin_bought in list(coins_bought_list):
+                        coin_bought = coin_bought.replace("USDT", "") + "\n"
+                        if not coin_bought in list(lines_today):
+                            lines_today.append(coin_bought)
+                    # for coin in coins_bought_list:
+                        # coinstosave.append(coin.replace(PAIR_WITH,"") + "\n")
+                    
+                    # for c in coinstosave:
+                        # for l in lines_today:
+                            # if c == l:
+                                # break
+                            # else:
+                                # lines_today.append(c)
+                                # break                
+                            
+                    with open(today,'w') as f:
+                        f.writelines(lines_today)
+
+                    print(f'{txcolors.WARNING}BOT: {txcolors.DEFAULT}A new Volatily Volume list has been created, {len(list(coins_bought_list))} coin(s) added...{txcolors.DEFAULT}')
+                    FLAG_PAUSE = False
+                    #renew_list()
+                    load_signal_threads()     
+                
+        else:
+            if in_init:
+                stop_signal_threads()
+                
+                FLAG_PAUSE = True
+                
+                if TEST_MODE == True:
+                    jsonfile = "test_" + COINS_BOUGHT
+                else: 
+                    jsonfile = "live_" + COINS_BOUGHT
+                    
+                if os.path.exists(jsonfile): 
+                    with open(jsonfile,'r') as f:
+                        coins_bought_list = json.load(f)
+
+                    with open(TICKERS_LIST,'r') as f:
+                            lines_tickers = f.readlines()
+                            
+                    if os.path.exists(TICKERS_LIST.replace(".txt",".backup")): 
+                        os.remove(TICKERS_LIST.replace(".txt",".backup"))
+                        
+                    with open(TICKERS_LIST.replace(".txt",".backup"),'w') as f:
+                        f.writelines(lines_tickers)
+                    
+                    new_lines_tickers = []
+                    for line_tickers in lines_tickers:
+                        if "\n" in line_tickers:
+                            new_lines_tickers.append(line_tickers)
+                        else:
+                            new_lines_tickers.append(line_tickers + "\n")
+                                    
+                    for coin_bought in list(coins_bought_list):
+                        coin_bought = coin_bought.replace("USDT", "") + "\n"
+                        if not coin_bought in new_lines_tickers:
+                            new_lines_tickers.append(coin_bought)
+                            
+                    with open(TICKERS_LIST,'w') as f:
+                        f.writelines(new_lines_tickers)
+                    
+            tickers=[line.strip() for line in open(TICKERS_LIST)]
+    except Exception as e:
+        write_log(f'{txcolors.WARNING}BOT: {txcolors.WARNING}renew_list(): Exception in function: {e}{txcolors.DEFAULT}')
+        write_log("Error on line {}".format(sys.exc_info()[-1].tb_lineno))
+        pass    
 
 def new_or_continue():
     if TEST_MODE:

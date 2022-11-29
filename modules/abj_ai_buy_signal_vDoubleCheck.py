@@ -1,6 +1,6 @@
 # ABJ AI MOD
 print("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||")
-print("||||||||||||||||||||||     AI Crypto Bot by ABJ vBinance  |||||||||||||||||||||||")
+print("||||||||||||||||||||||     AI Crypto Bot by ABJ vDoubleCheck  |||||||||||||||||||||||")
 print("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||")
 
 from helpers.parameters import parse_args, load_config
@@ -112,13 +112,13 @@ global graph,model
 #graph = tf.get_default_graph()
 
 global OldCheck
-OldCheck={}
+OldCheck=[]
 
 global DoubleCheck
-DoubleCheck={}
+DoubleCheck=[]
 
 global TripleCheck
-TripleCheck={}
+TripleCheck=[]
 
 creds_file = args.creds if args.creds else DEFAULT_CREDS_FILE
 parsed_creds = load_config(creds_file)
@@ -150,7 +150,7 @@ MY_SCREENER = 'CRYPTO'
 
 FULL_LOG = False # List anylysis result to console
 
-SIGNAL_NAME = 'abj_ai_buy_signal_vBinance'
+SIGNAL_NAME = 'abj_ai_buy_signal_vDoubleCheck'
 SIGNAL_FILE = 'signals/' + SIGNAL_NAME + '.buy'
 
 X_AI_EX_FILE = 'AI_EXBUY'
@@ -748,19 +748,19 @@ async def get_pdata_data(symbol,RLIST={},window=10,pair_with='USDT'):
         BTC1h=[]
         BTC1d=[]
 
-        tasks = [do_ohlcv(pair=symbol,window=window,Dlist=D1m,interval='1m'),
-                    do_ohlcv(pair=symbol,window=window,Dlist=D5m,interval='5m'),
-                    do_ohlcv(pair=symbol,window=window,Dlist=D15m,interval='15m'),
-                    do_ohlcv(pair=symbol,window=window,Dlist=D1h,interval='1h'),
-                    do_ohlcv(pair=symbol,window=window,Dlist=D1d,interval='1d'),
+        tasks = [asyncio.create_task(do_ohlcv(pair=symbol,window=window,Dlist=D1m,interval='1m')),
+                    asyncio.create_task(do_ohlcv(pair=symbol,window=window,Dlist=D5m,interval='5m')),
+                    asyncio.create_task(do_ohlcv(pair=symbol,window=window,Dlist=D15m,interval='15m')),
+                    asyncio.create_task(do_ohlcv(pair=symbol,window=window,Dlist=D1h,interval='1h')),
+                    asyncio.create_task(do_ohlcv(pair=symbol,window=window,Dlist=D1d,interval='1d')),
                     #BTC
-                    do_ohlcv(pair="BTCUSDT",window=window,Dlist=BTC1m,interval='1m'),
-                    do_ohlcv(pair="BTCUSDT",window=window,Dlist=BTC5m,interval='5m'),
-                    do_ohlcv(pair="BTCUSDT",window=window,Dlist=BTC15m,interval='15m'),
-                    do_ohlcv(pair="BTCUSDT",window=window,Dlist=BTC1h,interval='1h'),
-                    do_ohlcv(pair="BTCUSDT",window=window,Dlist=BTC1d,interval='1d'),
-
+                    asyncio.create_task(do_ohlcv(pair="BTCUSDT",window=window,Dlist=BTC1m,interval='1m')),
+                    asyncio.create_task(do_ohlcv(pair="BTCUSDT",window=window,Dlist=BTC5m,interval='5m')),
+                    asyncio.create_task(do_ohlcv(pair="BTCUSDT",window=window,Dlist=BTC15m,interval='15m')),
+                    asyncio.create_task(do_ohlcv(pair="BTCUSDT",window=window,Dlist=BTC1h,interval='1h')),
+                    asyncio.create_task(do_ohlcv(pair="BTCUSDT",window=window,Dlist=BTC1d,interval='1d'))
                     ]
+        
         result = await asyncio.wait(tasks) 
         #print(len(D1m))
         DF1m=pd.DataFrame(D1m,columns=['open_time','open', 'high', 'low', 'close', 'volume', 'close_time', 'qav', 'num_trades', 'taker_base_vol', 'taker_quote_vol','is_best_match']).astype(np.float64)
@@ -927,85 +927,12 @@ async def get_df_from_pair_loop(pair_list=[],window=10,pair_with='USDT'):
 PDEBUG=True
 
 
-def analyze2(pairs):
-    signal_coins = {}
-    print('########################################### Start Analyser ###################################################')
-    if os.path.exists(SIGNAL_FILE):
-        os.remove(SIGNAL_FILE)
-
-    if os.path.exists(X_AI_EX_FILE):
-        os.remove(X_AI_EX_FILE)
-    #BTC_OK=btc_check(BTC_CHECK_LEVEL)
-    break_out_flag = False
-    iii=0
-    for pair in pairs:
-        print(f"-------> working on : {pair} <------------")
-        pair_usdt=pair.split(PAIR_WITH)[0]+"/USDT"
-        pair_usdt=pair_usdt.split('/USDT')[0]+"/USDT"
-        print(f"-------> pair_usdt : {pair_usdt} <------------")
-        try:
-            pdata=instant_full_data(pair_usdt,exchange=ex,window=WINDOW_SIZE)
-            print(f"{pdata}")
-            BuyD=Buy_Dessision(pdata.iloc[0])
-            print(f"XXXXXX=================  buy dession for :{pair} is {BuyD} ==================XXXXXXX")
-            if int(BuyD) == 1:
-                print("Good : " +pair)
-                print("buying at"+str(pdata["price"].iloc[0]))
-                bt=pd.to_datetime(ex.fetchTime(),unit='ms')
-                pp=ex.fetch_ticker(pair_usdt)['info']['askPrice']
-                GoodDeal.append({"pair":pair_usdt,
-                            "buying_time":bt,
-                            "buying_price":float(pdata["price"].iloc[0]),
-                            "Selling_time":bt,
-                            "selling_price":float(pp)})
-                signal_coins[pair] = pair          
-                with open(SIGNAL_FILE,'a+') as f: f.write(pair + '\n')
-            
-        except Exception as e:
-            print(f'{SIGNAL_NAME}')
-            print("Exception:")
-            print(e)
-            print (f'Coin: {pair}')
-            #print (f'The handler interval: {interval}')
-            #print (f'The handler pair: {the_handler}')
-            with open(X_AI_EX_FILE,'a+') as f:
-                    f.write(pair.removesuffix(PAIR_WITH) + '\n')
-            continue
-        
-        
-        if FULL_LOG:
-                
-                print(f'{SIGNAL_NAME}: {pair} \n'+
-                    f'Seem Good deals {GoodDeal[iii]["pair"]} detection_price {GoodDeal[iii]["buying_price"]}\n'+
-                    f'Recheck time {GoodDeal[iii]["Selling_time"]} recheck price {GoodDeal[iii]["selling_price"]}\n'
-
-                    )
-        iii+=1
-
-            # for i in range(max_time_window*2):
-            #     time.sleep(30)
-            #     pp=ex.fetch_ticker(pair)['info']['askPrice']
-            #     if((float(pdata.loc[0,"price"])*0.01*min_win_percent+float(pdata.loc[0,"price"])) <= float(pp)):
-            #         GoodDeal.append({"pair":pair,
-            #                          "buying_time":bt,
-            #                          "buying_price":float(pdata["price"].iloc[0]),
-            #                          "Selling_time":pd.to_datetime(ex.fetchTime(),unit='ms'),
-            #                          "selling_price":float(pp)})
-            #         print("+++ wining bought at:"+str(pdata.loc[0,"price"]) +" sold at: "+str(pp) )
-            #         break_out_flag = True
-            #         break     
-
-
-            
-    
-    
-    return signal_coins
-
-
-
-
+def list_intersection(lst1, lst2):
+    lst3 = [value for value in lst1 if value in lst2]
+    return lst3
 
 async def analyze(pairs):
+    global OldCheck,DoubleCheck
     signal_coins = {}
     print('########################################### Start Analyser ###################################################')
     if os.path.exists(SIGNAL_FILE):
@@ -1029,46 +956,53 @@ async def analyze(pairs):
             print(Dtobuy[['Pair','Note']])
 
             buy_pairs=Dtobuy["Pair"].to_list()
+            
         except Exception as ee:
             buy_pairs=[]
             print(ee)
     
 
 ########################################################################
-        for pair in buy_pairs:
-            print(f"-------> working on : {pair} <------------")
-            pair_usdt=pair.split(PAIR_WITH)[0]+"/USDT"
-            pair_usdt=pair_usdt.split('/USDT')[0]+"/USDT"
-            print(f"-------> pair_usdt : {pair_usdt} <------------")
-            try:
-                print(f"XXXXXX=================  buy dession for :{pair} ==================XXXXXXX")
-                pairok=pair.split("USDT")[0]+PAIR_WITH
-                if pairok.find('/')!=-1:
-                    pairok=pair.split("/")[0]+PAIR_WITH
-                with open(SIGNAL_FILE,'a+') as f: 
-                    f.write(pairok + '\n')
-                    signal_coins[pairok] = pair
-                
-            except Exception as e:
-                print(f'{SIGNAL_NAME}')
-                print("Exception:")
-                print(e)
-                print (f'Coin: {pair}')
-                #print (f'The handler interval: {interval}')
-                #print (f'The handler pair: {the_handler}')
-                with open(X_AI_EX_FILE,'a+') as f:
-                        f.write(pair.removesuffix(PAIR_WITH) + '\n')
-                continue
+        #for pair in list_intersection(buy_pairs,OldCheck):
+        for pair in DoubleCheck:
+            if (pair  in buy_pairs) and (pair not in OldCheck):
+                print(f"-------> working on : {pair} <------------")
+                pair_usdt=pair.split(PAIR_WITH)[0]+"/USDT"
+                pair_usdt=pair_usdt.split('/USDT')[0]+"/USDT"
+                print(f"-------> pair_usdt : {pair_usdt} <------------")
+                try:
+                    print(f"XXXXXX=================  buy dession for :{pair} ==================XXXXXXX")
+                    pairok=pair.split("USDT")[0]+PAIR_WITH
+                    if pairok.find('/')!=-1:
+                        pairok=pair.split("/")[0]+PAIR_WITH
+                    with open(SIGNAL_FILE,'a+') as f: 
+                        f.write(pairok + '\n')
+                        signal_coins[pairok] = pair
             
-            
-            if FULL_LOG:
                     
-                    print(f'{SIGNAL_NAME}: {pair} \n'+
-                        f'Seem Good deals {GoodDeal[iii]["pair"]} detection_price {GoodDeal[iii]["buying_price"]}\n'+
-                        f'Recheck time {GoodDeal[iii]["Selling_time"]} recheck price {GoodDeal[iii]["selling_price"]}\n'
+                except Exception as e:
+                    print(f'{SIGNAL_NAME}')
+                    print("Exception:")
+                    print(e)
+                    print (f'Coin: {pair}')
+                    #print (f'The handler interval: {interval}')
+                    #print (f'The handler pair: {the_handler}')
+                    with open(X_AI_EX_FILE,'a+') as f:
+                            f.write(pair.removesuffix(PAIR_WITH) + '\n')
+                    continue
+                
+                
+                if FULL_LOG:
+                        
+                        print(f'{SIGNAL_NAME}: {pair} \n'+
+                            f'Seem Good deals {GoodDeal[iii]["pair"]} detection_price {GoodDeal[iii]["buying_price"]}\n'+
+                            f'Recheck time {GoodDeal[iii]["Selling_time"]} recheck price {GoodDeal[iii]["selling_price"]}\n'
 
-                        )
-            iii+=1
+                            )
+                iii+=1
+        DoubleCheck=OldCheck    
+        OldCheck=buy_pairs
+        
     except Exception as e:
         print("error new part at analyse()")
         print("exception : "+str(e))
@@ -1088,7 +1022,7 @@ async def analyze(pairs):
     return signal_coins
 
 
-DIVIDE_ANALYSE=True
+DIVIDE_ANALYSE=False
 ANALYZE_RELAX_TIME=40
 async def do_work1():
     print(f'{SIGNAL_NAME} - Starting')
@@ -1105,7 +1039,7 @@ async def do_work1():
             pairs=[line.strip() for line in open(TICKERS)]
             for line in open(TICKERS):
                 pairs=[line.strip() + PAIR_WITH for line in open(TICKERS)] 
-            print("abj_ai_buy_signal_vBinance.py")
+            print("abj_ai_buy_signal_vDoubleCheck.py")
             if not threading.main_thread().is_alive(): exit()
             print(f'{SIGNAL_NAME}: Analyzing {len(pairs)} coins')
             if DIVIDE_ANALYSE:

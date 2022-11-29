@@ -8,17 +8,40 @@ abj_ai_buy_signal_vBinance: Analyzing 20 coins
 ->Double anlayse mode
 ->Analysing the fist part
 ########################################### Start Analyser ###################################################
-working on: SHIBUSDT
-working on: MOBUSDT
-working on: RENUSDT
-working on: EOSUSDT
-working on: NEARUSDT
-working on: APEUSDT
-working on: XRPUSDT
-working on: LTCUSDT
-working on: AVAXUSDT
-working on: SCRTUSDT
-finshing work of: MOBUSDT
-finshing work of: RENUSDT
+working on: JASMYBUSD
+working on: DOGEBUSD
+working on: NEARBUSD
+working on: LTCBUSD
+working on: ETHBUSD
+working on: ORNBUSD
+working on: PYRBUSD
+working on: DOTBUSD
+working on: LUNABUSD
+working on: MOBBUSD
+finshing work of: LTCUSDT
+finshing work of: PYRUSDT
+finshing work of: DOTUSDT
+finshing work of: JASMYUSDT
+finshing work of: DOGEUSDT
+finshing work of: ETHUSDT
 finshing work of: NEARUSDT
-finshing work of: EOSUSDT
+finshing work of: ORNUSDT
+finshing work of: LUNAUSDT
+finshing work of: MOBUSDT
+Loading normalization from file
+Nomalization shape: 566
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 0s 302ms/step
+        Pair  Buy          Note
+0    LTCUSDT  0.0  5.726247e-29
+1    PYRUSDT  0.0  5.716727e-38
+2    DOTUSDT  0.0  5.875322e-35
+3  JASMYUSDT  0.0  1.747693e-07
+4   DOGEUSDT  0.0  7.680904e-17
+5    ETHUSDT  0.0  3.900373e-08
+6   NEARUSDT  0.0  1.263306e-03
+7    ORNUSDT  0.0  7.032068e-06
+8   LUNAUSDT  0.0  1.109905e-15
+9    MOBUSDT  0.0  0.000000e+00
+Empty DataFrame
+Columns: [Pair, Note]
+Index: []
