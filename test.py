@@ -1,62 +1,40 @@
-import ccxt.pro as ccxt 
 import asyncio
-import sys
-from datetime import date, datetime, timedelta
 import time
-PAIR_WITH="USDT"
-async def get_soket_orderbook(name):
-    global orderbook
-    orderbook={}
-    orderbook[name] = await Exchange.watchOrderBook(name+'/'+PAIR_WITH, limit=5)
-    
-async def refresh_all_orderbooks():
-    tasks=[]
-    for item1 in VOLATILE_VOLUME_LIST:
-                tasks.append(asyncio.create_task(get_soket_orderbook(item1))) 
-    result = await asyncio.wait(tasks) 
-    
-async def main():
-    global ex, exchange, Exchange 
-    Exchange=ccxt.binance({
-    # 'rateLimit': 1000,  # unified exchange property
-    # 'headers': {
-    #     'YOUR_CUSTOM_HTTP_HEADER': 'YOUR_CUSTOM_VALUE',
-    # },
-    # 'options': {
-    #     'adjustForTimeDifference': True,  # exchange-specific option
-    # },
 
-    'enableRateLimit': True
-    })
-                      
-    ex=Exchange
-    exchange=Exchange
-    await Exchange.load_markets()
+
+async def l1():
+    while True:
+        await asyncio.sleep(0)
+        print(1)
+        time.sleep(1)
+
+async def l2():
+    await asyncio.sleep(0)
+    while True:
+        time.sleep(2)
+        print(2)
+        
+
+async def main(loop):
+    background_tasks = set()
+    task1=asyncio.create_task(l1())
+    task2=asyncio.create_task(l2())
+    #await asyncio.gather(l1(loop),l2(loop))
     
-    try:
-        today = "volatile_volume_" + str(date.today()) + ".txt"
-        global VOLATILE_VOLUME_LIST
-        VOLATILE_VOLUME_LIST=[line.strip() for line in open(today)]
-        await refresh_all_orderbooks()
-        print('############################## get price #######################################')
+    #await asyncio.gather(task1,task2)
+    await asyncio.wait([task1,task2],timeout=0.2)
+    # await asyncio.wait(task2,timeout=0.3)
 
-        print(orderbook["LTC"]['bids'][0][0])
-        time.sleep(30)
-        print(orderbook["LTC"]['bids'][0][0])
-        print('############################## end get price ###################################')
-        await exchange.close()
-    except Exception as e:
-        print(e)
-        await exchange.close()
-
+    while True:
+        print("main lopp ...")
+        time.sleep(1)
 
 if __name__ == '__main__':
-    req_version = (3,9)
-    if sys.version_info[:2] < req_version: 
-        print(f'This bot requires Python version 3.9 or higher/newer. You are running version {sys.version_info[:2]} - please upgrade your Python version!!{txcolors.DEFAULT}')
-        sys.exit()
-		# Load arguments then parse settings
-
-
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(main())
+    print("main code")
+    # loop = asyncio.get_event_loop()
+    # # main_gr=asyncio.gather(main(loop))
+    # # refresh_gr=asyncio.gather(loop_refresh_all_orderbooks(loop))
+    # # all_gr=asyncio.gather(main_gr,refresh_gr)
+    # loop.run_until_complete(main(loop))
+    await l1()
+    

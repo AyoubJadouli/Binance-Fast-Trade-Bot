@@ -25,16 +25,13 @@ Notes:
 
 """
 
+
 # use for environment variables
 import os
 import asyncio
 import ccxt.pro as ccxt
 # use if needed to pass args to external modules
 import sys
-PDEBUG=False
-def pdebug(err):
-    if PDEBUG:
-        print("\033[0;31m Debug msg: "+str(sys._getframe().f_code.co_name) +" \033[0;33m"+str(err))
 
 #for clear screen console
 from os import system, name
@@ -95,8 +92,6 @@ from helpers.handle_creds import (
 def symfilter(symbol):
     return symbol.split("/")[0].split(PAIR_WITH)[0].split("BUSD")[0].split("USDT")[0].split("-")[0]
 
-
-        
 # for colourful logging to the console
 class txcolors:
     BUY = '\033[92m'
@@ -126,6 +121,8 @@ Exchange=None
 orderbook={}
 global session_profit_incfees_perc, session_profit_incfees_total, session_tpsl_override_msg, is_bot_running, session_USDT_EARNED, last_msg_discord_balance_date, session_USDT_EARNED_TODAY, parsed_creds, TUP,PUP, TDOWN, PDOWN, TNEUTRAL, PNEUTRAL, renewlist, DISABLE_TIMESTAMPS, signalthreads, VOLATILE_VOLUME_LIST, FLAG_PAUSE,TOP_LIST, coins_up,coins_down,coins_unchanged, SHOW_TABLE_COINS_BOUGHT, USED_BNB_IN_SESSION, PAUSEBOT_MANUAL, sell_specific_coin, lostconnection
 global historic_profit_incfees_perc, historic_profit_incfees_total, trade_wins, trade_losses, sell_all_coins, bot_started_datetime ,ALL_COIN_DATA_SORTED
+global First_is_bot_running
+First_is_bot_running=True
 last_price_global = 0
 session_profit_incfees_perc = 0
 session_profit_incfees_total = 0
@@ -179,48 +176,32 @@ def is_fiat():
 
 async def get_soket_orderbook(name):
     global orderbook
-    #orderbook={}
-    try:
-        old_ob = orderbook[name]
-    except:
-        print(f"orderbook of {name} not initialized yet ")
-    
-    try:
-        new_ob = await Exchange.watchOrderBook(symfilter(name)+'/'+PAIR_WITH, limit=5)
-        if new_ob["asks"][0] :
-             if new_ob["bids"][0]:
-                orderbook[name]=new_ob
-             else:
-                 print("new_ob no bids ")
-        else:
-            print("new ob no asks and no bids error : {new_ob}")
-    except Exception as e:
-        print("error getting well formatted new ob")
-        print(e)
-        orderbook[name]=old_ob
-        
+    orderbook={}
+    orderbook[name] = await Exchange.watchOrderBook(name+'/'+PAIR_WITH, limit=5)
     
 async def refresh_all_orderbooks():
     tasks=[]
-    pdebug("prices refreshing ...")
+    print("prices refreshing ...")
     for item1 in VOLATILE_VOLUME_LIST:
             if item1  not in EX_PAIRS:
                 tasks.append(asyncio.create_task(get_soket_orderbook(item1))) 
     result = await asyncio.wait(tasks) 
-    pdebug("prices refreshed.")
+    print("prices refreshed.")
     
 async def loop_refresh_all_orderbooks(loop):
     global orderbook
+    global First_is_bot_running
     FirstTime=True
     while True:
-        print("workig on refreshing ")
-        await refresh_all_orderbooks()
-        if FirstTime:
-            await asyncio.sleep(4)
-            FirstTime=False
-        #print(orderbook)
-        print("end workig on refreshing ")
-        await asyncio.sleep(0.5)
+        if not First_is_bot_running:
+            print("workig on refreshing ")
+            if FirstTime:
+                await asyncio.sleep(1)
+                FirstTime=False
+            await refresh_all_orderbooks()
+            print(orderbook)
+            print("end workig on refreshing ")
+            await asyncio.sleep(0.2)
     
 
 def decimals():
@@ -250,7 +231,6 @@ def get_price(add_to_historical=True):
     prices = one_time_prices
     
     renew_list()
-    pdebug(f"len orderbook : {len(orderbook.keys())} - "+str(list(orderbook.keys())))
     try:
         for coin in prices:
             if CUSTOM_LIST and USE_MOST_VOLUME_COINS == False:
@@ -282,7 +262,7 @@ def get_price(add_to_historical=True):
                         #initial_price[coin['symbol']] = { 'price': coin['price'], 'time': datetime.now()}
                         #print(f"coin : {coinsym}")
                         #print(f"coin symbol : {coin['symbol']}")
-                        
+                        #print(f"orderbook : {orderbook[coinsym]}")
                         initial_price[coin['symbol']] = { 'price': orderbook[coinsym]['bids'][0][0], 'time': datetime.now()} 
 
                 
@@ -2493,16 +2473,16 @@ async def main(loop):
     # seed initial prices
     try:
         
-        print('############################## get initial price #######################################')
+        print('############################## get price #######################################')
         #loop.create_task(loop_refresh_all_orderbooks(loop))
-        await refresh_all_orderbooks()
-        #await asyncio.gather(refresh_all_orderbooks())
+#        await refresh_all_orderbooks()
+        await asyncio.wait(refresh_all_orderbooks())
 
         #await asyncio.sleep(2)
         #print(orderbook["LTC"]['bids'][0][0])
-        time.sleep(2)
+        # time.sleep(30)
         # print(orderbook["LTC"]['bids'][0][0])
-        print('############################## end get initial price ###################################')
+        print('############################## end get price ###################################')
     except Exception as e:
         print(f"{txcolors.RED}XXXXXXXXXXXXX Errotr in refresh oderbook routing XXXXXXXXXXXXXXXXXXXX" )
         print(e)
@@ -2517,15 +2497,21 @@ async def main(loop):
     #extract of code of OlorinSledge, Thanks
     thehour = datetime.now().hour  
     coins_sold = {}
+    global First_is_bot_running
+    First_is_bot_running=True
     while is_bot_running:
         try:
-            orderbook_task = [asyncio.create_task(refresh_all_orderbooks())]
-            # print('############################## get price #######################################')
-            # print(orderbook["LTC"]['bids'][0][0])
-            # time.sleep(30)
-            # print(orderbook["LTC"]['bids'][0][0])
-            # print('############################## end get price ###################################')
-            await asyncio.wait( orderbook_task,timeout=0.5)
+            pass
+            if First_is_bot_running:
+                orderbook_task = asyncio.create_task(refresh_all_orderbooks())
+                # print('############################## get price #######################################')
+                # print(orderbook["LTC"]['bids'][0][0])
+                # time.sleep(30)
+                # print(orderbook["LTC"]['bids'][0][0])
+                # print('############################## end get price ###################################')
+                info_orderbook=        await asyncio.gather(orderbook_task)
+                print(info_orderbook)
+                First_is_bot_running=False
         except Exception as e:
             print(f"{txcolors.RED}XXXXXXXXXXXXX Errotr in refresh oderbook routing XXXXXXXXXXXXXXXXXXXX" )
             print(e)
@@ -2591,7 +2577,9 @@ if __name__ == '__main__':
         print(f'This bot requires Python version 3.9 or higher/newer. You are running version {sys.version_info[:2]} - please upgrade your Python version!!{txcolors.DEFAULT}')
         sys.exit()
 		# Load arguments then parse settings
-
-
     loop = asyncio.get_event_loop()
-    loop.run_until_complete(main(loop))
+
+    main_gr=asyncio.gather(main(loop))
+    refresh_gr=asyncio.gather(loop_refresh_all_orderbooks(loop))
+    all_gr=asyncio.gather(main_gr,refresh_gr)
+    loop.run_until_complete(all_gr)

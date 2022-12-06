@@ -965,7 +965,7 @@ async def analyze(pairs):
 ########################################################################
         #for pair in list_intersection(buy_pairs,OldCheck):
         for pair in DoubleCheck:
-            if (pair  in buy_pairs) and (pair not in OldCheck):
+            if  (pair  in OldCheck) and (pair not in buy_pairs):
                 print(f"-------> working on : {pair} <------------")
                 pair_usdt=pair.split(PAIR_WITH)[0]+"/USDT"
                 pair_usdt=pair_usdt.split('/USDT')[0]+"/USDT"
@@ -989,6 +989,7 @@ async def analyze(pairs):
                     #print (f'The handler pair: {the_handler}')
                     with open(X_AI_EX_FILE,'a+') as f:
                             f.write(pair.removesuffix(PAIR_WITH) + '\n')
+                            print(f"signal send to buy : {pair.removesuffix(PAIR_WITH)}")
                     continue
                 
                 

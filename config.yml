@@ -61,12 +61,12 @@ ai_options: # top 20
 
 
 trading_options:
-  TAKE_PROFIT: 0.5   # define in % when to take profit on a profitable coin. default 0.25
-  STOP_LOSS:  0.5  # define in % when to sell a coin that's not making a profit.
-  MAX_HOLDING_TIME: 7    # in minutes if we can't sell in this time it will sell it at more than 1/2 of SL
+  TAKE_PROFIT: 0.1   # define in % when to take profit on a profitable coin. default 0.25
+  STOP_LOSS:  0.49  # define in % when to sell a coin that's not making a profit.
+  MAX_HOLDING_TIME: 10    # in minutes if we can't sell in this time it will sell it at more than 1/2 of SL
 
 
-  USE_TRAILING_STOP_LOSS: True
+  USE_TRAILING_STOP_LOSS: False
   #USE_TRAILING_STOP_LOSS: False
   TRAILING_STOP_LOSS: .005     # when hit TAKE_PROFIT, move STOP_LOSS to TRAILING_STOP_LOSS percentage points below TAKE_PROFIT hence locking in profit
   TRAILING_TAKE_PROFIT: .005 
@@ -93,7 +93,7 @@ trading_options:
 #     - abj_ai_buy_signal_vRF
 #    - abj_ai_buy_signal_vNoPrice
 #    - abj_ai_buy_signal_vDoubleCheck
-    - abj_ai_buy_signal_vBinance
+#    - abj_ai_buy_signal_vBinance
 #    - abj_superbuy_signal
 #    - abj_superbuy_signal_v2    
 #    - RSI_Algo_v3
@@ -207,7 +207,7 @@ trading_options:
   #Sweethackercasper's idea, thanks mate.
   UPDATE_MOST_VOLUME_COINS: 1440
   #It should not be touched here, used as record.
-  VOLATILE_VOLUME: volatile_volume_29-11-2022(22_34_40)
+  VOLATILE_VOLUME: volatile_volume_06-12-2022(11_23_33)
   #idea from my psychologist, thanks Sebastian V.
   #Two different currencies can be used as a range (within the market table in Binance ordered from highest to lowest)
   COINS_MAX_VOLUME: ETH #ETH  #5000000000
