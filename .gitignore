@@ -20,3 +20,5 @@ __*__
 # Don't upload files
 test*.txt
 live*.txt
+
+volatile_volum*
