@@ -28,4 +28,5 @@ bt
 pandas-ta
 regex
 ccxt
-ta-lib
+ccxtpro
+#ta-lib

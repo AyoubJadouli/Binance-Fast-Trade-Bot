@@ -1,14 +1,60 @@
-/usr/local/lib/python3.9/dist-packages/pandas/core/arrays/masked.py:59: UserWarning: Pandas requires version '1.3.2' or newer of 'bottleneck' (version '1.2.1' currently installed).
-  from pandas.core import (
-2022-11-30 17:19:37.052409: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
-2022-11-30 17:19:37.052502: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
-2022-11-30 17:19:37.117651: E tensorflow/stream_executor/cuda/cuda_blas.cc:2981] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
-2022-11-30 17:19:38.485976: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory
-2022-11-30 17:19:38.486155: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory
-2022-11-30 17:19:38.486196: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
-2022-11-30 17:19:40.727894: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
-2022-11-30 17:19:40.727981: W tensorflow/stream_executor/cuda/cuda_driver.cc:263] failed call to cuInit: UNKNOWN ERROR (303)
-2022-11-30 17:19:40.728034: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:169] retrieving CUDA diagnostic information for host: abj-K93SV
-2022-11-30 17:19:40.728061: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:176] hostname: abj-K93SV
-2022-11-30 17:19:40.728138: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:200] libcuda reported version is: NOT_FOUND: was unable to find libcuda.so DSO loaded into this program
-2022-11-30 17:19:40.728218: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:204] kernel reported version is: 390.154.0
+/root/miniforge3/lib/python3.10/site-packages/tensorflow_io/python/ops/__init__.py:98: UserWarning: unable to load libtensorflow_io_plugins.so: unable to open file: libtensorflow_io_plugins.so, from paths: ['/root/miniforge3/lib/python3.10/site-packages/tensorflow_io/python/ops/libtensorflow_io_plugins.so']
+caused by: ["[Errno 2] The file to load file system plugin from does not exist.: '/root/miniforge3/lib/python3.10/site-packages/tensorflow_io/python/ops/libtensorflow_io_plugins.so'"]
+  warnings.warn(f"unable to load libtensorflow_io_plugins.so: {e}")
+/root/miniforge3/lib/python3.10/site-packages/tensorflow_io/python/ops/__init__.py:104: UserWarning: file system plugins are not loaded: unable to open file: libtensorflow_io.so, from paths: ['/root/miniforge3/lib/python3.10/site-packages/tensorflow_io/python/ops/libtensorflow_io.so']
+caused by: ['/root/miniforge3/lib/python3.10/site-packages/tensorflow_io/python/ops/libtensorflow_io.so: cannot open shared object file: No such file or directory']
+  warnings.warn(f"file system plugins are not loaded: {e}")
+Traceback (most recent call last):
+  File "/UltimeTradingBot/Binance-Fast-Trade-Bot/modules/abj_ai_buy_signal_vBinance.py", line 332, in <module>
+    MetaData=pd.read_csv("../Data/MetaData.csv")
+  File "/root/miniforge3/lib/python3.10/site-packages/pandas/util/_decorators.py", line 211, in wrapper
+    return func(*args, **kwargs)
+  File "/root/miniforge3/lib/python3.10/site-packages/pandas/util/_decorators.py", line 331, in wrapper
+    return func(*args, **kwargs)
+  File "/root/miniforge3/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 950, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/root/miniforge3/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 605, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/root/miniforge3/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1442, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/root/miniforge3/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1735, in _make_engine
+    self.handles = get_handle(
+  File "/root/miniforge3/lib/python3.10/site-packages/pandas/io/common.py", line 856, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '../Data/MetaData.csv'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/UltimeTradingBot/Binance-Fast-Trade-Bot/modules/abj_ai_buy_signal_vBinance.py", line 334, in <module>
+    MetaData=get_crypto_metadata(pairs)
+  File "/UltimeTradingBot/Binance-Fast-Trade-Bot/modules/abj_ai_buy_signal_vBinance.py", line 311, in get_crypto_metadata
+    symbol_launch_week_stamp   = give_first_kline_open_stamp('1w', this_id, 1499990400000 )
+  File "/UltimeTradingBot/Binance-Fast-Trade-Bot/modules/abj_ai_buy_signal_vBinance.py", line 288, in give_first_kline_open_stamp
+    kline_data = urllib.request.urlopen(url_to_get).read().decode("utf-8")
+  File "/root/miniforge3/lib/python3.10/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+  File "/root/miniforge3/lib/python3.10/urllib/request.py", line 525, in open
+    response = meth(req, response)
+  File "/root/miniforge3/lib/python3.10/urllib/request.py", line 634, in http_response
+    response = self.parent.error(
+  File "/root/miniforge3/lib/python3.10/urllib/request.py", line 557, in error
+    result = self._call_chain(*args)
+  File "/root/miniforge3/lib/python3.10/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+  File "/root/miniforge3/lib/python3.10/urllib/request.py", line 749, in http_error_302
+    return self.parent.open(new, timeout=req.timeout)
+  File "/root/miniforge3/lib/python3.10/urllib/request.py", line 525, in open
+    response = meth(req, response)
+  File "/root/miniforge3/lib/python3.10/urllib/request.py", line 634, in http_response
+    response = self.parent.error(
+  File "/root/miniforge3/lib/python3.10/urllib/request.py", line 563, in error
+    return self._call_chain(*args)
+  File "/root/miniforge3/lib/python3.10/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+  File "/root/miniforge3/lib/python3.10/urllib/request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 400: Bad Request
+Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0xffff676685e0>

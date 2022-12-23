@@ -919,7 +919,10 @@ def convert_volume():
             # while XRP is only 1
             #try:
             info = client.get_symbol_info(symfilter(coin)+PAIR_WITH)
-            step_size = info['filters'][2]['stepSize']
+            dicts=info['filters']
+            LOT_SIZE=next(item for item in dicts if item["filterType"] == "LOT_SIZE")
+            step_size = LOT_SIZE['stepSize']
+            print(f"step_size: {step_size}")
             lot_size[coin] = step_size.index('1') - 1
             
             if lot_size[coin] < 0: lot_size[coin] = 0
