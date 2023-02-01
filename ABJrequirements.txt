@@ -56,3 +56,6 @@ websockets
 yarl
 tensorflow-cpu
 ccxtpro
+seaborn
+matplotlib
+Pillow

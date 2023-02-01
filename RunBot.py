@@ -919,7 +919,10 @@ def convert_volume():
             # while XRP is only 1
             #try:
             info = client.get_symbol_info(symfilter(coin)+PAIR_WITH)
-            step_size = info['filters'][2]['stepSize']
+            dicts=info['filters']
+            LOT_SIZE=next(item for item in dicts if item["filterType"] == "LOT_SIZE")
+            step_size = LOT_SIZE['stepSize']
+            print(f"step_size: {step_size}")
             lot_size[coin] = step_size.index('1') - 1
             
             if lot_size[coin] < 0: lot_size[coin] = 0
@@ -1913,7 +1916,7 @@ def renew_list(in_init=False):
                     #coinstosave = []
 
                     for coin_bought in list(coins_bought_list):
-                        coin_bought = coin_bought.replace("USDT", "") + "\n"
+                        coin_bought = coin_bought.replace("USDT", "").replace("BUSD", "").replace(PAIR_WITH, "") + "\n"
                         if not coin_bought in list(lines_today):
                             lines_today.append(coin_bought)
                     # for coin in coins_bought_list:
