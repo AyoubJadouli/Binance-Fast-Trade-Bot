@@ -1,3 +1,13 @@
+#__________________________________________________________________________________________
+#                                   Binance Fast trader
+#_____________________________________     by ABJ     _____________________________________
+#STARTED: 2023-02-11 21:34:41 | Running for: 1 day, 9:07:22
+#CURRENT HOLDS: 4/5 400/500 BUSD
+#BUYING PAUSE: False
+#WINS/LOSSSES: 282/103 WIN %: 73.25%
+#PENDING: -0.343% EST $:-1.717 BUSD
+#EARNED: -20.14 BUSD | PROFIT %: -4.027%
+
 
 ######################################################################################################
 ####################################### new #########################################################
@@ -47,9 +57,9 @@
 
 
 ai_options: # top 20
-   Normalization_File: AI/tp70_w14_max7min_Norm_v1_top20_dip.json
-   Model_FileName:  AI/tp70_w14_max7min_Mode_top20_dip.hdf5
-   WINDOW_SIZE: 14
+   Normalization_File: AI/ll/all_w25_bp5_AFTER_DEPTH_CLOSE_normalization.json
+   Model_FileName:  AI/ll/all_w25_bp5_AFTER_DEPTH_CLOSE_model1.h5
+   WINDOW_SIZE: 25
    PRESSISION: -0.0
 
 
@@ -61,21 +71,21 @@ ai_options: # top 20
 
 
 trading_options:
-  TAKE_PROFIT: 0.02   # define in % when to take profit on a profitable coin. default 0.25
-  STOP_LOSS:  0.2  # define in % when to sell a coin that's not making a profit.
-  MAX_HOLDING_TIME: 2    # in minutes if we can't sell in this time it will sell it at more than 1/2 of SL
+  TAKE_PROFIT: 0.2   # define in % when to take profit on a profitable coin. default 0.25
+  STOP_LOSS:  2.5  # define in % when to sell a coin that's not making a profit.
+  MAX_HOLDING_TIME: 25    # in minutes if we can't sell in this time it will sell it at more than 1/2 of SL
 
 
-  USE_TRAILING_STOP_LOSS: False
+  USE_TRAILING_STOP_LOSS: True
   #USE_TRAILING_STOP_LOSS: False
   TRAILING_STOP_LOSS: .005     # when hit TAKE_PROFIT, move STOP_LOSS to TRAILING_STOP_LOSS percentage points below TAKE_PROFIT hence locking in profit
-  TRAILING_TAKE_PROFIT: .005 
+  TRAILING_TAKE_PROFIT: .005
   #abj_seperbuy_signal_v2 config
 
 
   PAIR_WITH: BUSD #BUSD       # select your base currency to use for trading (trade for example USDT pairs)
-  TRADE_TOTAL: 1000 #0.00002614 #10 #Total amount per trade (your base currency balance must be at least TRADE_SLOTS * TRADE_TOTAL) min 12
-  TRADE_SLOTS: 1    # Maximum number of trade 'slots' at any time (your USDT balance must be at least TRADE_SLOTS * TRADE_TOTAL)
+  TRADE_TOTAL: 100 #0.00002614 #10 #Total amount per trade (your base currency balance must be at least TRADE_SLOTS * TRADE_TOTAL) min 12
+  TRADE_SLOTS: 5   # Maximum number of trade 'slots' at any time (your USDT balance must be at least TRADE_SLOTS * TRADE_TOTAL)
 
   CHOOSEN_INTERVAL: 1m # 5m 1m-5m 5m-15m 15m 1h 4h
   BTC_CHECK_LEVEL: 1 #up to 4
@@ -207,7 +217,7 @@ trading_options:
   #Sweethackercasper's idea, thanks mate.
   UPDATE_MOST_VOLUME_COINS: 1440
   #It should not be touched here, used as record.
-  VOLATILE_VOLUME: volatile_volume_23-12-2022(11_08_30)
+  VOLATILE_VOLUME: volatile_volume_28-02-2023(00_00_32)
   #idea from my psychologist, thanks Sebastian V.
   #Two different currencies can be used as a range (within the market table in Binance ordered from highest to lowest)
   COINS_MAX_VOLUME: ETH #ETH  #5000000000

@@ -1916,7 +1916,7 @@ def renew_list(in_init=False):
                     #coinstosave = []
 
                     for coin_bought in list(coins_bought_list):
-                        coin_bought = coin_bought.replace("USDT", "") + "\n"
+                        coin_bought = coin_bought.replace("USDT", "").replace("BUSD", "").replace(PAIR_WITH, "") + "\n"
                         if not coin_bought in list(lines_today):
                             lines_today.append(coin_bought)
                     # for coin in coins_bought_list:
